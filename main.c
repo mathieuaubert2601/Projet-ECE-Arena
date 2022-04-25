@@ -2,6 +2,6 @@
 
 int main()
 {
-    printf("Penis\n");
+    printf("Coucou \n");
     return 0;
 }
