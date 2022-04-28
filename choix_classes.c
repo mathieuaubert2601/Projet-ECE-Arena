@@ -2,11 +2,11 @@
  void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page)
  {
     stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-    masked_stretch_blit(classe1,page,0,0,283,190,-75,400,400,300);
-    masked_stretch_blit(classe2,page,0,0,286,190,150,400,400,300);
-    masked_stretch_blit(classe3,page,0,0,288,191,375,375,400,300);
-    masked_stretch_blit(classe4,page,0,0,135,120,600,375,350,280);
-    masked_stretch_blit(classe5,page,0,0,287,192,850,400,400,300);
+    masked_stretch_blit(classe1,page,0,0,115,103,15,400,255,203);
+    masked_stretch_blit(classe2,page,0,0,127,114,240,420,217,186);
+    masked_stretch_blit(classe3,page,0,0,86,121,480,400,216,200);
+    masked_stretch_blit(classe4,page,0,0,135,120,700,400,225,200);
+    masked_stretch_blit(classe5,page,0,0,128,118,950,400,220,200);
 
     AffichageBouton(page,50,650,200,700,makecol(220,220,220));
     AffichageBouton(page,275,650,425,700,makecol(220,220,220));
