@@ -20,5 +20,11 @@
     textprintf_ex(page,font,760,670,makecol(0,0,0),-1," Alakazam ");
     textprintf_ex(page,font,1000,670,makecol(0,0,0),-1," Rondoudou ");
 
+    AffichageBouton(page,75,350,175,400,makecol(220,220,220));
+    AffichageBouton(page,300,350,400,400,makecol(220,220,220));
+    AffichageBouton(page,525,350,625,400,makecol(220,220,220));
+    AffichageBouton(page,750,350,850,400,makecol(220,220,220));
+    AffichageBouton(page,1000,350,1100,400,makecol(220,220,220));
+
 
     }
