@@ -6,7 +6,10 @@ int main()
     install_keyboard();
     install_mouse();
 
+    t_joueur joueur1;
+
     ///Déclaration des BITMAP
+    BITMAP* fond1 = load_bitmap("fond.bmp",NULL);
     BITMAP* fond = load_bitmap("fond1.bmp",NULL);
     BITMAP* lucario = load_bitmap("lucario.bmp",NULL);
     BITMAP* rondoudou = load_bitmap("rondoudou.bmp",NULL);
@@ -20,7 +23,7 @@ int main()
     while(!key[KEY_ESC])
     {
         clear_bitmap(page);
-        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page);
+        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1);
         show_mouse(page);
 
         blit(page,screen,0,0,0,0,1200,800);

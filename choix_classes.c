@@ -1,5 +1,5 @@
  #include "header.h"
- void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page)
+ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page,t_joueur* joueur)
  {
     stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
     masked_stretch_blit(classe1,page,0,0,283,190,-75,400,400,300);
@@ -33,4 +33,58 @@
     textprintf_ex(page,font,1000,370,makecol(0,0,0),-1," Infos ");
 
 
+    //Choix de Pikachu
+    if((mouse_x<=(200) && mouse_x>=(50)) && (mouse_y)<=(700) && mouse_y>=(650))
+    {
+        if(mouse_b && 1)
+        {
+            joueur->classe=1;
+            joueur->pv=75;
+            joueur->pm=6;
+        }
     }
+
+    //Choix de Ronflex
+    if((mouse_x<=(425) && mouse_x>=(275)) && (mouse_y)<=(700) && mouse_y>=(650))
+    {
+        if(mouse_b && 1)
+        {
+            joueur->classe=2;
+            joueur->pv=125;
+            joueur->pm=2;
+        }
+    }
+
+    //Choix de Lucario
+    if((mouse_x<=(650) && mouse_x>=(500)) && (mouse_y)<=(700) && mouse_y>=(650))
+    {
+        if(mouse_b && 1)
+        {
+            joueur->classe=3;
+            joueur->pv=100;
+            joueur->pm=4;
+        }
+    }
+
+    //Choix d'Alakazam
+    if((mouse_x<=(875) && mouse_x>=(725)) && (mouse_y)<=(700) && mouse_y>=(650))
+    {
+        if(mouse_b && 1)
+        {
+            joueur->classe=4;
+            joueur->pv=100;
+            joueur->pm=4;
+        }
+    }
+
+    //Choix de Rondoudou
+    if((mouse_x<=(1125) && mouse_x>=(975)) && (mouse_y)<=(700) && mouse_y>=(650))
+    {
+        if(mouse_b && 1)
+        {
+            joueur->classe=5;
+            joueur->pv=75;
+            joueur->pm=6;
+        }
+    }
+ }
