@@ -12,7 +12,7 @@
 typedef struct joueur
 {
     char* pseudo;
-    int ligne, colonne, numero, equipe,classe,pv,pm,pa,tourPoison,tourDodo,tourParalysie,tourPeur,tourPeur,tourBouclier,score;
+    int ligne, colonne, numero, equipe,classe,pv,pm,pa,tourPoison,tourDodo,tourParalysie,tourPeur,tourBouclier,score;
     BITMAP* bitmap
 }t_joueur;
 
@@ -28,7 +28,11 @@ typedef struct cases
     int disponibleOuNon;
 }t_cases;
 
+
+
 ///Déclaration des prototypes des sous programmes
+void initialisationAllegro();
+void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page);
 
 
 #endif // HEADER_H_INCLUDED
