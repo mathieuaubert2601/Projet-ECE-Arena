@@ -26,5 +26,11 @@
     AffichageBouton(page,750,350,850,400,makecol(220,220,220));
     AffichageBouton(page,1000,350,1100,400,makecol(220,220,220));
 
+    textprintf_ex(page,font,90,370,makecol(0,0,0),-1," Infos ");
+    textprintf_ex(page,font,310,370,makecol(0,0,0),-1," Infos ");
+    textprintf_ex(page,font,540,370,makecol(0,0,0),-1," Infos ");
+    textprintf_ex(page,font,760,370,makecol(0,0,0),-1," Infos ");
+    textprintf_ex(page,font,1000,370,makecol(0,0,0),-1," Infos ");
+
 
     }
