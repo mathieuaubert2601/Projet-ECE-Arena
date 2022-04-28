@@ -7,12 +7,12 @@ int main()
     install_mouse();
 
     ///Déclaration des BITMAP
-    BITMAP* fond = load_bitmap("fond.bmp",NULL);
+    BITMAP* fond = load_bitmap("fond1.bmp",NULL);
     BITMAP* lucario = load_bitmap("lucario.bmp",NULL);
     BITMAP* rondoudou = load_bitmap("rondoudou.bmp",NULL);
     BITMAP* pikachu = load_bitmap("pikachu.bmp",NULL);
     BITMAP* ronflex = load_bitmap("ronflex.bmp",NULL);
-    BITMAP* alakazam = load_bitmap("alakazam.bmp",NULL);
+    BITMAP* alakazam = load_bitmap("alakazam1.bmp",NULL);
 
     BITMAP* page=create_bitmap(1200,800);
     clear_bitmap(page);
