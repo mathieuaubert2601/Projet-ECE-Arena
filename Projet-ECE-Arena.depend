@@ -2,18 +2,18 @@
 1651138433 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\init_allegro.c
 	"header.h"
 
-1651161256 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
+1651243080 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
 
-1651161415 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
+1651243080 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
 	"header.h"
 
-1651161415 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
+1651243080 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
-1651140408 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
+1651239052 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
 	"header.h"
 
 1651237593 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\main.c
@@ -33,6 +33,23 @@
 1651154147 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\init_allegro.c
 	"header.h"
 
-1651235430 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\informations_classe.c
+1651236996 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\boutons_menu.c
+	"header.h"
+
+1651240535 c:\users\aubert mathieu\documents\github\projet-ece-arena\header.h
+	<allegro.h>
+	<stdio.h>
+	<stdlib.h>
+
+1651236375 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\init_allegro.c
+	"header.h"
+
+1651240535 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\main.c
+	"header.h"
+
+1651238579 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\choix_classes.c
+	"header.h"
+
+1651242706 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\informations_classe.c
 	"header.h"
 
