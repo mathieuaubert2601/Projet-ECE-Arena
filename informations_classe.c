@@ -3,7 +3,9 @@
 void information_Pikachu(BITMAP* page, BITMAP* fond)
 {
     //déclaration des variables
-    //BITMAP* info_pika = load_bitmap("pikachu/pikachuInfo1.bmp",NULL);
+    BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
+    BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
+    BITMAP* info_pika = load_bitmap("pikachu/fichepik.bmp",NULL);
     BITMAP* pika1 = load_bitmap("pikachu/pikachuInfo1.bmp",NULL);
     BITMAP* pika2 = load_bitmap("pikachu/pikachu2.bmp",NULL);
     BITMAP* tableauBitmapPikachu[2] = {pika1,pika2};
@@ -13,17 +15,21 @@ void information_Pikachu(BITMAP* page, BITMAP* fond)
     {
         clear_bitmap(page);
         stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-        masked_blit(tableauBitmapPikachu[0],page,0,0,0,0,500,490);
+        masked_blit(tableauBitmapPikachu[0],page,0,0,600,250,500,490);
+        masked_blit(info_pika,page,0,0,50,50,571,670);
+        AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,800);
-        rest(750);
+        rest(75);
 
         clear_bitmap(page);
         stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-        masked_blit(tableauBitmapPikachu[1],page,0,0,0,0,500,500);
+        masked_blit(tableauBitmapPikachu[1],page,0,0,600,250,500,500);
+        masked_blit(info_pika,page,0,0,50,50,571,670);
+        AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,800);
-        rest(750);
+        rest(75);
     }
 }
 
@@ -31,6 +37,7 @@ void information_Ronflex(BITMAP* page, BITMAP* fond)
 {
     //déclaration des variables
     BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
+    BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
     BITMAP* info_ronf = load_bitmap("ronflex/ficheRonf.bmp",NULL);
     BITMAP* ronflex1 = load_bitmap("ronflex/frame1.bmp",NULL);
     BITMAP* ronflex2 = load_bitmap("ronflex/frame2.bmp",NULL);
@@ -47,9 +54,9 @@ void information_Ronflex(BITMAP* page, BITMAP* fond)
         {
             clear_bitmap(page);
             stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-            masked_stretch_blit(info_ronf,page,0,0,373,450,50,50,400,500);
-            masked_stretch_blit(tableau_ronflex[i],page,0,0,600,580,650,170,400,400);
-            AffichageBouton(quitter,quitter,page,0,0,1000,700,181,59);
+            masked_stretch_blit(info_ronf,page,0,0,373,450,50,50,571,670);
+            masked_stretch_blit(tableau_ronflex[i],page,0,0,600,580,700,300,400,400);
+            AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
             show_mouse(page);
             blit(page,screen,0,0,0,0,1200,800);
             rest(100);
@@ -60,7 +67,9 @@ void information_Ronflex(BITMAP* page, BITMAP* fond)
 void information_Lucario(BITMAP* page, BITMAP* fond)
 {
     //déclaration des variables
-    //BITMAP* info_luca = load_bitmap("pikachu/pikachuInfo1.bmp",NULL);
+    BITMAP* info_luca = load_bitmap("lucario/ficheLu.bmp",NULL);
+    BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
+    BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
     BITMAP* lucario1 = load_bitmap("lucario/frame1.bmp",NULL);
     BITMAP* lucario2 = load_bitmap("lucario/frame2.bmp",NULL);
     BITMAP* lucario3 = load_bitmap("lucario/frame3.bmp",NULL);
@@ -95,7 +104,9 @@ void information_Lucario(BITMAP* page, BITMAP* fond)
         {
             clear_bitmap(page);
             stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-            masked_stretch_blit(tableau_lucario[i],page,0,0,192,192,0,0,500,500);
+            masked_stretch_blit(tableau_lucario[i],page,0,0,192,192,500,75,700,700);
+            masked_stretch_blit(info_luca,page,0,0,582,694,50,50,571,670);
+            AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
             show_mouse(page);
             blit(page,screen,0,0,0,0,1200,800);
             rest(75);
@@ -108,6 +119,8 @@ void information_Alakazam(BITMAP* page, BITMAP* fond)
 {
     //déclaration des variables
     //BITMAP* info_al = load_bitmap("ronflex/ficheRonf.bmp",NULL);
+    BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
+    BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
     BITMAP* alakazam1 = load_bitmap("alakazam/frame1.bmp",NULL);
     BITMAP* alakazam2 = load_bitmap("alakazam/frame2.bmp",NULL);
     BITMAP* alakazam3 = load_bitmap("alakazam/frame3.bmp",NULL);
