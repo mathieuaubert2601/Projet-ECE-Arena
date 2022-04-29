@@ -22,12 +22,13 @@ int main()
 
     while(!key[KEY_ESC])
     {
-        clear_bitmap(page);
-        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1);
+        /*clear_bitmap(page);
+        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page);
         show_mouse(page);
 
         blit(page,screen,0,0,0,0,1200,800);
-        rest(10);
+        rest(10);*/
+        information_Lucario(page);
     }
     destroy_bitmap(page);
 

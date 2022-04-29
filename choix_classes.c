@@ -54,7 +54,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     textprintf_ex(page,font,760,370,makecol(0,0,0),-1," Infos ");
     textprintf_ex(page,font,1000,370,makecol(0,0,0),-1," Infos ");
 
-
+/*
     //Choix de Pikachu
     if((mouse_x<=(200) && mouse_x>=(50)) && (mouse_y)<=(700) && mouse_y>=(650))
     {
@@ -108,5 +108,5 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             joueur->pv=75;
             joueur->pm=6;
         }
-    }
+    }*/
  }
