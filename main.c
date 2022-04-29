@@ -11,11 +11,11 @@ int main()
     ///D�claration des BITMAP
     BITMAP* fond1 = load_bitmap("fond.bmp",NULL);
     BITMAP* fond = load_bitmap("fond1.bmp",NULL);
-    BITMAP* lucario = load_bitmap("lucario1.bmp",NULL);
-    BITMAP* rondoudou = load_bitmap("rondoudou1.bmp",NULL);
-    BITMAP* pikachu = load_bitmap("pikatchu1.bmp",NULL);
-    BITMAP* ronflex = load_bitmap("ronflex1.bmp",NULL);
-    BITMAP* alakazam = load_bitmap("alakazam1.bmp",NULL);
+    BITMAP* lucario = load_bitmap("lucario/lucario1.bmp",NULL);
+    BITMAP* rondoudou = load_bitmap("rondoudou/rondoudou1.bmp",NULL);
+    BITMAP* pikachu = load_bitmap("pikachu/pikatchu1.bmp",NULL);
+    BITMAP* ronflex = load_bitmap("ronflex/ronflex1.bmp",NULL);
+    BITMAP* alakazam = load_bitmap("alakazam/alakazam1.bmp",NULL);
 
     BITMAP* page=create_bitmap(1200,800);
     clear_bitmap(page);

@@ -3,8 +3,8 @@
 void information_Pikachu(BITMAP* info_Pikachu)
 {
     //déclaration des variables
-    BITMAP* pika1 = load_bitmap("pikachuInfo1.bmp",NULL);
-    BITMAP* pika2 = load_bitmap("pikachuInfo2.bmp",NULL);
+    BITMAP* pika1 = load_bitmap("pikachu/pikachuInfo1.bmp",NULL);
+    BITMAP* pika2 = load_bitmap("pikachu/pikachuInfo2.bmp",NULL);
     BITMAP* tableauBitmapPikachu[2] = {pika1,pika2};
 
     //Boucle d'affichage du gif
