@@ -1,8 +1,9 @@
 #include "header.h"
 
-void information_Pikachu(BITMAP* info_Pikachu)
+void information_Pikachu(BITMAP* page, BITMAP* fond)
 {
     //déclaration des variables
+    //BITMAP* info_pika = load_bitmap("pikachu/pikachuInfo1.bmp",NULL);
     BITMAP* pika1 = load_bitmap("pikachu/pikachuInfo1.bmp",NULL);
     BITMAP* pika2 = load_bitmap("pikachu/pikachuInfo2.bmp",NULL);
     BITMAP* tableauBitmapPikachu[2] = {pika1,pika2};
@@ -10,21 +11,24 @@ void information_Pikachu(BITMAP* info_Pikachu)
     //Boucle d'affichage du gif
     while(!key[KEY_ESC])
     {
-        clear_bitmap(info_Pikachu);
-        masked_blit(tableauBitmapPikachu[0],info_Pikachu,0,0,0,0,500,490);
-        blit(info_Pikachu,screen,0,0,0,0,1200,800);
+        clear_bitmap(page);
+        stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
+        masked_blit(tableauBitmapPikachu[0],page,0,0,0,0,500,490);
+        blit(page,screen,0,0,0,0,1200,800);
         rest(750);
 
-        clear_bitmap(info_Pikachu);
-        masked_blit(tableauBitmapPikachu[1],info_Pikachu,0,0,0,0,500,500);
-        blit(info_Pikachu,screen,0,0,0,0,1200,800);
+        clear_bitmap(page);
+        stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
+        masked_blit(tableauBitmapPikachu[1],page,0,0,0,0,500,500);
+        blit(page,screen,0,0,0,0,1200,800);
         rest(750);
     }
 }
 
-void information_Lucario(BITMAP* info_Lucario)
+void information_Lucario(BITMAP* page, BITMAP* fond)
 {
     //déclaration des variables
+    //BITMAP* info_luca = load_bitmap("pikachu/pikachuInfo1.bmp",NULL);
     BITMAP* lucario1 = load_bitmap("lucario/frame1.bmp",NULL);
     BITMAP* lucario2 = load_bitmap("lucario/frame2.bmp",NULL);
     BITMAP* lucario3 = load_bitmap("lucario/frame3.bmp",NULL);
@@ -57,17 +61,19 @@ void information_Lucario(BITMAP* info_Lucario)
     {
         for(int i=0;i<25;i++)
         {
-            clear_bitmap(info_Lucario);
-            masked_stretch_blit(tableau_lucario[i],info_Lucario,0,0,192,192,0,0,500,500);
-            blit(info_Lucario,screen,0,0,0,0,1200,800);
+            clear_bitmap(page);
+            stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
+            masked_stretch_blit(tableau_lucario[i],page,0,0,192,192,0,0,500,500);
+            blit(page,screen,0,0,0,0,1200,800);
             rest(100);
         }
     }
 }
 
-void information_Ronflex(BITMAP* info_Ronflex)
+void information_Ronflex(BITMAP* page, BITMAP* fond)
 {
     //déclaration des variables
+    BITMAP* info_ronf = load_bitmap("ronflex/ficheRonf.bmp",NULL);
     BITMAP* ronflex1 = load_bitmap("ronflex/frame1.bmp",NULL);
     BITMAP* ronflex2 = load_bitmap("ronflex/frame2.bmp",NULL);
     BITMAP* ronflex3 = load_bitmap("ronflex/frame3.bmp",NULL);
@@ -81,17 +87,20 @@ void information_Ronflex(BITMAP* info_Ronflex)
     {
         for(int i=0;i<6;i++)
         {
-            clear_bitmap(info_Ronflex);
-            masked_stretch_blit(tableau_ronflex[i],info_Ronflex,0,0,600,580,0,0,400,400);
-            blit(info_Ronflex,screen,0,0,0,0,1200,800);
+            clear_bitmap(page);
+            stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
+            masked_stretch_blit(info_ronf,page,0,0,373,450,50,50,400,500);
+            masked_stretch_blit(tableau_ronflex[i],page,0,0,600,580,0,0,400,400);
+            blit(page,screen,0,0,0,0,1200,800);
             rest(200);
         }
     }
 }
 
-void information_Alakazam(BITMAP* info_Alakazam)
+void information_Alakazam(BITMAP* page, BITMAP* fond)
 {
     //déclaration des variables
+    //BITMAP* info_al = load_bitmap("ronflex/ficheRonf.bmp",NULL);
     BITMAP* alakazam1 = load_bitmap("alakazam/frame1.bmp",NULL);
     BITMAP* alakazam2 = load_bitmap("alakazam/frame2.bmp",NULL);
     BITMAP* alakazam3 = load_bitmap("alakazam/frame3.bmp",NULL);
@@ -124,16 +133,18 @@ void information_Alakazam(BITMAP* info_Alakazam)
     {
         for(int i=0;i<17;i++)
         {
-            clear_bitmap(info_Alakazam);
-            masked_stretch_blit(tableau_alakazam[i],info_Alakazam,0,0,570,560,0,0,500,500);
-            blit(info_Alakazam,screen,0,0,0,0,1200,800);
+            clear_bitmap(page);
+            stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
+            masked_stretch_blit(tableau_alakazam[i],page,0,0,570,560,0,0,500,500);
+            blit(page,screen,0,0,0,0,1200,800);
             rest(50);
         }
         for(int i=16;i>0;i--)
         {
-            clear_bitmap(info_Alakazam);
-            masked_stretch_blit(tableau_alakazam[i],info_Alakazam,0,0,570,560,0,0,500,500);
-            blit(info_Alakazam,screen,0,0,0,0,1200,800);
+            clear_bitmap(page);
+            stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
+            masked_stretch_blit(tableau_alakazam[i],page,0,0,570,560,0,0,500,500);
+            blit(page,screen,0,0,0,0,1200,800);
             rest(50);
         }
     }

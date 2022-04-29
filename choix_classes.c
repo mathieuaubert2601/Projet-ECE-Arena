@@ -32,18 +32,18 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     //masked_blit(boutonInv,page,sourcex,sourcey,destx,desty,longueur,hauteur);
 
     ///Affichage nom des pok�mons
-    AffichageBouton(bouton1,boutonInv1,page,0,0,15,650,212,67);
-    AffichageBouton(bouton2,boutonInv2,page,0,0,245,650,211,67);
-    AffichageBouton(bouton3,boutonInv3,page,0,0,485,650,212,67);
-    AffichageBouton(bouton4,boutonInv4,page,0,0,705,650,211,67);
-    AffichageBouton(bouton5,boutonInv5,page,0,0,955,650,211,67);
+    AffichageBouton(bouton1,boutonInv1,page,0,0,15,650,212,67,1);
+    AffichageBouton(bouton2,boutonInv2,page,0,0,245,650,211,67,2);
+    AffichageBouton(bouton3,boutonInv3,page,0,0,485,650,212,67,3);
+    AffichageBouton(bouton4,boutonInv4,page,0,0,705,650,211,67,4);
+    AffichageBouton(bouton5,boutonInv5,page,0,0,955,650,211,67,5);
 
     ///Affichage bouton infos
-    AffichageBouton(boutonI,boutonInvI,page,0,0,68,725,100,50);
-    AffichageBouton(boutonI,boutonInvI,page,0,0,300,725,100,50);
-    AffichageBouton(boutonI,boutonInvI,page,0,0,550,725,100,50);
-    AffichageBouton(boutonI,boutonInvI,page,0,0,765,725,100,50);
-    AffichageBouton(boutonI,boutonInvI,page,0,0,1020,725,100,50);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,68,725,100,50,0);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,300,725,100,50,0);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,550,725,100,50,0);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,765,725,100,50,0);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,1020,725,100,50,0);
 
     masked_blit(logo,page,0,0,200,5,755,374);
 

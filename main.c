@@ -9,7 +9,6 @@ int main()
     t_joueur joueur1;
 
     ///D�claration des BITMAP
-    BITMAP* fond1 = load_bitmap("fond.bmp",NULL);
     BITMAP* fond = load_bitmap("fond1.bmp",NULL);
     BITMAP* lucario = load_bitmap("lucario/lucario1.bmp",NULL);
     BITMAP* rondoudou = load_bitmap("rondoudou/rondoudou1.bmp",NULL);
