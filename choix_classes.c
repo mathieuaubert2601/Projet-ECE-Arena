@@ -24,7 +24,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
 
     ///Affichage des pok�mons
     stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-    masked_blit(logo,page,0,0,200,5,755,374);
     masked_stretch_blit(classe1,page,0,0,115,103,15,400,255,203);
     masked_stretch_blit(classe2,page,0,0,127,114,240,420,217,186);
     masked_stretch_blit(classe3,page,0,0,86,121,480,400,216,200);
@@ -40,11 +39,13 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     AffichageBouton(bouton5,boutonInv5,page,0,0,955,650,211,67);
 
     ///Affichage bouton infos
-    /*AffichageBouton(boutonI,boutonInvI,page,0,0,15,650,212,67);
-    AffichageBouton(boutonI,boutonInvI,page,0,0,245,650,211,67);
-    AffichageBouton(boutonI,boutonInvI,page,0,0,485,650,212,67);
-    AffichageBouton(boutonI,boutonInvI,page,0,0,705,650,211,67);
-    AffichageBouton(boutonI,boutonInvI,page,0,0,955,650,211,67);*/
+    AffichageBouton(boutonI,boutonInvI,page,0,0,68,725,100,50);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,300,725,100,50);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,550,725,100,50);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,765,725,100,50);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,1020,725,100,50);
+
+    masked_blit(logo,page,0,0,200,5,755,374);
 
     /*AffichageBouton(page,75,350,175,400,makecol(220,220,220));
     AffichageBouton(page,300,350,400,400,makecol(220,220,220));
