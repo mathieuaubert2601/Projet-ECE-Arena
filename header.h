@@ -33,7 +33,7 @@ typedef struct cases
 ///Déclaration des prototypes des sous programmes
 void initialisationAllegro();
 void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page);
-void AffichageBouton(BITMAP* page,int posx,int posy,int posx2,int posy2,int couleur);
+void AffichageBouton(BITMAP* bouton,BITMAP* boutonInv, BITMAP* page,int sourcex,int sourcey,int destx,int desty,int longueur, int hauteur);
 
 
 #endif // HEADER_H_INCLUDED

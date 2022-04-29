@@ -19,15 +19,15 @@
 1651159429 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\main.c
 	"header.h"
 
-1651154147 c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\header.h
+1651180741 c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
 
-1651154147 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\boutons_menu.c
+1651182335 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\boutons_menu.c
 	"header.h"
 
-1651160085 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\choix_classes.c
+1651182445 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\choix_classes.c
 	"header.h"
 
 1651154147 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\init_allegro.c

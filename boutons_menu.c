@@ -1,13 +1,14 @@
 #include "header.h"
 
-void AffichageBouton(BITMAP* page,int posx,int posy,int posx2,int posy2,int couleur)
+void AffichageBouton(BITMAP* bouton,BITMAP* boutonInv, BITMAP* page,int sourcex,int sourcey,int destx,int desty,int longueur, int hauteur)
 {
-
-    if((mouse_x<=(posx2) && mouse_x>=(posx)) && (mouse_y)<=(posy2) && mouse_y>=(posy))
+    if((mouse_x>=(destx)
+        && mouse_x<=(destx+longueur))
+       && (mouse_y)>=(desty)
+       && mouse_y<=(desty+hauteur))
     {
-        couleur = makecol(128,128,128);
-        rectfill(page, posx, posy, posx2, posy2, couleur);
+        masked_blit(boutonInv,page,sourcex,sourcey,destx,desty,longueur,hauteur);
     }
     else
-        rectfill(page, posx, posy, posx2, posy2, couleur);
+        masked_blit(bouton,page,sourcex,sourcey,destx,desty,longueur,hauteur);
 }
