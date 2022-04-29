@@ -5,7 +5,7 @@ void information_Pikachu(BITMAP* page, BITMAP* fond)
     //déclaration des variables
     //BITMAP* info_pika = load_bitmap("pikachu/pikachuInfo1.bmp",NULL);
     BITMAP* pika1 = load_bitmap("pikachu/pikachuInfo1.bmp",NULL);
-    BITMAP* pika2 = load_bitmap("pikachu/pikachuInfo2.bmp",NULL);
+    BITMAP* pika2 = load_bitmap("pikachu/pikachu2.bmp",NULL);
     BITMAP* tableauBitmapPikachu[2] = {pika1,pika2};
 
     //Boucle d'affichage du gif
@@ -14,14 +14,46 @@ void information_Pikachu(BITMAP* page, BITMAP* fond)
         clear_bitmap(page);
         stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
         masked_blit(tableauBitmapPikachu[0],page,0,0,0,0,500,490);
+        show_mouse(page);
         blit(page,screen,0,0,0,0,1200,800);
         rest(750);
 
         clear_bitmap(page);
         stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
         masked_blit(tableauBitmapPikachu[1],page,0,0,0,0,500,500);
+        show_mouse(page);
         blit(page,screen,0,0,0,0,1200,800);
         rest(750);
+    }
+}
+
+void information_Ronflex(BITMAP* page, BITMAP* fond)
+{
+    //déclaration des variables
+    BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
+    BITMAP* info_ronf = load_bitmap("ronflex/ficheRonf.bmp",NULL);
+    BITMAP* ronflex1 = load_bitmap("ronflex/frame1.bmp",NULL);
+    BITMAP* ronflex2 = load_bitmap("ronflex/frame2.bmp",NULL);
+    BITMAP* ronflex3 = load_bitmap("ronflex/frame3.bmp",NULL);
+    BITMAP* ronflex4 = load_bitmap("ronflex/frame4.bmp",NULL);
+    BITMAP* ronflex5 = load_bitmap("ronflex/frame5.bmp",NULL);
+    BITMAP* ronflex6 = load_bitmap("ronflex/frame6.bmp",NULL);
+    BITMAP* tableau_ronflex[6] = {ronflex1,ronflex2,ronflex3,ronflex4,ronflex5,ronflex6};
+
+    //boucle d'affichage du gif
+    while(!key[KEY_ESC])
+    {
+        for(int i=0;i<6;i++)
+        {
+            clear_bitmap(page);
+            stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
+            masked_stretch_blit(info_ronf,page,0,0,373,450,50,50,400,500);
+            masked_stretch_blit(tableau_ronflex[i],page,0,0,600,580,650,170,400,400);
+            AffichageBouton(quitter,quitter,page,0,0,1000,700,181,59);
+            show_mouse(page);
+            blit(page,screen,0,0,0,0,1200,800);
+            rest(100);
+        }
     }
 }
 
@@ -64,38 +96,13 @@ void information_Lucario(BITMAP* page, BITMAP* fond)
             clear_bitmap(page);
             stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
             masked_stretch_blit(tableau_lucario[i],page,0,0,192,192,0,0,500,500);
+            show_mouse(page);
             blit(page,screen,0,0,0,0,1200,800);
-            rest(100);
+            rest(75);
         }
     }
 }
 
-void information_Ronflex(BITMAP* page, BITMAP* fond)
-{
-    //déclaration des variables
-    BITMAP* info_ronf = load_bitmap("ronflex/ficheRonf.bmp",NULL);
-    BITMAP* ronflex1 = load_bitmap("ronflex/frame1.bmp",NULL);
-    BITMAP* ronflex2 = load_bitmap("ronflex/frame2.bmp",NULL);
-    BITMAP* ronflex3 = load_bitmap("ronflex/frame3.bmp",NULL);
-    BITMAP* ronflex4 = load_bitmap("ronflex/frame4.bmp",NULL);
-    BITMAP* ronflex5 = load_bitmap("ronflex/frame5.bmp",NULL);
-    BITMAP* ronflex6 = load_bitmap("ronflex/frame6.bmp",NULL);
-    BITMAP* tableau_ronflex[6] = {ronflex1,ronflex2,ronflex3,ronflex4,ronflex5,ronflex6};
-
-    //boucle d'affichage du gif
-    while(!key[KEY_ESC])
-    {
-        for(int i=0;i<6;i++)
-        {
-            clear_bitmap(page);
-            stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-            masked_stretch_blit(info_ronf,page,0,0,373,450,50,50,400,500);
-            masked_stretch_blit(tableau_ronflex[i],page,0,0,600,580,0,0,400,400);
-            blit(page,screen,0,0,0,0,1200,800);
-            rest(200);
-        }
-    }
-}
 
 void information_Alakazam(BITMAP* page, BITMAP* fond)
 {
@@ -136,6 +143,7 @@ void information_Alakazam(BITMAP* page, BITMAP* fond)
             clear_bitmap(page);
             stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
             masked_stretch_blit(tableau_alakazam[i],page,0,0,570,560,0,0,500,500);
+            show_mouse(page);
             blit(page,screen,0,0,0,0,1200,800);
             rest(50);
         }
@@ -144,6 +152,7 @@ void information_Alakazam(BITMAP* page, BITMAP* fond)
             clear_bitmap(page);
             stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
             masked_stretch_blit(tableau_alakazam[i],page,0,0,570,560,0,0,500,500);
+            show_mouse(page);
             blit(page,screen,0,0,0,0,1200,800);
             rest(50);
         }
