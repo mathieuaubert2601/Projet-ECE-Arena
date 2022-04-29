@@ -1,12 +1,12 @@
 #ifndef HEADER_H_INCLUDED
 #define HEADER_H_INCLUDED
 
-///Déclaration des bibliothèques
+///Dï¿½claration des bibliothï¿½ques
 #include <allegro.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-///Déclaration des structures
+///Dï¿½claration des structures
 
 //Structure joueur
 typedef struct joueur
@@ -30,7 +30,7 @@ typedef struct cases
 
 
 
-///Déclaration des prototypes des sous programmes
+///Dï¿½claration des prototypes des sous programmes
 void initialisationAllegro();
 void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page);
 void AffichageBouton(BITMAP* bouton,BITMAP* boutonInv, BITMAP* page,int sourcex,int sourcey,int destx,int desty,int longueur, int hauteur);

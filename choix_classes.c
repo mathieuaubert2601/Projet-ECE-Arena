@@ -1,7 +1,7 @@
 #include "header.h"
 void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page)
 {
-    ///Déclaration des BITMAP
+    ///Dï¿½claration des BITMAP
     BITMAP* bouton1 = load_bitmap("boutonPik.bmp",NULL);
     BITMAP* boutonInv1 = load_bitmap("boutonInvPik.bmp",NULL);
 
@@ -20,7 +20,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     BITMAP* boutonI = load_bitmap("boutonInfos.bmp",NULL);
     BITMAP* boutonInvI = load_bitmap("boutonInvInfos.bmp",NULL);
 
-    ///Affichage des pokémons
+    ///Affichage des pokï¿½mons
     stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
     masked_stretch_blit(classe1,page,0,0,115,103,15,400,255,203);
     masked_stretch_blit(classe2,page,0,0,127,114,240,420,217,186);
@@ -28,7 +28,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     masked_stretch_blit(classe4,page,0,0,135,120,700,400,225,200);
     masked_stretch_blit(classe5,page,0,0,128,118,950,400,220,200);
 
-    ///Affichage nom des pokémons
+    ///Affichage nom des pokï¿½mons
     AffichageBouton(bouton1,boutonInv1,page,0,0,15,650,212,67);
     AffichageBouton(bouton2,boutonInv2,page,0,0,245,650,211,67);
     AffichageBouton(bouton3,boutonInv3,page,0,0,485,650,212,67);
@@ -48,5 +48,65 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     AffichageBouton(page,750,350,850,400,makecol(220,220,220));
     AffichageBouton(page,1000,350,1100,400,makecol(220,220,220));*/
 
+    textprintf_ex(page,font,90,370,makecol(0,0,0),-1," Infos ");
+    textprintf_ex(page,font,310,370,makecol(0,0,0),-1," Infos ");
+    textprintf_ex(page,font,540,370,makecol(0,0,0),-1," Infos ");
+    textprintf_ex(page,font,760,370,makecol(0,0,0),-1," Infos ");
+    textprintf_ex(page,font,1000,370,makecol(0,0,0),-1," Infos ");
 
+
+    //Choix de Pikachu
+    if((mouse_x<=(200) && mouse_x>=(50)) && (mouse_y)<=(700) && mouse_y>=(650))
+    {
+        if(mouse_b && 1)
+        {
+            joueur->classe=1;
+            joueur->pv=75;
+            joueur->pm=6;
+        }
     }
+
+    //Choix de Ronflex
+    if((mouse_x<=(425) && mouse_x>=(275)) && (mouse_y)<=(700) && mouse_y>=(650))
+    {
+        if(mouse_b && 1)
+        {
+            joueur->classe=2;
+            joueur->pv=125;
+            joueur->pm=2;
+        }
+    }
+
+    //Choix de Lucario
+    if((mouse_x<=(650) && mouse_x>=(500)) && (mouse_y)<=(700) && mouse_y>=(650))
+    {
+        if(mouse_b && 1)
+        {
+            joueur->classe=3;
+            joueur->pv=100;
+            joueur->pm=4;
+        }
+    }
+
+    //Choix d'Alakazam
+    if((mouse_x<=(875) && mouse_x>=(725)) && (mouse_y)<=(700) && mouse_y>=(650))
+    {
+        if(mouse_b && 1)
+        {
+            joueur->classe=4;
+            joueur->pv=100;
+            joueur->pm=4;
+        }
+    }
+
+    //Choix de Rondoudou
+    if((mouse_x<=(1125) && mouse_x>=(975)) && (mouse_y)<=(700) && mouse_y>=(650))
+    {
+        if(mouse_b && 1)
+        {
+            joueur->classe=5;
+            joueur->pv=75;
+            joueur->pm=6;
+        }
+    }
+ }
