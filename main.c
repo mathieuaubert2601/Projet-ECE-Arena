@@ -28,7 +28,7 @@ int main()
 
         blit(page,screen,0,0,0,0,1200,800);
         rest(10);*/
-        information_Lucario(page);
+        information_Alakazam(page);
     }
     destroy_bitmap(page);
 

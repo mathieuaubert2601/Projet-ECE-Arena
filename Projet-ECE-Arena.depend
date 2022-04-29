@@ -36,7 +36,7 @@
 1651236996 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\boutons_menu.c
 	"header.h"
 
-1651236375 c:\users\aubert mathieu\documents\github\projet-ece-arena\header.h
+1651240535 c:\users\aubert mathieu\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -44,6 +44,9 @@
 1651236375 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\init_allegro.c
 	"header.h"
 
-1651236429 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\main.c
+1651240535 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\main.c
+	"header.h"
+
+1651238579 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
