@@ -1,7 +1,7 @@
 #include "header.h"
 void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page)
 {
-    ///D�claration des BITMAP
+    ///Déclaration des BITMAP
     BITMAP* bouton1 = load_bitmap("boutonPik.bmp",NULL);
     BITMAP* boutonInv1 = load_bitmap("boutonInvPik.bmp",NULL);
 
@@ -20,13 +20,17 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     BITMAP* boutonI = load_bitmap("boutonInfos.bmp",NULL);
     BITMAP* boutonInvI = load_bitmap("boutonInvInfos.bmp",NULL);
 
+    BITMAP* logo = load_bitmap("logo.bmp",NULL);
+
     ///Affichage des pok�mons
     stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
+    masked_blit(logo,page,0,0,200,5,755,374);
     masked_stretch_blit(classe1,page,0,0,115,103,15,400,255,203);
     masked_stretch_blit(classe2,page,0,0,127,114,240,420,217,186);
     masked_stretch_blit(classe3,page,0,0,86,121,480,400,216,200);
     masked_stretch_blit(classe4,page,0,0,135,120,700,400,225,200);
     masked_stretch_blit(classe5,page,0,0,128,118,950,400,220,200);
+    //masked_blit(boutonInv,page,sourcex,sourcey,destx,desty,longueur,hauteur);
 
     ///Affichage nom des pok�mons
     AffichageBouton(bouton1,boutonInv1,page,0,0,15,650,212,67);
@@ -48,13 +52,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     AffichageBouton(page,750,350,850,400,makecol(220,220,220));
     AffichageBouton(page,1000,350,1100,400,makecol(220,220,220));*/
 
-    textprintf_ex(page,font,90,370,makecol(0,0,0),-1," Infos ");
-    textprintf_ex(page,font,310,370,makecol(0,0,0),-1," Infos ");
-    textprintf_ex(page,font,540,370,makecol(0,0,0),-1," Infos ");
-    textprintf_ex(page,font,760,370,makecol(0,0,0),-1," Infos ");
-    textprintf_ex(page,font,1000,370,makecol(0,0,0),-1," Infos ");
-
-
+/*
     //Choix de Pikachu
     if((mouse_x<=(200) && mouse_x>=(50)) && (mouse_y)<=(700) && mouse_y>=(650))
     {
@@ -108,5 +106,5 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             joueur->pv=75;
             joueur->pm=6;
         }
-    }
+    }*/
  }

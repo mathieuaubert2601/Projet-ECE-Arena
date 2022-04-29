@@ -23,7 +23,7 @@ int main()
     while(!key[KEY_ESC])
     {
         clear_bitmap(page);
-        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1);
+        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page);
         show_mouse(page);
 
         blit(page,screen,0,0,0,0,1200,800);

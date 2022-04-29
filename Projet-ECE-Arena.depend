@@ -33,3 +33,17 @@
 1651154147 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\init_allegro.c
 	"header.h"
 
+1651236996 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\boutons_menu.c
+	"header.h"
+
+1651236375 c:\users\aubert mathieu\documents\github\projet-ece-arena\header.h
+	<allegro.h>
+	<stdio.h>
+	<stdlib.h>
+
+1651236375 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\init_allegro.c
+	"header.h"
+
+1651236429 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\main.c
+	"header.h"
+
