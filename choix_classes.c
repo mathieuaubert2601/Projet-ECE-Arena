@@ -70,7 +70,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
 
 
     //Choix de Pikachu
-    if((mouse_x<=(200) && mouse_x>=(50)) && (mouse_y)<=(700) && mouse_y>=(650))
+    if((mouse_x>=(200) && mouse_x>=(50)) && (mouse_y)<=(700) && mouse_y>=(650))
     {
         if(mouse_b && 1)
         {
