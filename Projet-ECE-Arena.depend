@@ -2,7 +2,11 @@
 1651253952 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\init_allegro.c
 	"header.h"
 
+<<<<<<< Updated upstream
 1651251392 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
+=======
+1651233443 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
+>>>>>>> Stashed changes
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -10,10 +14,17 @@
 1651251798 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
 	"header.h"
 
+<<<<<<< Updated upstream
 1651253952 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
 1651251354 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
+=======
+1651233445 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
+	"header.h"
+
+1651233362 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
+>>>>>>> Stashed changes
 	"header.h"
 
 1651237593 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\main.c
