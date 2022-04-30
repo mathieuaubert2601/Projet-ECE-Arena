@@ -20,7 +20,7 @@ int main()
     BITMAP* ronflex = load_bitmap("ronflex/ronflex1.bmp",NULL);
     BITMAP* alakazam = load_bitmap("alakazam/alakazam1.bmp",NULL);
 
-    BITMAP* page=create_bitmap(1200,800);
+    BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
 
 
@@ -35,7 +35,8 @@ int main()
         menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,&violetcity,musiqueFond);
         show_mouse(page);
 
-        blit(page,screen,0,0,0,0,1200,800);
+        blit(page,screen,0,0,0,0,1200,711);
+        //afficher_map(page);
     }
     destroy_bitmap(page);
 
