@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1651253952 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\init_allegro.c
+1651333568 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\init_allegro.c
 	"header.h"
 
 1651251798 ated upstream
 
-1651328230 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
+1651328681 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -15,10 +15,10 @@
 	<stdlib.h>
 	"header.h"
 
-1651328230 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
+1651333568 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
 	"header.h"
 
-1651327711 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
+1651334117 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
 1651251354 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
