@@ -5,6 +5,7 @@ int main()
     initialisationAllegro();
     install_keyboard();
     install_mouse();
+    install_sound(DIGI_AUTODETECT,MIDI_AUTODETECT,"A");
 
     t_joueur joueur1;
 

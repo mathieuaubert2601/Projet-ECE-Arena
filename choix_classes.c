@@ -1,6 +1,12 @@
 #include "header.h"
 void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page, t_joueur* joueur)
 {
+    SAMPLE* pikachuSon = load_sample("sons_pokemons/pikachu.wav");
+    SAMPLE* ronflexSon = load_sample("sons_pokemons/ronflex.wav");
+    SAMPLE* lucarioSon = load_sample("sons_pokemons/lucario.wav");
+    SAMPLE* alakazamSon = load_sample("sons_pokemons/alakazam.wav");
+    SAMPLE* rondoudouSon = load_sample("sons_pokemons/rondoudou.wav");
+
     ///Déclaration des BITMAP
     BITMAP* bouton1 = load_bitmap("boutons/boutonPik.bmp",NULL);
     BITMAP* boutonInv1 = load_bitmap("boutons/boutonInvPik.bmp",NULL);
@@ -70,57 +76,62 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
 
 
     //Choix de Pikachu
-    if((mouse_x>=(200) && mouse_x>=(50)) && (mouse_y)<=(700) && mouse_y>=(650))
+    if((mouse_x>=(15) && mouse_x<=(227)) && (mouse_y)<=(717) && mouse_y>=(650))
     {
         if(mouse_b && 1)
         {
             joueur->classe=1;
             joueur->pv=75;
             joueur->pm=6;
+            play_sample(pikachuSon,600,0,1000,0);
         }
     }
 
     //Choix de Ronflex
-    if((mouse_x<=(425) && mouse_x>=(275)) && (mouse_y)<=(700) && mouse_y>=(650))
+    if((mouse_x<=(456) && mouse_x>=(245)) && (mouse_y)<=(717) && mouse_y>=(650))
     {
         if(mouse_b && 1)
         {
             joueur->classe=2;
             joueur->pv=125;
             joueur->pm=2;
+            play_sample(ronflexSon,600,0,1000,0);
         }
     }
 
     //Choix de Lucario
-    if((mouse_x<=(650) && mouse_x>=(500)) && (mouse_y)<=(700) && mouse_y>=(650))
+    if((mouse_x<=(697) && mouse_x>=(485)) && (mouse_y)<=(717) && mouse_y>=(650))
     {
         if(mouse_b && 1)
         {
             joueur->classe=3;
             joueur->pv=100;
             joueur->pm=4;
+            play_sample(lucarioSon,600,0,1000,0);
         }
     }
 
     //Choix d'Alakazam
-    if((mouse_x<=(875) && mouse_x>=(725)) && (mouse_y)<=(700) && mouse_y>=(650))
+    if((mouse_x<=(916) && mouse_x>=(705)) && (mouse_y)<=(717) && mouse_y>=(650))
     {
         if(mouse_b && 1)
         {
             joueur->classe=4;
             joueur->pv=100;
             joueur->pm=4;
+            play_sample(alakazamSon,600,0,1000,0);
         }
     }
 
     //Choix de Rondoudou
-    if((mouse_x<=(1125) && mouse_x>=(975)) && (mouse_y)<=(700) && mouse_y>=(650))
+    if((mouse_x<=(1166) && mouse_x>=(955)) && (mouse_y)<=(717) && mouse_y>=(650))
     {
         if(mouse_b && 1)
         {
             joueur->classe=5;
             joueur->pv=75;
             joueur->pm=6;
+            play_sample(rondoudouSon,600,0,1000,0);
         }
     }
  }
