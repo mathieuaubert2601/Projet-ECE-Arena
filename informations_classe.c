@@ -15,29 +15,29 @@ void information_Pikachu(BITMAP* page, BITMAP* fond)
     while(sortie!=1)
     {
         clear_bitmap(page);
-        stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-        masked_blit(tableauBitmapPikachu[0],page,0,0,600,250,500,490);
-        masked_blit(info_pika,page,0,0,50,50,571,670);
+        stretch_blit(fond,page,0,0,640,360,0,0,1200,711);
+        masked_blit(tableauBitmapPikachu[0],page,0,0,600,200,500,490);
+        masked_blit(info_pika,page,0,0,50,0,571,670);
         AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
         show_mouse(page);
         if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
             {
                 sortie=1;
             }
-        blit(page,screen,0,0,0,0,1200,800);
+        blit(page,screen,0,0,0,0,1200,711);
         rest(75);
 
         clear_bitmap(page);
-        stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-        masked_blit(tableauBitmapPikachu[1],page,0,0,600,250,500,500);
-        masked_blit(info_pika,page,0,0,50,50,571,670);
+        stretch_blit(fond,page,0,0,640,360,0,0,1200,711);
+        masked_blit(tableauBitmapPikachu[1],page,0,0,600,200,500,500);
+        masked_blit(info_pika,page,0,0,50,0,571,670);
         AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
         show_mouse(page);
         if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
             {
                 sortie=1;
             }
-        blit(page,screen,0,0,0,0,1200,800);
+        blit(page,screen,0,0,0,0,1200,711);
         rest(75);
     }
 }
@@ -63,16 +63,16 @@ void information_Ronflex(BITMAP* page, BITMAP* fond)
         for(int i=0;i<6;i++)
         {
             clear_bitmap(page);
-            stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-            masked_stretch_blit(info_ronf,page,0,0,373,450,50,50,571,670);
-            masked_stretch_blit(tableau_ronflex[i],page,0,0,600,580,700,300,400,400);
+            stretch_blit(fond,page,0,0,640,360,0,0,1200,711);
+            masked_stretch_blit(info_ronf,page,0,0,373,450,50,0,571,670);
+            masked_stretch_blit(tableau_ronflex[i],page,0,0,600,580,700,275,400,400);
             AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
             show_mouse(page);
             if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
             {
                 sortie=1;
             }
-            blit(page,screen,0,0,0,0,1200,800);
+            blit(page,screen,0,0,0,0,1200,711);
             rest(100);
         }
     }
@@ -118,16 +118,16 @@ void information_Lucario(BITMAP* page, BITMAP* fond)
         for(int i=0;i<25;i++)
         {
             clear_bitmap(page);
-            stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-            masked_stretch_blit(tableau_lucario[i],page,0,0,192,192,500,75,700,700);
-            masked_stretch_blit(info_luca,page,0,0,582,694,50,50,571,670);
+            stretch_blit(fond,page,0,0,640,360,0,0,1200,711);
+            masked_stretch_blit(tableau_lucario[i],page,0,0,192,192,500,25,700,700);
+            masked_stretch_blit(info_luca,page,0,0,582,694,50,0,571,670);
             AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
             show_mouse(page);
             if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
             {
                 sortie=1;
             }
-            blit(page,screen,0,0,0,0,1200,800);
+            blit(page,screen,0,0,0,0,1200,711);
             rest(75);
         }
     }
@@ -174,31 +174,31 @@ void information_Alakazam(BITMAP* page, BITMAP* fond)
         for(int i=0;i<17;i++)
         {
             clear_bitmap(page);
-            stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-            masked_stretch_blit(tableau_alakazam[i],page,0,0,570,560,600,230,500,500);
-            masked_stretch_blit(info_al,page,0,0,573,696,50,50,571,670);
+            stretch_blit(fond,page,0,0,640,360,0,0,1200,711);
+            masked_stretch_blit(tableau_alakazam[i],page,0,0,570,560,600,180,500,500);
+            masked_stretch_blit(info_al,page,0,0,573,696,50,0,571,670);
             AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
             show_mouse(page);
             if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
             {
                 sortie=1;
             }
-            blit(page,screen,0,0,0,0,1200,800);
+            blit(page,screen,0,0,0,0,1200,711);
             rest(50);
         }
         for(int i=16;i>0;i--)
         {
             clear_bitmap(page);
-            stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-            masked_stretch_blit(tableau_alakazam[i],page,0,0,570,560,600,230,500,500);
-            masked_stretch_blit(info_al,page,0,0,573,696,50,50,571,670);
+            stretch_blit(fond,page,0,0,640,360,0,0,1200,711);
+            masked_stretch_blit(tableau_alakazam[i],page,0,0,570,560,600,180,500,500);
+            masked_stretch_blit(info_al,page,0,0,573,696,50,0,571,670);
             AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
             show_mouse(page);
             if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
             {
                 sortie=1;
             }
-            blit(page,screen,0,0,0,0,1200,800);
+            blit(page,screen,0,0,0,0,1200,711);
             rest(50);
         }
     }
@@ -235,8 +235,8 @@ void information_Rondoudou(BITMAP* page, BITMAP* fond)
         for(int i=0;i<15;i++)
         {
             clear_bitmap(page);
-            stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-            masked_stretch_blit(tableau_rondoudou[i],page,0,0,tableau_rondoudou[i]->w,tableau_rondoudou[i]->h,800,330,350,350);
+            stretch_blit(fond,page,0,0,640,360,0,0,1200,711);
+            masked_stretch_blit(tableau_rondoudou[i],page,0,0,tableau_rondoudou[i]->w,tableau_rondoudou[i]->h,711,330,350,350);
             masked_stretch_blit(info_rond,page,0,0,581,706,50,50,571,670);
             AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
             show_mouse(page);
@@ -244,7 +244,7 @@ void information_Rondoudou(BITMAP* page, BITMAP* fond)
             {
                 sortie=1;
             }
-            blit(page,screen,0,0,0,0,1200,800);
+            blit(page,screen,0,0,0,0,1200,711);
             rest(150);
         }
     }
