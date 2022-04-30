@@ -234,7 +234,7 @@ void information_Rondoudou(BITMAP* page, BITMAP* fond)
         {
             clear_bitmap(page);
             stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-            masked_stretch_blit(tableau_rondoudou[i],page,0,0,tableau_rondoudou[i]->w,tableau_rondoudou[i]->h,600,230,350,350);
+            masked_stretch_blit(tableau_rondoudou[i],page,0,0,tableau_rondoudou[i]->w,tableau_rondoudou[i]->h,800,330,350,350);
             AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
             show_mouse(page);
             if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
@@ -242,7 +242,7 @@ void information_Rondoudou(BITMAP* page, BITMAP* fond)
                 sortie=1;
             }
             blit(page,screen,0,0,0,0,1200,800);
-            rest(100);
+            rest(150);
         }
     }
 }
