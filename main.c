@@ -35,8 +35,7 @@ int main()
         menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,&violetcity,musiqueFond);
         show_mouse(page);
 
-        blit(page,screen,0,0,0,0,1200,800);*/
-        afficher_map(page);
+        blit(page,screen,0,0,0,0,1200,800);
     }
     destroy_bitmap(page);
 
