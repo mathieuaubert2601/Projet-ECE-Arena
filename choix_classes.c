@@ -32,26 +32,41 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     //masked_blit(boutonInv,page,sourcex,sourcey,destx,desty,longueur,hauteur);
 
     ///Affichage nom des pok�mons
-    AffichageBouton(bouton1,boutonInv1,page,0,0,15,650,212,67,1);
-    AffichageBouton(bouton2,boutonInv2,page,0,0,245,650,211,67,2);
-    AffichageBouton(bouton3,boutonInv3,page,0,0,485,650,212,67,3);
-    AffichageBouton(bouton4,boutonInv4,page,0,0,705,650,211,67,4);
-    AffichageBouton(bouton5,boutonInv5,page,0,0,955,650,211,67,5);
+    AffichageBouton(bouton1,boutonInv1,page,0,0,15,650,212,67);
+    AffichageBouton(bouton2,boutonInv2,page,0,0,245,650,211,67);
+    AffichageBouton(bouton3,boutonInv3,page,0,0,485,650,212,67);
+    AffichageBouton(bouton4,boutonInv4,page,0,0,705,650,211,67);
+    AffichageBouton(bouton5,boutonInv5,page,0,0,955,650,211,67);
 
     ///Affichage bouton infos
-    AffichageBouton(boutonI,boutonInvI,page,0,0,68,725,100,50,0);
-    AffichageBouton(boutonI,boutonInvI,page,0,0,300,725,100,50,0);
-    AffichageBouton(boutonI,boutonInvI,page,0,0,550,725,100,50,0);
-    AffichageBouton(boutonI,boutonInvI,page,0,0,765,725,100,50,0);
-    AffichageBouton(boutonI,boutonInvI,page,0,0,1020,725,100,50,0);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,68,725,100,50);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,300,725,100,50);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,550,725,100,50);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,765,725,100,50);
+    AffichageBouton(boutonI,boutonInvI,page,0,0,1020,725,100,50);
 
     masked_blit(logo,page,0,0,200,5,755,374);
 
-    /*AffichageBouton(page,75,350,175,400,makecol(220,220,220));
-    AffichageBouton(page,300,350,400,400,makecol(220,220,220));
-    AffichageBouton(page,525,350,625,400,makecol(220,220,220));
-    AffichageBouton(page,750,350,850,400,makecol(220,220,220));
-    AffichageBouton(page,1000,350,1100,400,makecol(220,220,220));*/
+    if(((mouse_x>=(68)&& mouse_x<=(68+100))&& (mouse_y)>=(725)&& mouse_y<=(725+50))&& (mouse_b && 1))
+    {
+        information_Pikachu(page,fond);
+    }
+    if(((mouse_x>=(300)&& mouse_x<=(300+100))&& (mouse_y)>=(725)&& mouse_y<=(725+50))&&(mouse_b && 1))
+    {
+        information_Ronflex(page,fond);
+    }
+    if(((mouse_x>=(550)&& mouse_x<=(550+100))&& (mouse_y)>=(725)&& mouse_y<=(725+50))&&(mouse_b && 1))
+    {
+       information_Lucario(page,fond);
+    }
+    if(((mouse_x>=(765)&& mouse_x<=(765+100))&& (mouse_y)>=(725)&& mouse_y<=(725+50))&&(mouse_b && 1))
+    {
+        information_Alakazam(page,fond);
+    }
+    if(((mouse_x>=(1020)&& mouse_x<=(1020+100))&& (mouse_y)>=(725)&& mouse_y<=(725+50))&&(mouse_b && 1))
+    {
+        information_Rondoudou(page,fond);
+    }
 
 
     //Choix de Pikachu
