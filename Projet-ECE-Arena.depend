@@ -15,30 +15,30 @@
 	<stdlib.h>
 	"header.h"
 
-1651323058 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
+1651325566 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
 	"header.h"
 
-1651322663 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
+1651325641 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
 1651251354 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
 	"header.h"
 
-1651237593 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\main.c
+1651323726 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\main.c
 	"header.h"
 
-1651249943 c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\header.h
+1651323726 c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
 
-1651182335 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\boutons_menu.c
+1651323726 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\boutons_menu.c
 	"header.h"
 
-1651233424 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\choix_classes.c
+1651323726 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\choix_classes.c
 	"header.h"
 
-1651154147 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\init_allegro.c
+1651250007 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\init_allegro.c
 	"header.h"
 
 1651323473 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\boutons_menu.c
@@ -58,7 +58,10 @@
 1651323473 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
-1651323272 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\informations_classe.c
+1651324771 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\informations_classe.c
+	"header.h"
+
+1651323726 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\informations_classe.c
 	"header.h"
 
 1651323473 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\informations_classe.c

@@ -138,7 +138,7 @@ void information_Alakazam(BITMAP* page, BITMAP* fond)
 {
     //déclaration des variables
     int sortie = 0;
-    //BITMAP* info_al = load_bitmap("ronflex/ficheRonf.bmp",NULL);
+    BITMAP* info_al = load_bitmap("alakazam/ficheAl.bmp",NULL);
     BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
     BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
     BITMAP* alakazam1 = load_bitmap("alakazam/frame1.bmp",NULL);
@@ -176,6 +176,7 @@ void information_Alakazam(BITMAP* page, BITMAP* fond)
             clear_bitmap(page);
             stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
             masked_stretch_blit(tableau_alakazam[i],page,0,0,570,560,600,230,500,500);
+            masked_stretch_blit(info_al,page,0,0,573,696,50,50,571,670);
             AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
             show_mouse(page);
             if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
@@ -190,6 +191,7 @@ void information_Alakazam(BITMAP* page, BITMAP* fond)
             clear_bitmap(page);
             stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
             masked_stretch_blit(tableau_alakazam[i],page,0,0,570,560,600,230,500,500);
+            masked_stretch_blit(info_al,page,0,0,573,696,50,50,571,670);
             AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
             show_mouse(page);
             if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
@@ -207,7 +209,7 @@ void information_Rondoudou(BITMAP* page, BITMAP* fond)
 {
     //déclaration des variables
     int sortie = 0;
-    //BITMAP* info_al = load_bitmap("ronflex/ficheRonf.bmp",NULL);
+    BITMAP* info_rond = load_bitmap("rondoudou/ficheRon.bmp",NULL);
     BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
     BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
     BITMAP* rondoudou1 = load_bitmap("rondoudou/frame1.bmp",NULL);
@@ -234,7 +236,8 @@ void information_Rondoudou(BITMAP* page, BITMAP* fond)
         {
             clear_bitmap(page);
             stretch_blit(fond,page,0,0,640,360,0,0,1200,800);
-            masked_stretch_blit(tableau_rondoudou[i],page,0,0,tableau_rondoudou[i]->w,tableau_rondoudou[i]->h,600,230,350,350);
+            masked_stretch_blit(tableau_rondoudou[i],page,0,0,tableau_rondoudou[i]->w,tableau_rondoudou[i]->h,800,330,350,350);
+            masked_stretch_blit(info_rond,page,0,0,581,706,50,50,571,670);
             AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
             show_mouse(page);
             if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
@@ -242,7 +245,7 @@ void information_Rondoudou(BITMAP* page, BITMAP* fond)
                 sortie=1;
             }
             blit(page,screen,0,0,0,0,1200,800);
-            rest(100);
+            rest(150);
         }
     }
 }
