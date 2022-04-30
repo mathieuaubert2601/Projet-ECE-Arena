@@ -65,7 +65,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     }
     if(((mouse_x>=(1020)&& mouse_x<=(1020+100))&& (mouse_y)>=(725)&& mouse_y<=(725+50))&&(mouse_b && 1))
     {
-
+        information_Rondoudou(page,fond);
     }
 
 
