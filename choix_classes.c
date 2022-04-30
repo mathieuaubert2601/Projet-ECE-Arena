@@ -1,11 +1,12 @@
 #include "header.h"
-void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page, t_joueur* joueur)
+void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page, t_joueur* joueur, int* violetCity, SAMPLE* musiqueFond)
 {
     SAMPLE* pikachuSon = load_sample("sons_pokemons/pikachu.wav");
     SAMPLE* ronflexSon = load_sample("sons_pokemons/ronflex.wav");
     SAMPLE* lucarioSon = load_sample("sons_pokemons/lucario.wav");
     SAMPLE* alakazamSon = load_sample("sons_pokemons/alakazam.wav");
     SAMPLE* rondoudouSon = load_sample("sons_pokemons/rondoudou.wav");
+
 
     ///Déclaration des BITMAP
     BITMAP* bouton1 = load_bitmap("boutons/boutonPik.bmp",NULL);
@@ -56,22 +57,32 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     if(((mouse_x>=(68)&& mouse_x<=(68+100))&& (mouse_y)>=(725)&& mouse_y<=(725+50))&& (mouse_b && 1))
     {
         information_Pikachu(page,fond);
+        //stop_sample(musiqueFond);
+        //*violetCity = 0;
     }
     if(((mouse_x>=(300)&& mouse_x<=(300+100))&& (mouse_y)>=(725)&& mouse_y<=(725+50))&&(mouse_b && 1))
     {
         information_Ronflex(page,fond);
+        stop_sample(musiqueFond);
+        *violetCity = 0;
     }
     if(((mouse_x>=(550)&& mouse_x<=(550+100))&& (mouse_y)>=(725)&& mouse_y<=(725+50))&&(mouse_b && 1))
     {
        information_Lucario(page,fond);
+       stop_sample(musiqueFond);
+       *violetCity = 0;
     }
     if(((mouse_x>=(765)&& mouse_x<=(765+100))&& (mouse_y)>=(725)&& mouse_y<=(725+50))&&(mouse_b && 1))
     {
         information_Alakazam(page,fond);
+        stop_sample(musiqueFond);
+        *violetCity = 0;
     }
     if(((mouse_x>=(1020)&& mouse_x<=(1020+100))&& (mouse_y)>=(725)&& mouse_y<=(725+50))&&(mouse_b && 1))
     {
         information_Rondoudou(page,fond);
+        stop_sample(musiqueFond);
+        *violetCity = 0;
     }
 
 
