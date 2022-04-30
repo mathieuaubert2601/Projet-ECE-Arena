@@ -26,7 +26,7 @@ int main()
 
     while(!key[KEY_ESC])
     {
-        clear_bitmap(page);
+        /*clear_bitmap(page);
         if (violetcity==0)
         {
             play_sample(musiqueFond,200,0,1000,1);
@@ -35,8 +35,11 @@ int main()
         menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,&violetcity,musiqueFond);
         show_mouse(page);
 
-        blit(page,screen,0,0,0,0,1200,711);
-        //afficher_map(page);
+        blit(page,screen,0,0,0,0,1200,711);*/
+        afficher_map(page);
+        afficher_arbre(page);
+        afficher_coordonnees(page);
+        blit(page,screen,0,0,0,0,1200,800);
     }
     destroy_bitmap(page);
 
