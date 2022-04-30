@@ -40,5 +40,6 @@ void information_Ronflex(BITMAP* page, BITMAP* fond);
 void information_Alakazam(BITMAP* page, BITMAP* fond);
 void information_Rondoudou(BITMAP* page, BITMAP* fond);
 void afficher_map(BITMAP* buffer);
-
+void afficher_arbre(BITMAP* buffer);
+void afficher_coordonnees(BITMAP* buffer);
 #endif // HEADER_H_INCLUDED

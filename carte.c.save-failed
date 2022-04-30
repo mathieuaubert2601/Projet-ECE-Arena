@@ -28,7 +28,7 @@ void afficher_arbre(BITMAP* buffer)
     show_mouse(buffer);
 }
 
-void afficher_coordonnees(BITMAP* buffer)
+void afficher_coordonnées(BITMAP* buffer)
 {
     textprintf(buffer,font,150,150,makecol(255,255,255),"x : %d, y : %d",mouse_x/30,mouse_y/32);
 }
