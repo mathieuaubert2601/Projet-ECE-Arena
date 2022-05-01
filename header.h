@@ -7,20 +7,25 @@
 #include <stdlib.h>
 
 ///D�claration des structures
+//Structure sort
+typedef struct sorts
+{
+    int degats,numero,plusMoins,chance,type,pMin,pMax,rayon,nbrPa,typePortee,typeStatus,typeSoin;
+    BITMAP* bouton;
+    BITMAP* boutonInv;
+}t_sorts;
 
 //Structure joueur
 typedef struct joueur
 {
     char* pseudo;
     int ligne, colonne, numero, equipe,classe,pv,pm,pa,tourPoison,tourDodo,tourParalysie,tourPeur,tourBouclier,score;
-    BITMAP* bitmap
+    t_sorts sort1,sort2,sort3,sort4,sort5;
+    BITMAP* bitmap;
+    SAMPLE* sonClasse;
 }t_joueur;
 
-//Structure sort
-typedef struct sorts
-{
-    int degats,numero,plusMoins,chance,type,pMin,pMax,rayon,nbrPa,typePortee,typeStatus,typeSoin;
-}t_sorts;
+
 
 //structure case
 typedef struct cases
@@ -48,6 +53,7 @@ void afficher_personnage_ronflex(BITMAP* buffer,int compteur,int cote,int x,int 
 void afficher_personnage_rondoudou(BITMAP* buffer,int compteur,int cote,int x,int y);
 void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int y);
 void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo,int* violetCity);
+void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo,int* violetCity,t_sorts tabSorts);
 void menuJeu(BITMAP* page, BITMAP* fond,BITMAP* logo);
 void afficher_caractere(BITMAP* buffer);
 #endif // HEADER_H_INCLUDED

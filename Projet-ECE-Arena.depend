@@ -4,7 +4,7 @@
 
 1651251798 ated upstream
 
-1651393675 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
+1651402915 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -15,19 +15,19 @@
 	<stdlib.h>
 	"header.h"
 
-1651394914 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
+1651396338 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
 	"header.h"
 
-1651394914 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
+1651396393 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
 1651251354 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
 	"header.h"
 
-1651328757 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\main.c
+1651407073 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\main.c
 	"header.h"
 
-1651328712 c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\header.h
+1651400328 c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -35,10 +35,10 @@
 1651323726 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\boutons_menu.c
 	"header.h"
 
-1651328712 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\choix_classes.c
+1651400328 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\choix_classes.c
 	"header.h"
 
-1651250007 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\init_allegro.c
+1651400328 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\init_allegro.c
 	"header.h"
 
 1651323473 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\boutons_menu.c
@@ -61,7 +61,7 @@
 1651335118 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\informations_classe.c
 	"header.h"
 
-1651324926 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\informations_classe.c
+1651336400 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\informations_classe.c
 	"header.h"
 
 1651337627 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\informations_classe.c
@@ -70,7 +70,20 @@
 1651337454 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\carte.c
 	"header.h"
 
+<<<<<<< Updated upstream
 1651400392 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\affichage_personnages.c
+=======
+1651402915 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\menunbjoueur.c
+	"header.h"
+
+1651395801 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\menujeu.c
+>>>>>>> Stashed changes
+	"header.h"
+
+1651400328 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\menujeu.c
+	"header.h"
+
+1651407047 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\menunbjoueur.c
 	"header.h"
 
 1651403293 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\gestion_clavier.c
