@@ -31,7 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="affichage_Personnages.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="boutons_menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="carte.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="choix_classes.c">

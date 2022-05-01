@@ -1,6 +1,6 @@
 #include "header.h"
 
-void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity)
+void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity,t_sorts tabSorts)
 {
     int sortieMenu = 0;
     t_joueur joueur1;
@@ -40,15 +40,15 @@ void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity)
             }
         if(((mouse_x>=(320)&& mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))
             {
-                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond);
+                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond,tabSorts);
             }
         if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))
             {
-                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond);
+                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond,tabSorts);
             }
         if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))
             {
-                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond);
+                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond,tabSorts);
             }
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
