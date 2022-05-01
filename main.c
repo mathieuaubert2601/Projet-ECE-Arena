@@ -16,12 +16,10 @@ int main()
 
     ///D�claration des BITMAP
     BITMAP* fond = load_bitmap("fond1.bmp",NULL);
+    BITMAP* fondMenu = load_bitmap("fondMenu.bmp",NULL);
     SAMPLE* musiqueFond = load_sample("musiques/VioletCity.wav");
-    BITMAP* lucario = load_bitmap("lucario/lucario1.bmp",NULL);
-    BITMAP* rondoudou = load_bitmap("rondoudou/rondoudou1.bmp",NULL);
-    BITMAP* pikachu = load_bitmap("pikachu/pikatchu1.bmp",NULL);
-    BITMAP* ronflex = load_bitmap("ronflex/ronflex1.bmp",NULL);
-    BITMAP* alakazam = load_bitmap("alakazam/alakazam1.bmp",NULL);
+
+    BITMAP* logo = load_bitmap("logo.bmp",NULL);
 
     BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
@@ -35,23 +33,19 @@ int main()
             play_sample(musiqueFond,200,0,1000,1);
             violetcity++;
         }
-        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,&violetcity,musiqueFond);
+
+        menuJeu(page,fondMenu,logo);
+        if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b && 1))
+        {
+            menuNbJoueur(page,fondMenu,logo,&violetcity);
+        }
         show_mouse(page);
 
-        blit(page,screen,0,0,0,0,1200,711);*/
-        afficher_map(page);
-        afficher_arbre(page);
-        afficher_coordonnees(page);
-        afficher_personnage_alakazam(page,i,0,x,y);
-        rest(100);
-        x = x+3;
-        i++;
-        if(i==4)
-        {
-            i=0;
-        }
-
         blit(page,screen,0,0,0,0,1200,711);
+        //afficher_map(page);
+        //afficher_arbre(page);
+        //afficher_coordonnees(page);
+
     }
     destroy_bitmap(page);
 
