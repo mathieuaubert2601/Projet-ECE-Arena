@@ -7,20 +7,25 @@
 #include <stdlib.h>
 
 ///D�claration des structures
+//Structure sort
+typedef struct sorts
+{
+    int degats,numero,plusMoins,chance,type,pMin,pMax,rayon,nbrPa,typePortee,typeStatus,typeSoin;
+    BITMAP* bouton;
+    BITMAP* boutonInv;
+}t_sorts;
 
 //Structure joueur
 typedef struct joueur
 {
     char* pseudo;
     int ligne, colonne, numero, equipe,classe,pv,pm,pa,tourPoison,tourDodo,tourParalysie,tourPeur,tourBouclier,score;
-    BITMAP* bitmap
+    t_sorts sort1,sort2,sort3,sort4,sort5;
+    BITMAP* bitmap;
+    SAMPLE* sonClasse;
 }t_joueur;
 
-//Structure sort
-typedef struct sorts
-{
-    int degats,numero,plusMoins,chance,type,pMin,pMax,rayon,nbrPa,typePortee,typeStatus,typeSoin;
-}t_sorts;
+
 
 //structure case
 typedef struct cases
@@ -32,7 +37,7 @@ typedef struct cases
 
 ///D�claration des prototypes des sous programmes
 void initialisationAllegro();
-void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page, t_joueur* joueur,int* violetCity,SAMPLE* musiqueFond);
+void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page, t_joueur* joueur,int* violetCity,SAMPLE* musiqueFond,t_sorts tabSorts);
 void AffichageBouton(BITMAP* bouton,BITMAP* boutonInv, BITMAP* page,int sourcex,int sourcey,int destx,int desty,int longueur, int hauteur);
 void information_Pikachu(BITMAP* page, BITMAP* fond);
 void information_Lucario(BITMAP* page, BITMAP* fond);
@@ -42,11 +47,15 @@ void information_Rondoudou(BITMAP* page, BITMAP* fond);
 void afficher_map(BITMAP* buffer);
 void afficher_arbre(BITMAP* buffer);
 void afficher_coordonnees(BITMAP* buffer);
+<<<<<<< Updated upstream
 void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int y);
 void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int y);
 void afficher_personnage_ronflex(BITMAP* buffer,int compteur,int cote,int x,int y);
 void afficher_personnage_rondoudou(BITMAP* buffer,int compteur,int cote,int x,int y);
 void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int y);
 void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo,int* violetCity);
+=======
+void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo,int* violetCity,t_sorts tabSorts);
+>>>>>>> Stashed changes
 void menuJeu(BITMAP* page, BITMAP* fond,BITMAP* logo);
 #endif // HEADER_H_INCLUDED
