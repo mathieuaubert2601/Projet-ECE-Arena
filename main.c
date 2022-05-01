@@ -44,7 +44,10 @@ int main()
         blit(page,screen,0,0,0,0,1200,711);
         //afficher_map(page);
         //afficher_arbre(page);
-        //afficher_coordonnees(page);
+        //afficher_coordonnees(page);*/
+        afficher_caractere(page);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(20);
 
     }
     destroy_bitmap(page);
