@@ -42,4 +42,9 @@ void information_Rondoudou(BITMAP* page, BITMAP* fond);
 void afficher_map(BITMAP* buffer);
 void afficher_arbre(BITMAP* buffer);
 void afficher_coordonnees(BITMAP* buffer);
+void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int y);
+void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int y);
+void afficher_personnage_ronflex(BITMAP* buffer,int compteur,int cote,int x,int y);
+void afficher_personnage_rondoudou(BITMAP* buffer,int compteur,int cote,int x,int y);
+void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int y);
 #endif // HEADER_H_INCLUDED
