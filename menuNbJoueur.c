@@ -11,6 +11,7 @@ void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity)
     BITMAP* bouton3inv = load_bitmap("boutons/boutonInvNb3.bmp",NULL);
     BITMAP* bouton4 = load_bitmap("boutons/boutonNb4.bmp",NULL);
     BITMAP* bouton4inv = load_bitmap("boutons/boutonInvNb4.bmp",NULL);
+
     BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
     BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
     BITMAP* lucario = load_bitmap("lucario/lucario1.bmp",NULL);
