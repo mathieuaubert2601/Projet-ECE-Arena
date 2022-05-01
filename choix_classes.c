@@ -1,5 +1,5 @@
 #include "header.h"
-void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page, t_joueur* joueur, int* violetCity, SAMPLE* musiqueFond,t_sorts tabSorts)
+void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page, t_joueur* joueur, int* violetCity, SAMPLE* musiqueFond)
 {
 
 
@@ -94,11 +94,11 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur->classe=1;
                 joueur->pv=75;
                 joueur->pm=6;
-                memcpy(joueur->sort1,&tabSorts[0],sizeof(t_sorts));
+                /*memcpy(joueur->sort1,&tabSorts[0],sizeof(t_sorts));
                 memcpy(joueur->sort2,&tabSorts[1],sizeof(t_sorts));
                 memcpy(joueur->sort3,&tabSorts[2],sizeof(t_sorts));
                 memcpy(joueur->sort4,&tabSorts[3],sizeof(t_sorts));
-                memcpy(joueur->sort5,&tabSorts[4],sizeof(t_sorts));
+                memcpy(joueur->sort5,&tabSorts[4],sizeof(t_sorts));*/
                 play_sample(pikachuSon,600,0,1000,0);
             }
         }
@@ -111,11 +111,11 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur->classe=2;
                 joueur->pv=125;
                 joueur->pm=2;
-                memcpy(joueur->sort1,&tabSorts[5],sizeof(t_sorts));
+                /*memcpy(joueur->sort1,&tabSorts[5],sizeof(t_sorts));
                 memcpy(joueur->sort2,&tabSorts[6],sizeof(t_sorts));
                 memcpy(joueur->sort3,&tabSorts[7],sizeof(t_sorts));
                 memcpy(joueur->sort4,&tabSorts[8],sizeof(t_sorts));
-                memcpy(joueur->sort5,&tabSorts[9],sizeof(t_sorts));
+                memcpy(joueur->sort5,&tabSorts[9],sizeof(t_sorts));*/
                 play_sample(ronflexSon,600,0,1000,0);
             }
         }
@@ -128,11 +128,11 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur->classe=3;
                 joueur->pv=100;
                 joueur->pm=4;
-                memcpy(joueur->sort1,&tabSorts[10],sizeof(t_sorts));
+                /*memcpy(joueur->sort1,&tabSorts[10],sizeof(t_sorts));
                 memcpy(joueur->sort2,&tabSorts[11],sizeof(t_sorts));
                 memcpy(joueur->sort3,&tabSorts[12],sizeof(t_sorts));
                 memcpy(joueur->sort4,&tabSorts[13],sizeof(t_sorts));
-                memcpy(joueur->sort5,&tabSorts[14],sizeof(t_sorts));
+                memcpy(joueur->sort5,&tabSorts[14],sizeof(t_sorts));*/
                 play_sample(lucarioSon,600,0,1000,0);
             }
         }
@@ -145,11 +145,11 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur->classe=4;
                 joueur->pv=100;
                 joueur->pm=4;
-                memcpy(joueur->sort1,&tabSorts[4],sizeof(t_sorts));
+                /*memcpy(joueur->sort1,&tabSorts[4],sizeof(t_sorts));
                 memcpy(joueur->sort2,&tabSorts[15],sizeof(t_sorts));
                 memcpy(joueur->sort3,&tabSorts[16],sizeof(t_sorts));
                 memcpy(joueur->sort4,&tabSorts[17],sizeof(t_sorts));
-                memcpy(joueur->sort5,&tabSorts[18],sizeof(t_sorts));
+                memcpy(joueur->sort5,&tabSorts[18],sizeof(t_sorts));*/
                 play_sample(alakazamSon,600,0,1000,0);
             }
         }
@@ -162,11 +162,11 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur->classe=5;
                 joueur->pv=75;
                 joueur->pm=6;
-                memcpy(joueur->sort1,&tabSorts[19],sizeof(t_sorts));
+                /*memcpy(joueur->sort1,&tabSorts[19],sizeof(t_sorts));
                 memcpy(joueur->sort2,&tabSorts[20],sizeof(t_sorts));
                 memcpy(joueur->sort3,&tabSorts[17],sizeof(t_sorts));
                 memcpy(joueur->sort4,&tabSorts[21],sizeof(t_sorts));
-                memcpy(joueur->sort5,&tabSorts[22],sizeof(t_sorts));
+                memcpy(joueur->sort5,&tabSorts[22],sizeof(t_sorts));*/
                 play_sample(rondoudouSon,600,0,1000,0);
             }
         }

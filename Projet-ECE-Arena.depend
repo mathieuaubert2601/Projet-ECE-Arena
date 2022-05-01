@@ -2,23 +2,24 @@
 1651338522 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\init_allegro.c
 	"header.h"
 
-1651251798 ated upstream
+1651337454 ated upstream
 
-1651402915 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
+1651408353 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
 
-1651233362 shed changes
+1651395801 shed changes
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
 	"header.h"
-
-1651396338 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
 	"header.h"
 
-1651396393 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
+1651408996 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
+	"header.h"
+
+1651408353 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
 1651251354 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
@@ -70,19 +71,22 @@
 1651337454 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\carte.c
 	"header.h"
 
-<<<<<<< Updated upstream
 1651400392 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\affichage_personnages.c
-=======
-1651402915 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\menunbjoueur.c
+
+1651408523 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\menunbjoueur.c
 	"header.h"
 
 1651395801 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\menujeu.c
->>>>>>> Stashed changes
-	"header.h"
 
 1651400328 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\menujeu.c
 	"header.h"
 
 1651407047 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\menunbjoueur.c
+	"header.h"
+
+1651406470 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\affichage_personnages.c
+	"header.h"
+
+1651337778 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\carte.c
 	"header.h"
 

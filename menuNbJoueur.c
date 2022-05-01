@@ -1,6 +1,6 @@
 #include "header.h"
 
-void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity,t_sorts tabSorts)
+void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity)
 {
     int sortieMenu = 0;
     t_joueur joueur1;
@@ -11,7 +11,6 @@ void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity,t_sor
     BITMAP* bouton3inv = load_bitmap("boutons/boutonInvNb3.bmp",NULL);
     BITMAP* bouton4 = load_bitmap("boutons/boutonNb4.bmp",NULL);
     BITMAP* bouton4inv = load_bitmap("boutons/boutonInvNb4.bmp",NULL);
-
     BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
     BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
     BITMAP* lucario = load_bitmap("lucario/lucario1.bmp",NULL);
@@ -40,15 +39,15 @@ void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity,t_sor
             }
         if(((mouse_x>=(320)&& mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))
             {
-                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond,tabSorts);
+                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond);
             }
         if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))
             {
-                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond,tabSorts);
+                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond);
             }
         if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))
             {
-                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond,tabSorts);
+                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond);
             }
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);

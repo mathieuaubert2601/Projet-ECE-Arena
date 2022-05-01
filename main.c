@@ -11,70 +11,9 @@ int main()
 
 
     int violetcity=0;
-    int x = 20;
-    int y = 80;
-    int i = 0;
-
-    ///Déclaration des sorts
-    t_sorts vitesseExtreme;
-    t_sorts vitesseExtremeL;
-    t_sorts fatalFoudre;
-    t_sorts bouleElek;
-    t_sorts couDjus;
-    t_sorts cageEclair;
-    t_sorts boulArmure;
-    t_sorts repos;
-    t_sorts coupDboule;
-    t_sorts seisme;
-    t_sorts charge;
-    t_sorts rugissement;
-    t_sorts aurasphere;
-    t_sorts closeCombat;
-    t_sorts hate;
-    t_sorts toxic;
-    t_sorts psyko;
-    t_sorts teleport;
-    t_sorts autoSoin;
-    t_sorts vaguePsy;
-    t_sorts torgnoles;
-    t_sorts soin;
-    t_sorts berceuse;
-
-    vitesseExtreme={0,0,0,80,2,0,3,0,7,0,0,0,vitEx,vitExInv};
-    vitesseExtremeL={0,0,0,80,2,0,3,0,7,0,0,0,vitEx,vitExInv};
-    fatalFoudre={15,1,8,50,1,4,7,0,10,1,0,0,fat,fatInv};
-    bouleElek={10,2,5,75,1,3,5,2,6,2,0,0,boulE,boulEInv};
-    couDjus={6,3,4,90,1,2,5,0,3,3,0,0,coud,coudInv};
-    cageEclair={0,4,0,25,3,2,4,0,7,3,3,0,cage,cageInv};
-    boulArmure={0,5,0,50,4,0,0,0,7,0,0,1,boulA,boulAInv};
-    repos={100,6,25,60,4,0,0,0,10,0,1,2,vitEx,vitExInv};
-    coupDboule={5,7,4,95,1,1,3,0,3,3,0,0,vitEx,vitExInv};
-    seisme={9,8,15,50,1,1,4,0,10,3,0,0,vitEx,vitExInv};
-    charge={0,9,0,50,2,0,5,0,7,0,0,0,vitEx,vitExInv};
-    rugissement={0,10,0,40,2,0,2,0,3,3,4,0,vitEx,vitExInv};
-    aurasphere={12,11,5,75,1,3,6,0,6,1,0,0,vitEx,vitExInv};
-    closeCombat={15,12,3,60,1,1,3,0,6,3,0,0,vitEx,vitExInv};
-    hate={0,13,0,70,2,0,0,0,4,0,5,0,vitEx,vitExInv};
-    toxic={0,14,0,25,3,2,4,0,5,3,1,0,vitEx,vitExInv};
-    psyko={12,15,8,60,1,3,5,0,6,3,0,0,vitEx,vitExInv};
-    teleport={0,16,0,50,2,0,4,0,8,3,0,0,vitEx,vitExInv};
-    autoSoin={5,17,10,95,4,0,0,0,2,0,0,2,vitEx,vitExInv};
-    vaguePsy={7,18,5,80,1,2,8,0,5,1,0,0,vitEx,vitExInv};
-    torgnoles={8,19,2,80,1,0,2,0,5,3,0,0,vitEx,vitExInv};
-    soin={50,20,10,75,2,0,2,0,10,3,0,3,vitEx,vitExInv};
-    berceuse={0,21,0,50,2,0,3,0,6,3,2,0,vitEx,vitExInv};
-
-    t_sorts tabSorts[23]={vitesseExtreme,fatalFoudre,bouleElek,couDjus,cageEclair,boulArmure,repos,coupDboule,seisme,charge,rugissement,aurasphere,closeCombat,vitesseExtremeL,hate,toxic,psyko,teleport,autoSoin,vaguePsy,torgnoles,soin,berceuse};
-
-    ///Declaration des BITMAP
-    BITMAP* fond = load_bitmap("fond1.bmp",NULL);
-    BITMAP* fondMenu = load_bitmap("fondMenu.bmp",NULL);
-    SAMPLE* musiqueFond = load_sample("musiques/VioletCity.wav");
-
-    BITMAP* logo = load_bitmap("logo.bmp",NULL);
-
-    BITMAP* page=create_bitmap(1200,711);
-    clear_bitmap(page);
+    //int x = 20;
+    //int y = 80;
+    //int i = 0;
 
     //Declaration Bitmap Pikachu sorts
     BITMAP* cageE = load_bitmap("pikachu/CageEclair.bmp",NULL);
@@ -132,9 +71,48 @@ int main()
     BITMAP* soin = load_bitmap("rondoudou/Soin.bmp",NULL);
     BITMAP* soinInv = load_bitmap("rondoudou/SoinInv.bmp",NULL);
 
+    ///Déclaration sorts
+    t_sorts vitesseExtreme={0,0,0,80,2,0,3,0,7,0,0,0,vitEx,vitExInv};
+    t_sorts vitesseExtremeL={0,0,0,80,2,0,3,0,7,0,0,0,vitExL,vitExLInv};
+    t_sorts fatalFoudre={15,1,8,50,1,4,7,0,10,1,0,0,fatF,fatFInv};
+    t_sorts bouleElek={10,2,5,75,1,3,5,2,6,2,0,0,boulE,boulEInv};
+    t_sorts couDjus={6,3,4,90,1,2,5,0,3,3,0,0,coupJ,coupJInv};
+    t_sorts cageEclair={0,4,0,25,3,2,4,0,7,3,3,0,cageE,cageEInv};
+    t_sorts boulArmure={0,5,0,50,4,0,0,0,7,0,0,1,boulA,boulAInv};
+    t_sorts reposS={100,6,25,60,4,0,0,0,10,0,1,2,repos,reposInv};
+    t_sorts coupDboule={5,7,4,95,1,1,3,0,3,3,0,0,coupB,coupBInv};
+    t_sorts seismeS={9,8,15,50,1,1,4,0,10,3,0,0,seisme,seismeInv};
+    t_sorts chargeS={0,9,0,50,2,0,5,0,7,0,0,0,charge,chargeInv};
+    t_sorts rugissement={0,10,0,40,2,0,2,0,3,3,4,0,rugis,rugisInv};
+    t_sorts aurasphere={12,11,5,75,1,3,6,0,6,1,0,0,aura,auraInv};
+    t_sorts closeCombat={15,12,3,60,1,1,3,0,6,3,0,0,closeC,closeCInv};
+    t_sorts hateS={0,13,0,70,2,0,0,0,4,0,5,0,hate,hateInv};
+    t_sorts toxicS={0,14,0,25,3,2,4,0,5,3,1,0,toxic,toxicInv};
+    t_sorts psykoS={12,15,8,60,1,3,5,0,6,3,0,0,psyko,psykoInv};
+    t_sorts teleportS={0,16,0,50,2,0,4,0,8,3,0,0,teleport,teleportInv};
+    t_sorts autoSoinS={5,17,10,95,4,0,0,0,2,0,0,2,autoSoin,autoSoinInv};
+    t_sorts vaguePsyS={7,18,5,80,1,2,8,0,5,1,0,0,vaguePsy,vaguePsyInv};
+    t_sorts torgnolesS={8,19,2,80,1,0,2,0,5,3,0,0,torgnoles,torgnolesInv};
+    t_sorts soinS={50,20,10,75,2,0,2,0,10,3,0,3,soin,soinInv};
+    t_sorts berceuseS={0,21,0,50,2,0,3,0,6,3,2,0,berceuse,berceuseInv};
+
+    t_sorts tabSorts[23]={vitesseExtreme,fatalFoudre,bouleElek,couDjus,cageEclair,boulArmure,reposS,coupDboule,seismeS,chargeS,rugissement,aurasphere,closeCombat,vitesseExtremeL,hateS,toxicS,psykoS,teleportS,autoSoinS,vaguePsyS,torgnolesS,soinS,berceuseS};
+
+    ///Declaration des BITMAP
+    BITMAP* fond = load_bitmap("fond1.bmp",NULL);
+    BITMAP* fondMenu = load_bitmap("fondMenu.bmp",NULL);
+    SAMPLE* musiqueFond = load_sample("musiques/VioletCity.wav");
+
+    BITMAP* logo = load_bitmap("logo.bmp",NULL);
+
+    BITMAP* page=create_bitmap(1200,711);
+    clear_bitmap(page);
+
+
+
     while(!key[KEY_ESC])
     {
-        clear_bitmap(page);/*
+        clear_bitmap(page);
         if (violetcity==0)
         {
             play_sample(musiqueFond,200,0,1000,1);
@@ -144,7 +122,7 @@ int main()
         menuJeu(page,fondMenu,logo);
         if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b && 1))
         {
-            menuNbJoueur(page,fondMenu,logo,&violetcity,tabSorts);
+            menuNbJoueur(page,fondMenu,logo,&violetcity);
         }
 
         show_mouse(page);
