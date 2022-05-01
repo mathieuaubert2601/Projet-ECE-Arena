@@ -54,4 +54,5 @@ void afficher_personnage_rondoudou(BITMAP* buffer,int compteur,int cote,int x,in
 void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int y);
 void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo,int* violetCity);
 void menuJeu(BITMAP* page, BITMAP* fond,BITMAP* logo);
+void afficher_caractere(BITMAP* buffer);
 #endif // HEADER_H_INCLUDED
