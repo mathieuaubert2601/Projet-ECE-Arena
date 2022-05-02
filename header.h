@@ -27,7 +27,7 @@ typedef struct classe
 //Structure joueur
 typedef struct joueur
 {
-    char* pseudo;
+    char pseudo[15];
     int ligne, colonne, numero, equipe,pa,tourPoison,tourDodo,tourParalysie,tourPeur,tourBouclier,score;
     t_classe classe;
 }t_joueur;

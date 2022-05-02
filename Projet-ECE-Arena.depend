@@ -102,7 +102,7 @@
 1651483118 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\affichage_personnages.c
 	"header.h"
 
-1651483118 c:\users\augus\onedrive\documents\github\projet-ece-arena\header.h
+1651487420 c:\users\augus\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -126,5 +126,8 @@
 	"header.h"
 
 1651483118 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\menunbjoueur.c
+	"header.h"
+
+1651483246 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\main.c
 	"header.h"
 
