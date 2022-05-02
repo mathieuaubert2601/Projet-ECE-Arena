@@ -64,7 +64,7 @@ void information_Ronflex(BITMAP* page, BITMAP* fond)
         {
             clear_bitmap(page);
             stretch_blit(fond,page,0,0,640,360,0,0,1200,711);
-            masked_stretch_blit(info_ronf,page,0,0,373,450,50,0,571,670);
+            masked_stretch_blit(info_ronf,page,0,0,571,668,50,0,571,670);
             masked_stretch_blit(tableau_ronflex[i],page,0,0,600,580,700,275,400,400);
             AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
             show_mouse(page);

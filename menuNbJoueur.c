@@ -15,7 +15,7 @@ void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity)
     BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
     BITMAP* lucario = load_bitmap("lucario/lucario1.bmp",NULL);
     BITMAP* rondoudou = load_bitmap("rondoudou/rondoudou1.bmp",NULL);
-    BITMAP* pikachu = load_bitmap("pikachu/pikatchu1.bmp",NULL);
+    BITMAP* pikachu = load_bitmap("pikachu/pikachu1.bmp",NULL);
     BITMAP* ronflex = load_bitmap("ronflex/ronflex1.bmp",NULL);
     BITMAP* alakazam = load_bitmap("alakazam/alakazam1.bmp",NULL);
     SAMPLE* musiqueFond = load_sample("musiques/VioletCity.wav");
@@ -39,15 +39,15 @@ void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity)
             }
         if(((mouse_x>=(320)&& mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))
             {
-                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond);
+                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&joueur1,violetCity,musiqueFond);
             }
         if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))
             {
-                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond);
+                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&joueur1,violetCity,musiqueFond);
             }
         if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))
             {
-                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,fond,page,&joueur1,violetCity,musiqueFond);
+                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&joueur1,violetCity,musiqueFond);
             }
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);

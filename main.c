@@ -7,13 +7,13 @@ int main()
     install_mouse();
     install_sound(DIGI_AUTODETECT,MIDI_AUTODETECT,"A");
 
-    t_joueur joueur1;
 
 
     int violetcity=0;
     //int x = 20;
     //int y = 80;
     //int i = 0;
+
 
     //Declaration Bitmap Pikachu sorts
     BITMAP* cageE = load_bitmap("pikachu/CageEclair.bmp",NULL);
@@ -98,8 +98,8 @@ int main()
 
     t_sorts tabSorts[23]={vitesseExtreme,fatalFoudre,bouleElek,couDjus,cageEclair,boulArmure,reposS,coupDboule,seismeS,chargeS,rugissement,aurasphere,closeCombat,vitesseExtremeL,hateS,toxicS,psykoS,teleportS,autoSoinS,vaguePsyS,torgnolesS,soinS,berceuseS};
 
+
     ///Declaration des BITMAP
-    BITMAP* fond = load_bitmap("fond1.bmp",NULL);
     BITMAP* fondMenu = load_bitmap("fondMenu.bmp",NULL);
     SAMPLE* musiqueFond = load_sample("musiques/VioletCity.wav");
 
@@ -129,10 +129,7 @@ int main()
         blit(page,screen,0,0,0,0,1200,711);
         //afficher_map(page);
         //afficher_arbre(page);
-        //afficher_coordonnees(page);*/
-        afficher_caractere(page);
-        blit(page,screen,0,0,0,0,1200,711);
-        rest(20);
+        //afficher_coordonnees(page);
 
     }
     destroy_bitmap(page);
