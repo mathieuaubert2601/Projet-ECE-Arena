@@ -1,6 +1,11 @@
 #include "header.h"
-void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur* joueur, int* violetCity, SAMPLE* musiqueFond)
+void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur* joueur, int* violetCity, SAMPLE* musiqueFond, int nbJoueur)
 {
+    BITMAP* phrase1 = load_bitmap("phrase1.bmp",NULL);
+    BITMAP* phrase2 = load_bitmap("phrase2.bmp",NULL);
+    BITMAP* phrase3 = load_bitmap("phrase3.bmp",NULL);
+    BITMAP* phrase4 = load_bitmap("phrase4.bmp",NULL);
+    BITMAP* tabPhrases[4];
 
     //Declaration Bitmap Pikachu sorts
     BITMAP* cageE = load_bitmap("pikachu/CageEclair.bmp",NULL);
@@ -8,7 +13,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     BITMAP* fatF = load_bitmap("pikachu/FatalFoudre.bmp",NULL);
     BITMAP* fatFInv = load_bitmap("pikachu/FatalFoudreInv.bmp",NULL);
     BITMAP* boulE = load_bitmap("pikachu/BouleElek.bmp",NULL);
-    BITMAP* boulEInv = load_bitmap("pikachu/BoulEInv.bmp",NULL);
+    BITMAP* boulEInv = load_bitmap("pikachu/BouleElekInv.bmp",NULL);
     BITMAP* coupJ = load_bitmap("pikachu/CoupJus.bmp",NULL);
     BITMAP* coupJInv = load_bitmap("pikachu/CoupJusInv.bmp",NULL);
     BITMAP* vitEx = load_bitmap("pikachu/VitesseExtreme.bmp",NULL);
@@ -182,6 +187,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
 
     BITMAP* logo = load_bitmap("logo.bmp",NULL);
     BITMAP* fond = load_bitmap("fond1.bmp",NULL);
+    BITMAP* fondMenu = load_bitmap("fondMenu.bmp",NULL);
 
     rest(300);
     while(sortieClasses!=1)
@@ -207,9 +213,26 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         AffichageBouton(boutonI,boutonInvI,page,0,0,550,625,100,50);
         AffichageBouton(boutonI,boutonInvI,page,0,0,765,625,100,50);
         AffichageBouton(boutonI,boutonInvI,page,0,0,1020,625,100,50);
-        AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
+        //AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
 
         masked_stretch_blit(logo,page,0,0,755,374,300,5,600,300);
+        if(nbJoueur==0)
+        {
+            masked_stretch_blit(phrase1,page,0,0,phrase1->w,phrase1->h,5,50,300,38);
+        }
+        if(nbJoueur==1)
+        {
+            masked_stretch_blit(phrase2,page,0,0,phrase2->w,phrase2->h,5,50,300,38);
+        }
+        if(nbJoueur==2)
+        {
+            masked_stretch_blit(phrase3,page,0,0,phrase3->w,phrase3->h,5,50,300,38);
+        }
+        if(nbJoueur==3)
+        {
+            masked_stretch_blit(phrase4,page,0,0,phrase4->w,phrase4->h,5,50,300,38);
+        }
+
 
         if(((mouse_x>=(68)&& mouse_x<=(68+100))&& (mouse_y)>=(625)&& mouse_y<=(625+50))&& (mouse_b && 1))
         {
@@ -239,7 +262,8 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur->classe=pikachu;
-                play_sample(pikachuSon,600,0,1000,0);
+                play_sample(joueur->classe.sonClasse,600,0,1000,0);
+                sortieClasses=1;
             }
         }
 
@@ -249,7 +273,8 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur->classe=ronflex;
-                play_sample(ronflexSon,600,0,1000,0);
+                play_sample(joueur->classe.sonClasse,600,0,1000,0);
+                sortieClasses=1;
             }
         }
 
@@ -259,7 +284,8 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur->classe=lucario;
-                play_sample(lucarioSon,600,0,1000,0);
+                play_sample(joueur->classe.sonClasse,600,0,1000,0);
+                sortieClasses=1;
             }
         }
 
@@ -269,7 +295,8 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur->classe=alakazam;
-                play_sample(alakazamSon,600,0,1000,0);
+                play_sample(joueur->classe.sonClasse,600,0,1000,0);
+                sortieClasses=1;
             }
         }
 
@@ -279,14 +306,15 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur->classe=rondoudou;
-                play_sample(rondoudouSon,600,0,1000,0);
+                play_sample(joueur->classe.sonClasse,600,0,1000,0);
+                sortieClasses=1;
             }
         }
-        if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
+        /*if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
             {
                 sortieClasses=1;
-                menuNbJoueur(page,fond,logo, violetCity);
-            }
+                menuNbJoueur(page,fondMenu,logo, violetCity);
+            }*/
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
     }

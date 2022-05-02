@@ -7,9 +7,13 @@ int main()
     install_mouse();
     install_sound(DIGI_AUTODETECT,MIDI_AUTODETECT,"A");
 
+    t_joueur tabJoueur[4];
+    int delaiMenuNb=0;
+    int sortieMenu = 0;
+    int nbJoueurs;
+    t_joueur joueur1;
 
-
-    int violetcity=0;
+    int violetCity=0;
     //int x = 20;
     //int y = 80;
     //int i = 0;
@@ -40,8 +44,15 @@ int main()
     ///Declaration des BITMAP
     BITMAP* fondMenu = load_bitmap("fondMenu.bmp",NULL);
     SAMPLE* musiqueFond = load_sample("musiques/VioletCity.wav");
+    BITMAP* lucario = load_bitmap("lucario/lucario1.bmp",NULL);
+    BITMAP* rondoudou = load_bitmap("rondoudou/rondoudou1.bmp",NULL);
+    BITMAP* pikachu = load_bitmap("pikachu/pikachu1.bmp",NULL);
+    BITMAP* ronflex = load_bitmap("ronflex/ronflex1.bmp",NULL);
+    BITMAP* alakazam = load_bitmap("alakazam/alakazam1.bmp",NULL);
+
 
     BITMAP* logo = load_bitmap("logo.bmp",NULL);
+
 
 
     BITMAP* page=create_bitmap(1200,711);
@@ -51,17 +62,52 @@ int main()
 
     while(!key[KEY_ESC])
     {
+        sortieMenu=0;
         clear_bitmap(page);
-        if (violetcity==0)
+        if (violetCity==0)
         {
             play_sample(musiqueFond,200,0,1000,1);
-            violetcity++;
-        }*/
-        /*
+            violetCity++;
+        }
+
         menuJeu(page,fondMenu,logo);
         if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b && 1))
         {
-            menuNbJoueur(page,fondMenu,logo,&violetcity);
+            rest(100);
+            while(sortieMenu!=1)
+            {
+                menuNbJoueur(page,fondMenu,logo,&violetCity);
+                if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
+                {
+                    sortieMenu=1;
+                }
+                if(((mouse_x>=(320) && mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 2 joueurs
+                {
+                    nbJoueurs = 2;
+                    for(int i=0; i<nbJoueurs; i++)
+                    {
+                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond, i);
+                    }
+                }
+                if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 3 joueurs
+                {
+                    nbJoueurs = 3;
+                    for(int i=0; i<nbJoueurs; i++)
+                    {
+                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond, i);
+                    }
+                }
+                if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 4 joueurs
+                {
+                    nbJoueurs = 4;
+                    for(int i=0; i<nbJoueurs; i++)
+                    {
+                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond,i);
+                    }
+                }
+
+            }
+
         }
 
         show_mouse(page);
@@ -71,7 +117,7 @@ int main()
         afficher_arbre(page);
         blit(page,screen,0,0,0,0,1200,711);
 
-        rest(20);
+        rest(20);*/
 
     }
     destroy_bitmap(page);
