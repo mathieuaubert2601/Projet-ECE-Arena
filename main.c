@@ -43,6 +43,7 @@ int main()
 
     BITMAP* logo = load_bitmap("logo.bmp",NULL);
 
+
     BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
 
@@ -51,12 +52,12 @@ int main()
     while(!key[KEY_ESC])
     {
         clear_bitmap(page);
-        /*if (violetcity==0)
+        if (violetcity==0)
         {
             play_sample(musiqueFond,200,0,1000,1);
             violetcity++;
-        }
-
+        }*/
+        /*
         menuJeu(page,fondMenu,logo);
         if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b && 1))
         {
@@ -64,11 +65,12 @@ int main()
         }
 
         show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);*/
-        afficher_map(page);
+        blit(page,screen,0,0,0,0,1200,711);
+        /*afficher_map(page);
         afficher_cases_non_obstacles(tableau_Cases,page);
         afficher_arbre(page);
         blit(page,screen,0,0,0,0,1200,711);
+
         rest(20);
 
     }
