@@ -2,6 +2,8 @@
 
 void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int y)
 {
+    //déclaratation de la taille des cases
+
     //Déclaration des variables pour pikachu de face
     BITMAP* pikaFace1 = load_bitmap("pikachu/pikaFace1.bmp",NULL);
     BITMAP* pikaFace2 = load_bitmap("pikachu/pikaFace2.bmp",NULL);
@@ -81,19 +83,19 @@ void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int 
 
     if(cote == 0)
     {
-        masked_stretch_blit(tab_lucarioFace[compteur],buffer,0,0,tab_lucarioFace[compteur]->w,tab_lucarioFace[compteur]->h,x,y,(tab_lucarioFace[compteur]->w)*2,(tab_lucarioFace[compteur]->h)*2);
+        masked_stretch_blit(tab_lucarioFace[compteur],buffer,0,0,tab_lucarioFace[compteur]->w,tab_lucarioFace[compteur]->h,x,y,(tab_lucarioFace[compteur]->w)*1,(tab_lucarioFace[compteur]->h)*1);
     }
     if(cote == 1)
     {
-        masked_stretch_blit(tab_lucarioArriere[compteur],buffer,0,0,tab_lucarioArriere[compteur]->w,tab_lucarioArriere[compteur]->h,x,y,(tab_lucarioArriere[compteur]->w)*2,(tab_lucarioArriere[compteur]->h)*2);
+        masked_stretch_blit(tab_lucarioArriere[compteur],buffer,0,0,tab_lucarioArriere[compteur]->w,tab_lucarioArriere[compteur]->h,x,y,(tab_lucarioArriere[compteur]->w)*1,(tab_lucarioArriere[compteur]->h)*1);
     }
     if(cote == 2)
     {
-        masked_stretch_blit(tab_lucarioGauche[compteur],buffer,0,0,tab_lucarioGauche[compteur]->w,tab_lucarioGauche[compteur]->h,x,y,(tab_lucarioGauche[compteur]->w)*2,(tab_lucarioGauche[compteur]->h)*2);
+        masked_stretch_blit(tab_lucarioGauche[compteur],buffer,0,0,tab_lucarioGauche[compteur]->w,tab_lucarioGauche[compteur]->h,x,y,(tab_lucarioGauche[compteur]->w)*1,(tab_lucarioGauche[compteur]->h)*1);
     }
     if(cote == 3)
     {
-        masked_stretch_blit(tab_lucarioDroite[compteur],buffer,0,0,tab_lucarioDroite[compteur]->w,tab_lucarioDroite[compteur]->h,x,y,(tab_lucarioDroite[compteur]->w)*2,(tab_lucarioDroite[compteur]->h)*2);
+        masked_stretch_blit(tab_lucarioDroite[compteur],buffer,0,0,tab_lucarioDroite[compteur]->w,tab_lucarioDroite[compteur]->h,x,y,(tab_lucarioDroite[compteur]->w)*1,(tab_lucarioDroite[compteur]->h)*1);
     }
 
 }
@@ -130,19 +132,19 @@ void afficher_personnage_ronflex(BITMAP* buffer,int compteur,int cote,int x,int 
 
     if(cote == 0)
     {
-        masked_stretch_blit(tab_ronflexFace[compteur],buffer,0,0,tab_ronflexFace[compteur]->w,tab_ronflexFace[compteur]->h,x,y,(tab_ronflexFace[compteur]->w)*2,(tab_ronflexFace[compteur]->h)*2);
+        masked_stretch_blit(tab_ronflexFace[compteur],buffer,0,0,tab_ronflexFace[compteur]->w,tab_ronflexFace[compteur]->h,x,y,(tab_ronflexFace[compteur]->w)*1,(tab_ronflexFace[compteur]->h)*1);
     }
     if(cote == 1)
     {
-        masked_stretch_blit(tab_ronflexArriere[compteur],buffer,0,0,tab_ronflexArriere[compteur]->w,tab_ronflexArriere[compteur]->h,x,y,(tab_ronflexArriere[compteur]->w)*2,(tab_ronflexArriere[compteur]->h)*2);
+        masked_stretch_blit(tab_ronflexArriere[compteur],buffer,0,0,tab_ronflexArriere[compteur]->w,tab_ronflexArriere[compteur]->h,x,y,(tab_ronflexArriere[compteur]->w)*1,(tab_ronflexArriere[compteur]->h)*1);
     }
     if(cote == 2)
     {
-        masked_stretch_blit(tab_ronflexGauche[compteur],buffer,0,0,tab_ronflexGauche[compteur]->w,tab_ronflexGauche[compteur]->h,x,y,(tab_ronflexGauche[compteur]->w)*2,(tab_ronflexGauche[compteur]->h)*2);
+        masked_stretch_blit(tab_ronflexGauche[compteur],buffer,0,0,tab_ronflexGauche[compteur]->w,tab_ronflexGauche[compteur]->h,x,y,(tab_ronflexGauche[compteur]->w)*1,(tab_ronflexGauche[compteur]->h)*1);
     }
     if(cote == 3)
     {
-        masked_stretch_blit(tab_ronflexDroite[compteur],buffer,0,0,tab_ronflexDroite[compteur]->w,tab_ronflexDroite[compteur]->h,x,y,(tab_ronflexDroite[compteur]->w)*2,(tab_ronflexDroite[compteur]->h)*2);
+        masked_stretch_blit(tab_ronflexDroite[compteur],buffer,0,0,tab_ronflexDroite[compteur]->w,tab_ronflexDroite[compteur]->h,x,y,(tab_ronflexDroite[compteur]->w)*1,(tab_ronflexDroite[compteur]->h)*1);
     }
 
 }
@@ -179,19 +181,19 @@ void afficher_personnage_rondoudou(BITMAP* buffer,int compteur,int cote,int x,in
 
     if(cote == 0)
     {
-        masked_stretch_blit(tab_rondoudouFace[compteur],buffer,0,0,tab_rondoudouFace[compteur]->w,tab_rondoudouFace[compteur]->h,x,y,(tab_rondoudouFace[compteur]->w)*1.5,(tab_rondoudouFace[compteur]->h)*1.5);
+        masked_stretch_blit(tab_rondoudouFace[compteur],buffer,0,0,tab_rondoudouFace[compteur]->w,tab_rondoudouFace[compteur]->h,x,y,(tab_rondoudouFace[compteur]->w)*1,(tab_rondoudouFace[compteur]->h)*1);
     }
     if(cote == 1)
     {
-        masked_stretch_blit(tab_rondoudouArriere[compteur],buffer,0,0,tab_rondoudouArriere[compteur]->w,tab_rondoudouArriere[compteur]->h,x,y,(tab_rondoudouArriere[compteur]->w)*1.5,(tab_rondoudouArriere[compteur]->h)*1.5);
+        masked_stretch_blit(tab_rondoudouArriere[compteur],buffer,0,0,tab_rondoudouArriere[compteur]->w,tab_rondoudouArriere[compteur]->h,x,y,(tab_rondoudouArriere[compteur]->w)*1,(tab_rondoudouArriere[compteur]->h)*1);
     }
     if(cote == 2)
     {
-        masked_stretch_blit(tab_rondoudouGauche[compteur],buffer,0,0,tab_rondoudouGauche[compteur]->w,tab_rondoudouGauche[compteur]->h,x,y,(tab_rondoudouGauche[compteur]->w)*1.5,(tab_rondoudouGauche[compteur]->h)*1.5);
+        masked_stretch_blit(tab_rondoudouGauche[compteur],buffer,0,0,tab_rondoudouGauche[compteur]->w,tab_rondoudouGauche[compteur]->h,x,y,(tab_rondoudouGauche[compteur]->w)*1,(tab_rondoudouGauche[compteur]->h)*1);
     }
     if(cote == 3)
     {
-        masked_stretch_blit(tab_rondoudouDroite[compteur],buffer,0,0,tab_rondoudouDroite[compteur]->w,tab_rondoudouDroite[compteur]->h,x,y,(tab_rondoudouDroite[compteur]->w)*1.5,(tab_rondoudouDroite[compteur]->h)*1.5);
+        masked_stretch_blit(tab_rondoudouDroite[compteur],buffer,0,0,tab_rondoudouDroite[compteur]->w,tab_rondoudouDroite[compteur]->h,x,y,(tab_rondoudouDroite[compteur]->w)*1,(tab_rondoudouDroite[compteur]->h)*1);
     }
 
 }
@@ -228,19 +230,19 @@ void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int
 
     if(cote == 0)
     {
-        masked_stretch_blit(tab_alakazamFace[compteur],buffer,0,0,tab_alakazamFace[compteur]->w,tab_alakazamFace[compteur]->h,x,y,(tab_alakazamFace[compteur]->w)*1.5,(tab_alakazamFace[compteur]->h)*1.5);
+        masked_stretch_blit(tab_alakazamFace[compteur],buffer,0,0,tab_alakazamFace[compteur]->w,tab_alakazamFace[compteur]->h,x,y,(tab_alakazamFace[compteur]->w)*1,(tab_alakazamFace[compteur]->h)*1);
     }
     if(cote == 1)
     {
-        masked_stretch_blit(tab_alakazamArriere[compteur],buffer,0,0,tab_alakazamArriere[compteur]->w,tab_alakazamArriere[compteur]->h,x,y,(tab_alakazamArriere[compteur]->w)*1.5,(tab_alakazamArriere[compteur]->h)*1.5);
+        masked_stretch_blit(tab_alakazamArriere[compteur],buffer,0,0,tab_alakazamArriere[compteur]->w,tab_alakazamArriere[compteur]->h,x,y,(tab_alakazamArriere[compteur]->w)*1,(tab_alakazamArriere[compteur]->h)*1);
     }
     if(cote == 2)
     {
-        masked_stretch_blit(tab_alakazamGauche[compteur],buffer,0,0,tab_alakazamGauche[compteur]->w,tab_alakazamGauche[compteur]->h,x,y,(tab_alakazamGauche[compteur]->w)*1.5,(tab_alakazamGauche[compteur]->h)*1.5);
+        masked_stretch_blit(tab_alakazamGauche[compteur],buffer,0,0,tab_alakazamGauche[compteur]->w,tab_alakazamGauche[compteur]->h,x,y,(tab_alakazamGauche[compteur]->w)*1,(tab_alakazamGauche[compteur]->h)*1);
     }
     if(cote == 3)
     {
-        masked_stretch_blit(tab_alakazamDroite[compteur],buffer,0,0,tab_alakazamDroite[compteur]->w,tab_alakazamDroite[compteur]->h,x,y,(tab_alakazamDroite[compteur]->w)*1.5,(tab_alakazamDroite[compteur]->h)*1.5);
+        masked_stretch_blit(tab_alakazamDroite[compteur],buffer,0,0,tab_alakazamDroite[compteur]->w,tab_alakazamDroite[compteur]->h,x,y,(tab_alakazamDroite[compteur]->w)*1,(tab_alakazamDroite[compteur]->h)*1);
     }
 
 }
