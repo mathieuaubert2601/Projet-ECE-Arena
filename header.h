@@ -55,6 +55,6 @@ void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int
 void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo,int* violetCity);
 void menuJeu(BITMAP* page, BITMAP* fond,BITMAP* logo);
 void afficher_caractere(BITMAP* buffer);
-void casebleu(BITMAP* casefiltre,BITMAP* buffer, int posx, int posy);
-void afficher_commande (BITMAP* page);
+void casebleu(BITMAP* buffer, int posx, int posy);
+void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer);
 #endif // HEADER_H_INCLUDED

@@ -99,10 +99,10 @@ int main()
     t_sorts tabSorts[23]={vitesseExtreme,fatalFoudre,bouleElek,couDjus,cageEclair,boulArmure,reposS,coupDboule,seismeS,chargeS,rugissement,aurasphere,closeCombat,vitesseExtremeL,hateS,toxicS,psykoS,teleportS,autoSoinS,vaguePsyS,torgnolesS,soinS,berceuseS};
 
     //Déclaration du tableau de case :
-    t_cases tableau_Cases[18][36]= {
+    int tableau_Cases[18][36] = {
     {1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},//L1
     {1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},//L2
-    {1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},//L3
+    {1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},//L3
     {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},//L4
     {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},//L5
     {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0},//L6
@@ -133,7 +133,7 @@ int main()
     while(!key[KEY_ESC])
     {
         clear_bitmap(page);
-        if (violetcity==0)
+        /*if (violetcity==0)
         {
             play_sample(musiqueFond,200,0,1000,1);
             violetcity++;
@@ -146,10 +146,10 @@ int main()
         }
 
         show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);
-        //afficher_map(page);
-        //afficher_arbre(page);
-        //afficher_coordonnees(page);*/
+        blit(page,screen,0,0,0,0,1200,711);*/
+        afficher_map(page);
+        afficher_cases_non_obstacles(tableau_Cases,page);
+        afficher_arbre(page);
         blit(page,screen,0,0,0,0,1200,711);
         rest(20);
 
