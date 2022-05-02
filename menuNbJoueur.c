@@ -20,6 +20,7 @@ void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity)
     BITMAP* alakazam = load_bitmap("alakazam/alakazam1.bmp",NULL);
     SAMPLE* musiqueFond = load_sample("musiques/VioletCity.wav");
 
+
     rest(100);
 
     while(sortieMenu!=1)
@@ -32,6 +33,7 @@ void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity)
         AffichageBouton(bouton3,bouton3inv,page,0,0,520,540,171,165);
         AffichageBouton(bouton4,bouton4inv,page,0,0,720,540,171,165);
         AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
+
 
         if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
             {
