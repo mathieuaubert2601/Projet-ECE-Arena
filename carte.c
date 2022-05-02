@@ -1,3 +1,5 @@
+#include "header.h"
+
 void afficher_map(BITMAP* buffer)
 {
     //d�claration des variables
