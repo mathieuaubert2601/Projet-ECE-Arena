@@ -27,7 +27,7 @@ typedef struct classe
 //Structure joueur
 typedef struct joueur
 {
-    char* pseudo;
+    char pseudo[15];
     int ligne, colonne, numero, equipe,pa,tourPoison,tourDodo,tourParalysie,tourPeur,tourBouclier,score;
     t_classe classe;
 }t_joueur;
@@ -64,4 +64,6 @@ void menuJeu(BITMAP* page, BITMAP* fond,BITMAP* logo);
 void afficher_caractere(BITMAP* buffer);
 void casebleu(BITMAP* buffer, int posx, int posy);
 void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer);
+void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y , int pm,int tableau_cases[18][36]);
+void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colonne_finale, int indice_ligne_ini, int indice_colonne_ini, int personnage);
 #endif // HEADER_H_INCLUDED
