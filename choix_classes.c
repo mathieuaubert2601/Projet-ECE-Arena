@@ -1,13 +1,161 @@
 #include "header.h"
-void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page, t_joueur* joueur, int* violetCity, SAMPLE* musiqueFond)
+void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur* joueur, int* violetCity, SAMPLE* musiqueFond)
 {
 
+    //Declaration Bitmap Pikachu sorts
+    BITMAP* cageE = load_bitmap("pikachu/CageEclair.bmp",NULL);
+    BITMAP* cageEInv = load_bitmap("pikachu/CageEclairInv.bmp",NULL);
+    BITMAP* fatF = load_bitmap("pikachu/FatalFoudre.bmp",NULL);
+    BITMAP* fatFInv = load_bitmap("pikachu/FatalFoudreInv.bmp",NULL);
+    BITMAP* boulE = load_bitmap("pikachu/BouleElek.bmp",NULL);
+    BITMAP* boulEInv = load_bitmap("pikachu/BoulEInv.bmp",NULL);
+    BITMAP* coupJ = load_bitmap("pikachu/CoupJus.bmp",NULL);
+    BITMAP* coupJInv = load_bitmap("pikachu/CoupJusInv.bmp",NULL);
+    BITMAP* vitEx = load_bitmap("pikachu/VitesseExtreme.bmp",NULL);
+    BITMAP* vitExInv = load_bitmap("pikachu/VitesseExtremeInv.bmp",NULL);
+
+    //Declaration Bitmap Ronflex sorts
+    BITMAP* coupB = load_bitmap("ronflex/CoupBoule.bmp",NULL);
+    BITMAP* coupBInv = load_bitmap("ronflex/CoupBouleInv.bmp",NULL);
+    BITMAP* seisme = load_bitmap("ronflex/Seisme.bmp",NULL);
+    BITMAP* seismeInv = load_bitmap("ronflex/SeismeInv.bmp",NULL);
+    BITMAP* charge = load_bitmap("ronflex/Charge.bmp",NULL);
+    BITMAP* chargeInv = load_bitmap("ronflex/ChargeInv.bmp",NULL);
+    BITMAP* boulA = load_bitmap("ronflex/BoulArmure.bmp",NULL);
+    BITMAP* boulAInv = load_bitmap("ronflex/BoulArmureInv.bmp",NULL);
+    BITMAP* repos = load_bitmap("ronflex/Repos.bmp",NULL);
+    BITMAP* reposInv = load_bitmap("ronflex/ReposInv.bmp",NULL);
+
+    //Declaration Bitmap Lucario sorts
+    BITMAP* rugis = load_bitmap("lucario/Rugissement.bmp",NULL);
+    BITMAP* rugisInv = load_bitmap("lucario/RugissementInv.bmp",NULL);
+    BITMAP* aura = load_bitmap("lucario/Aurasphere.bmp",NULL);
+    BITMAP* auraInv = load_bitmap("lucario/AurasphereInv.bmp",NULL);
+    BITMAP* closeC = load_bitmap("lucario/CloseCombat.bmp",NULL);
+    BITMAP* closeCInv = load_bitmap("lucario/CloseCombatInv.bmp",NULL);
+    BITMAP* vitExL = load_bitmap("lucario/VitesseExtreme.bmp",NULL);
+    BITMAP* vitExLInv = load_bitmap("lucario/VitesseExtremeInv.bmp",NULL);
+    BITMAP* hate = load_bitmap("lucario/Hate.bmp",NULL);
+    BITMAP* hateInv = load_bitmap("lucario/HateInv.bmp",NULL);
+
+    //Declaration Bitmap Alakazam sorts
+    BITMAP* toxic = load_bitmap("alakazam/Toxic.bmp",NULL);
+    BITMAP* toxicInv = load_bitmap("alakazam/ToxicInv.bmp",NULL);
+    BITMAP* psyko = load_bitmap("alakazam/Psyko.bmp",NULL);
+    BITMAP* psykoInv = load_bitmap("alakazam/PsykoInv.bmp",NULL);
+    BITMAP* teleport = load_bitmap("alakazam/Teleport.bmp",NULL);
+    BITMAP* teleportInv = load_bitmap("alakazam/TeleportInv.bmp",NULL);
+    BITMAP* autoSoin = load_bitmap("alakazam/AutoSoin.bmp",NULL);
+    BITMAP* autoSoinInv = load_bitmap("alakazam/AutoSoinInv.bmp",NULL);
+
+    //Declaration Bitmap Rondoudou sorts
+    BITMAP* berceuse = load_bitmap("rondoudou/Berceuse.bmp",NULL);
+    BITMAP* berceuseInv = load_bitmap("rondoudou/BerceuseInv.bmp",NULL);
+    BITMAP* vaguePsy = load_bitmap("rondoudou/VaguePsy.bmp",NULL);
+    BITMAP* vaguePsyInv = load_bitmap("rondoudou/VaguePsyInv.bmp",NULL);
+    BITMAP* torgnoles = load_bitmap("rondoudou/Torgnoles.bmp",NULL);
+    BITMAP* torgnolesInv = load_bitmap("rondoudou/TorgnolesInv.bmp",NULL);
+    BITMAP* soin = load_bitmap("rondoudou/Soin.bmp",NULL);
+    BITMAP* soinInv = load_bitmap("rondoudou/SoinInv.bmp",NULL);
+
+    ///Déclaration sorts
+    t_sorts vitesseExtreme={0,0,0,80,2,0,3,0,7,0,0,0,vitEx,vitExInv};
+    t_sorts vitesseExtremeL={0,0,0,80,2,0,3,0,7,0,0,0,vitExL,vitExLInv};
+    t_sorts fatalFoudre={15,1,8,50,1,4,7,0,10,1,0,0,fatF,fatFInv};
+    t_sorts bouleElek={10,2,5,75,1,3,5,2,6,2,0,0,boulE,boulEInv};
+    t_sorts couDjus={6,3,4,90,1,2,5,0,3,3,0,0,coupJ,coupJInv};
+    t_sorts cageEclair={0,4,0,25,3,2,4,0,7,3,3,0,cageE,cageEInv};
+    t_sorts boulArmure={0,5,0,50,4,0,0,0,7,0,0,1,boulA,boulAInv};
+    t_sorts reposS={100,6,25,60,4,0,0,0,10,0,1,2,repos,reposInv};
+    t_sorts coupDboule={5,7,4,95,1,1,3,0,3,3,0,0,coupB,coupBInv};
+    t_sorts seismeS={9,8,15,50,1,1,4,0,10,3,0,0,seisme,seismeInv};
+    t_sorts chargeS={0,9,0,50,2,0,5,0,7,0,0,0,charge,chargeInv};
+    t_sorts rugissement={0,10,0,40,2,0,2,0,3,3,4,0,rugis,rugisInv};
+    t_sorts aurasphere={12,11,5,75,1,3,6,0,6,1,0,0,aura,auraInv};
+    t_sorts closeCombat={15,12,3,60,1,1,3,0,6,3,0,0,closeC,closeCInv};
+    t_sorts hateS={0,13,0,70,2,0,0,0,4,0,5,0,hate,hateInv};
+    t_sorts toxicS={0,14,0,25,3,2,4,0,5,3,1,0,toxic,toxicInv};
+    t_sorts psykoS={12,15,8,60,1,3,5,0,6,3,0,0,psyko,psykoInv};
+    t_sorts teleportS={0,16,0,50,2,0,4,0,8,3,0,0,teleport,teleportInv};
+    t_sorts autoSoinS={5,17,10,95,4,0,0,0,2,0,0,2,autoSoin,autoSoinInv};
+    t_sorts vaguePsyS={7,18,5,80,1,2,8,0,5,1,0,0,vaguePsy,vaguePsyInv};
+    t_sorts torgnolesS={8,19,2,80,1,0,2,0,5,3,0,0,torgnoles,torgnolesInv};
+    t_sorts soinS={50,20,10,75,2,0,2,0,10,3,0,3,soin,soinInv};
+    t_sorts berceuseS={0,21,0,50,2,0,3,0,6,3,2,0,berceuse,berceuseInv};
+
+    t_sorts tabSorts[23]={vitesseExtreme,fatalFoudre,bouleElek,couDjus,cageEclair,boulArmure,reposS,coupDboule,seismeS,chargeS,rugissement,aurasphere,closeCombat,vitesseExtremeL,hateS,toxicS,psykoS,teleportS,autoSoinS,vaguePsyS,torgnolesS,soinS,berceuseS};
 
     SAMPLE* pikachuSon = load_sample("sons_pokemons/pikachu.wav");
     SAMPLE* ronflexSon = load_sample("sons_pokemons/ronflex.wav");
     SAMPLE* lucarioSon = load_sample("sons_pokemons/lucario.wav");
     SAMPLE* alakazamSon = load_sample("sons_pokemons/alakazam.wav");
     SAMPLE* rondoudouSon = load_sample("sons_pokemons/rondoudou.wav");
+
+    t_classe pikachu;
+    t_classe ronflex;
+    t_classe lucario;
+    t_classe alakazam;
+    t_classe rondoudou;
+
+    //Déclaration pikachu
+    pikachu.classe = 1;
+    strcpy(pikachu.nom,"Pikachu");
+    pikachu.pm = 6;
+    pikachu.pv = 75;
+    pikachu.sonClasse = pikachuSon;
+    pikachu.sort1=vitesseExtreme;
+    pikachu.sort2=fatalFoudre;
+    pikachu.sort3=bouleElek;
+    pikachu.sort4=couDjus;
+    pikachu.sort5=cageEclair;
+
+    //Déclaration ronflex
+    ronflex.classe = 2;
+    strcpy(ronflex.nom,"Ronflex");
+    ronflex.pm = 2;
+    ronflex.pv = 125;
+    ronflex.sonClasse = ronflexSon;
+    ronflex.sort1=boulArmure;
+    ronflex.sort2=reposS;
+    ronflex.sort3=coupDboule;
+    ronflex.sort4=seismeS;
+    ronflex.sort5=chargeS;
+
+    //Déclaration lucario
+    lucario.classe = 3;
+    strcpy(lucario.nom,"Lucario");
+    lucario.pm = 4;
+    lucario.pv = 100;
+    lucario.sonClasse = lucarioSon;
+    lucario.sort1=rugissement;
+    lucario.sort2=aurasphere;
+    lucario.sort3=closeCombat;
+    lucario.sort4=vitesseExtremeL;
+    lucario.sort5=hateS;
+
+    //Déclaration alakazam
+    alakazam.classe = 4;
+    strcpy(alakazam.nom,"Alakazam");
+    alakazam.pm = 3;
+    alakazam.pv = 100;
+    alakazam.sonClasse = alakazamSon;
+    alakazam.sort1=cageEclair;
+    alakazam.sort2=toxicS;
+    alakazam.sort3=psykoS;
+    alakazam.sort4=teleportS;
+    alakazam.sort5=autoSoinS;
+
+    //Déclaration rondoudou
+    rondoudou.classe = 5;
+    strcpy(rondoudou.nom,"Rondoudou");
+    rondoudou.pm = 5;
+    rondoudou.pv = 75;
+    rondoudou.sonClasse = rondoudouSon;
+    rondoudou.sort1=vaguePsyS;
+    rondoudou.sort2=torgnolesS;
+    rondoudou.sort3=teleportS;
+    rondoudou.sort4=soinS;
+    rondoudou.sort5=berceuseS;
 
     int sortieClasses = 0;
 
@@ -34,6 +182,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     BITMAP* boutonInvI = load_bitmap("boutons/boutonInvInfos.bmp",NULL);
 
     BITMAP* logo = load_bitmap("logo.bmp",NULL);
+    BITMAP* fond = load_bitmap("fond1.bmp",NULL);
 
     rest(300);
     while(sortieClasses!=1)
@@ -45,7 +194,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         masked_stretch_blit(classe3,page,0,0,86,121,480,330,216,200);
         masked_stretch_blit(classe4,page,0,0,135,120,700,330,225,200);
         masked_stretch_blit(classe5,page,0,0,128,118,950,330,220,200);
-        //masked_blit(boutonInv,page,sourcex,sourcey,destx,desty,longueur,hauteur);
 
         ///Affichage nom des pok�mons
         AffichageBouton(bouton1,boutonInv1,page,0,0,15,550,212,67);
@@ -91,14 +239,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         {
             if(mouse_b && 1)
             {
-                joueur->classe=1;
-                joueur->pv=75;
-                joueur->pm=6;
-                /*memcpy(joueur->sort1,&tabSorts[0],sizeof(t_sorts));
-                memcpy(joueur->sort2,&tabSorts[1],sizeof(t_sorts));
-                memcpy(joueur->sort3,&tabSorts[2],sizeof(t_sorts));
-                memcpy(joueur->sort4,&tabSorts[3],sizeof(t_sorts));
-                memcpy(joueur->sort5,&tabSorts[4],sizeof(t_sorts));*/
                 play_sample(pikachuSon,600,0,1000,0);
             }
         }
@@ -108,14 +248,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         {
             if(mouse_b && 1)
             {
-                joueur->classe=2;
-                joueur->pv=125;
-                joueur->pm=2;
-                /*memcpy(joueur->sort1,&tabSorts[5],sizeof(t_sorts));
-                memcpy(joueur->sort2,&tabSorts[6],sizeof(t_sorts));
-                memcpy(joueur->sort3,&tabSorts[7],sizeof(t_sorts));
-                memcpy(joueur->sort4,&tabSorts[8],sizeof(t_sorts));
-                memcpy(joueur->sort5,&tabSorts[9],sizeof(t_sorts));*/
                 play_sample(ronflexSon,600,0,1000,0);
             }
         }
@@ -125,14 +257,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         {
             if(mouse_b && 1)
             {
-                joueur->classe=3;
-                joueur->pv=100;
-                joueur->pm=4;
-                /*memcpy(joueur->sort1,&tabSorts[10],sizeof(t_sorts));
-                memcpy(joueur->sort2,&tabSorts[11],sizeof(t_sorts));
-                memcpy(joueur->sort3,&tabSorts[12],sizeof(t_sorts));
-                memcpy(joueur->sort4,&tabSorts[13],sizeof(t_sorts));
-                memcpy(joueur->sort5,&tabSorts[14],sizeof(t_sorts));*/
                 play_sample(lucarioSon,600,0,1000,0);
             }
         }
@@ -142,14 +266,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         {
             if(mouse_b && 1)
             {
-                joueur->classe=4;
-                joueur->pv=100;
-                joueur->pm=4;
-                /*memcpy(joueur->sort1,&tabSorts[4],sizeof(t_sorts));
-                memcpy(joueur->sort2,&tabSorts[15],sizeof(t_sorts));
-                memcpy(joueur->sort3,&tabSorts[16],sizeof(t_sorts));
-                memcpy(joueur->sort4,&tabSorts[17],sizeof(t_sorts));
-                memcpy(joueur->sort5,&tabSorts[18],sizeof(t_sorts));*/
                 play_sample(alakazamSon,600,0,1000,0);
             }
         }
@@ -159,14 +275,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         {
             if(mouse_b && 1)
             {
-                joueur->classe=5;
-                joueur->pv=75;
-                joueur->pm=6;
-                /*memcpy(joueur->sort1,&tabSorts[19],sizeof(t_sorts));
-                memcpy(joueur->sort2,&tabSorts[20],sizeof(t_sorts));
-                memcpy(joueur->sort3,&tabSorts[17],sizeof(t_sorts));
-                memcpy(joueur->sort4,&tabSorts[21],sizeof(t_sorts));
-                memcpy(joueur->sort5,&tabSorts[22],sizeof(t_sorts));*/
                 play_sample(rondoudouSon,600,0,1000,0);
             }
         }

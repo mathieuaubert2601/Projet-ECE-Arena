@@ -10,15 +10,25 @@ void afficher_map(BITMAP* buffer)
     blit(carte,buffer,0,0,0,0,buffer->w,buffer->h);
 }
 
+void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer)
+{
+    for(int i=0;i<18;i++)
+    {
+        for(int j=0;j<36;j++)
+        {
+            if(tab_cases[i][j] == 0)
+            {
+                casebleu(buffer,j,i);
+            }
+        }
+    }
+
+}
+
 void afficher_arbre(BITMAP* buffer)
 {
     //Déclaration des variables
     BITMAP* arbre = load_bitmap("arbre1.bmp",NULL);
-    BITMAP* casefiltre = load_bitmap("casefiltre.bmp",NULL);
-
-    int casex, casey;
-    casex = -30;
-    casey = -32;
 
     //affichage des arbres sur le buffer
     masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,53,195,arbre->w/5,arbre->h/5);
@@ -31,20 +41,16 @@ void afficher_arbre(BITMAP* buffer)
     masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,318,0,arbre->w/5,arbre->h/5);
     masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,623,385,arbre->w/5,arbre->h/5);
 
-    casebleu(casefiltre,buffer,casex*0,casey*4);
-    casebleu(casefiltre,buffer,casex*1,casey*4);
-    casebleu(casefiltre,buffer,casex*2,casey*4);
-    casebleu(casefiltre,buffer,casex*3,casey*4);
-
     show_mouse(buffer);
 }
 
-void afficher_coordonnees(BITMAP* buffer)
-{
-    textprintf(buffer,font,150,150,makecol(255,255,255),"x : %d, y : %d",mouse_x/30,mouse_y/32);
-}
 
-void casebleu(BITMAP* casefiltre,BITMAP* buffer, int posx, int posy)
+void casebleu(BITMAP* buffer, int posx, int posy)
 {
-    blit(casefiltre,buffer,posx,posy,0,0,buffer->w,buffer->h);
+    //déclaration des variables
+    BITMAP* casefiltre = load_bitmap("casefiltre.bmp",NULL);
+    int casex = -30, casey = -32;
+
+    //On affiche la bitmap sur le buffer
+    blit(casefiltre,buffer,posx * casex,posy * casey,0,0,buffer->w,buffer->h);
 }

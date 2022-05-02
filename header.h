@@ -15,14 +15,21 @@ typedef struct sorts
     BITMAP* boutonInv;
 }t_sorts;
 
+typedef struct classe
+{
+    char nom[15];
+    int classe,pv,pm;
+    t_sorts sort1,sort2,sort3,sort4,sort5;
+    BITMAP* imageClasse;
+    SAMPLE* sonClasse;
+}t_classe;
+
 //Structure joueur
 typedef struct joueur
 {
     char* pseudo;
-    int ligne, colonne, numero, equipe,classe,pv,pm,pa,tourPoison,tourDodo,tourParalysie,tourPeur,tourBouclier,score;
-    t_sorts sort1,sort2,sort3,sort4,sort5;
-    BITMAP* bitmap;
-    SAMPLE* sonClasse;
+    int ligne, colonne, numero, equipe,pa,tourPoison,tourDodo,tourParalysie,tourPeur,tourBouclier,score;
+    t_classe classe;
 }t_joueur;
 
 
@@ -37,7 +44,7 @@ typedef struct cases
 
 ///Declaration des prototypes des sous programmes
 void initialisationAllegro();
-void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* fond, BITMAP* page, t_joueur* joueur,int* violetCity,SAMPLE* musiqueFond);
+void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur* joueur,int* violetCity,SAMPLE* musiqueFond);
 void AffichageBouton(BITMAP* bouton,BITMAP* boutonInv, BITMAP* page,int sourcex,int sourcey,int destx,int desty,int longueur, int hauteur);
 void information_Pikachu(BITMAP* page, BITMAP* fond);
 void information_Lucario(BITMAP* page, BITMAP* fond);
@@ -55,6 +62,6 @@ void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int
 void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo,int* violetCity);
 void menuJeu(BITMAP* page, BITMAP* fond,BITMAP* logo);
 void afficher_caractere(BITMAP* buffer);
-void casebleu(BITMAP* casefiltre,BITMAP* buffer, int posx, int posy);
-void afficher_commande (BITMAP* page);
+void casebleu(BITMAP* buffer, int posx, int posy);
+void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer);
 #endif // HEADER_H_INCLUDED

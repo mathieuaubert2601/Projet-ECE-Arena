@@ -46,9 +46,6 @@
 		<Unit filename="choix_classes.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="gestion_clavier.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="header.h" />
 		<Unit filename="informations_classe.c">
 			<Option compilerVar="CC" />
