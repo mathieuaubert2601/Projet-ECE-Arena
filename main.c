@@ -119,6 +119,7 @@ int main()
     {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0},//L17
     {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},//L18
     };
+
     ///Declaration des BITMAP
     BITMAP* fondMenu = load_bitmap("fondMenu.bmp",NULL);
     SAMPLE* musiqueFond = load_sample("musiques/VioletCity.wav");
@@ -148,7 +149,7 @@ int main()
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);*/
         afficher_map(page);
-        afficher_cases_non_obstacles(tableau_Cases,page);
+        afficher_cases_dispo_joueur(page,16,7,3,tableau_Cases);
         afficher_arbre(page);
         blit(page,screen,0,0,0,0,1200,711);
         rest(20);

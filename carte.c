@@ -25,6 +25,50 @@ void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer)
 
 }
 
+void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y , int pm,int tableau_cases[18][36])
+{
+    int soustractionX, soustractionY, additionF, pm_tmp1 = pm,pm_tmp2 = pm,obstacle1 = 0,obstacle2 = 0;
+    for(int i=0 ; i<18 ; i++)
+    {
+        for(int j=0 ; j<36 ;j++)
+        {
+            if(j < x)
+            {
+                if(tableau_cases[i][j] == 1 && obstacle1 == 0)
+                {
+                    obstacle1 = 1;
+                    pm_tmp1 = pm_tmp1 - 2;
+                }
+                soustractionX = abs(x - j);
+                soustractionY = abs(y - i);
+                additionF = soustractionX + soustractionY;
+                if((additionF <= pm_tmp1) && (tableau_cases[i][j] == 0))
+                {
+                    casebleu(buffer,j,i);
+                }
+            }
+            if(j >= x)
+            {
+                if(tableau_cases[i][j] == 1 && obstacle2 == 0)
+                {
+                    obstacle2 = 1;
+                    pm_tmp2 = pm_tmp2 - 2;
+                }
+                soustractionX = abs(x - j);
+                soustractionY = abs(y - i);
+                additionF = soustractionX + soustractionY;
+                if((additionF <= pm_tmp2) && (tableau_cases[i][j] == 0))
+                {
+                    casebleu(buffer,j,i);
+                }
+            }
+        }
+        pm_tmp1 = pm;
+        pm_tmp2 = pm;
+        obstacle1 = 0;
+        obstacle2 = 0;
+    }
+}
 void afficher_arbre(BITMAP* buffer)
 {
     //Déclaration des variables
