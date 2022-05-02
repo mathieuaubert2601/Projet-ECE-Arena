@@ -35,6 +35,18 @@ void afficher_commande (BITMAP* buffer, t_joueur* joueur)
 
 void commande_pokemon (BITMAP* buffer,t_joueur* joueur)
 {
+    BITMAP* pikachu = load_bitmap("pikachu1.bmp",NULL);
+    BITMAP* cageE = load_bitmap("pikachu/CageEclair.bmp",NULL);
+    BITMAP* cageEInv = load_bitmap("pikachu/CageEclairInv.bmp",NULL);
+    BITMAP* fatF = load_bitmap("pikachu/FatalFoudre.bmp",NULL);
+    BITMAP* fatFInv = load_bitmap("pikachu/FatalFoudreInv.bmp",NULL);
+    BITMAP* boulE = load_bitmap("pikachu/BouleElek.bmp",NULL);
+    BITMAP* boulEInv = load_bitmap("pikachu/BouleElekInv.bmp",NULL);
+    BITMAP* coupJ = load_bitmap("pikachu/CoupJus.bmp",NULL);
+    BITMAP* coupJInv = load_bitmap("pikachu/CoupJusInv.bmp",NULL);
+    BITMAP* vitEx = load_bitmap("pikachu/VitesseExtreme.bmp",NULL);
+    BITMAP* vitExInv = load_bitmap("pikachu/VitesseExtremeInv.bmp",NULL);
+
     int casex, casey;
     casex = 30;
     casey = 32;
