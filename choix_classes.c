@@ -158,7 +158,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     rondoudou.sort5=berceuseS;
 
     int sortieClasses = 0;
-
     ///Déclaration des BITMAP
     BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
     BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
@@ -239,6 +238,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         {
             if(mouse_b && 1)
             {
+                joueur->classe=pikachu;
                 play_sample(pikachuSon,600,0,1000,0);
             }
         }
@@ -248,6 +248,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         {
             if(mouse_b && 1)
             {
+                joueur->classe=ronflex;
                 play_sample(ronflexSon,600,0,1000,0);
             }
         }
@@ -257,6 +258,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         {
             if(mouse_b && 1)
             {
+                joueur->classe=lucario;
                 play_sample(lucarioSon,600,0,1000,0);
             }
         }
@@ -266,6 +268,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         {
             if(mouse_b && 1)
             {
+                joueur->classe=alakazam;
                 play_sample(alakazamSon,600,0,1000,0);
             }
         }
@@ -275,6 +278,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         {
             if(mouse_b && 1)
             {
+                joueur->classe=rondoudou;
                 play_sample(rondoudouSon,600,0,1000,0);
             }
         }
