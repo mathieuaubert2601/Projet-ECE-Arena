@@ -4,7 +4,7 @@
 
 1651337454 ated upstream
 
-1651477634 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
+1651481761 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -16,7 +16,7 @@
 	"header.h"
 	"header.h"
 
-1651479103 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
+1651482768 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
 	"header.h"
 
 1651478355 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
@@ -25,10 +25,10 @@
 1651478450 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
 	"header.h"
 
-1651407073 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\main.c
+1651481432 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\main.c
 	"header.h"
 
-1651400328 c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\header.h
+1651436423 c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -36,7 +36,7 @@
 1651323726 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\boutons_menu.c
 	"header.h"
 
-1651400328 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\choix_classes.c
+1651425713 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\choix_classes.c
 	"header.h"
 
 1651400328 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\init_allegro.c
@@ -81,13 +81,13 @@
 1651400328 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\menujeu.c
 	"header.h"
 
-1651407047 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\menunbjoueur.c
+1651481382 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\menunbjoueur.c
 	"header.h"
 
 1651406470 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\affichage_personnages.c
 	"header.h"
 
-1651337778 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\carte.c
+1651479343 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\carte.c
 	"header.h"
 
 1651477689 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\gestion_clavier.c
@@ -97,5 +97,17 @@
 	"header.h"
 
 1651479489 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\menunbjoueur.c
+	"header.h"
+
+1651407155 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\affichage_personnages.c
+	"header.h"
+
+1651482024 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\carte.c
+	"header.h"
+
+1651420089 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\gestion_clavier.c
+	"header.h"
+
+1651481879 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\barre_commande.c
 	"header.h"
 

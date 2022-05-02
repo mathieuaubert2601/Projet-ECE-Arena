@@ -15,14 +15,21 @@ typedef struct sorts
     BITMAP* boutonInv;
 }t_sorts;
 
+typedef struct classe
+{
+    char nom[15];
+    int classe,pv,pm;
+    t_sorts sort1,sort2,sort3,sort4,sort5;
+    BITMAP* imageClasse;
+    SAMPLE* sonClasse;
+}t_classe;
+
 //Structure joueur
 typedef struct joueur
 {
     char* pseudo;
-    int ligne, colonne, numero, equipe,classe,pv,pm,pa,tourPoison,tourDodo,tourParalysie,tourPeur,tourBouclier,score;
-    t_sorts sort1,sort2,sort3,sort4,sort5;
-    BITMAP* bitmap;
-    SAMPLE* sonClasse;
+    int ligne, colonne, numero, equipe,pa,tourPoison,tourDodo,tourParalysie,tourPeur,tourBouclier,score;
+    t_classe classe;
 }t_joueur;
 
 

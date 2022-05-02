@@ -34,6 +34,9 @@
 		<Unit filename="affichage_Personnages.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="barre_Commande.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="boutons_menu.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -41,6 +44,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="choix_classes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="gestion_clavier.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="header.h" />
