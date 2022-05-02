@@ -1,12 +1,12 @@
 #ifndef HEADER_H_INCLUDED
 #define HEADER_H_INCLUDED
 
-///D�claration des biblioth�ques
+///Declaration des biblioth�ques
 #include <allegro.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-///D�claration des structures
+///Declaration des structures
 //Structure sort
 typedef struct sorts
 {
@@ -35,7 +35,7 @@ typedef struct cases
 
 
 
-///D�claration des prototypes des sous programmes
+///Declaration des prototypes des sous programmes
 void initialisationAllegro();
 void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur* joueur,int* violetCity,SAMPLE* musiqueFond);
 void AffichageBouton(BITMAP* bouton,BITMAP* boutonInv, BITMAP* page,int sourcex,int sourcey,int destx,int desty,int longueur, int hauteur);
@@ -54,4 +54,7 @@ void afficher_personnage_rondoudou(BITMAP* buffer,int compteur,int cote,int x,in
 void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int y);
 void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo,int* violetCity);
 void menuJeu(BITMAP* page, BITMAP* fond,BITMAP* logo);
+void afficher_caractere(BITMAP* buffer);
+void casebleu(BITMAP* casefiltre,BITMAP* buffer, int posx, int posy);
+void afficher_commande (BITMAP* page);
 #endif // HEADER_H_INCLUDED
