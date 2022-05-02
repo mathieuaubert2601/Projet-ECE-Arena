@@ -40,7 +40,7 @@ void commande_pokemon (BITMAP* buffer)
     BITMAP* fatF = load_bitmap("pikachu/FatalFoudre.bmp",NULL);
     BITMAP* fatFInv = load_bitmap("pikachu/FatalFoudreInv.bmp",NULL);
     BITMAP* boulE = load_bitmap("pikachu/BouleElek.bmp",NULL);
-    BITMAP* boulEInv = load_bitmap("pikachu/BoulEInv.bmp",NULL);
+    BITMAP* boulEInv = load_bitmap("pikachu/BouleElekInv.bmp",NULL);
     BITMAP* coupJ = load_bitmap("pikachu/CoupJus.bmp",NULL);
     BITMAP* coupJInv = load_bitmap("pikachu/CoupJusInv.bmp",NULL);
     BITMAP* vitEx = load_bitmap("pikachu/VitesseExtreme.bmp",NULL);

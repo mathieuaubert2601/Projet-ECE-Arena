@@ -11,6 +11,7 @@ int main()
     int delaiMenuNb=0;
     int sortieMenu = 0;
     int nbJoueurs;
+    int i=0;
     t_joueur joueur1;
 
     int violetCity=0;
@@ -84,7 +85,7 @@ int main()
                 if(((mouse_x>=(320) && mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 2 joueurs
                 {
                     nbJoueurs = 2;
-                    for(int i=0; i<nbJoueurs; i++)
+                    for(i=0; i<nbJoueurs; i++)
                     {
                         menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond, i);
                     }
@@ -92,7 +93,7 @@ int main()
                 if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 3 joueurs
                 {
                     nbJoueurs = 3;
-                    for(int i=0; i<nbJoueurs; i++)
+                    for(i=0; i<nbJoueurs; i++)
                     {
                         menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond, i);
                     }
@@ -100,10 +101,23 @@ int main()
                 if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 4 joueurs
                 {
                     nbJoueurs = 4;
-                    for(int i=0; i<nbJoueurs; i++)
+                    for(i=0; i<nbJoueurs; i++)
                     {
                         menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond,i);
                     }
+                }
+                if (i==nbJoueurs)
+                {
+                    while(!key[KEY_ESC])
+                    {
+                        afficher_map(page);
+                        afficher_cases_non_obstacles(tableau_Cases,page);
+                        afficher_arbre(page);
+                        afficher_commande(page);
+                        show_mouse(page);
+                        blit(page,screen,0,0,0,0,1200,711);
+                    }
+                    i=0;
                 }
 
             }
