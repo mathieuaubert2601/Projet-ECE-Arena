@@ -102,7 +102,7 @@
 1651407155 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\affichage_personnages.c
 	"header.h"
 
-1651487420 c:\users\augus\onedrive\documents\github\projet-ece-arena\header.h
+1651487545 c:\users\augus\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -116,6 +116,33 @@
 1651481879 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\barre_commande.c
 	"header.h"
 
-1651483246 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\main.c
+1651487545 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\main.c
+	"header.h"
+
+1651483118 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\affichage_personnages.c
+	"header.h"
+
+1651483118 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\informations_classe.c
+	"header.h"
+
+1651483118 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\init_allegro.c
+	"header.h"
+
+1651483118 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\menujeu.c
+	"header.h"
+
+1651483118 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\menunbjoueur.c
+	"header.h"
+
+1651487545 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\barre_commande.c
+	"header.h"
+
+1651487545 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\choix_classes.c
+	"header.h"
+
+1651500684 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\carte.c
+	"header.h"
+
+1651500665 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\gestion_clavier.c
 	"header.h"
 
