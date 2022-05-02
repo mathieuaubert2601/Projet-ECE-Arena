@@ -45,7 +45,7 @@
 1651479489 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\boutons_menu.c
 	"header.h"
 
-1651500816 c:\users\aubert mathieu\documents\github\projet-ece-arena\header.h
+1651505717 c:\users\aubert mathieu\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -68,7 +68,7 @@
 1651479489 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\informations_classe.c
 	"header.h"
 
-1651495649 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\carte.c
+1651504897 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\carte.c
 	"header.h"
 
 1651498809 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\affichage_personnages.c
@@ -92,7 +92,7 @@
 1651505658 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\carte.c
 	"header.h"
 
-1651499594 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\gestion_clavier.c
+1651504897 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\gestion_clavier.c
 	"header.h"
 
 1651400492 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\menujeu.c
@@ -125,5 +125,8 @@
 	"header.h"
 
 1651505634 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\deplacement_joueur.c
+	"header.h"
+
+1651503838 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\deplacement_joueur.c
 	"header.h"
 

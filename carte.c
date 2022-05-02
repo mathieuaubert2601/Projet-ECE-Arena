@@ -1,5 +1,3 @@
-#include "header.h"
-
 void afficher_map(BITMAP* buffer)
 {
     //d�claration des variables
@@ -18,7 +16,7 @@ void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer)
         {
             if(tab_cases[i][j] == 0)
             {
-                //casebleu(buffer,j,i);
+                casebleu(buffer,j,i);
             }
         }
     }
@@ -44,7 +42,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y , int pm,int tableau
                 additionF = soustractionX + soustractionY;
                 if((additionF <= pm_tmp1) && (tableau_cases[i][j] == 0))
                 {
-                    //casebleu(buffer,j,i);
+                    casebleu(buffer,j,i);
                 }
             }
             if(j >= x)
@@ -59,7 +57,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y , int pm,int tableau
                 additionF = soustractionX + soustractionY;
                 if((additionF <= pm_tmp2) && (tableau_cases[i][j] == 0))
                 {
-                    //casebleu(buffer,j,i);
+                    casebleu(buffer,j,i);
                 }
             }
         }
@@ -85,11 +83,6 @@ void afficher_arbre(BITMAP* buffer)
     masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,318,0,arbre->w/5,arbre->h/5);
     masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,623,385,arbre->w/5,arbre->h/5);
 
-    /*casebleu(casefiltre,buffer,casex*0,casey*4);
-    casebleu(casefiltre,buffer,casex*1,casey*4);
-    casebleu(casefiltre,buffer,casex*2,casey*4);
-    casebleu(casefiltre,buffer,casex*3,casey*4);*/
-
     show_mouse(buffer);
 }
 
@@ -108,8 +101,3 @@ void afficher_coordonnees(BITMAP* buffer)
 {
     textprintf(buffer,font,150,150,makecol(255,255,255),"x : %d, y : %d",mouse_x/30,mouse_y/32);
 }
-
-/*void casebleu(BITMAP* casefiltre,BITMAP* buffer, int posx, int posy)
-{
-    blit(casefiltre,buffer,posx,posy,0,0,buffer->w,buffer->h);
-}*/
