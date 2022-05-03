@@ -75,10 +75,10 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     t_sorts coupDboule={5,7,4,95,1,1,3,0,3,3,0,0,coupB,coupBInv};
     t_sorts seismeS={9,8,15,50,1,1,4,0,10,3,0,0,seisme,seismeInv};
     t_sorts chargeS={0,9,0,50,2,0,5,0,7,0,0,0,charge,chargeInv};
-    t_sorts rugissement={0,10,0,40,2,0,2,0,3,3,4,0,rugis,rugisInv};
+    t_sorts rugissement={0,10,0,40,3,0,2,0,3,3,4,0,rugis,rugisInv};
     t_sorts aurasphere={12,11,5,75,1,3,6,0,6,1,0,0,aura,auraInv};
     t_sorts closeCombat={15,12,3,60,1,1,3,0,6,3,0,0,closeC,closeCInv};
-    t_sorts hateS={0,13,0,70,2,0,0,0,4,0,5,0,hate,hateInv};
+    t_sorts hateS={0,13,0,70,2,0,0,0,4,0,0,0,hate,hateInv};
     t_sorts toxicS={0,14,0,25,3,2,4,0,5,3,1,0,toxic,toxicInv};
     t_sorts psykoS={12,15,8,60,1,3,5,0,6,3,0,0,psyko,psykoInv};
     t_sorts teleportS={0,16,0,50,2,0,4,0,8,3,0,0,teleport,teleportInv};
@@ -288,6 +288,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur->classe=pikachu;
+                joueur->pv = pikachu.pv;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
@@ -299,6 +300,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur->classe=ronflex;
+                joueur->pv = ronflex.pv;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
@@ -310,6 +312,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur->classe=lucario;
+                joueur->pv = lucario.pv;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
@@ -321,6 +324,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur->classe=alakazam;
+                joueur->pv = alakazam.pv;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
@@ -332,6 +336,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur->classe=rondoudou;
+                joueur->pv = rondoudou.pv;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
