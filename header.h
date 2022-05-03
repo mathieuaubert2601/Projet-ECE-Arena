@@ -5,6 +5,7 @@
 #include <allegro.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "time.h"
 
 
 ///Declaration des structures
@@ -30,7 +31,7 @@ typedef struct classe
 typedef struct joueur
 {
     char pseudo[15];
-    int ligne, colonne, numero, equipe,pa,tourPoison,tourDodo,tourParalysie,tourPeur,tourBouclier,score;
+    int ligne, colonne, numero, equipe,pa,tourPoison,tourDodo,tourParalysie,tourPeur,tourBouclier,tourHate,score,pv,pm;
     t_classe classe;
 }t_joueur;
 
@@ -71,4 +72,9 @@ void afficher_commande(BITMAP* buffer,t_joueur* joueur);
 void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colonne_finale, int indice_ligne_ini, int indice_colonne_ini, int personnage);
 void casebleu_foncee(BITMAP* buffer, int posy, int posx);
 void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18][36]);
+void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur);
+int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB);
+void sortMouvement(t_sorts sort1, t_joueur* joueurA);
+int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB);
+void sortVie(t_sorts sort1, t_joueur* joueurA);
 #endif // HEADER_H_INCLUDED

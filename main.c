@@ -8,14 +8,11 @@ int main()
     install_sound(DIGI_AUTODETECT,MIDI_AUTODETECT,"A");
 
     t_joueur tabJoueur[4];
-    int delaiMenuNb=0;
     int sortieMenu = 0;
     int nbJoueurs;
     int i=0;
-    t_joueur joueur1;
 
     int violetCity=0;
-
 
 
     //DÃ©claration du tableau de case :
@@ -56,7 +53,7 @@ int main()
     BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
 
-
+    srand(time(NULL));
 
     while(!key[KEY_ESC])
     {
@@ -109,7 +106,7 @@ int main()
                     {
                         afficher_map(page);
                         afficher_arbre(page);
-                        afficher_commande(page);
+                        afficher_commande(page, &tabJoueur[1]);
                         show_mouse(page);
                         blit(page,screen,0,0,0,0,1200,711);
                     }
