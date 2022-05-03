@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 ///Declaration des structures
 //Structure sort
 typedef struct sorts
@@ -20,7 +21,8 @@ typedef struct classe
     char nom[15];
     int classe,pv,pm;
     t_sorts sort1,sort2,sort3,sort4,sort5;
-    BITMAP* imageClasse;
+    BITMAP* profil;
+    BITMAP* profilvert;
     SAMPLE* sonClasse;
 }t_classe;
 
@@ -65,5 +67,6 @@ void afficher_caractere(BITMAP* buffer);
 void casebleu(BITMAP* buffer, int posx, int posy);
 void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer);
 void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y , int pm,int tableau_cases[18][36]);
+void afficher_commande(BITMAP* buffer,t_joueur* joueur);
 void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colonne_finale, int indice_ligne_ini, int indice_colonne_ini, int personnage);
 #endif // HEADER_H_INCLUDED

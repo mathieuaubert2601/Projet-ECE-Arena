@@ -28,4 +28,24 @@ void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity)
     blit(page,screen,0,0,0,0,1200,711);
 
 
+        if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
+            {
+                sortieMenu=1;
+            }
+        if(((mouse_x>=(320)&& mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))
+            {
+                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&joueur1,violetCity,musiqueFond);
+            }
+        if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))
+            {
+                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&joueur1,violetCity,musiqueFond);
+            }
+        if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))
+            {
+                menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&joueur1,violetCity,musiqueFond);
+            }
+        show_mouse(page);
+        blit(page,screen,0,0,0,0,1200,711);
+    }
+
 }
