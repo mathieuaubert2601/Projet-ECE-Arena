@@ -53,7 +53,7 @@ int main()
     BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
 
-
+    srand(time(NULL));
 
     while(!key[KEY_ESC])
     {
