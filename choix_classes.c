@@ -288,6 +288,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             {
                 joueur->classe=pikachu;
                 joueur->pv = pikachu.pv;
+                joueur->numero=nbJoueur;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
@@ -300,6 +301,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             {
                 joueur->classe=ronflex;
                 joueur->pv = ronflex.pv;
+                joueur->numero=nbJoueur;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
@@ -312,6 +314,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             {
                 joueur->classe=lucario;
                 joueur->pv = lucario.pv;
+                joueur->numero=nbJoueur;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
@@ -324,6 +327,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             {
                 joueur->classe=alakazam;
                 joueur->pv = alakazam.pv;
+                joueur->numero=nbJoueur;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
@@ -336,6 +340,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             {
                 joueur->classe=rondoudou;
                 joueur->pv = rondoudou.pv;
+                joueur->numero=nbJoueur;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
