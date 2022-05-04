@@ -117,8 +117,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     pikachu.sort4=couDjus;
     pikachu.sort5=cageEclair;
     pikachu.profil=profilpik;
-    pikachu.profilvert=profilvertpik;
-
+    pikachu.profilvert=profilpik;
 
     //Déclaration ronflex
     BITMAP* profilronf = load_bitmap("ronflex/profil.bmp",NULL);
@@ -135,7 +134,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     ronflex.sort4=seismeS;
     ronflex.sort5=chargeS;
     ronflex.profil=profilronf;
-    ronflex.profilvert=profilvertronf;
+    ronflex.profilvert=profilronf;
 
     //Déclaration lucario
     BITMAP* profillu = load_bitmap("lucario/profil.bmp",NULL);
@@ -152,7 +151,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     lucario.sort4=vitesseExtremeL;
     lucario.sort5=hateS;
     lucario.profil=profillu;
-    lucario.profilvert=profilvertlu;
+    lucario.profilvert=profillu;
 
     //Déclaration alakazam
     BITMAP* profilal = load_bitmap("alakazam/profil.bmp",NULL);
@@ -169,7 +168,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     alakazam.sort4=teleportS;
     alakazam.sort5=autoSoinS;
     alakazam.profil=profilal;
-    alakazam.profilvert=profilvertal;
+    alakazam.profilvert=profilal;
 
     //Déclaration rondoudou
     BITMAP* profilron = load_bitmap("rondoudou/profil.bmp",NULL);
@@ -186,7 +185,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     rondoudou.sort4=soinS;
     rondoudou.sort5=berceuseS;
     rondoudou.profil=profilron;
-    rondoudou.profilvert=profilvertron;
+    rondoudou.profilvert=profilron;
 
     int sortieClasses = 0;
     ///Déclaration des BITMAP
@@ -281,7 +280,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             information_Rondoudou(page,fond);
         }
 
-        /*
+
         //Choix de Pikachu
         if((mouse_x>=(15) && mouse_x<=(227)) && (mouse_y)<=(617) && mouse_y>=(550))
         {
