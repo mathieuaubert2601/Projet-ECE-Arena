@@ -6,87 +6,114 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     BITMAP* phrase3 = load_bitmap("phrase3.bmp",NULL);
     BITMAP* phrase4 = load_bitmap("phrase4.bmp",NULL);
     BITMAP* tabPhrases[4];
+    BITMAP* corpsacorps = load_bitmap("corpsacorps.bmp",NULL);
+    BITMAP* corpsacorpsInv = load_bitmap("corpsacorpsInv.bmp",NULL);
+    BITMAP* infoscorps = load_bitmap("infoscorps.bmp",NULL);
 
     //Declaration Bitmap Pikachu sorts
     BITMAP* cageE = load_bitmap("pikachu/CageEclair.bmp",NULL);
     BITMAP* cageEInv = load_bitmap("pikachu/CageEclairInv.bmp",NULL);
+    BITMAP* infoscageE = load_bitmap("pikachu/InfosCageEclair.bmp",NULL);
     BITMAP* fatF = load_bitmap("pikachu/FatalFoudre.bmp",NULL);
     BITMAP* fatFInv = load_bitmap("pikachu/FatalFoudreInv.bmp",NULL);
+    BITMAP* infosfatF = load_bitmap("pikachu/InfosFatalFoudre.bmp",NULL);
     BITMAP* boulE = load_bitmap("pikachu/BouleElek.bmp",NULL);
     BITMAP* boulEInv = load_bitmap("pikachu/BouleElekInv.bmp",NULL);
+    BITMAP* infosboulE = load_bitmap("pikachu/InfosBouleElek.bmp",NULL);
     BITMAP* coupJ = load_bitmap("pikachu/CoupJus.bmp",NULL);
     BITMAP* coupJInv = load_bitmap("pikachu/CoupJusInv.bmp",NULL);
+    BITMAP* infoscoupJ = load_bitmap("pikachu/InfosCoupJus.bmp",NULL);
     BITMAP* vitEx = load_bitmap("pikachu/VitesseExtreme.bmp",NULL);
     BITMAP* vitExInv = load_bitmap("pikachu/VitesseExtremeInv.bmp",NULL);
+    BITMAP* infosvitEx = load_bitmap("pikachu/InfosVitesseExtreme.bmp",NULL);
 
     //Declaration Bitmap Ronflex sorts
     BITMAP* coupB = load_bitmap("ronflex/CoupBoule.bmp",NULL);
     BITMAP* coupBInv = load_bitmap("ronflex/CoupBouleInv.bmp",NULL);
+    BITMAP* infoscoupB = load_bitmap("ronflex/InfosCoupBoule.bmp",NULL);
     BITMAP* seisme = load_bitmap("ronflex/Seisme.bmp",NULL);
     BITMAP* seismeInv = load_bitmap("ronflex/SeismeInv.bmp",NULL);
+    BITMAP* infosseisme = load_bitmap("ronflex/InfosSeisme.bmp",NULL);
     BITMAP* charge = load_bitmap("ronflex/Charge.bmp",NULL);
     BITMAP* chargeInv = load_bitmap("ronflex/ChargeInv.bmp",NULL);
+    BITMAP* infoscharge = load_bitmap("ronflex/InfosCharge.bmp",NULL);
     BITMAP* boulA = load_bitmap("ronflex/BoulArmure.bmp",NULL);
     BITMAP* boulAInv = load_bitmap("ronflex/BoulArmureInv.bmp",NULL);
+    BITMAP* infosboulA = load_bitmap("ronflex/InfosBoulArmure.bmp",NULL);
     BITMAP* repos = load_bitmap("ronflex/Repos.bmp",NULL);
     BITMAP* reposInv = load_bitmap("ronflex/ReposInv.bmp",NULL);
+    BITMAP* infosrepos = load_bitmap("ronflex/InfosRepos.bmp",NULL);
 
     //Declaration Bitmap Lucario sorts
     BITMAP* rugis = load_bitmap("lucario/Rugissement.bmp",NULL);
     BITMAP* rugisInv = load_bitmap("lucario/RugissementInv.bmp",NULL);
+    BITMAP* infosrugis = load_bitmap("lucario/InfosRugissement.bmp",NULL);
     BITMAP* aura = load_bitmap("lucario/Aurasphere.bmp",NULL);
     BITMAP* auraInv = load_bitmap("lucario/AurasphereInv.bmp",NULL);
+    BITMAP* infosaura = load_bitmap("lucario/InfosAurasphere.bmp",NULL);
     BITMAP* closeC = load_bitmap("lucario/CloseCombat.bmp",NULL);
     BITMAP* closeCInv = load_bitmap("lucario/CloseCombatInv.bmp",NULL);
+    BITMAP* infoscloseC = load_bitmap("lucario/InfosCloseCombat.bmp",NULL);
     BITMAP* vitExL = load_bitmap("lucario/VitesseExtreme.bmp",NULL);
     BITMAP* vitExLInv = load_bitmap("lucario/VitesseExtremeInv.bmp",NULL);
+    BITMAP* infosvitExL = load_bitmap("lucario/InfosVitesseExtreme.bmp",NULL);
     BITMAP* hate = load_bitmap("lucario/Hate.bmp",NULL);
     BITMAP* hateInv = load_bitmap("lucario/HateInv.bmp",NULL);
+    BITMAP* infoshate = load_bitmap("lucario/InfosHate.bmp",NULL);
 
     //Declaration Bitmap Alakazam sorts
     BITMAP* toxic = load_bitmap("alakazam/Toxic.bmp",NULL);
     BITMAP* toxicInv = load_bitmap("alakazam/ToxicInv.bmp",NULL);
+    BITMAP* infostoxic = load_bitmap("alakazam/InfosToxic.bmp",NULL);
     BITMAP* psyko = load_bitmap("alakazam/Psyko.bmp",NULL);
     BITMAP* psykoInv = load_bitmap("alakazam/PsykoInv.bmp",NULL);
+    BITMAP* infospsyko = load_bitmap("alakazam/InfosPsyko.bmp",NULL);
     BITMAP* teleport = load_bitmap("alakazam/Teleport.bmp",NULL);
     BITMAP* teleportInv = load_bitmap("alakazam/TeleportInv.bmp",NULL);
+    BITMAP* infosteleport = load_bitmap("alakazam/InfosTeleport.bmp",NULL);
     BITMAP* autoSoin = load_bitmap("alakazam/AutoSoin.bmp",NULL);
     BITMAP* autoSoinInv = load_bitmap("alakazam/AutoSoinInv.bmp",NULL);
+    BITMAP* infosautoSoin = load_bitmap("alakazam/InfosAutoSoin.bmp",NULL);
 
     //Declaration Bitmap Rondoudou sorts
     BITMAP* berceuse = load_bitmap("rondoudou/Berceuse.bmp",NULL);
     BITMAP* berceuseInv = load_bitmap("rondoudou/BerceuseInv.bmp",NULL);
+    BITMAP* infosberceuse = load_bitmap("rondoudou/InfosBerceuse.bmp",NULL);
     BITMAP* vaguePsy = load_bitmap("rondoudou/VaguePsy.bmp",NULL);
     BITMAP* vaguePsyInv = load_bitmap("rondoudou/VaguePsyInv.bmp",NULL);
+    BITMAP* infosvaguePsy = load_bitmap("rondoudou/InfosVaguePsy.bmp",NULL);
     BITMAP* torgnoles = load_bitmap("rondoudou/Torgnoles.bmp",NULL);
     BITMAP* torgnolesInv = load_bitmap("rondoudou/TorgnolesInv.bmp",NULL);
+    BITMAP* infostorgnoles = load_bitmap("rondoudou/InfosTorgnoles.bmp",NULL);
     BITMAP* soin = load_bitmap("rondoudou/Soin.bmp",NULL);
     BITMAP* soinInv = load_bitmap("rondoudou/SoinInv.bmp",NULL);
+    BITMAP* infossoin = load_bitmap("rondoudou/InfosSoin.bmp",NULL);
 
     ///Déclaration sorts
-    t_sorts vitesseExtreme={0,0,0,80,2,0,3,0,7,0,0,0,vitEx,vitExInv};
-    t_sorts vitesseExtremeL={0,0,0,80,2,0,3,0,7,0,0,0,vitExL,vitExLInv};
-    t_sorts fatalFoudre={15,1,8,50,1,4,7,0,10,1,0,0,fatF,fatFInv};
-    t_sorts bouleElek={10,2,5,75,1,3,5,2,6,2,0,0,boulE,boulEInv};
-    t_sorts couDjus={6,3,4,90,1,2,5,0,3,3,0,0,coupJ,coupJInv};
-    t_sorts cageEclair={0,4,0,25,3,2,4,0,7,3,3,0,cageE,cageEInv};
-    t_sorts boulArmure={0,5,0,50,4,0,0,0,7,0,0,1,boulA,boulAInv};
-    t_sorts reposS={100,6,25,60,4,0,0,0,10,0,1,2,repos,reposInv};
-    t_sorts coupDboule={5,7,4,95,1,1,3,0,3,3,0,0,coupB,coupBInv};
-    t_sorts seismeS={9,8,15,50,1,1,4,0,10,3,0,0,seisme,seismeInv};
-    t_sorts chargeS={0,9,0,50,2,0,5,0,7,0,0,0,charge,chargeInv};
-    t_sorts rugissement={0,10,0,40,3,0,2,0,3,3,4,0,rugis,rugisInv};
-    t_sorts aurasphere={12,11,5,75,1,3,6,0,6,1,0,0,aura,auraInv};
-    t_sorts closeCombat={15,12,3,60,1,1,3,0,6,3,0,0,closeC,closeCInv};
-    t_sorts hateS={0,13,0,70,2,0,0,0,4,0,0,0,hate,hateInv};
-    t_sorts toxicS={0,14,0,25,3,2,4,0,5,3,1,0,toxic,toxicInv};
-    t_sorts psykoS={12,15,8,60,1,3,5,0,6,3,0,0,psyko,psykoInv};
-    t_sorts teleportS={0,16,0,50,2,0,4,0,8,3,0,0,teleport,teleportInv};
-    t_sorts autoSoinS={5,17,10,95,4,0,0,0,2,0,0,2,autoSoin,autoSoinInv};
-    t_sorts vaguePsyS={7,18,5,80,1,2,8,0,5,1,0,0,vaguePsy,vaguePsyInv};
-    t_sorts torgnolesS={8,19,2,80,1,0,2,0,5,3,0,0,torgnoles,torgnolesInv};
-    t_sorts soinS={50,20,10,75,2,0,2,0,10,3,0,3,soin,soinInv};
-    t_sorts berceuseS={0,21,0,50,2,0,3,0,6,3,2,0,berceuse,berceuseInv};
+    t_sorts vitesseExtreme={0,0,0,80,2,0,3,0,7,0,0,0,vitEx,vitExInv,infosvitEx};
+    t_sorts vitesseExtremeL={0,0,0,80,2,0,3,0,7,0,0,0,vitExL,vitExLInv,infosvitExL};
+    t_sorts fatalFoudre={15,1,8,50,1,4,7,0,10,1,0,0,fatF,fatFInv,infosfatF};
+    t_sorts bouleElek={10,2,5,75,1,3,5,2,6,2,0,0,boulE,boulEInv,infosboulE};
+    t_sorts couDjus={6,3,4,90,1,2,5,0,3,3,0,0,coupJ,coupJInv,infoscoupJ};
+    t_sorts cageEclair={0,4,0,25,3,2,4,0,7,3,3,0,cageE,cageEInv,infoscageE};
+    t_sorts boulArmure={0,5,0,50,4,0,0,0,7,0,0,1,boulA,boulAInv,infosboulA};
+    t_sorts reposS={100,6,25,60,4,0,0,0,10,0,1,2,repos,reposInv,infosrepos};
+    t_sorts coupDboule={5,7,4,95,1,1,3,0,3,3,0,0,coupB,coupBInv,infoscoupB};
+    t_sorts seismeS={9,8,15,50,1,1,4,0,10,3,0,0,seisme,seismeInv,infosseisme};
+    t_sorts chargeS={0,9,0,50,2,0,5,0,7,0,0,0,charge,chargeInv,infoscharge};
+    t_sorts rugissement={0,10,0,40,3,0,2,0,3,3,4,0,rugis,rugisInv,infosrugis};
+    t_sorts aurasphere={12,11,5,75,1,3,6,0,6,1,0,0,aura,auraInv,infosaura};
+    t_sorts closeCombat={15,12,3,60,1,1,3,0,6,3,0,0,closeC,closeCInv,infoscloseC};
+    t_sorts hateS={0,13,0,70,2,0,0,0,4,0,0,0,hate,hateInv,infoshate};
+    t_sorts toxicS={0,14,0,25,3,2,4,0,5,3,1,0,toxic,toxicInv,infostoxic};
+    t_sorts psykoS={12,15,8,60,1,3,5,0,6,3,0,0,psyko,psykoInv,infospsyko};
+    t_sorts teleportS={0,16,0,50,2,0,4,0,8,3,0,0,teleport,teleportInv,infosteleport};
+    t_sorts autoSoinS={5,17,10,95,4,0,0,0,2,0,0,2,autoSoin,autoSoinInv,infosautoSoin};
+    t_sorts vaguePsyS={7,18,5,80,1,2,8,0,5,1,0,0,vaguePsy,vaguePsyInv,infosvaguePsy};
+    t_sorts torgnolesS={8,19,2,80,1,0,2,0,5,3,0,0,torgnoles,torgnolesInv,infostorgnoles};
+    t_sorts soinS={50,20,10,75,2,0,2,0,10,3,0,3,soin,soinInv,infossoin};
+    t_sorts berceuseS={0,21,0,50,2,0,3,0,6,3,2,0,berceuse,berceuseInv,infosberceuse};
+    t_sorts corps={1,22,0,100,1,0,1,0,1,0,0,0,corpsacorps,corpsacorpsInv,infoscorps};
 
     t_sorts tabSorts[23]={vitesseExtreme,fatalFoudre,bouleElek,couDjus,cageEclair,boulArmure,reposS,coupDboule,seismeS,chargeS,rugissement,aurasphere,closeCombat,vitesseExtremeL,hateS,toxicS,psykoS,teleportS,autoSoinS,vaguePsyS,torgnolesS,soinS,berceuseS};
 
@@ -118,6 +145,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     pikachu.sort5=cageEclair;
     pikachu.profil=profilpik;
     pikachu.profilvert=profilpik;
+    pikachu.corps=corps;
 
     //Déclaration ronflex
     BITMAP* profilronf = load_bitmap("ronflex/profil.bmp",NULL);
@@ -135,6 +163,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     ronflex.sort5=chargeS;
     ronflex.profil=profilronf;
     ronflex.profilvert=profilronf;
+    ronflex.corps=corps;
 
     //Déclaration lucario
     BITMAP* profillu = load_bitmap("lucario/profil.bmp",NULL);
@@ -152,6 +181,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     lucario.sort5=hateS;
     lucario.profil=profillu;
     lucario.profilvert=profillu;
+    lucario.corps=corps;
 
     //Déclaration alakazam
     BITMAP* profilal = load_bitmap("alakazam/profil.bmp",NULL);
@@ -169,6 +199,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     alakazam.sort5=autoSoinS;
     alakazam.profil=profilal;
     alakazam.profilvert=profilal;
+    alakazam.corps=corps;
 
     //Déclaration rondoudou
     BITMAP* profilron = load_bitmap("rondoudou/profil.bmp",NULL);
@@ -186,6 +217,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     rondoudou.sort5=berceuseS;
     rondoudou.profil=profilron;
     rondoudou.profilvert=profilron;
+    rondoudou.corps=corps;
 
     int sortieClasses = 0;
     ///Déclaration des BITMAP
@@ -345,11 +377,11 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 sortieClasses=1;
             }
         }
-        /*if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
+        if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
             {
                 sortieClasses=1;
                 menuNbJoueur(page,fondMenu,logo, violetCity);
-            }*/
+            }
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
     }

@@ -119,7 +119,6 @@ int main()
 
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
-
     }
     destroy_bitmap(page);
 
