@@ -65,11 +65,13 @@ void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int
 void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo,int* violetCity);
 void menuJeu(BITMAP* page, BITMAP* fond,BITMAP* logo);
 void afficher_caractere(BITMAP* buffer);
-void casebleu(BITMAP* buffer, int posx, int posy);
+void casebleu(BITMAP* buffer, int posy, int posx);
 void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer);
 void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y , int pm,int tableau_cases[18][36]);
 void afficher_commande(BITMAP* buffer,t_joueur* joueur);
 void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colonne_finale, int indice_ligne_ini, int indice_colonne_ini, int personnage);
+void casebleu_foncee(BITMAP* buffer, int posy, int posx);
+void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18][36]);
 void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur);
 int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB);
 void sortMouvement(t_sorts sort1, t_joueur* joueurA);
