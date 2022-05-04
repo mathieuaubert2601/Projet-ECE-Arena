@@ -22,7 +22,7 @@ typedef struct classe
 {
     char nom[15];
     int classe,pv,pm;
-    t_sorts sort1,sort2,sort3,sort4,sort5;
+    t_sorts sort1,sort2,sort3,sort4,sort5,corps;
     BITMAP* profil;
     BITMAP* profilvert;
     SAMPLE* sonClasse;
