@@ -104,7 +104,7 @@
 1651507984 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\affichage_personnages.c
 	"header.h"
 
-1651487545 c:\users\augus\onedrive\documents\github\projet-ece-arena\header.h
+1651582329 c:\users\augus\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -137,5 +137,11 @@
 	"header.h"
 
 1651568308 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\gestionsorts.c
+	"header.h"
+
+1651483118 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\informations_classe.c
+	"header.h"
+
+1651483118 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\init_allegro.c
 	"header.h"
 
