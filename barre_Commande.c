@@ -2,6 +2,7 @@
 
 void afficher_commande (BITMAP* buffer, t_joueur* joueur)
 {
+    FONT* maPolice = load_font("police_ecriture/calibri.pcx",NULL,NULL);
     BITMAP* casefiltre = load_bitmap("casefiltre.bmp",NULL);
     BITMAP* fondbas = load_bitmap("fondbas.bmp",NULL);
     BITMAP* fondcote = load_bitmap("fondcote.bmp",NULL);
@@ -27,6 +28,23 @@ void afficher_commande (BITMAP* buffer, t_joueur* joueur)
     masked_blit(PA,buffer,casex*5,-600,0,0,buffer->w,buffer->h);
     masked_blit(PM,buffer,casex*5,-660,0,0,buffer->w,buffer->h);
     masked_blit(PV,buffer,casex*2,-620,0,0,buffer->w,buffer->h);
+    if ( joueur->pa == 10)
+    {
+        textprintf_ex(buffer,maPolice,158,604,makecol(255,255,255),-1,"%d",joueur->pa);
+    }
+    if (joueur->pa<10)
+    {
+        textprintf_ex(buffer,maPolice,168,604,makecol(255,255,255),-1,"%d",joueur->pa);
+    }
+    textprintf_ex(buffer,maPolice,168,664,makecol(255,255,255),-1,"%d",joueur->pm);
+    if(joueur->pv <100)
+    {
+        textprintf_ex(buffer,maPolice,74,630,makecol(255,255,255),-1,"%d",joueur->pv);
+    }
+    if(joueur->pv >= 100)
+    {
+        textprintf_ex(buffer,maPolice,65,630,makecol(255,255,255),-1,"%d",joueur->pv);
+    }
 
     AffichageBouton(JoueurS,JoueurSInv,buffer,0,0,casex2*37,620,130,115);
 }

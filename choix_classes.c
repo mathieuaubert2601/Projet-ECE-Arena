@@ -1,6 +1,15 @@
 #include "header.h"
-void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur* joueur, int* violetCity, SAMPLE* musiqueFond, int nbJoueur)
+void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur* joueur, int* violetCity, SAMPLE* musiqueFond, int nbJoueur, int tabCases[18][36])
 {
+    int xRand;
+    int yRand;
+    do
+    {
+         xRand = rand()%35;
+         yRand = rand()%17;
+    }while(tabCases[yRand][xRand]==1);
+
+
     BITMAP* phrase1 = load_bitmap("phrase1.bmp",NULL);
     BITMAP* phrase2 = load_bitmap("phrase2.bmp",NULL);
     BITMAP* phrase3 = load_bitmap("phrase3.bmp",NULL);
@@ -321,6 +330,9 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur->classe=pikachu;
                 joueur->pv = pikachu.pv;
                 joueur->numero=nbJoueur;
+                joueur->numeroClasse=1;
+                joueur->colonne = xRand*30;
+                joueur->ligne=yRand*32;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
@@ -334,6 +346,9 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur->classe=ronflex;
                 joueur->pv = ronflex.pv;
                 joueur->numero=nbJoueur;
+                joueur->numeroClasse=2;
+                joueur->colonne = xRand*30;
+                joueur->ligne=yRand*32;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
@@ -347,6 +362,9 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur->classe=lucario;
                 joueur->pv = lucario.pv;
                 joueur->numero=nbJoueur;
+                joueur->numeroClasse=3;
+                joueur->colonne = xRand*30;
+                joueur->ligne=yRand*32;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
@@ -360,6 +378,9 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur->classe=alakazam;
                 joueur->pv = alakazam.pv;
                 joueur->numero=nbJoueur;
+                joueur->numeroClasse=4;
+                joueur->colonne = xRand*30;
+                joueur->ligne=yRand*32;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
@@ -373,6 +394,9 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur->classe=rondoudou;
                 joueur->pv = rondoudou.pv;
                 joueur->numero=nbJoueur;
+                joueur->numeroClasse=5;
+                joueur->colonne = xRand*30;
+                joueur->ligne=yRand*32;
                 play_sample(joueur->classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }

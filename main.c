@@ -13,6 +13,11 @@ int main()
     int i=0;
     int joueurSuivant = 0;
     int j=0;
+    int pikachuPm=6;
+    int ronflexPm=2;
+    int lucarioPm=4;
+    int alakazamPm=3;
+    int rondoudouPm=5;
 
     int violetCity=0;
 
@@ -84,7 +89,7 @@ int main()
                     nbJoueurs = 2;
                     for(i=0; i<nbJoueurs; i++)
                     {
-                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond, i);
+                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond, i, tableau_Cases);
                     }
                 }
                 if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 3 joueurs
@@ -92,7 +97,7 @@ int main()
                     nbJoueurs = 3;
                     for(i=0; i<nbJoueurs; i++)
                     {
-                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond, i);
+                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond, i, tableau_Cases);
                     }
                 }
                 if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 4 joueurs
@@ -100,7 +105,7 @@ int main()
                     nbJoueurs = 4;
                     for(i=0; i<nbJoueurs; i++)
                     {
-                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond,i);
+                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond,i, tableau_Cases);
                     }
                 }
                 if (i==nbJoueurs)
@@ -111,16 +116,46 @@ int main()
                         {
                             j=0;
                         }
+                        tabJoueur[j].pa=5;
                         afficher_map(page);
-                        afficher_arbre(page);
                         afficher_commande(page, &tabJoueur[j]);
+                        for (int z=0; z<nbJoueurs; z++)
+                        {
+                            if (tabJoueur[z].numeroClasse==1)///Pikachu
+                            {
+                                afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                tabJoueur[z].pm=pikachuPm;
+                            }
+                            if (tabJoueur[z].numeroClasse==2)///Ronflex
+                            {
+                                afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                tabJoueur[z].pm=ronflexPm;
+                            }
+                            if (tabJoueur[z].numeroClasse==3)///Lucario
+                            {
+                                afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                tabJoueur[z].pm=lucarioPm;
+                            }
+                            if (tabJoueur[z].numeroClasse==4)///Alakazam
+                            {
+                                afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                tabJoueur[z].pm=alakazamPm;
+                            }
+                            if (tabJoueur[z].numeroClasse==5)///Rondoudou
+                            {
+                                afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                tabJoueur[z].pm=rondoudouPm;
+                            }
+                        }
+                        afficher_arbre(page);
                         show_mouse(page);
                         blit(page,screen,0,0,0,0,1200,711);
-                        if(((mouse_x>=(30*31)&& mouse_x<=((30*31)+130))&& (mouse_y)>=(620)&& mouse_y<=(620+115))&&(mouse_b && 1))
+                        if(((mouse_x>=(30*37)&& mouse_x<=((30*37)+130))&& (mouse_y)>=(620)&& mouse_y<=(620+115))&&(mouse_b && 1))
                         {
                             j++;
                             rest(200);
                         }
+
 
 
                     }
@@ -130,8 +165,9 @@ int main()
             }
 
         }
+        show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
-        allegro_message("ok");
+
 
     }
     destroy_bitmap(page);
