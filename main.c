@@ -11,6 +11,8 @@ int main()
     int sortieMenu = 0;
     int nbJoueurs;
     int i=0;
+    int joueurSuivant = 0;
+    int j=0;
 
     int violetCity=0;
 
@@ -104,11 +106,22 @@ int main()
                 {
                     while(!key[KEY_ESC])
                     {
+                        if (j==nbJoueurs)
+                        {
+                            j=0;
+                        }
                         afficher_map(page);
                         afficher_arbre(page);
-                        afficher_commande(page, &tabJoueur[1]);
+                        afficher_commande(page, &tabJoueur[j]);
                         show_mouse(page);
                         blit(page,screen,0,0,0,0,1200,711);
+                        if(((mouse_x>=(30*31)&& mouse_x<=((30*31)+130))&& (mouse_y)>=(620)&& mouse_y<=(620+115))&&(mouse_b && 1))
+                        {
+                            j++;
+                            rest(200);
+                        }
+
+
                     }
                     i=0;
                 }
