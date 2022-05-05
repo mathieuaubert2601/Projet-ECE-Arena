@@ -43,6 +43,9 @@
 		<Unit filename="carte.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="chargement_map_fichier.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="choix_classes.c">
 			<Option compilerVar="CC" />
 		</Unit>

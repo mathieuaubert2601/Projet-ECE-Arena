@@ -472,23 +472,29 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
     }
 }
 
-void afficher_arbre(BITMAP* buffer)
+void afficher_arbre(BITMAP* buffer, int x, int y)
 {
     //Déclaration des variables
     BITMAP* arbre = load_bitmap("arbre1.bmp",NULL);
+    int caseX = 30,caseY = 32,initX = 20;
 
     //affichage des arbres sur le buffer
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,53,195,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,80,390,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,500,160,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,318,385,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,1008,35,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,890,480,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,770,255,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,318,0,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,713,445,arbre->w/5,arbre->h/5);
+    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,(caseX*(x-1))+initX,(caseY*(y-1)),arbre->w/5,arbre->h/5);
 
-    show_mouse(buffer);
+}
+
+void afficher_tout_arbre(BITMAP* buffer, int matrice_arbre[18][36])
+{
+    for(int i=0 ; i<18 ; i++)
+    {
+        for(int j = 0 ; j<36 ; j++)
+        {
+            if(matrice_arbre[i][j] == 6)
+            {
+                afficher_arbre(buffer,j,i);
+            }
+        }
+    }
 }
 
 
