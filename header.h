@@ -62,13 +62,15 @@ void information_Alakazam(BITMAP* page, BITMAP* fond);
 void information_Rondoudou(BITMAP* page, BITMAP* fond);
 //carte
 void afficher_map(BITMAP* buffer);
-void afficher_arbre(BITMAP* buffer);
+void afficher_arbre(BITMAP* buffer, int x, int y);
+void afficher_tout_arbre(BITMAP* buffer, int matrice_arbre[18][36]);
 void afficher_coordonnees(BITMAP* buffer);
 void casebleu(BITMAP* buffer, int posy, int posx);
 void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer);
 void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y , int pm,int tableau_cases[18][36]);
 void casebleu_foncee(BITMAP* buffer, int posy, int posx);
 void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18][36]);
+void remettre_case_obstacle(int matrice_A_Modifier[18][36]);
 //affichage_Personnages
 void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int y);
 void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int y);
@@ -82,11 +84,15 @@ void menuJeu(BITMAP* page, BITMAP* fond,BITMAP* logo);
 //barre_commande
 void afficher_commande(BITMAP* buffer,t_joueur* joueur);
 //deplacement_joueur
-void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colonne_finale, int indice_ligne_ini, int indice_colonne_ini, int personnage);
+void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colonne_finale, int indice_ligne_ini, int indice_colonne_ini, int personnage, int tableau_affichage_arbre[18][36]);
 //gestionSorts
 void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur);
 int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB);
 void sortMouvement(t_sorts sort1, t_joueur* joueurA);
 int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB);
 void sortVie(t_sorts sort1, t_joueur* joueurA);
+//gestion fichier
+void lecture_fichier_matrice_map_base(int matrice_a_remplir[18][36]);
+void lecture_fichier_matrice_map_arbre(int matrice_a_remplir[18][36]);
+void mettre_arbre_ou_non(int matrice_a_analyse[18][36]);
 #endif // HEADER_H_INCLUDED
