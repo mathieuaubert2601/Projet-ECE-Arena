@@ -94,6 +94,6 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA);
 int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB);
 void sortVie(t_sorts sort1, t_joueur* joueurA);
 int test_clique_Suppr(int destx, int desty, int longueur, int hauteur,int compteur,char pseudo[15]);
-int test_clique_Entree(int destx, int desty, int longueur, int hauteur,int boule);
+int test_clique_Entree(int destx, int desty, int longueur, int hauteur,int boule,char pseudo[15]);
 int test_clique(int destx, int desty, int longueur, int hauteur,char lettre,int compteur,char pseudo[15]);
 #endif // HEADER_H_INCLUDED

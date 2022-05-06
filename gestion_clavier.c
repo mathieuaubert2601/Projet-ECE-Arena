@@ -7,20 +7,29 @@ int test_clique(int destx, int desty, int longueur, int hauteur,char lettre,int 
     {
         pseudo[compteur]=lettre;
         compteur++;
-        rest(500);
+        rest(200);
 
     }
     return compteur;
 
 }
 
-int test_clique_Entree(int destx, int desty, int longueur, int hauteur,int boule)
+int test_clique_Entree(int destx, int desty, int longueur, int hauteur,int boule,char pseudo[15])
 {
     if((mouse_x>=(destx)&& mouse_x<=(destx+longueur))&& (mouse_y)>=(desty)&& mouse_y<=(desty+hauteur)&&(mouse_b && 1))
     {
-        boule=1;
+        if(pseudo[0]==' ')
+        {
+            boule=0;
+            rest(200);
 
-        rest(500);
+        }
+        if(pseudo[0]!=' ')
+        {
+            boule=1;
+            rest(200);
+
+        }
 
     }
     return boule;
@@ -34,7 +43,7 @@ int test_clique_Suppr(int destx, int desty, int longueur, int hauteur,int compte
     {
         compteur--;
         pseudo[compteur]=' ';
-        rest(500);
+        rest(200);
 
     }
     return compteur;
@@ -300,7 +309,7 @@ void Saisir_nom(t_joueur* joueur, BITMAP* page)
         compteur =test_clique(495,400,75,75,Bl,compteur,pseudo);
         compteur =test_clique(570,400,75,75,Nl,compteur,pseudo);
 
-        arret=test_clique_Entree(645,400,150,75,arret);
+        arret=test_clique_Entree(645,400,150,75,arret,pseudo);
         compteur=test_clique_Suppr(795,400,150,75,compteur,pseudo);
         for (int v=0; v<15; v++)
         {
