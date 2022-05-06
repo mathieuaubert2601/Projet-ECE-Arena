@@ -333,13 +333,6 @@ void Saisir_nom(t_joueur* joueur, BITMAP* page)
     rest(1000);
 
 
-
-
-
-
-
-
-
 }
 
 

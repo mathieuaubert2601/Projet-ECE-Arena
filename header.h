@@ -84,7 +84,7 @@ void menuJeu(BITMAP* page, BITMAP* fond,BITMAP* logo);
 //barre_commande
 void afficher_commande(BITMAP* buffer,t_joueur tab[],int nbJ, int j);
 void affichage_profil(BITMAP* buffer,t_joueur tab[],int nbJ, int j);
-void commande_pokemon (BITMAP* buffer,t_joueur joueur[]);
+void commande_pokemon (BITMAP* buffer,t_joueur joueur[],int j);
 //deplacement_joueur
 void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colonne_finale, int indice_ligne_ini, int indice_colonne_ini, int personnage, int tableau_affichage_arbre[18][36]);
 //gestionSorts

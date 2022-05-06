@@ -145,7 +145,6 @@ int main()
                             }
                         }
                         afficher_tout_arbre(page,tableau_affichage_arbre);
-                        afficher_arbre(page);
 
                         afficher_commande(page,tabJoueur,nbJoueurs,j);
                         show_mouse(page);
