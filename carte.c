@@ -12,9 +12,9 @@ void afficher_map(BITMAP* buffer)
 
 void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer)
 {
-    for(int i=0;i<18;i++)
+    for(int i=0; i<18; i++)
     {
-        for(int j=0;j<36;j++)
+        for(int j=0; j<36; j++)
         {
             if(tab_cases[i][j] == 0)
             {
@@ -27,7 +27,7 @@ void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer)
 
 void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18][36])
 {
-   for(int i = 0 ; i<18 ; i++)
+    for(int i = 0 ; i<18 ; i++)
     {
         for(int j=0 ; j<36 ; j++)
         {
@@ -36,233 +36,465 @@ void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18]
     }
 }
 
-void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y , int pm,int tableau_cases[18][36])
+void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_cases[18][36])
 {
-    //déclaration des variables
-    int soustractionX, soustractionY, additionF, pm_tmp1 = pm,pm_tmp_Bas = pm,pm_tmp_Haut = pm,obstacle1 = 0,obstacle2 = 0,compteur = 1,change = 1;
-    int pm_tmp_Bas1 = pm, pm_tmp_Haut1 = pm;
-    int tableau_case_bleu[18][36];
+    //déclaration du tableau de case intermédiaire
+    //int tableau_case_tmp[18][36];
+    int tableau_case_tmp[18][36] ;
+
+    //Déclaration des variables de test
+    int soustraction_ligne, soustraction_colonne, addition_globale,obstacle = 0;
+
+    //déclaration compteur;
+    int compteur = 1;
+
+    //déclaration des points de mouvement temporaires
+    int pm_tmp = pm;
+
+    //Copie des information du premier tableau dans le second
     for(int i = 0 ; i<18 ; i++)
+    {
+        for(int j = 0 ; j<36 ; j++)
+        {
+            tableau_case_tmp[i][j] = 1;
+            tableau_case_tmp[i][j] = tableau_cases[i][j];
+        }
+    }
+
+
+
+    //Premier test :
+    for(int i=0 ; i < 18 ; i++)
     {
         for(int j=0 ; j<36 ; j++)
         {
-            tableau_case_bleu[i][j] = tableau_cases[i][j];
+            soustraction_ligne = abs(x - j);
+            soustraction_colonne = abs(y - i);
+            addition_globale = soustraction_colonne + soustraction_ligne;
+
+            if(addition_globale <= pm && tableau_case_tmp[i][j]==0)
+            {
+                tableau_case_tmp[i][j] = 2;
+            }
         }
     }
 
-    for(int i = y ; i < y+pm ; i++)
+    pm_tmp = pm;
+    compteur = 0;
+    //Test intermédiaire obstacle
+    for(int i=x ; i <= x+pm ; i++)
     {
-        if(tableau_cases[i][x] == 1 && obstacle2 == 0)
+        for(int j=y+1 ; j < (y+pm_tmp) - compteur ; j++)
         {
-            pm_tmp_Bas = pm_tmp_Bas - 2;
-            obstacle2 = 1;
-            tableau_case_bleu[y+pm][x] = 3;
-            tableau_case_bleu[y+pm-1][x] = 3;
-            tableau_case_bleu[y+pm][x+1] = 3;
-            tableau_case_bleu[y+pm][x-1] = 3;
-        }
-    }
-    for(int i = y ; i > y-pm ; i--)
-    {
-        if(tableau_cases[i][x] == 1 && obstacle2 == 0)
-        {
-            pm_tmp_Haut = pm_tmp_Haut- 2;
-            obstacle2 = 1;
-            tableau_case_bleu[y-pm][x] = 3;
-            tableau_case_bleu[y+pm+1][x] = 3;
-        }
-    }
-
-
-    //Boucle qui met en place les chemins possibles
-    for(int i = y ; i<=y+pm_tmp_Bas ; i++)
-    {
-
-        for(int j=x ; j>=x-pm ; j--)
-        {
-
-            //allegro_message("x : %d, y : %d, obstacle : %d, valTab : %d",j,i,obstacle1,tableau_cases[i][j]);
-            if(tableau_cases[i][j] == 1 && obstacle1 == 0)
+            if(tableau_case_tmp[j][i] == 1 && obstacle == 0)
             {
-                obstacle1 = 1;
-                pm_tmp1 = pm_tmp1 - 2;
-            }
-            soustractionX = abs(x - j);
-            soustractionY = abs(y - i);
-            additionF = soustractionX + soustractionY;
-            if((additionF <= pm_tmp1) && (tableau_cases[i][j] == 0))
-            {
-                tableau_case_bleu[i][j] = 2;
-                casebleu(buffer,j,i);
-            }
-        }
-        pm_tmp1 = pm;
-        obstacle1 = 0;
-    }
-    for(int i = y ; i<=y+pm_tmp_Bas ; i++)
-    {
-
-        for(int j=x ; j<=x+pm ; j++)
-        {
-
-
-            if(tableau_cases[i][j] == 1 && obstacle1 == 0)
-            {
-                obstacle1 = 1;
-                pm_tmp1 = pm_tmp1 - 2;
-            }
-            soustractionX = abs(x - j);
-            soustractionY = abs(y - i);
-            additionF = soustractionX + soustractionY;
-            if((additionF <= pm_tmp1) && (tableau_cases[i][j] == 0))
-            {
-                tableau_case_bleu[i][j] = 2;
-                casebleu(buffer,j,i);
-                //allegro_message("x : %d, y : %d, bleu : %d, valTab : %d",j,i,tableau_case_bleu[i][j],tableau_cases[i][j]);
-            }
-
-        }
-        pm_tmp1 = pm;
-        obstacle1 = 0;
-    }
-    for(int i = y ; i>=y-pm_tmp_Haut ; i--)
-    {
-
-        for(int j=x ; j<=x+pm ; j++)
-        {
-
-            //allegro_message("x : %d, y : %d, obstacle : %d, valTab : %d",j,i,obstacle1,tableau_cases[i][j]);
-            if(tableau_cases[i][j] == 1 && obstacle1 == 0)
-            {
-                obstacle1 = 1;
-                pm_tmp1 = pm_tmp1 - 2;
-            }
-            soustractionX = abs(x - j);
-            soustractionY = abs(y - i);
-            additionF = soustractionX + soustractionY;
-            if((additionF <= pm_tmp1) && (tableau_cases[i][j] == 0))
-            {
-                tableau_case_bleu[i][j] = 2;
-                casebleu(buffer,j,i);
-            }
-        }
-        pm_tmp1 = pm;
-        obstacle1 = 0;
-    }
-    for(int i = y ; i>=y-pm_tmp_Haut ; i--)
-    {
-
-        for(int j=x ; j>=x-pm ; j--)
-        {
-
-            //allegro_message("x : %d, y : %d, obstacle : %d, valTab : %d",j,i,obstacle1,tableau_cases[i][j]);
-            if(tableau_cases[i][j] == 1 && obstacle1 == 0)
-            {
-                obstacle1 = 1;
-                pm_tmp1 = pm_tmp1 - 2;
-            }
-            soustractionX = abs(x - j);
-            soustractionY = abs(y - i);
-            additionF = soustractionX + soustractionY;
-            if((additionF <= pm_tmp1) && (tableau_cases[i][j] == 0))
-            {
-                tableau_case_bleu[i][j] = 2;
-                casebleu(buffer,j,i);
-            }
-        }
-        pm_tmp1 = pm;
-        obstacle1 = 0;
-    }
-
-    //Second test
-    while(change == 1)
-    {
-        change = 0;
-        compteur = 1;
-        for(int i = y ; i <= (y+pm_tmp_Bas) ; i++)
-        {
-
-            for(int j = x ; j<=(x+pm)-(compteur) ; j++)
-            {
-               // allegro_message("x : %d, y : %d, obstacle : %d, valTab i+1 j : %d, valTabB i j %d",j,i,obstacle1,tableau_cases[i+1][j],tableau_case_bleu[i][j]);
-                if(tableau_case_bleu[i][j] == 2 && tableau_cases[i+1][j] == 0 && tableau_case_bleu[i+1][j] != 3)
+                obstacle = 1;
+                if(tableau_case_tmp[((y-1)+pm)- compteur][i] == 1 && tableau_case_tmp[((y)+pm)- compteur][i] != 1)
                 {
-                    casebleu(buffer,j,i+1);
-                    tableau_case_bleu[i][j] = 4;
-                    tableau_case_bleu[i+1][j] = 2;
-                    change = 1;
+                    tableau_case_tmp[((y)+pm)- compteur][i] = 3;
+                }
+                if(tableau_case_tmp[((y-1)+pm)- compteur][i] != 1 && tableau_case_tmp[((y)+pm)- compteur][i] == 1)
+                {
+                    tableau_case_tmp[((y-1)+pm)- compteur][i] = 3;
+                }
+                if(tableau_case_tmp[((y-1)+pm)- compteur][i] != 1 && tableau_case_tmp[((y)+pm)- compteur][i] != 1)
+                {
+                    tableau_case_tmp[((y-1)+pm)- compteur][i] = 3;
+                    tableau_case_tmp[((y)+pm)- compteur][i] = 3;
                 }
             }
-            compteur ++;
+        }
+        compteur = compteur + 1;
+        obstacle = 0;
+        pm_tmp = pm;
+    }
 
-        }
-        compteur = 1;
-        for(int i = y ; i <= (y+pm_tmp_Bas) ; i++)
+    pm_tmp = pm;
+    compteur = 0;
+    for(int i=x ; i >= x-pm ; i--)
+    {
+        for(int j=y+1 ; j <(y+pm_tmp) - compteur ; j++)
         {
-            for(int j = x ; j>=(x-pm)+(compteur) ; j--)
+            if(tableau_case_tmp[j][i] == 1 && obstacle == 0)
+            {
+                obstacle = 1;
+                if(tableau_case_tmp[((y-1)+pm)- compteur][i] == 1 && tableau_case_tmp[((y)+pm)- compteur][i] != 1)
+                {
+                    tableau_case_tmp[((y)+pm)- compteur][i] = 3;
+                }
+                if(tableau_case_tmp[((y-1)+pm)- compteur][i] != 1 && tableau_case_tmp[((y)+pm)- compteur][i] == 1)
+                {
+                    tableau_case_tmp[((y-1)+pm)- compteur][i] = 3;
+                }
+                if(tableau_case_tmp[((y-1)+pm)- compteur][i] != 1 && tableau_case_tmp[((y)+pm)- compteur][i] != 1)
+                {
+                    tableau_case_tmp[((y-1)+pm)- compteur][i] = 3;
+                    tableau_case_tmp[((y)+pm)- compteur][i] = 3;
+                }
+            }
+        }
+        compteur = compteur + 1;
+        obstacle = 0;
+        pm_tmp = pm;
+    }
+
+    pm_tmp = pm;
+    compteur = 0;
+    for(int i=x ; i >= x-pm ; i--)
+    {
+        for(int j=y-1 ; j > (y-pm_tmp) + compteur ; j--)
+        {
+            if(tableau_case_tmp[j][i] == 1 && obstacle == 0)
+            {
+                obstacle = 1;
+                if(tableau_case_tmp[((y+1)-pm)+ compteur][i] == 1 && tableau_case_tmp[((y)-pm)+ compteur][i] != 1)
+                {
+                    tableau_case_tmp[((y)-pm)+ compteur][i] = 3;
+                }
+                if(tableau_case_tmp[((y+1)-pm)+ compteur][i] != 1 && tableau_case_tmp[((y)-pm)+ compteur][i] == 1)
+                {
+                    tableau_case_tmp[((y+1)-pm)+ compteur][i] = 3;
+                }
+                if(tableau_case_tmp[((y+1)-pm)+ compteur][i] != 1 && tableau_case_tmp[((y)-pm)+ compteur][i] != 1)
+                {
+                    tableau_case_tmp[((y+1)-pm)+ compteur][i] = 3;
+                    tableau_case_tmp[((y)-pm)+ compteur][i] = 3;
+                }
+            }
+        }
+        compteur = compteur + 1;
+        obstacle = 0;
+        pm_tmp = pm;
+    }
+
+    pm_tmp = pm;
+    compteur = 0;
+    for(int i=x ; i <= x+pm ; i++)
+    {
+        for(int j=y-1 ; j > (y-pm_tmp) + compteur ; j--)
+        {
+            if(tableau_case_tmp[j][i] == 1 && obstacle == 0)
+            {
+                obstacle = 1;
+                if(tableau_case_tmp[((y+1)-pm)+ compteur][i] == 1 && tableau_case_tmp[((y)-pm)+ compteur][i] != 1)
+                {
+                    tableau_case_tmp[((y)-pm)+ compteur][i] = 3;
+                }
+                if(tableau_case_tmp[((y+1)-pm)+ compteur][i] != 1 && tableau_case_tmp[((y)-pm)+ compteur][i] == 1)
+                {
+                    tableau_case_tmp[((y+1)-pm)+ compteur][i] = 3;
+                }
+                if(tableau_case_tmp[((y+1)-pm)+ compteur][i] != 1 && tableau_case_tmp[((y)-pm)+ compteur][i] != 1)
+                {
+                    tableau_case_tmp[((y+1)-pm)+ compteur][i] = 3;
+                    tableau_case_tmp[((y)-pm)+ compteur][i] = 3;
+                }
+            }
+        }
+        compteur = compteur + 1;
+        obstacle = 0;
+        pm_tmp = pm;
+    }
+
+    pm_tmp = pm;
+    compteur = 0;
+    for(int i = y ; i <= y+pm ; i++)
+    {
+        for(int j = x ; j <= (x+pm_tmp) - compteur; j++)
+        {
+            if(tableau_case_tmp[i][j] == 1 && obstacle == 0)
             {
 
-                if(tableau_case_bleu[i][j] == 2 && tableau_cases[i+1][j] == 0 && tableau_case_bleu[i+1][j] != 3)
+                obstacle = 1;
+                if(tableau_case_tmp[i][((x)+pm) - compteur] == 1 && tableau_case_tmp[i][((x-1)+pm) - compteur] != 1)
                 {
-                    casebleu(buffer,j,i+1);
-                    tableau_case_bleu[i][j] = 4;
-                    tableau_case_bleu[i+1][j] = 2;
-                    change = 1;
+                    tableau_case_tmp[i][((x)+pm) - compteur] = 3;
+                }
+                if(tableau_case_tmp[i][((x-1)+pm) - compteur] != 1 && tableau_case_tmp[i][((x)+pm) - compteur] == 1)
+                {
+                    tableau_case_tmp[i][((x-1)+pm) - compteur] = 3;
+                }
+                if(tableau_case_tmp[i][((x-1)+pm) - compteur] != 1 && tableau_case_tmp[i][((x)+pm) - compteur] != 1)
+                {
+                    tableau_case_tmp[i][((x-1)+pm) - compteur] = 3;
+                    tableau_case_tmp[i][((x)+pm) - compteur] = 3;
                 }
             }
-            compteur ++;
         }
-        compteur = 1;
-        for(int i = y ; i >= (y-pm_tmp_Haut) ; i--)
+        compteur = compteur + 1;
+        obstacle = 0;
+        pm_tmp = pm;
+    }
+    pm_tmp = pm;
+    compteur = 0;
+    for(int i = y ; i <= y+pm ; i++)
+    {
+        for(int j = x ; j >= (x-pm_tmp) + compteur; j--)
         {
-            for(int j = x ; j<=(x+pm)-(compteur) ; j++)
+            if(tableau_case_tmp[i][j] == 1 && obstacle == 0)
             {
-                if(tableau_case_bleu[i][j] == 2 && tableau_cases[i-1][j] == 0 && tableau_case_bleu[i-1][j] != 3)
+                obstacle = 1;
+                if(tableau_case_tmp[i][((x)-pm) + compteur] == 1 && tableau_case_tmp[i][((x+1)-pm) + compteur] != 1)
                 {
-                    casebleu(buffer,j,i-1);
-                    tableau_case_bleu[i][j] = 4;
-                    tableau_case_bleu[i-1][j] = 2;
-                    change = 1;
+                    tableau_case_tmp[i][((x)-pm) + compteur] = 3;
+                }
+                if(tableau_case_tmp[i][((x+1)-pm)+ compteur] != 1 && tableau_case_tmp[i][((x)-pm) + compteur] == 1)
+                {
+                    tableau_case_tmp[i][((x+1)-pm) + compteur] = 3;
+                }
+                if(tableau_case_tmp[i][((x+1)-pm) + compteur] != 1 && tableau_case_tmp[i][((x)-pm) + compteur] != 1)
+                {
+                    tableau_case_tmp[i][((x+1)-pm) + compteur] = 3;
+                    tableau_case_tmp[i][((x)-pm) + compteur] = 3;
                 }
             }
-            compteur ++;
         }
-        compteur = 1;
-        for(int i = y ; i >=(y-pm_tmp_Haut) ; i--)
+        compteur = compteur + 1;
+        obstacle = 0;
+        pm_tmp = pm;
+    }
+    pm_tmp = pm;
+    compteur = 0;
+    for(int i = y ; i >= y-pm ; i--)
+    {
+        for(int j = x ; j <= (x+pm_tmp) - compteur; j++)
         {
-            for(int j = x ; j>=(x-pm)+(compteur) ; j--)
+            if(tableau_case_tmp[i][j] == 1 && obstacle == 0)
             {
-                if(tableau_case_bleu[i][j] == 2 && tableau_cases[i-1][j] == 0 && tableau_case_bleu[i-1][j] != 3)
+                obstacle = 1;
+                if(tableau_case_tmp[i][((x)+pm) - compteur] == 1 && tableau_case_tmp[i][((x-1)+pm) - compteur] != 1)
                 {
-                    casebleu(buffer,j,i-1);
-                    tableau_case_bleu[i][j] = 4;
-                    tableau_case_bleu[i-1][j] = 2;
-                    change = 1;
+                    tableau_case_tmp[i][((x)+pm) - compteur] = 3;
+                }
+                if(tableau_case_tmp[i][((x-1)+pm) - compteur] != 1 && tableau_case_tmp[i][((x)+pm) - compteur] == 1)
+                {
+                    tableau_case_tmp[i][((x-1)+pm) - compteur] = 3;
+                }
+                if(tableau_case_tmp[i][((x-1)+pm) - compteur] != 1 && tableau_case_tmp[i][((x)+pm) - compteur] != 1)
+                {
+                    tableau_case_tmp[i][((x-1)+pm) - compteur] = 3;
+                    tableau_case_tmp[i][((x)+pm) - compteur] = 3;
                 }
             }
-            compteur ++;
         }
+        compteur = compteur + 1;
+        obstacle = 0;
+        pm_tmp = pm;
+    }
+    pm_tmp = pm;
+    compteur = 0;
+    for(int i = y ; i >= y-pm ; i--)
+    {
+        for(int j = x ; j >= (x-pm_tmp) + compteur; j--)
+        {
+            if(tableau_case_tmp[i][j] == 1 && obstacle == 0)
+            {
+                obstacle = 1;
+                if(tableau_case_tmp[i][((x)-pm) + compteur] == 1 && tableau_case_tmp[i][((x+1)-pm) + compteur] != 1)
+                {
+                    tableau_case_tmp[i][((x)-pm) + compteur] = 3;
+                }
+                if(tableau_case_tmp[i][((x+1)-pm)+ compteur] != 1 && tableau_case_tmp[i][((x)-pm) + compteur] == 1)
+                {
+                    tableau_case_tmp[i][((x+1)-pm) + compteur] = 3;
+                }
+                if(tableau_case_tmp[i][((x+1)-pm) + compteur] != 1 && tableau_case_tmp[i][((x)-pm) + compteur] != 1)
+                {
+                    tableau_case_tmp[i][((x+1)-pm) + compteur] = 3;
+                    tableau_case_tmp[i][((x)-pm) + compteur] = 3;
+                }
+            }
+        }
+        compteur = compteur + 1;
+        obstacle = 0;
+        pm_tmp = pm;
+    }
+    //test case à coté
+    compteur = 1;
+    for(int i = y ; i <= y+pm ; i++)
+    {
+        for(int j=x ; j<= (x+pm)-compteur; j++)
+        {
+            if(tableau_case_tmp[i][j] == 2 && (tableau_case_tmp[i+1][j] == 0 || tableau_case_tmp[i+1][j] == 3))
+            {
+                tableau_case_tmp[i+1][j] = 2;
+            }
+        }
+        compteur ++;
+    }
+    compteur = 1;
+    for(int i = y ; i <= y+pm ; i++)
+    {
+        for(int j=x ; j>= (x-pm)+compteur; j--)
+        {
+            if(tableau_case_tmp[i][j] == 2 && (tableau_case_tmp[i+1][j] == 0 || tableau_case_tmp[i+1][j] == 3))
+            {
+                tableau_case_tmp[i+1][j] = 2;
+            }
+        }
+        compteur ++;
+    }
+    compteur = 1;
+    for(int i = y ; i >= y-pm ; i--)
+    {
+        for(int j=x ; j>= (x-pm)+compteur; j--)
+        {
+            if(tableau_case_tmp[i][j] == 2 && (tableau_case_tmp[i-1][j] == 0 || tableau_case_tmp[i-1][j] == 3))
+            {
+                tableau_case_tmp[i-1][j] = 2;
+            }
+        }
+        compteur ++;
+    }
+    compteur = 1;
+    for(int i = y ; i >= y-pm ; i--)
+    {
+        for(int j=x ; j<= (x+pm)-compteur; j++)
+        {
+            if(tableau_case_tmp[i][j] == 2 && (tableau_case_tmp[i-1][j] == 0 || tableau_case_tmp[i-1][j] == 3))
+            {
+                tableau_case_tmp[i-1][j] = 2;
+            }
+        }
+        compteur ++;
+    }
+
+    //test case cote 2
+    compteur = 1;
+    for(int colonne = x ; colonne <= x+pm ; colonne ++)
+    {
+        for(int ligne= y ; ligne<= (y+pm) - compteur ; ligne ++)
+        {
+            if(tableau_case_tmp[ligne][colonne] == 2 && tableau_case_tmp[ligne][colonne + 1] == 0)
+            {
+                tableau_case_tmp[ligne][colonne + 1] = 2;
+                casebleu(buffer,colonne +1, ligne);
+            }
+            if(tableau_case_tmp[ligne][colonne] == 2 && tableau_case_tmp[ligne][colonne + 1] == 3)
+            {
+                tableau_case_tmp[ligne][colonne + 1] = 2;
+                casebleu(buffer,colonne +1, ligne);
+            }
+        }
+        compteur ++;
+    }
+    compteur = 1;
+    for(int colonne = x ; colonne <= x+pm ; colonne ++)
+    {
+        for(int ligne = y ; ligne>= (y-pm) + compteur ; ligne --)
+        {
+            if(tableau_case_tmp[ligne][colonne] == 2 && tableau_case_tmp[ligne][colonne + 1] == 0)
+            {
+                tableau_case_tmp[ligne][colonne + 1] = 2;
+                casebleu(buffer,colonne +1, ligne);
+            }
+            if(tableau_case_tmp[ligne][colonne] == 2 && tableau_case_tmp[ligne][colonne + 1] == 3)
+            {
+                tableau_case_tmp[ligne][colonne + 1] = 2;
+                casebleu(buffer,colonne +1, ligne);
+            }
+        }
+        compteur ++;
+    }
+
+    compteur = 1;
+    for(int colonne = x ; colonne >= x-pm ; colonne --)
+    {
+        for(int ligne = y ; ligne>= (y-pm) + compteur ; ligne --)
+        {
+            if(tableau_case_tmp[ligne][colonne] == 2 && tableau_case_tmp[ligne][colonne - 1] == 0)
+            {
+                tableau_case_tmp[ligne][colonne - 1] = 2;
+                casebleu(buffer,colonne -1, ligne);
+            }
+            if(tableau_case_tmp[ligne][colonne] == 2 && tableau_case_tmp[ligne][colonne - 1] == 3)
+            {
+                tableau_case_tmp[ligne][colonne - 1] = 2;
+                casebleu(buffer,colonne -1, ligne);
+            }
+        }
+        compteur ++;
+    }
+
+    compteur = 1;
+    for(int colonne = x ; colonne >= x-pm ; colonne --)
+    {
+        for(int ligne = y ; ligne<= (y+pm) - compteur ; ligne ++)
+        {
+            if(tableau_case_tmp[ligne][colonne] == 2 && tableau_case_tmp[ligne][colonne - 1] == 0)
+            {
+                tableau_case_tmp[ligne][colonne - 1] = 2;
+                casebleu(buffer,colonne -1, ligne);
+            }
+            if(tableau_case_tmp[ligne][colonne] == 2 && tableau_case_tmp[ligne][colonne - 1] == 3)
+            {
+                tableau_case_tmp[ligne][colonne - 1] = 2;
+                casebleu(buffer,colonne -1, ligne);
+            }
+        }
+        compteur ++;
     }
 
 
+
+
+    //deuxième test
+    for(int i = 0 ; i<18 ; i++)
+    {
+        for(int j = 0 ; j<36 ; j++)
+        {
+            if(tableau_case_tmp[i][j] == 2)
+            {
+                if(tableau_case_tmp[i][j+1] != 2 && tableau_case_tmp[i][j-1] != 2 && tableau_case_tmp[i+1][j] != 2 && tableau_case_tmp[i-1][j] != 2)
+                {
+                    tableau_case_tmp[i][j] = 1;
+                }
+            }
+        }
+    }
+
+    //On met les cases disponibles en bleu
+    for(int i = 0 ; i<18 ; i++)
+    {
+        for(int j = 0 ; j<36 ; j++)
+        {
+            if(tableau_cases[i][j] != 1)
+            {
+                if(tableau_case_tmp[i][j] == 2)
+                {
+                    casebleu(buffer,j,i);
+                }
+
+            }
+
+
+        }
+    }
 }
-void afficher_arbre(BITMAP* buffer)
+
+void afficher_arbre(BITMAP* buffer, int x, int y)
 {
     //Déclaration des variables
     BITMAP* arbre = load_bitmap("arbre1.bmp",NULL);
+    int caseX = 30,caseY = 32,initX = 20;
 
     //affichage des arbres sur le buffer
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,53,195,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,50,390,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,500,160,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,318,385,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,1008,35,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,890,480,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,770,225,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,318,0,arbre->w/5,arbre->h/5);
-    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,623,385,arbre->w/5,arbre->h/5);
+    masked_stretch_blit(arbre,buffer,0,0,arbre->w,arbre->h,(caseX*(x-1))+initX,(caseY*(y-1)),arbre->w/5,arbre->h/5);
 
-    show_mouse(buffer);
+}
+
+void afficher_tout_arbre(BITMAP* buffer, int matrice_arbre[18][36])
+{
+    for(int i=0 ; i<18 ; i++)
+    {
+        for(int j = 0 ; j<36 ; j++)
+        {
+            if(matrice_arbre[i][j] == 6)
+            {
+                afficher_arbre(buffer,j,i);
+            }
+        }
+    }
 }
 
 
@@ -274,7 +506,7 @@ void casebleu(BITMAP* buffer, int posx, int posy)
 
     //On affiche la bitmap sur le buffer
     blit(casefiltre,buffer,posx * casex,posy * casey,0,0,buffer->w,buffer->h);
-    blit(buffer,screen,0,0,0,0,1200,711);
+    //blit(buffer,screen,0,0,0,0,1200,711);
 }
 
 void casebleu_foncee(BITMAP* buffer, int posx, int posy)

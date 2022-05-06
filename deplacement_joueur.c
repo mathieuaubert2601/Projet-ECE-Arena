@@ -1,6 +1,6 @@
 #include "header.h"
 
-void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colonne_finale, int indice_ligne_ini, int indice_colonne_ini, int personnage)
+void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colonne_finale, int indice_ligne_ini, int indice_colonne_ini, int personnage, int tableau_affichage_arbre[18][36])
 {
     //Déclaration de la taille de cases
     int cote_X = 32;
@@ -17,7 +17,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_pikachu(buffer,indice,3,x,indice_colonne_ini);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -26,7 +26,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_pikachu(buffer,indice,2,x,indice_colonne_ini);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -43,7 +43,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_pikachu(buffer,indice,0,indice_ligne_ini,y);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -52,7 +52,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_pikachu(buffer,indice,1,indice_ligne_ini,y);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -74,7 +74,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_lucario(buffer,indice,3,x,indice_colonne_ini);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -83,7 +83,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_lucario(buffer,indice,2,x,indice_colonne_ini);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -100,7 +100,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_lucario(buffer,indice,0,indice_ligne_ini,y);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -109,7 +109,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_lucario(buffer,indice,1,indice_ligne_ini,y);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -130,7 +130,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_rondoudou(buffer,indice,3,x,indice_colonne_ini);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -139,7 +139,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_rondoudou(buffer,indice,2,x,indice_colonne_ini);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -156,7 +156,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_rondoudou(buffer,indice,0,indice_ligne_ini,y);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -165,7 +165,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_rondoudou(buffer,indice,1,indice_ligne_ini,y);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -186,7 +186,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_alakazam(buffer,indice,3,x,indice_colonne_ini);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -195,7 +195,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_alakazam(buffer,indice,2,x,indice_colonne_ini);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -212,7 +212,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_alakazam(buffer,indice,0,indice_ligne_ini,y);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -221,7 +221,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_alakazam(buffer,indice,1,indice_ligne_ini,y);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -242,7 +242,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_ronflex(buffer,indice,3,x,indice_colonne_ini);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -251,7 +251,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_ronflex(buffer,indice,2,x,indice_colonne_ini);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -268,7 +268,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_ronflex(buffer,indice,0,indice_ligne_ini,y);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
@@ -277,7 +277,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colo
                 clear_bitmap(buffer);
                 afficher_map(buffer);
                 afficher_personnage_ronflex(buffer,indice,1,indice_ligne_ini,y);
-                afficher_arbre(buffer);
+                afficher_tout_arbre(buffer,tableau_affichage_arbre);
                 blit(buffer,screen,0,0,0,0,1200,711);
                 rest(30);
             }
