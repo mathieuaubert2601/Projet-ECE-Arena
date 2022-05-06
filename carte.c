@@ -523,3 +523,22 @@ void afficher_coordonnees(BITMAP* buffer)
 {
     textprintf(buffer,font,150,150,makecol(255,255,255),"x : %d, y : %d",mouse_x/30,mouse_y/32);
 }
+
+void afficher_lac(BITMAP* buffer)
+{
+    BITMAP* lac1=load_bitmap("lac1.bmp",NULL);
+    BITMAP* lac2=load_bitmap("lac2.bmp",NULL);
+    BITMAP* lac3=load_bitmap("lac3.bmp",NULL);
+    BITMAP* lac4=load_bitmap("lac4.bmp",NULL);
+    BITMAP* lac5=load_bitmap("lac5.bmp",NULL);
+
+    int casex = 30;
+    int casey = 32;
+
+    blit(lac1,buffer,0,0,casex*0,casey*0,91,97);
+    blit(lac2,buffer,0,0,casex*11,casey*6,151,65);
+    blit(lac3,buffer,0,0,casex*24,casey*5,91,97);
+    blit(lac4,buffer,0,0,casex*0,casey*13,61,129);
+    blit(lac5,buffer,0,0,casex*17,casey*13,121,97);
+
+}

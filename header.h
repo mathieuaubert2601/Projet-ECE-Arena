@@ -71,6 +71,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y , int pm,int tableau
 void casebleu_foncee(BITMAP* buffer, int posy, int posx);
 void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18][36]);
 void remettre_case_obstacle(int matrice_A_Modifier[18][36]);
+void afficher_lac(BITMAP* buffer);
 //affichage_Personnages
 void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int y);
 void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int y);
@@ -95,6 +96,6 @@ int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB,BITMAP* page)
 void sortVie(t_sorts sort1, t_joueur* joueurA,BITMAP* page);
 int sortSoin(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page);
 int test_clique_Suppr(int destx, int desty, int longueur, int hauteur,int compteur,char pseudo[15]);
-int test_clique_Entree(int destx, int desty, int longueur, int hauteur,int boule);
+int test_clique_Entree(int destx, int desty, int longueur, int hauteur,int boule,char pseudo[15]);
 int test_clique(int destx, int desty, int longueur, int hauteur,char lettre,int compteur,char pseudo[15]);
 #endif // HEADER_H_INCLUDED
