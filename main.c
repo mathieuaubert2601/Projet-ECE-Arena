@@ -109,6 +109,7 @@ int main()
                 }
                 if (i==nbJoueurs)
                 {
+                    time_t temps1=time(NULL);
                     while(!key[KEY_ESC])
                     {
                         if (j==nbJoueurs)
@@ -150,8 +151,16 @@ int main()
                         afficher_commande(page,tabJoueur,nbJoueurs,j);
                         show_mouse(page);
                         blit(page,screen,0,0,0,0,1200,711);
+                        time_t temps2=time(NULL);
+                        if (difftime(temps2,temps1)>=15)
+                        {
+                            temps1=time(NULL);
+                            j++;
+                            rest(200);
+                        }
                         if(((mouse_x>=(30*37)&& mouse_x<=((30*37)+130))&& (mouse_y)>=(620)&& mouse_y<=(620+115))&&(mouse_b && 1))
                         {
+                            temps1=time(NULL);
                             j++;
                             rest(200);
                         }
