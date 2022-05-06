@@ -25,6 +25,7 @@ int test_clique_Entree(int destx, int desty, int longueur, int hauteur,int boule
     }
     return boule;
 
+
 }
 
 int test_clique_Suppr(int destx, int desty, int longueur, int hauteur,int compteur,char pseudo[15])
@@ -41,7 +42,7 @@ int test_clique_Suppr(int destx, int desty, int longueur, int hauteur,int compte
 
 }
 
-void Saisir_nom(t_joueur* lejoueur)
+void Saisir_nom(t_joueur* joueur, BITMAP* page)
 {
 
     int arret=0;
@@ -303,38 +304,15 @@ void Saisir_nom(t_joueur* lejoueur)
         compteur=test_clique_Suppr(795,400,150,75,compteur,pseudo);
         for (int v=0; v<15; v++)
         {
-            lejoueur->pseudo[v]=pseudo[v];
+            joueur->pseudo[v]=pseudo[v];
         }
 
 
         for(int y=0; y<15; y++)
         {
-            textprintf_ex(page, font, 195+10*y, 474, makecol(0, 0, 0), -1,"%c",lejoueur->pseudo[y]);
+            textprintf_ex(page, font, 195+10*y, 474, makecol(0, 0, 0), -1,"%c",joueur->pseudo[y]);
 
         }
-
-        }
-        else{
-
-            draw_sprite(page,fondMenu,0,0);
-            textprintf_ex(page, font, 400, 300, makecol(0, 0, 0), -1," Tu es");
-            for(int z=0;z<15;z++)
-            {
-                textprintf_ex(page, font, 450+10*z, 300, makecol(0, 0, 0), -1,"%c",lejoueur->pseudo[z]);
-
-            }
-            textprintf_ex(page, font, 500, 300, makecol(0, 0, 0), -1,"!");
-
-            show_mouse(page);
-            blit(page,screen,0,0,0,0,SCREEN_W,SCREEN_H);
-
-
-
-
-        }
-
-
-
 
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);

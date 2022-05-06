@@ -7,6 +7,7 @@ int main()
     install_mouse();
     install_sound(DIGI_AUTODETECT,MIDI_AUTODETECT,"A");
 
+
     t_joueur tabJoueur[4];
     int sortieMenu = 0;
     int nbJoueurs;
