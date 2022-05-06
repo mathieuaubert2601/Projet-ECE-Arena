@@ -71,6 +71,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y , int pm,int tableau
 void casebleu_foncee(BITMAP* buffer, int posy, int posx);
 void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18][36]);
 void remettre_case_obstacle(int matrice_A_Modifier[18][36]);
+void afficher_lac(BITMAP* buffer);
 //affichage_Personnages
 void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int y);
 void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int y);
