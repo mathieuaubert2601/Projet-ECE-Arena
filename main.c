@@ -22,6 +22,8 @@ int main()
 
     int violetCity=0;
 
+    int test=1;
+
 
     //DÃ©claration du tableau de case :
     int tableau_Cases[18][36];
@@ -41,10 +43,13 @@ int main()
     BITMAP* ronflex = load_bitmap("ronflex/ronflex1.bmp",NULL);
     BITMAP* alakazam = load_bitmap("alakazam/alakazam1.bmp",NULL);
 
+    BITMAP* fond = load_bitmap("fond/fondflou.bmp",NULL);
+    BITMAP* quitter = load_bitmap("fond/Quitter.bmp",NULL);
+    BITMAP* quitterInv = load_bitmap("fond/QuitterInv.bmp",NULL);
+    BITMAP* reprendre = load_bitmap("fond/Reprendre.bmp",NULL);
+    BITMAP* reprendreInv = load_bitmap("fond/ReprendreInv.bmp",NULL);
 
     BITMAP* logo = load_bitmap("logo.bmp",NULL);
-
-
 
     BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
@@ -147,8 +152,23 @@ int main()
                             }
                         }
                         afficher_tout_arbre(page,tableau_affichage_arbre);
-
                         afficher_commande(page,tabJoueur,nbJoueurs,j);
+                        if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b && 1))
+                        {
+                            while(test==1)
+                            {
+                                clear_bitmap(page);
+                                blit(fond,page,0,0,0,0,1200,711);
+                                AffichageBouton(quitter,quitterInv,fond,0,0,200,210,200,73);
+                                AffichageBouton(reprendre,reprendreInv,fond,0,0,400,210,200,73);
+                                if (((mouse_x>=(200)&& mouse_x<=(400))&& (mouse_y)>=(210)&& mouse_y<=(283))&&(mouse_b && 1))
+                                {
+                                    test=1;
+                                }
+                                show_mouse(page);
+                                blit(page,screen,0,0,0,0,1200,711);
+                            }
+                        }
                         show_mouse(page);
                         blit(page,screen,0,0,0,0,1200,711);
                         time_t temps2=time(NULL);

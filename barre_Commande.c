@@ -15,11 +15,16 @@ void afficher_commande (BITMAP* buffer,t_joueur tab[],int nbJ, int j)
     BITMAP* JoueurS = load_bitmap("JoueurSuivant.bmp",NULL);
     BITMAP* JoueurSInv = load_bitmap("JoueurSuivantInv.bmp",NULL);
 
+    BITMAP* fond = load_bitmap("fond/fondflou",NULL);
+    BITMAP* menu = load_bitmap("fond/Menu.bmp",NULL);
+    BITMAP* menuInv = load_bitmap("fond/MenuInv.bmp",NULL);
+
     int casex, casey, casex2, casey2;
     casex = -30;
     casey = -32;
     casex2 = 30;
     casey2 = 32;
+
 
     blit(fondbas,buffer,0,casey*18,0,0,buffer->w,buffer->h);
     blit(fondcote,buffer,casex*36,0,0,0,buffer->w,buffer->h);
@@ -49,6 +54,7 @@ void afficher_commande (BITMAP* buffer,t_joueur tab[],int nbJ, int j)
     }
 
     AffichageBouton(JoueurS,JoueurSInv,buffer,0,0,casex2*37,620,130,115);
+    AffichageBouton(menu,menuInv,buffer,0,0,1100,0,90,70);
 }
 
 void commande_pokemon (BITMAP* buffer,t_joueur joueur[],int j)
@@ -73,9 +79,13 @@ void affichage_profil(BITMAP* buffer,t_joueur tab[], int nbJoueurs,int j)
     {
         if(i==j)
         {
-            masked_blit(tab[i].classe.profilvert,buffer,0,0,1100,casey*i*3,90,80);
+            masked_blit(tab[i].classe.profilvert,buffer,0,0,1100,casey*i*3+90,90,80);
         }
         else
-             masked_blit(tab[i].classe.profil,buffer,0,0,1100,casey*i*3,90,80);
+        {
+            masked_blit(tab[i].classe.profil,buffer,0,0,1100,casey*i*3+90,90,80);
+        }
     }
 }
+
+
