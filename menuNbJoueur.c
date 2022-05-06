@@ -26,6 +26,4 @@ void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity)
     masked_blit(phrase,page,0,0,280,430,652,74);
     show_mouse(page);
     blit(page,screen,0,0,0,0,1200,711);
-
-
 }

@@ -150,8 +150,8 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA)
         {
             if (mouse_b && 1)
             {
-                caseChoisieLigne = mouse_x/30;
-                caseChoisieColonne = mouse_y/32;
+                caseChoisieColonne = mouse_x/30;
+                caseChoisieLigne = mouse_y/32;
             }
             if (mouse_b && 0)
             {
