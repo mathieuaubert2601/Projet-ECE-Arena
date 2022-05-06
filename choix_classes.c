@@ -153,7 +153,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     pikachu.sort4=couDjus;
     pikachu.sort5=cageEclair;
     pikachu.profil=profilpik;
-    pikachu.profilvert=profilpik;
+    pikachu.profilvert=profilvertpik;
     pikachu.corps=corps;
 
     //Déclaration ronflex
@@ -171,7 +171,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     ronflex.sort4=seismeS;
     ronflex.sort5=chargeS;
     ronflex.profil=profilronf;
-    ronflex.profilvert=profilronf;
+    ronflex.profilvert=profilvertronf;
     ronflex.corps=corps;
 
     //Déclaration lucario
@@ -189,7 +189,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     lucario.sort4=vitesseExtremeL;
     lucario.sort5=hateS;
     lucario.profil=profillu;
-    lucario.profilvert=profillu;
+    lucario.profilvert=profilvertlu;
     lucario.corps=corps;
 
     //Déclaration alakazam
@@ -207,7 +207,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     alakazam.sort4=teleportS;
     alakazam.sort5=autoSoinS;
     alakazam.profil=profilal;
-    alakazam.profilvert=profilal;
+    alakazam.profilvert=profilvertal;
     alakazam.corps=corps;
 
     //Déclaration rondoudou
@@ -225,7 +225,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     rondoudou.sort4=soinS;
     rondoudou.sort5=berceuseS;
     rondoudou.profil=profilron;
-    rondoudou.profilvert=profilron;
+    rondoudou.profilvert=profilvertron;
     rondoudou.corps=corps;
 
     int sortieClasses = 0;

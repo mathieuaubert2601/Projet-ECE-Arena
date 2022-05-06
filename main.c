@@ -116,7 +116,6 @@ int main()
                         }
                         tabJoueur[j].pa=10;
                         afficher_map(page);
-                        afficher_commande(page, &tabJoueur[j]);
                         for (int z=0; z<nbJoueurs; z++)
                         {
                             if (tabJoueur[z].numeroClasse==1)///Pikachu
@@ -146,6 +145,9 @@ int main()
                             }
                         }
                         afficher_tout_arbre(page,tableau_affichage_arbre);
+                        afficher_arbre(page);
+
+                        afficher_commande(page,tabJoueur,nbJoueurs,j);
                         show_mouse(page);
                         blit(page,screen,0,0,0,0,1200,711);
                         if(((mouse_x>=(30*37)&& mouse_x<=((30*37)+130))&& (mouse_y)>=(620)&& mouse_y<=(620+115))&&(mouse_b && 1))
@@ -162,7 +164,6 @@ int main()
         }
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
-
     }
     destroy_bitmap(page);
 
