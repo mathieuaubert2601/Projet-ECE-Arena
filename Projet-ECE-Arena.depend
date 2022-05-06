@@ -4,7 +4,7 @@
 
 1651337454 ated upstream
 
-1651770050 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
+1651770242 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -17,7 +17,7 @@
 	"header.h"
 	"header.h"
 
-1651770057 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
+1651772227 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
 	"header.h"
 
 1651742798 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
@@ -92,7 +92,7 @@
 1651505634 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\affichage_personnages.c
 	"header.h"
 
-1651736559 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\carte.c
+1651770242 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\carte.c
 	"header.h"
 
 1651504897 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\gestion_clavier.c
@@ -121,13 +121,13 @@
 1651657574 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\barre_commande.c
 	"header.h"
 
-1651770050 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\barre_commande.c
+1651770080 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\barre_commande.c
 	"header.h"
 
 1651505634 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\gestion_clavier.c
 	"header.h"
 
-1651505634 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\deplacement_joueur.c
+1651770242 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\deplacement_joueur.c
 	"header.h"
 
 1651754323 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\deplacement_joueur.c
@@ -155,5 +155,11 @@
 	"header.h"
 
 1651753897 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\chargement_map_fichier.c
+	"header.h"
+
+1651770242 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\chargement_map_fichier.c
+	"header.h"
+
+1651772271 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\ordrejoueurs.c
 	"header.h"
 

@@ -133,7 +133,7 @@ int main()
                                 tabJoueur[z].pm=rondoudouPm;
                             }
                         }
-                        afficher_arbre(page);
+                        afficher_tout_arbre(page,tableau_affichage_arbre);
                         show_mouse(page);
                         blit(page,screen,0,0,0,0,1200,711);
                         if(((mouse_x>=(30*37)&& mouse_x<=((30*37)+130))&& (mouse_y)>=(620)&& mouse_y<=(620+115))&&(mouse_b && 1))
@@ -141,9 +141,6 @@ int main()
                             j++;
                             rest(200);
                         }
-
-
-
                     }
                     i=0;
                 }
