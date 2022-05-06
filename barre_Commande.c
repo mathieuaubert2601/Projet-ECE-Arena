@@ -32,20 +32,20 @@ void afficher_commande (BITMAP* buffer,t_joueur tab[],int nbJ, int j)
     masked_blit(PV,buffer,casex*2,-620,0,0,buffer->w,buffer->h);
     if ( tab[j].pa == 10)
     {
-        textprintf_ex(buffer,maPolice,158,604,makecol(255,255,255),-1,"%d",tab[j].pa);
+        textprintf_ex(buffer,maPolice,161,575,makecol(255,255,255),-1,"%d",tab[j].pa);
     }
     if (tab[j].pa<10)
     {
-        textprintf_ex(buffer,maPolice,168,604,makecol(255,255,255),-1,"%d",tab[j].pa);
+        textprintf_ex(buffer,maPolice,165,580,makecol(255,255,255),-1,"%d",tab[j].pa);
     }
-    textprintf_ex(buffer,maPolice,168,664,makecol(255,255,255),-1,"%d",tab[j].pm);
+    textprintf_ex(buffer,maPolice,165,633,makecol(255,255,255),-1,"%d",tab[j].pm);
     if(tab[j].pv <100)
     {
-        textprintf_ex(buffer,maPolice,74,630,makecol(255,255,255),-1,"%d",tab[j].pv);
+        textprintf_ex(buffer,maPolice,68,600,makecol(255,255,255),-1,"%d",tab[j].pv);
     }
     if(tab[j].pv >= 100)
     {
-        textprintf_ex(buffer,maPolice,65,630,makecol(255,255,255),-1,"%d",tab[j].pv);
+        textprintf_ex(buffer,maPolice,65,600,makecol(255,255,255),-1,"%d",tab[j].pv);
     }
 
     AffichageBouton(JoueurS,JoueurSInv,buffer,0,0,casex2*37,620,130,115);
