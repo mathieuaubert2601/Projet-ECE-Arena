@@ -1,25 +1,13 @@
 #include "header.h"
 
 
-/*void AffichageBouton(BITMAP* bouton,BITMAP* boutonInv, BITMAP* page,int sourcex,int sourcey,int destx,int desty,int longueur, int hauteur)
-{
-    if((mouse_x>=(destx)&& mouse_x<=(destx+longueur))&& (mouse_y)>=(desty)&& mouse_y<=(desty+hauteur))
-    {
-        masked_blit(boutonInv,page,sourcex,sourcey,destx,desty,longueur,hauteur);
-
-    }
-    else
-        masked_blit(bouton,page,sourcex,sourcey,destx,desty,longueur,hauteur);
-}*/
-
 int test_clique(int destx, int desty, int longueur, int hauteur,char lettre,int compteur,char pseudo[15])
 {
     if((mouse_x>=(destx)&& mouse_x<=(destx+longueur))&& (mouse_y)>=(desty)&& mouse_y<=(desty+hauteur)&&(mouse_b && 1))
     {
-        //masked_blit(boutonInv,page,sourcex,sourcey,destx,desty,longueur,hauteur);
         pseudo[compteur]=lettre;
         compteur++;
-        rest(100);
+        rest(500);
 
     }
     return compteur;
@@ -32,7 +20,7 @@ int test_clique_Entree(int destx, int desty, int longueur, int hauteur,int boule
     {
         boule=1;
 
-        rest(100);
+        rest(500);
 
     }
     return boule;
@@ -45,7 +33,7 @@ int test_clique_Suppr(int destx, int desty, int longueur, int hauteur,int compte
     {
         compteur--;
         pseudo[compteur]=' ';
-        rest(100);
+        rest(500);
 
     }
     return compteur;
@@ -53,12 +41,17 @@ int test_clique_Suppr(int destx, int desty, int longueur, int hauteur,int compte
 
 }
 
-void Saisir_nom(t_joueur* joueur)
+void Saisir_nom(t_joueur* joueur, BITMAP* page)
 {
 
     int arret=0;
     char pseudo[15];
     int compteur=0;
+
+    for (int i=0; i<15; i++)
+    {
+        pseudo[i]=' ';
+    }
 
     char Al='A';
     char Bl='B';
@@ -86,24 +79,7 @@ void Saisir_nom(t_joueur* joueur)
     char Xl='X';
     char Yl='Y';
     char Zl='Z';
-    allegro_init();
-    install_keyboard();
-    install_mouse();
-    /*for(int i=0;i<15;i++)
-    {
-         pseudo[i]=' ';
 
-    }*/
-
-
-
-    //al_init_font_addon();
-    set_color_depth(desktop_color_depth());
-    if (set_gfx_mode(GFX_AUTODETECT_WINDOWED,1200,711,0,0)!=0){
-        allegro_message("probleme gfx mode");
-        allegro_exit();
-        exit(EXIT_FAILURE);
-    }
     BITMAP*A;
     BITMAP*AInv;
     BITMAP*B;
@@ -161,7 +137,6 @@ void Saisir_nom(t_joueur* joueur)
     BITMAP*Entree;
     BITMAP*EntreeInv;
     BITMAP*clavier;
-    BITMAP*page;
     BITMAP*fondMenu;
     BITMAP*logo;
     BITMAP*phrase1;
@@ -169,111 +144,105 @@ void Saisir_nom(t_joueur* joueur)
     BITMAP*barreNom;
 
     makecol(255, 0, 255);
-    clavier=load_bitmap("clavier.bmp",NULL);
-    page=create_bitmap(SCREEN_W,SCREEN_H);
     fondMenu=load_bitmap("fondMenu.bmp",NULL);
-    logo=load_bitmap("logo_pokemon_bien.bmp",NULL);
-    choixpseudo=load_bitmap("choixpseudo.bmp",NULL);
-    barreNom=load_bitmap("barreNom.bmp",NULL);
-    A=load_bitmap("A.bmp",NULL);
-    AInv=load_bitmap("AInv.bmp",NULL);
-    Z=load_bitmap("Z.bmp",NULL);
-    ZInv=load_bitmap("ZInv.bmp",NULL);
-    E=load_bitmap("E.bmp",NULL);
-    EInv=load_bitmap("EInv.bmp",NULL);
-    B=load_bitmap("B.bmp",NULL);
-    BInv=load_bitmap("BInv.bmp",NULL);
-    C=load_bitmap("C.bmp",NULL);
-    CInv=load_bitmap("CInv.bmp",NULL);
-    D=load_bitmap("D.bmp",NULL);
-    DInv=load_bitmap("DInv.bmp",NULL);
-    F=load_bitmap("F.bmp",NULL);
-    FInv=load_bitmap("FInv.bmp",NULL);
-    G=load_bitmap("G.bmp",NULL);
-    GInv=load_bitmap("GInv.bmp",NULL);
-    H=load_bitmap("H.bmp",NULL);
-    HInv=load_bitmap("HInv.bmp",NULL);
-    I=load_bitmap("I.bmp",NULL);
-    IInv=load_bitmap("IInv.bmp",NULL);
-    J=load_bitmap("J.bmp",NULL);
-    JInv=load_bitmap("JInv.bmp",NULL);
-    K=load_bitmap("K.bmp",NULL);
-    KInv=load_bitmap("KInv.bmp",NULL);
-    L=load_bitmap("L.bmp",NULL);
-    LInv=load_bitmap("LInv.bmp",NULL);
-    M=load_bitmap("M.bmp",NULL);
-    MInv=load_bitmap("MInv.bmp",NULL);
-    N=load_bitmap("N.bmp",NULL);
-    NInv=load_bitmap("NInv.bmp",NULL);
-    O=load_bitmap("O.bmp",NULL);
-    OInv=load_bitmap("OInv.bmp",NULL);
-    P=load_bitmap("P.bmp",NULL);
-    PInv=load_bitmap("PInv.bmp",NULL);
-    Q=load_bitmap("Q.bmp",NULL);
-    QInv=load_bitmap("QInv.bmp",NULL);
-    R=load_bitmap("R.bmp",NULL);
-    RInv=load_bitmap("RInv.bmp",NULL);
-    S=load_bitmap("S.bmp",NULL);
-    SInv=load_bitmap("SInv.bmp",NULL);
-    T=load_bitmap("T.bmp",NULL);
-    TInv=load_bitmap("TInv.bmp",NULL);
-    U=load_bitmap("U.bmp",NULL);
-    UInv=load_bitmap("UInv.bmp",NULL);
-    V=load_bitmap("V.bmp",NULL);
-    VInv=load_bitmap("VInv.bmp",NULL);
-    W=load_bitmap("W.bmp",NULL);
-    WInv=load_bitmap("WInv.bmp",NULL);
-    X=load_bitmap("X.bmp",NULL);
-    XInv=load_bitmap("XInv.bmp",NULL);
-    Y=load_bitmap("Y.bmp",NULL);
-    YInv=load_bitmap("YInv.bmp",NULL);
-    Suppr=load_bitmap("Suppr.bmp",NULL);
-    SupprInv=load_bitmap("SupprInv.bmp",NULL);
-    Entree=load_bitmap("Entree.bmp",NULL);
-    EntreeInv=load_bitmap("EntreeInv.bmp",NULL);
+    //logo=load_bitmap("logo_pokemon_bien.bmp",NULL);
+    choixpseudo=load_bitmap("clavier/choixpseudo.bmp",NULL);
+    barreNom=load_bitmap("clavier/barreNom.bmp",NULL);
+    A=load_bitmap("clavier/A.bmp",NULL);
+    AInv=load_bitmap("clavier/AInv.bmp",NULL);
+    Z=load_bitmap("clavier/Z.bmp",NULL);
+    ZInv=load_bitmap("clavier/ZInv.bmp",NULL);
+    E=load_bitmap("clavier/E.bmp",NULL);
+    EInv=load_bitmap("clavier/EInv.bmp",NULL);
+    B=load_bitmap("clavier/B.bmp",NULL);
+    BInv=load_bitmap("clavier/BInv.bmp",NULL);
+    C=load_bitmap("clavier/C.bmp",NULL);
+    CInv=load_bitmap("clavier/CInv.bmp",NULL);
+    D=load_bitmap("clavier/D.bmp",NULL);
+    DInv=load_bitmap("clavier/DInv.bmp",NULL);
+    F=load_bitmap("clavier/F.bmp",NULL);
+    FInv=load_bitmap("clavier/FInv.bmp",NULL);
+    G=load_bitmap("clavier/G.bmp",NULL);
+    GInv=load_bitmap("clavier/GInv.bmp",NULL);
+    H=load_bitmap("clavier/H.bmp",NULL);
+    HInv=load_bitmap("clavier/HInv.bmp",NULL);
+    I=load_bitmap("clavier/I.bmp",NULL);
+    IInv=load_bitmap("clavier/IInv.bmp",NULL);
+    J=load_bitmap("clavier/J.bmp",NULL);
+    JInv=load_bitmap("clavier/JInv.bmp",NULL);
+    K=load_bitmap("clavier/K.bmp",NULL);
+    KInv=load_bitmap("clavier/KInv.bmp",NULL);
+    L=load_bitmap("clavier/L.bmp",NULL);
+    LInv=load_bitmap("clavier/LInv.bmp",NULL);
+    M=load_bitmap("clavier/M.bmp",NULL);
+    MInv=load_bitmap("clavier/MInv.bmp",NULL);
+    N=load_bitmap("clavier/N.bmp",NULL);
+    NInv=load_bitmap("clavier/NInv.bmp",NULL);
+    O=load_bitmap("clavier/O.bmp",NULL);
+    OInv=load_bitmap("clavier/OInv.bmp",NULL);
+    P=load_bitmap("clavier/P.bmp",NULL);
+    PInv=load_bitmap("clavier/PInv.bmp",NULL);
+    Q=load_bitmap("clavier/Q.bmp",NULL);
+    QInv=load_bitmap("clavier/QInv.bmp",NULL);
+    R=load_bitmap("clavier/R.bmp",NULL);
+    RInv=load_bitmap("clavier/RInv.bmp",NULL);
+    S=load_bitmap("clavier/S.bmp",NULL);
+    SInv=load_bitmap("clavier/SInv.bmp",NULL);
+    T=load_bitmap("clavier/T.bmp",NULL);
+    TInv=load_bitmap("clavier/TInv.bmp",NULL);
+    U=load_bitmap("clavier/U.bmp",NULL);
+    UInv=load_bitmap("clavier/UInv.bmp",NULL);
+    V=load_bitmap("clavier/V.bmp",NULL);
+    VInv=load_bitmap("clavier/VInv.bmp",NULL);
+    W=load_bitmap("clavier/W.bmp",NULL);
+    WInv=load_bitmap("clavier/WInv.bmp",NULL);
+    X=load_bitmap("clavier/X.bmp",NULL);
+    XInv=load_bitmap("clavier/XInv.bmp",NULL);
+    Y=load_bitmap("clavier/Y.bmp",NULL);
+    YInv=load_bitmap("clavier/YInv.bmp",NULL);
+    Suppr=load_bitmap("clavier/Suppr.bmp",NULL);
+    SupprInv=load_bitmap("clavier/SupprInv.bmp",NULL);
+    Entree=load_bitmap("clavier/Entree.bmp",NULL);
+    EntreeInv=load_bitmap("clavier/EntreeInv.bmp",NULL);
 
-    while(!key[KEY_ESC])
+    while(arret==0)
     {
-        show_mouse(page);
         clear_bitmap(page);
-        draw_sprite(page,fondMenu,0,0);
-        //masked_blit(clavier,page,0,0,190,250,SCREEN_W,SCREEN_H);
-        masked_blit(barreNom,page,0,0,195,474,SCREEN_W,SCREEN_H);
-        masked_blit(logo,page,0,0,300,0,SCREEN_W,SCREEN_H);
-        masked_blit(choixpseudo,page,0,0,160,100,SCREEN_W,SCREEN_H);
-        blit(A,page,0,0,195,250,SCREEN_W,SCREEN_H);
-        blit(Z,page,0,0,270,250,SCREEN_W,SCREEN_H);
-        blit(E,page,0,0,345,250,SCREEN_W,SCREEN_H);
-        blit(R,page,0,0,420,250,SCREEN_W,SCREEN_H);
-        blit(T,page,0,0,495,250,SCREEN_W,SCREEN_H);
-        blit(Y,page,0,0,570,250,SCREEN_W,SCREEN_H);
-        blit(U,page,0,0,645,250,SCREEN_W,SCREEN_H);
-        blit(I,page,0,0,720,250,SCREEN_W,SCREEN_H);
-        blit(O,page,0,0,795,250,SCREEN_W,SCREEN_H);
-        blit(P,page,0,0,870,250,SCREEN_W,SCREEN_H);
-        blit(Q,page,0,0,195,325,SCREEN_W,SCREEN_H);
-        blit(S,page,0,0,270,325,SCREEN_W,SCREEN_H);
-        blit(D,page,0,0,345,325,SCREEN_W,SCREEN_H);
-        blit(F,page,0,0,420,325,SCREEN_W,SCREEN_H);
-        blit(G,page,0,0,495,325,SCREEN_W,SCREEN_H);
-        blit(H,page,0,0,570,325,SCREEN_W,SCREEN_H);
-        blit(J,page,0,0,645,325,SCREEN_W,SCREEN_H);
-        blit(K,page,0,0,720,325,SCREEN_W,SCREEN_H);
-        blit(L,page,0,0,795,325,SCREEN_W,SCREEN_H);
-        blit(M,page,0,0,870,325,SCREEN_W,SCREEN_H);
-        blit(W,page,0,0,195,400,SCREEN_W,SCREEN_H);
-        blit(X,page,0,0,270,400,SCREEN_W,SCREEN_H);
-        blit(C,page,0,0,345,400,SCREEN_W,SCREEN_H);
-        blit(V,page,0,0,420,400,SCREEN_W,SCREEN_H);
-        blit(V,page,0,0,495,400,SCREEN_W,SCREEN_H);
-        blit(W,page,0,0,570,400,SCREEN_W,SCREEN_H);
-        blit(Entree,page,0,0,645,400,SCREEN_W,SCREEN_H);
-        blit(Suppr,page,0,0,795,400,SCREEN_W,SCREEN_H);
+        blit(fondMenu,page,0,0,0,0,1200,711);
+        masked_blit(barreNom,page,0,0,195,474,1200,711);
+        //masked_blit(logo,page,0,0,300,0,1200,711);
+        masked_blit(choixpseudo,page,0,0,160,100,1200,711);
+        blit(A,page,0,0,195,250,1200,711);
+        blit(Z,page,0,0,270,250,1200,711);
+        blit(E,page,0,0,345,250,1200,711);
+        blit(R,page,0,0,420,250,1200,711);
+        blit(T,page,0,0,495,250,1200,711);
+        blit(Y,page,0,0,570,250,1200,711);
+        blit(U,page,0,0,645,250,1200,711);
+        blit(I,page,0,0,720,250,1200,711);
+        blit(O,page,0,0,795,250,1200,711);
+        blit(P,page,0,0,870,250,1200,711);
+        blit(Q,page,0,0,195,325,1200,711);
+        blit(S,page,0,0,270,325,1200,711);
+        blit(D,page,0,0,345,325,1200,711);
+        blit(F,page,0,0,420,325,1200,711);
+        blit(G,page,0,0,495,325,1200,711);
+        blit(H,page,0,0,570,325,1200,711);
+        blit(J,page,0,0,645,325,1200,711);
+        blit(K,page,0,0,720,325,1200,711);
+        blit(L,page,0,0,795,325,1200,711);
+        blit(M,page,0,0,870,325,1200,711);
+        blit(W,page,0,0,195,400,1200,711);
+        blit(X,page,0,0,270,400,1200,711);
+        blit(C,page,0,0,345,400,1200,711);
+        blit(V,page,0,0,420,400,1200,711);
+        blit(V,page,0,0,495,400,1200,711);
+        blit(W,page,0,0,570,400,1200,711);
+        blit(Entree,page,0,0,645,400,1200,711);
+        blit(Suppr,page,0,0,795,400,1200,711);
 
 
-        if(arret==0)
-        {
-            AffichageBouton(A,AInv,page,0,0,195,250,75,75);
+        AffichageBouton(A,AInv,page,0,0,195,250,75,75);
         AffichageBouton(Z,ZInv,page,0,0,270,250,75,75);
         AffichageBouton(E,EInv,page,0,0,345,250,75,75);
         AffichageBouton(R,RInv,page,0,0,420,250,75,75);
@@ -332,52 +301,45 @@ void Saisir_nom(t_joueur* joueur)
 
         arret=test_clique_Entree(645,400,150,75,arret);
         compteur=test_clique_Suppr(795,400,150,75,compteur,pseudo);
-        for (int v=0;v<15;v++)
+        for (int v=0; v<15; v++)
         {
-            lejoueur->pseudox[v]=pseudo[v];
+            joueur->pseudo[v]=pseudo[v];
         }
 
 
-        for(int y=0;y<15;y++)
+        for(int y=0; y<15; y++)
         {
             textprintf_ex(page, font, 195+10*y, 474, makecol(0, 0, 0), -1,"%c",joueur->pseudo[y]);
 
-
-
         }
-
-        }
-        else{
-
-            draw_sprite(page,fondMenu,0,0);
-            textprintf_ex(page, font, 400, 300, makecol(0, 0, 0), -1," Tu es");
-            for(int z=0;z<15;z++)
-            {
-                textprintf_ex(page, font, 450+10*z, 300, makecol(0, 0, 0), -1,"%c",joueur->pseudo[z]);
-
-            }
-            textprintf_ex(page, font, 500, 300, makecol(0, 0, 0), -1,"!");
-
-            show_mouse(page);
-            blit(page,screen,0,0,0,0,SCREEN_W,SCREEN_H);
-
-
-
-
-        }
-
-
-
 
         show_mouse(page);
-        blit(page,screen,0,0,0,0,SCREEN_W,SCREEN_H);
-
-
+        blit(page,screen,0,0,0,0,1200,711);
 
 
 
     }
+    blit(fondMenu,page,0,0,0,0,1200,711);
+    textprintf_ex(page, font, 400, 300, makecol(0, 0, 0), -1," Tu es ");
+    for(int z=0; z<15; z++)
+    {
+        textprintf_ex(page, font, 450+10*z, 300, makecol(0, 0, 0), -1,"%c",joueur->pseudo[z]);
+
+    }
+    textprintf_ex(page, font, 500, 300, makecol(0, 0, 0), -1,"!");
+
+    show_mouse(page);
+    blit(page,screen,0,0,0,0,1200,711);
+    rest(1000);
+
+
+
+
+
+
+
 
 
 }
+
 

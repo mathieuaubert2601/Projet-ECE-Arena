@@ -73,6 +73,10 @@ int main()
                 if(((mouse_x>=(320) && mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 2 joueurs
                 {
                     nbJoueurs = 2;
+                    for(int j=0; j<nbJoueurs; j++)
+                    {
+                        Saisir_nom(&tabJoueur[j],page);
+                    }
                     for(i=0; i<nbJoueurs; i++)
                     {
                         menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond, i, tableau_Cases);
@@ -81,6 +85,10 @@ int main()
                 if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 3 joueurs
                 {
                     nbJoueurs = 3;
+                    for(int j=0; j<nbJoueurs; j++)
+                    {
+                        Saisir_nom(&tabJoueur[j],page);
+                    }
                     for(i=0; i<nbJoueurs; i++)
                     {
                         menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond, i, tableau_Cases);
@@ -89,6 +97,10 @@ int main()
                 if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 4 joueurs
                 {
                     nbJoueurs = 4;
+                    for(int j=0; j<nbJoueurs; j++)
+                    {
+                        Saisir_nom(&tabJoueur[j],page);
+                    }
                     for(i=0; i<nbJoueurs; i++)
                     {
                         menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueur[i],violetCity,musiqueFond,i, tableau_Cases);
@@ -102,7 +114,7 @@ int main()
                         {
                             j=0;
                         }
-                        tabJoueur[j].pa=5;
+                        tabJoueur[j].pa=10;
                         afficher_map(page);
                         afficher_commande(page, &tabJoueur[j]);
                         for (int z=0; z<nbJoueurs; z++)
