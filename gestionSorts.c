@@ -1,7 +1,9 @@
 #include "header.h"
 
-void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur)
+void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur, BITMAP* page)
 {
+    BITMAP* pasPA = load_bitmap("phrasePA",NULL);
+    BITMAP* pasZone = load_bitmap("phraseZoneImpact.bmp",NULL);
     int totalTouche = 0;
     int touche=0;
     if (sort1.type == 1)
@@ -10,7 +12,7 @@ void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int no
         {
             while((tourJoueur+1) != (joueurA->numero))
             {
-                touche = sortAttaque(sort1,joueurA,tabJoueurs[tourJoueur+1]);
+                touche = sortAttaque(sort1,joueurA,tabJoueurs[tourJoueur+1],page);
                 totalTouche+=touche;
                 tourJoueur++;
                 if (tourJoueur == nombreJoueur-1)
@@ -24,17 +26,17 @@ void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int no
             }
             else if (totalTouche<1)
             {
-                ///Afficher aucun joueur dans la zone
+                masked_blit(pasZone,page,0,0,300,300,pasZone->w,pasZone->h);
             }
         }
         else if (joueurA->pa<sort1.nbrPa)
         {
-            ///Afficher pas assez de PA
+            masked_blit(pasPA,page,0,0,300,300,pasPA->w,pasPA->h);
         }
     }
     if (sort1.type == 2)
     {
-        sortMouvement(sort1,joueurA);
+        sortMouvement(sort1,joueurA,page);
     }
     if (sort1.type == 3)
     {
@@ -42,7 +44,7 @@ void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int no
         {
             while((tourJoueur+1) != (joueurA->numero))
             {
-                touche = sortStatut(sort1,joueurA,tabJoueurs[tourJoueur+1]);
+                touche = sortStatut(sort1,joueurA,tabJoueurs[tourJoueur+1],page);
                 totalTouche+=touche;
                 tourJoueur++;
                 if (tourJoueur == nombreJoueur-1)
@@ -56,24 +58,53 @@ void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int no
             }
             else if (totalTouche<1)
             {
-                ///Afficher aucun joueur dans la zone
+                masked_blit(pasZone,page,0,0,300,300,pasZone->w,pasZone->h);
             }
         }
         else if (joueurA->pa<sort1.nbrPa)
         {
-            ///Afficher pas assez de PA
+            masked_blit(pasPA,page,0,0,300,300,pasPA->w,pasPA->h);
         }
     }
     if (sort1.type == 4)
     {
-        sortVie(sort1,joueurA);
+        sortVie(sort1,joueurA,page);
+    }
+    if (sort1.numero==20)
+    {
+        if (joueurA->pa>=sort1.nbrPa)
+        {
+            while((tourJoueur+1) != (joueurA->numero))
+            {
+                touche = sortSoin(sort1,joueurA,tabJoueurs[tourJoueur+1],page);
+                totalTouche+=touche;
+                tourJoueur++;
+                if (tourJoueur == nombreJoueur-1)
+                {
+                    tourJoueur=0;
+                }
+            }
+            if(totalTouche>=1)
+            {
+                joueurA->pa-=sort1.nbrPa;
+            }
+            else if (totalTouche<1)
+            {
+                masked_blit(pasZone,page,0,0,300,300,pasZone->w,pasZone->h);
+            }
+        }
+        else if (joueurA->pa<sort1.nbrPa)
+        {
+            masked_blit(pasPA,page,0,0,300,300,pasPA->w,pasPA->h);
+        }
     }
 }
 
-int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB)
+int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page )
 {
     int probabilite;
     int nombrePv;
+    BITMAP* rate = load_bitmap("phraseRate.bmp",NULL);
     ///Attaque en zone
     if (sort1.typePortee == 1)
     {
@@ -82,16 +113,23 @@ int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB)
             probabilite=rand() % 100;
             if (probabilite<sort1.chance)
             {
-                nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                joueurB->pv -= nombrePv;
-                if (joueurB->pv <0)
+                if (joueurB->tourBouclier==1)
                 {
-                    joueurB->pv = 0;
+                    return 1;
+                }
+                else
+                {
+                    nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                    joueurB->pv -= nombrePv;
+                    if (joueurB->pv <0)
+                    {
+                        joueurB->pv = 0;
+                    }
                 }
             }
             else if (probabilite>=sort1.chance)
             {
-                ///Afficher sort raté
+                masked_blit(rate,page,0,0,300,300,rate->w,rate->h);
             }
             return 1;
         }
@@ -105,19 +143,26 @@ int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB)
     {
         if(1==1)
         {
-            probabilite=rand() % 100 ;
+             probabilite=rand() % 100;
             if (probabilite<sort1.chance)
             {
-                nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                joueurB->pv -= nombrePv;
-                if (joueurB->pv <0)
+                if (joueurB->tourBouclier==1)
                 {
-                    joueurB->pv = 0;
+                    return 1;
+                }
+                else
+                {
+                    nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                    joueurB->pv -= nombrePv;
+                    if (joueurB->pv <0)
+                    {
+                        joueurB->pv = 0;
+                    }
                 }
             }
             else if (probabilite>=sort1.chance)
             {
-                ///Afficher sort raté
+                masked_blit(rate,page,0,0,300,300,rate->w,rate->h);
             }
             return 1;
         }
@@ -128,9 +173,13 @@ int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB)
     }
 }
 
-void sortMouvement(t_sorts sort1, t_joueur* joueurA)
+void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite;
+    BITMAP* rate = load_bitmap("phraseRate.bmp",NULL);
+    BITMAP* rouler = load_bitmap("phraseRouler.bmp",NULL);
+    BITMAP* teleporter = load_bitmap("phraseTeleporter.bmp",NULL);
+    BITMAP* deplacer = load_bitmap("phraseDeplacer.bmp",NULL);
     if (sort1.numero==13)
     {
         probabilite=rand() % 100 ;
@@ -140,7 +189,7 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA)
         }
         else if (probabilite>=sort1.chance)
         {
-            ///Afficher sort raté
+            masked_blit(rate,page,0,0,300,300,rate->w,rate->h);
         }
         joueurA->pa-=sort1.nbrPa;
     }
@@ -152,6 +201,22 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA)
             {
                 caseChoisieColonne = mouse_x/30;
                 caseChoisieLigne = mouse_y/32;
+            }
+            if(sort1.numero==22)
+            {
+                masked_blit(deplacer,page,0,0,300,300,deplacer->w,deplacer->h);
+            }
+            if(sort1.numero==0)
+            {
+                masked_blit(deplacer,page,0,0,300,300,deplacer->w,deplacer->h);
+            }
+            if(sort1.numero==16)
+            {
+                masked_blit(teleporter,page,0,0,300,300,teleporter->w,teleporter->h);
+            }
+            if(sort1.numero==22)
+            {
+                masked_blit(rouler,page,0,0,300,300,rouler->w,rouler->h);
             }
             if (mouse_b && 0)
             {
@@ -168,7 +233,7 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA)
             }
             else if (probabilite>=sort1.chance)
             {
-                ///Afficher sort raté
+                masked_blit(rate,page,0,0,300,300,rate->w,rate->h);
             }
             joueurA->pa-=sort1.nbrPa;
         }
@@ -176,9 +241,10 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA)
 
 }
 
-int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB)
+int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page)
 {
     int probabilite;
+    BITMAP* rate = load_bitmap("phraseRate.bmp",NULL);
     if (((joueurA->ligne-joueurB->ligne)+(joueurA->colonne-joueurB->colonne)>=sort1.pMin)&& ((joueurA->ligne-joueurB->ligne)+(joueurA->colonne-joueurB->colonne)<=sort1.pMax))
         {
             probabilite=rand() % 100;
@@ -203,7 +269,7 @@ int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB)
             }
             else if (probabilite>=sort1.chance)
             {
-                ///Afficher sort raté
+                masked_blit(rate,page,0,0,300,300,rate->w,rate->h);
             }
             return 1;
         }
@@ -213,7 +279,75 @@ int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB)
         }
 }
 
-void sortVie(t_sorts sort1, t_joueur* joueurA)
+void sortVie(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
 {
+    int probabilite,nombrePv;
+    BITMAP* rate = load_bitmap("phraseRate.bmp",NULL);
+    if (sort1.typeSoin==1)
+    {
+        probabilite=rand() % 100;
+        if (probabilite<sort1.chance)
+        {
+            joueurA->tourBouclier=1;
 
+        }
+        else if (probabilite>=sort1.chance)
+        {
+            masked_blit(rate,page,0,0,300,300,rate->w,rate->h);
+        }
+        joueurA->pa-=sort1.nbrPa;
+    }
+    if (sort1.typeSoin==2)
+    {
+        probabilite=rand() % 100;
+        if (probabilite<sort1.chance)
+        {
+            nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+            joueurA->pv+=nombrePv;
+            if (joueurA->pv>joueurA->classe.pv)
+            {
+                joueurA->pv = joueurA->classe.pv;
+            }
+        }
+        else if (probabilite>=sort1.chance)
+        {
+            masked_blit(rate,page,0,0,300,300,rate->w,rate->h);
+        }
+        joueurA->pa-=sort1.nbrPa;
+    }
+}
+
+int sortSoin(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page)
+{
+    int probabilite, nombrePv;
+    BITMAP* rate = load_bitmap("phraseRate.bmp",NULL);
+    if (joueurB->equipe==joueurA->equipe)
+    {
+        if (((joueurA->ligne-joueurB->ligne)+(joueurA->colonne-joueurB->colonne)>=sort1.pMin)&& ((joueurA->ligne-joueurB->ligne)+(joueurA->colonne-joueurB->colonne)<=sort1.pMax))
+        {
+            probabilite=rand() % 100;
+            if (probabilite<sort1.chance)
+            {
+                nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                joueurB->pv+=nombrePv;
+                if (joueurB->pv>joueurB->classe.pv)
+                {
+                    joueurB->pv = joueurB->classe.pv;
+                }
+            }
+            else if (probabilite>=sort1.chance)
+            {
+                masked_blit(rate,page,0,0,300,300,rate->w,rate->h);
+            }
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    else
+    {
+        return 0;
+    }
 }

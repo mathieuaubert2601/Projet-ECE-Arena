@@ -100,7 +100,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
 
     ///Déclaration sorts
     t_sorts vitesseExtreme={0,0,0,80,2,0,3,0,7,0,0,0,vitEx,vitExInv,infosvitEx};
-    t_sorts vitesseExtremeL={0,0,0,80,2,0,3,0,7,0,0,0,vitExL,vitExLInv,infosvitExL};
+    t_sorts vitesseExtremeL={0,23,0,80,2,0,3,0,7,0,0,0,vitExL,vitExLInv,infosvitExL};
     t_sorts fatalFoudre={15,1,8,50,1,4,7,0,10,1,0,0,fatF,fatFInv,infosfatF};
     t_sorts bouleElek={10,2,5,75,1,3,5,2,6,2,0,0,boulE,boulEInv,infosboulE};
     t_sorts couDjus={6,3,4,90,1,2,5,0,3,3,0,0,coupJ,coupJInv,infoscoupJ};

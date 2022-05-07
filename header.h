@@ -86,15 +86,17 @@ void menuJeu(BITMAP* page, BITMAP* fond,BITMAP* logo);
 void afficher_commande(BITMAP* buffer,t_joueur tab[],int nbJ, int j);
 void affichage_profil(BITMAP* buffer,t_joueur tab[],int nbJ, int j);
 void commande_pokemon (BITMAP* buffer,t_joueur joueur[],int j);
+void menu_pause(BITMAP* buffer);
 //deplacement_joueur
 void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colonne_finale, int indice_ligne_ini, int indice_colonne_ini, int personnage, int tableau_affichage_arbre[18][36]);
 //gestionSorts
-void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur);
-int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB);
-void sortMouvement(t_sorts sort1, t_joueur* joueurA);
-int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB);
-void sortVie(t_sorts sort1, t_joueur* joueurA);
+void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur,BITMAP* page);
+int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB,BITMAP* page);
+void sortMouvement(t_sorts sort1, t_joueur* joueurA,BITMAP* page);
+int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB,BITMAP* page);
+void sortVie(t_sorts sort1, t_joueur* joueurA,BITMAP* page);
+int sortSoin(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page);
 int test_clique_Suppr(int destx, int desty, int longueur, int hauteur,int compteur,char pseudo[15]);
-int test_clique_Entree(int destx, int desty, int longueur, int hauteur,int boule);
+int test_clique_Entree(int destx, int desty, int longueur, int hauteur,int boule,char pseudo[15]);
 int test_clique(int destx, int desty, int longueur, int hauteur,char lettre,int compteur,char pseudo[15]);
 #endif // HEADER_H_INCLUDED
