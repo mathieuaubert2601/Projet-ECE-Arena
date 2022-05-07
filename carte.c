@@ -97,9 +97,19 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         obstacle = 1;
                         if((tableau_case_tmp[j][i-1] == 1 || tableau_case_tmp[j+1][i-1] == 1) && (tableau_case_tmp[j][i+1] == 1 || tableau_case_tmp[j+1][i+1] == 1))
                         {
-                            for(int k = ((y+pm)-compteur+1) ; k >= (((y-3)+pm)-compteur) ; k--)
+                            for(int k = ((y+pm)-compteur+1) ; k >= (((y-1)+pm)-compteur) ; k--)
                             {
-                                if(k>0 && k<18)
+                                if((k>0 && k<18)&& k>j)
+                                {
+                                    if(tableau_case_tmp[k][i] != 1)
+                                    {
+                                        tableau_case_tmp[k][i] = 4;
+                                    }
+                                }
+                            }
+                            for(int k = ((y-2+pm)-compteur+1) ; k >= (((y-3)+pm)-compteur) ; k--)
+                            {
+                                if((k>0 && k<18)&& k>j)
                                 {
                                     if(tableau_case_tmp[k][i] != 1)
                                     {
@@ -112,7 +122,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         {
                             for(int k = ((y+pm)-compteur+1) ; k >= (((y-1)+pm)-compteur) ; k--)
                             {
-                                if(k>0 && k<18)
+                                if((k>0 && k<18)&&k>j)
                                 {
                                     if(tableau_case_tmp[k][i] != 1)
                                     {
@@ -145,9 +155,19 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         obstacle = 1;
                         if((tableau_case_tmp[j][i-1] == 1 || tableau_case_tmp[j-1][i-1] == 1) && (tableau_case_tmp[j][i+1] == 1 || tableau_case_tmp[j-1][i+1] == 1))
                         {
-                            for(int k = ((y-pm)+compteur+1) ; k <= (((y+3)-pm)+compteur) ; k++)
+                            for(int k = ((y-pm)+compteur+1) ; k <= (((y+1)-pm)+compteur) ; k++)
                             {
-                                if(k>0 && k<18)
+                                if((k>0 && k<18)&&k<j)
+                                {
+                                    if(tableau_case_tmp[k][i] != 1)
+                                    {
+                                        tableau_case_tmp[k][i] = 4;
+                                    }
+                                }
+                            }
+                            for(int k = ((y+2-pm)+compteur+1) ; k <= (((y+3)-pm)+compteur) ; k++)
+                            {
+                                if((k>0 && k<18)&&k<j)
                                 {
                                     if(tableau_case_tmp[k][i] != 1)
                                     {
@@ -160,14 +180,13 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         {
                             for(int k = ((y-pm)+compteur+1) ; k <= (((y+1)-pm)+compteur) ; k++)
                             {
-                                if(k>0 && k<18)
+                                if((k>0 && k<18)&&k<j)
                                 {
                                     if(tableau_case_tmp[k][i] != 1)
                                     {
                                         tableau_case_tmp[k][i] = 3;
                                     }
                                 }
-
                             }
                         }
                     }
@@ -193,9 +212,19 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         obstacle = 1;
                         if((tableau_case_tmp[j][i-1] == 1 || tableau_case_tmp[j+1][i-1] == 1) && (tableau_case_tmp[j][i+1] == 1 || tableau_case_tmp[j+1][i+1] == 1))
                         {
-                            for(int k = ((y+pm)-compteur+1) ; k >= (((y-3)+pm)-compteur) ; k--)
+                            for(int k = ((y+pm)-compteur+1) ; k >= (((y-1)+pm)-compteur) ; k--)
                             {
-                                if(k>0 && k<18)
+                                if((k>0 && k<18)&&k>j)
+                                {
+                                    if(tableau_case_tmp[k][i] != 1)
+                                    {
+                                        tableau_case_tmp[k][i] = 4;
+                                    }
+                                }
+                            }
+                            for(int k = (((y-2)+pm)-compteur+1) ; k >= (((y-3)+pm)-compteur) ; k--)
+                            {
+                                if((k>0 && k<18)&&k>j)
                                 {
                                     if(tableau_case_tmp[k][i] != 1)
                                     {
@@ -208,7 +237,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         {
                             for(int k = ((y+pm)-compteur+1) ; k >= (((y-1)+pm)-compteur) ; k--)
                             {
-                                if(k>0 && k<18)
+                                if((k>0 && k<18)&&k>j)
                                 {
                                     if(tableau_case_tmp[k][i] != 1)
                                     {
@@ -241,9 +270,19 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         obstacle = 1;
                         if((tableau_case_tmp[j][i-1] == 1 || tableau_case_tmp[j-1][i-1] == 1) && (tableau_case_tmp[j][i+1] == 1 || tableau_case_tmp[j-1][i+1] == 1))
                         {
-                            for(int k = ((y-pm)+compteur+1) ; k <= (((y+3)-pm)+compteur) ; k++)
+                            for(int k = ((y-pm)+compteur+1) ; k <= (((y+1)-pm)+compteur) ; k++)
                             {
-                                if(k>0 && k<18)
+                                if((k>0 && k<18)&& k<j)
+                                {
+                                    if(tableau_case_tmp[k][i] != 1)
+                                    {
+                                        tableau_case_tmp[k][i] = 4;
+                                    }
+                                }
+                            }
+                            for(int k = (((y+2)-pm)+compteur+1) ; k <= (((y+3)-pm)+compteur) ; k++)
+                            {
+                                if((k>0 && k<18)&& k<j)
                                 {
                                     if(tableau_case_tmp[k][i] != 1)
                                     {
@@ -256,7 +295,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         {
                             for(int k = ((y-pm)+compteur+1) ; k <= (((y+1)-pm)+compteur) ; k++)
                             {
-                                if(k>0 && k<18)
+                                if((k>0 && k<18)&& k<j)
                                 {
                                     if(tableau_case_tmp[k][i] != 1)
                                     {
@@ -290,9 +329,19 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         obstacle = 1;
                         if((tableau_case_tmp[i+1][j] == 1 || tableau_case_tmp[i+1][i+1] == 1) && (tableau_case_tmp[i-1][j] == 1 || tableau_case_tmp[i-1][j+1] == 1))
                         {
-                            for(int k= ((x+pm)-compteur+1) ; k>= (((x-3)+pm)-compteur) ; k--)
+                            for(int k= ((x+pm)-compteur+1) ; k>= (((x-1)+pm)-compteur) ; k--)
                             {
-                                if(k>0 && k<36)
+                                if((k>0 && k<36)&&k>j)
+                                {
+                                    if(tableau_case_tmp[i][k] != 1)
+                                    {
+                                        tableau_case_tmp[i][k] = 4;
+                                    }
+                                }
+                            }
+                            for(int k= (((x-2)+pm)-compteur+1) ; k>= (((x-3)+pm)-compteur) ; k--)
+                            {
+                                if((k>0 && k<36)&&k>j)
                                 {
                                     if(tableau_case_tmp[i][k] != 1)
                                     {
@@ -305,7 +354,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         {
                             for(int k= ((x+pm)-compteur+1) ; k>= (((x-1)+pm)-compteur) ; k--)
                             {
-                                if(k>0 && k<36)
+                                if((k>0 && k<36)&&k>j)
                                 {
                                     if(tableau_case_tmp[i][k] != 1)
                                     {
@@ -338,9 +387,19 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         obstacle = 1;
                         if((tableau_case_tmp[i+1][j] == 1 || tableau_case_tmp[i+1][i+1] == 1) && (tableau_case_tmp[i-1][j] == 1 || tableau_case_tmp[i-1][j+1] == 1))
                         {
-                            for(int k= ((x-pm)+compteur+1) ; k<= (((x+3)-pm)+compteur) ; k++)
+                            for(int k= ((x-pm)+compteur+1) ; k<= (((x+1)-pm)+compteur) ; k++)
                             {
-                                if(k>0 && k<36)
+                                if((k>0 && k<36)&&k<j)
+                                {
+                                    if(tableau_case_tmp[i][k] != 1)
+                                    {
+                                        tableau_case_tmp[i][k] = 4;
+                                    }
+                                }
+                            }
+                            for(int k= (((x+2)-pm)+compteur+1) ; k<= (((x+3)-pm)+compteur) ; k++)
+                            {
+                                if((k>0 && k<36)&&k<j)
                                 {
                                     if(tableau_case_tmp[i][k] != 1)
                                     {
@@ -353,7 +412,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         {
                             for(int k= ((x-pm)+compteur+1) ; k<= (((x+1)-pm)+compteur) ; k++)
                             {
-                                if(k>0 && k<36)
+                                if((k>0 && k<36)&&k<j)
                                 {
                                     if(tableau_case_tmp[i][k] != 1)
                                     {
@@ -385,9 +444,19 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         obstacle = 1;
                         if((tableau_case_tmp[i+1][j] == 1 || tableau_case_tmp[i+1][i+1] == 1) && (tableau_case_tmp[i-1][j] == 1 || tableau_case_tmp[i-1][j+1] == 1))
                         {
-                            for(int k= ((x+pm)-compteur+1) ; k>= (((x-3)+pm)-compteur) ; k--)
+                            for(int k= ((x+pm)-compteur+1) ; k>= (((x-1)+pm)-compteur) ; k--)
                             {
-                                if(k>0 && k<36)
+                                if((k>0 && k<36)&& k>j)
+                                {
+                                    if(tableau_case_tmp[i][k] != 1)
+                                    {
+                                        tableau_case_tmp[i][k] = 4;
+                                    }
+                                }
+                            }
+                            for(int k= (((x-2)+pm)-compteur+1) ; k>= (((x-3)+pm)-compteur) ; k--)
+                            {
+                                if((k>0 && k<36)&& k>j)
                                 {
                                     if(tableau_case_tmp[i][k] != 1)
                                     {
@@ -400,7 +469,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         {
                             for(int k= ((x+pm)-compteur+1) ; k>= (((x-1)+pm)-compteur) ; k--)
                             {
-                                if(k>0 && k<36)
+                                if((k>0 && k<36)&& k>j)
                                 {
                                     if(tableau_case_tmp[i][k] != 1)
                                     {
@@ -434,9 +503,19 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         obstacle = 1;
                         if((tableau_case_tmp[i+1][j] == 1 || tableau_case_tmp[i+1][i+1] == 1) && (tableau_case_tmp[i-1][j] == 1 || tableau_case_tmp[i-1][j+1] == 1))
                         {
-                            for(int k= ((x-pm)+compteur+1) ; k<= (((x+3)-pm)+compteur) ; k++)
+                            for(int k= ((x-pm)+compteur+1) ; k<= (((x+1)-pm)+compteur) ; k++)
                             {
-                                if(k>0 && k<36)
+                                if((k>0 && k<36)&&k<j)
+                                {
+                                    if(tableau_case_tmp[i][k] != 1)
+                                    {
+                                        tableau_case_tmp[i][k] = 4;
+                                    }
+                                }
+                            }
+                            for(int k= (((x+2)-pm)+compteur+1) ; k<= (((x+3)-pm)+compteur) ; k++)
+                            {
+                                if((k>0 && k<36)&&k<j)
                                 {
                                     if(tableau_case_tmp[i][k] != 1)
                                     {
@@ -449,7 +528,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
                         {
                             for(int k= ((x-pm)+compteur+1) ; k<= (((x+1)-pm)+compteur) ; k++)
                             {
-                                if(k>0 && k<36)
+                                if((k>0 && k<36)&&k<j)
                                 {
                                     if(tableau_case_tmp[i][k] != 1)
                                     {

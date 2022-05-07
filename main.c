@@ -6,7 +6,7 @@ int main()
     install_keyboard();
     install_mouse();
     install_sound(DIGI_AUTODETECT,MIDI_AUTODETECT,"A");
-
+    srand(time(NULL));
 
     t_joueur tabJoueur[4];
     int sortieMenu = 0;
@@ -21,8 +21,6 @@ int main()
     int rondoudouPm=5;
 
     int violetCity=0;
-
-    int test=1;
 
 
     //DÃ©claration du tableau de case :
@@ -43,29 +41,27 @@ int main()
     BITMAP* ronflex = load_bitmap("ronflex/ronflex1.bmp",NULL);
     BITMAP* alakazam = load_bitmap("alakazam/alakazam1.bmp",NULL);
 
-    BITMAP* fond = load_bitmap("fond/fondflou.bmp",NULL);
-    BITMAP* quitter = load_bitmap("fond/Quitter.bmp",NULL);
-    BITMAP* quitterInv = load_bitmap("fond/QuitterInv.bmp",NULL);
-    BITMAP* reprendre = load_bitmap("fond/Reprendre.bmp",NULL);
-    BITMAP* reprendreInv = load_bitmap("fond/ReprendreInv.bmp",NULL);
 
     BITMAP* logo = load_bitmap("logo.bmp",NULL);
 
+
+    int x=0,y=0;
+
     BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
-    srand(time(NULL));
+
 
     while(!key[KEY_ESC])
     {
-        sortieMenu=0;
-        clear_bitmap(page);
+        /*sortieMenu=0;
+        clear_bitmap(page);*/
         /*if (violetCity==0)
         {
             play_sample(musiqueFond,200,0,1000,1);
             violetCity++;
         }*/
 
-        menuJeu(page,fondMenu,logo);
+        /*menuJeu(page,fondMenu,logo);
         if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b && 1))
         {
             rest(100);
@@ -114,7 +110,6 @@ int main()
                 }
                 if (i==nbJoueurs)
                 {
-                    time_t temps1=time(NULL);
                     while(!key[KEY_ESC])
                     {
                         if (j==nbJoueurs)
@@ -152,35 +147,12 @@ int main()
                             }
                         }
                         afficher_tout_arbre(page,tableau_affichage_arbre);
+
                         afficher_commande(page,tabJoueur,nbJoueurs,j);
-                        if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b && 1))
-                        {
-                            while(test==1)
-                            {
-                                clear_bitmap(page);
-                                blit(fond,page,0,0,0,0,1200,711);
-                                AffichageBouton(quitter,quitterInv,fond,0,0,200,210,200,73);
-                                AffichageBouton(reprendre,reprendreInv,fond,0,0,400,210,200,73);
-                                if (((mouse_x>=(200)&& mouse_x<=(400))&& (mouse_y)>=(210)&& mouse_y<=(283))&&(mouse_b && 1))
-                                {
-                                    test=1;
-                                }
-                                show_mouse(page);
-                                blit(page,screen,0,0,0,0,1200,711);
-                            }
-                        }
                         show_mouse(page);
                         blit(page,screen,0,0,0,0,1200,711);
-                        time_t temps2=time(NULL);
-                        if (difftime(temps2,temps1)>=15)
-                        {
-                            temps1=time(NULL);
-                            j++;
-                            rest(200);
-                        }
                         if(((mouse_x>=(30*37)&& mouse_x<=((30*37)+130))&& (mouse_y)>=(620)&& mouse_y<=(620+115))&&(mouse_b && 1))
                         {
-                            temps1=time(NULL);
                             j++;
                             rest(200);
                         }
@@ -192,7 +164,23 @@ int main()
 
         }
         show_mouse(page);
+        blit(page,screen,0,0,0,0,1200,711);*/
+
+        clear_bitmap(page);
+        afficher_map(page);
+        afficher_cases_dispo_joueur(page,x,y,6,tableau_Cases);
+        afficher_tout_arbre(page,tableau_affichage_arbre);
+        casebleu_foncee(page,x,y);
+        show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
+        allegro_message("ok");
+        x++;
+        if(x==36)
+        {
+            x=0;
+            y++;
+        }
+
     }
     destroy_bitmap(page);
 
