@@ -22,7 +22,6 @@ void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer)
             }
         }
     }
-
 }
 
 void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18][36])

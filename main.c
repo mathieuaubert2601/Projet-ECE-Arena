@@ -71,7 +71,7 @@ int main()
     BITMAP* alakazam = load_bitmap("alakazam/alakazam1.bmp",NULL);
 
 
-    BITMAP* logo = load_bitmap("logo.bmp",NULL);
+    BITMAP* logo = load_bitmap("fond/logo.bmp",NULL);
 
 
     int x=0,y=0;
@@ -111,7 +111,7 @@ int main()
 
                     for(i=0; i<nbJoueurs; i++)
                     {
-                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueurInit[i],violetCity,musiqueFond, i, tableau_Cases);
+                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,tabJoueurInit,violetCity,musiqueFond,i, tableau_Cases,i);
                         rest(300);
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
@@ -125,7 +125,7 @@ int main()
                     //ordreJoueurs3(tabJoueur,nbJoueurs,joueur1,joueur2,joueur3);
                     for(i=0; i<nbJoueurs; i++)
                     {
-                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueurInit[i],violetCity,musiqueFond, i, tableau_Cases);
+                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,tabJoueurInit,violetCity,musiqueFond,i, tableau_Cases,i);
                         rest(300);
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
@@ -139,7 +139,7 @@ int main()
                     Saisir_nom(&joueur4,page);
                     for(i=0; i<nbJoueurs; i++)
                     {
-                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,&tabJoueurInit[i],violetCity,musiqueFond,i, tableau_Cases);
+                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,tabJoueurInit,violetCity,musiqueFond,i, tableau_Cases,i);
                         rest(300);
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);

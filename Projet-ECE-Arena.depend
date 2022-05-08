@@ -4,7 +4,7 @@
 
 1651337454 ated upstream
 
-1651939789 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
+1652005937 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -20,7 +20,7 @@
 1652004685 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
 	"header.h"
 
-1652004963 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
+1652006005 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
 1651736559 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
@@ -92,7 +92,7 @@
 1651505634 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\affichage_personnages.c
 	"header.h"
 
-1652004963 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\carte.c
+1652005472 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\carte.c
 	"header.h"
 
 1651910187 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\gestion_clavier.c
