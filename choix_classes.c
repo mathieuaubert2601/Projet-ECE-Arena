@@ -10,6 +10,9 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     }while(tabCases[yRand][xRand]==1);
 
 
+    FONT* maPolice = load_font("police_ecriture/calibri.pcx",NULL,NULL);
+
+
     BITMAP* phrase1 = load_bitmap("phrase1.bmp",NULL);
     BITMAP* phrase2 = load_bitmap("phrase2.bmp",NULL);
     BITMAP* phrase3 = load_bitmap("phrase3.bmp",NULL);
@@ -279,9 +282,11 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         AffichageBouton(boutonI,boutonInvI,page,0,0,550,625,100,50);
         AffichageBouton(boutonI,boutonInvI,page,0,0,765,625,100,50);
         AffichageBouton(boutonI,boutonInvI,page,0,0,1020,625,100,50);
-        //AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
+
+
 
         masked_stretch_blit(logo,page,0,0,755,374,300,5,600,300);
+        textprintf_ex(page,maPolice,800,50,makecol(255,255,0),-1,"%s",joueur->pseudo);
         if(nbJoueur==0)
         {
             masked_stretch_blit(phrase1,page,0,0,phrase1->w,phrase1->h,5,50,300,38);
