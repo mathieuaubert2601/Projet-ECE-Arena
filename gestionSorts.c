@@ -2,8 +2,8 @@
 
 void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur, BITMAP* page)
 {
-    BITMAP* pasPA = load_bitmap("phrasePA.bmp",NULL);
-    BITMAP* pasZone = load_bitmap("phraseZoneImpact.bmp",NULL);
+    BITMAP* pasPA = load_bitmap("phrases/phrasePA.bmp",NULL);
+    BITMAP* pasZone = load_bitmap("phrases/phraseZoneImpact.bmp",NULL);
     int totalTouche = 0;
     int touche=0;
     if (sort1.type == 1)
@@ -104,7 +104,7 @@ int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* pag
 {
     int probabilite;
     int nombrePv;
-    BITMAP* rate = load_bitmap("phraseRate.bmp",NULL);
+    BITMAP* rate = load_bitmap("phrases/phraseRate.bmp",NULL);
     ///Attaque en zone
     if (sort1.typePortee == 1)
     {
@@ -176,11 +176,11 @@ int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* pag
 void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite;
-    BITMAP* pasPA = load_bitmap("phrasePA.bmp",NULL);
-    BITMAP* rate = load_bitmap("phraseRate.bmp",NULL);
-    BITMAP* rouler = load_bitmap("phraseRouler.bmp",NULL);
-    BITMAP* teleporter = load_bitmap("phraseTeleporter.bmp",NULL);
-    BITMAP* deplacer = load_bitmap("phraseDeplacer.bmp",NULL);
+    BITMAP* pasPA = load_bitmap("phrases/phrasePA.bmp",NULL);
+    BITMAP* rate = load_bitmap("phrases/phraseRate.bmp",NULL);
+    BITMAP* rouler = load_bitmap("phrases/phraseRouler.bmp",NULL);
+    BITMAP* teleporter = load_bitmap("phrases/phraseTeleporter.bmp",NULL);
+    BITMAP* deplacer = load_bitmap("phrases/phraseDeplacer.bmp",NULL);
     if(joueurA->pa>=sort1.nbrPa)
     {
         if (sort1.numero==13)
@@ -257,7 +257,7 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
 int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page)
 {
     int probabilite;
-    BITMAP* rate = load_bitmap("phraseRate.bmp",NULL);
+    BITMAP* rate = load_bitmap("phrases/phraseRate.bmp",NULL);
     if (((joueurA->ligne-joueurB->ligne)+(joueurA->colonne-joueurB->colonne)>=sort1.pMin)&& ((joueurA->ligne-joueurB->ligne)+(joueurA->colonne-joueurB->colonne)<=sort1.pMax))
     {
         probabilite=rand() % 100;
@@ -295,8 +295,8 @@ int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page
 void sortVie(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
 {
     int probabilite,nombrePv;
-    BITMAP* pasPA = load_bitmap("phrasePA.bmp",NULL);
-    BITMAP* rate = load_bitmap("phraseRate.bmp",NULL);
+    BITMAP* pasPA = load_bitmap("phrases/phrasePA.bmp",NULL);
+    BITMAP* rate = load_bitmap("phrases/phraseRate.bmp",NULL);
     if(joueurA->pa>=sort1.nbrPa)
     {
         if (sort1.typeSoin==1)
@@ -342,8 +342,8 @@ void sortVie(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
 int sortSoin(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page)
 {
     int probabilite, nombrePv;
-    BITMAP* pasPA = load_bitmap("phrasePA.bmp",NULL);
-    BITMAP* rate = load_bitmap("phraseRate.bmp",NULL);
+    BITMAP* pasPA = load_bitmap("phrases/phrasePA.bmp",NULL);
+    BITMAP* rate = load_bitmap("phrases/phraseRate.bmp",NULL);
     if(joueurA->pa>=sort1.nbrPa)
     {
         if (joueurB->equipe==joueurA->equipe)

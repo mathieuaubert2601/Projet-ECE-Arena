@@ -13,14 +13,14 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     FONT* maPolice = load_font("police_ecriture/calibri.pcx",NULL,NULL);
 
 
-    BITMAP* phrase1 = load_bitmap("phrase1.bmp",NULL);
-    BITMAP* phrase2 = load_bitmap("phrase2.bmp",NULL);
-    BITMAP* phrase3 = load_bitmap("phrase3.bmp",NULL);
-    BITMAP* phrase4 = load_bitmap("phrase4.bmp",NULL);
+    BITMAP* phrase1 = load_bitmap("phrases/phrase1.bmp",NULL);
+    BITMAP* phrase2 = load_bitmap("phrases/phrase2.bmp",NULL);
+    BITMAP* phrase3 = load_bitmap("phrases/phrase3.bmp",NULL);
+    BITMAP* phrase4 = load_bitmap("phrases/phrase4.bmp",NULL);
     BITMAP* tabPhrases[4];
-    BITMAP* corpsacorps = load_bitmap("corpsacorps.bmp",NULL);
-    BITMAP* corpsacorpsInv = load_bitmap("corpsacorpsInv.bmp",NULL);
-    BITMAP* infoscorps = load_bitmap("infoscorps.bmp",NULL);
+    BITMAP* corpsacorps = load_bitmap("CAC/corpsacorps.bmp",NULL);
+    BITMAP* corpsacorpsInv = load_bitmap("CAC/corpsacorpsInv.bmp",NULL);
+    BITMAP* infoscorps = load_bitmap("CAC/infoscorps.bmp",NULL);
 
     //Declaration Bitmap Pikachu sorts
     BITMAP* cageE = load_bitmap("pikachu/CageEclair.bmp",NULL);
@@ -255,8 +255,8 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     BITMAP* boutonInvI = load_bitmap("boutons/boutonInvInfos.bmp",NULL);
 
     BITMAP* logo = load_bitmap("logo.bmp",NULL);
-    BITMAP* fond = load_bitmap("fond1.bmp",NULL);
-    BITMAP* fondMenu = load_bitmap("fondMenu.bmp",NULL);
+    BITMAP* fond = load_bitmap("fond/fond1.bmp",NULL);
+    BITMAP* fondMenu = load_bitmap("fond/fondMenu.bmp",NULL);
 
     rest(300);
     while(sortieClasses!=1)

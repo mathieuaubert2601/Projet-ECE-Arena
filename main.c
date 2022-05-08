@@ -57,12 +57,12 @@ int main()
     lecture_fichier_matrice_map_arbre(tableau_affichage_arbre);
 
     ///Declaration des BITMAP
-    BITMAP* fondMenu = load_bitmap("fondMenu.bmp",NULL);
+    BITMAP* fondMenu = load_bitmap("fond/fondMenu.bmp",NULL);
     BITMAP* fond = load_bitmap("fond/fondflou.bmp",NULL);
-    BITMAP* quitter = load_bitmap("fond/Quitter.bmp",NULL);
-    BITMAP* quitterInv = load_bitmap("fond/QuitterInv.bmp",NULL);
-    BITMAP* reprendre = load_bitmap("fond/Reprendre.bmp",NULL);
-    BITMAP* reprendreInv = load_bitmap("fond/ReprendreInv.bmp",NULL);
+    BITMAP* quitter = load_bitmap("boutons/Quitter.bmp",NULL);
+    BITMAP* quitterInv = load_bitmap("boutons/QuitterInv.bmp",NULL);
+    BITMAP* reprendre = load_bitmap("boutons/Reprendre.bmp",NULL);
+    BITMAP* reprendreInv = load_bitmap("boutons/ReprendreInv.bmp",NULL);
     SAMPLE* musiqueFond = load_sample("musiques/VioletCity.wav");
     BITMAP* lucario = load_bitmap("lucario/lucario1.bmp",NULL);
     BITMAP* rondoudou = load_bitmap("rondoudou/rondoudou1.bmp",NULL);

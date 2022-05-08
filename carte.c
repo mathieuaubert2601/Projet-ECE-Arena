@@ -3,8 +3,8 @@
 void afficher_map(BITMAP* buffer)
 {
     //d�claration des variables
-    BITMAP* carte = load_bitmap("map.bmp",NULL);
-    BITMAP* arbre = load_bitmap("arbre1.bmp",NULL);
+    BITMAP* carte = load_bitmap("map/map.bmp",NULL);
+    BITMAP* arbre = load_bitmap("map/arbre1.bmp",NULL);
 
     //affichage de la carte sur le buffer
     blit(carte,buffer,0,0,0,0,buffer->w,buffer->h);
@@ -962,7 +962,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
 void afficher_arbre(BITMAP* buffer, int x, int y)
 {
     //Déclaration des variables
-    BITMAP* arbre = load_bitmap("arbre1.bmp",NULL);
+    BITMAP* arbre = load_bitmap("map/arbre1.bmp",NULL);
     int caseX = 30,caseY = 32,initX = 20;
 
     //affichage des arbres sur le buffer
@@ -988,7 +988,7 @@ void afficher_tout_arbre(BITMAP* buffer, int matrice_arbre[18][36])
 void casebleu(BITMAP* buffer, int posx, int posy)
 {
     //déclaration des variables
-    BITMAP* casefiltre = load_bitmap("casefiltre.bmp",NULL);
+    BITMAP* casefiltre = load_bitmap("map/casefiltre.bmp",NULL);
     int casex = -30, casey = -32;
 
     //On affiche la bitmap sur le buffer
@@ -999,7 +999,7 @@ void casebleu(BITMAP* buffer, int posx, int posy)
 void casebleu_foncee(BITMAP* buffer, int posx, int posy)
 {
     //déclaration des variables
-    BITMAP* casefiltre_foncee= load_bitmap("casefiltrefonce.bmp",NULL);
+    BITMAP* casefiltre_foncee= load_bitmap("map/casefiltrefonce.bmp",NULL);
     int casex = -30, casey = -32;
 
     //On affiche la bitmap sur le buffer
@@ -1013,11 +1013,11 @@ void afficher_coordonnees(BITMAP* buffer)
 
 void afficher_lac(BITMAP* buffer)
 {
-    BITMAP* lac1=load_bitmap("lac1.bmp",NULL);
-    BITMAP* lac2=load_bitmap("lac2.bmp",NULL);
-    BITMAP* lac3=load_bitmap("lac3.bmp",NULL);
-    BITMAP* lac4=load_bitmap("lac4.bmp",NULL);
-    BITMAP* lac5=load_bitmap("lac5.bmp",NULL);
+    BITMAP* lac1=load_bitmap("map/lac1.bmp",NULL);
+    BITMAP* lac2=load_bitmap("map/lac2.bmp",NULL);
+    BITMAP* lac3=load_bitmap("map/lac3.bmp",NULL);
+    BITMAP* lac4=load_bitmap("map/lac4.bmp",NULL);
+    BITMAP* lac5=load_bitmap("map/lac5.bmp",NULL);
 
     int casex = 30;
     int casey = 32;

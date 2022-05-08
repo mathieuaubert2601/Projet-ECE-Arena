@@ -11,7 +11,7 @@ void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo, int* violetCity)
     BITMAP* bouton4inv = load_bitmap("boutons/boutonInvNb4.bmp",NULL);
     BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
     BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
-    BITMAP* phrase = load_bitmap("choixnombre.bmp",NULL);
+    BITMAP* phrase = load_bitmap("phrases/choixnombre.bmp",NULL);
     SAMPLE* musiqueFond = load_sample("musiques/VioletCity.wav");
 
 
