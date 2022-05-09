@@ -102,8 +102,8 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     BITMAP* infossoin = load_bitmap("rondoudou/InfosSoin.bmp",NULL);
 
     ///Déclaration sorts
-    t_sorts vitesseExtreme={0,0,0,80,2,0,3,0,7,0,0,0,vitEx,vitExInv,infosvitEx};
-    t_sorts vitesseExtremeL={0,23,0,80,2,0,3,0,7,0,0,0,vitExL,vitExLInv,infosvitExL};
+    t_sorts vitesseExtreme={0,0,0,80,2,0,3,0,7,3,0,0,vitEx,vitExInv,infosvitEx};
+    t_sorts vitesseExtremeL={0,23,0,80,2,0,3,0,7,3,0,0,vitExL,vitExLInv,infosvitExL};
     t_sorts fatalFoudre={15,1,8,50,1,4,7,0,10,1,0,0,fatF,fatFInv,infosfatF};
     t_sorts bouleElek={10,2,5,75,1,3,5,2,6,2,0,0,boulE,boulEInv,infosboulE};
     t_sorts couDjus={6,3,4,90,1,2,5,0,3,3,0,0,coupJ,coupJInv,infoscoupJ};
@@ -112,7 +112,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     t_sorts reposS={100,6,25,60,4,0,0,0,10,0,1,2,repos,reposInv,infosrepos};
     t_sorts coupDboule={5,7,4,95,1,1,3,0,3,3,0,0,coupB,coupBInv,infoscoupB};
     t_sorts seismeS={9,8,15,50,1,1,4,0,10,3,0,0,seisme,seismeInv,infosseisme};
-    t_sorts chargeS={0,9,0,50,2,0,5,0,7,0,0,0,charge,chargeInv,infoscharge};
+    t_sorts chargeS={0,9,0,50,2,0,5,0,7,3,0,0,charge,chargeInv,infoscharge};
     t_sorts rugissement={0,10,0,40,3,0,2,0,3,3,4,0,rugis,rugisInv,infosrugis};
     t_sorts aurasphere={12,11,5,75,1,3,6,0,6,1,0,0,aura,auraInv,infosaura};
     t_sorts closeCombat={15,12,3,60,1,1,3,0,6,3,0,0,closeC,closeCInv,infoscloseC};
@@ -125,7 +125,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     t_sorts torgnolesS={8,19,2,80,1,0,2,0,5,3,0,0,torgnoles,torgnolesInv,infostorgnoles};
     t_sorts soinS={50,20,10,75,2,0,2,0,10,3,0,3,soin,soinInv,infossoin};
     t_sorts berceuseS={0,21,0,50,2,0,3,0,6,3,2,0,berceuse,berceuseInv,infosberceuse};
-    t_sorts corps={1,22,0,100,1,0,1,0,1,0,0,0,corpsacorps,corpsacorpsInv,infoscorps};
+    t_sorts corps={1,22,0,100,1,0,1,0,1,3,0,0,corpsacorps,corpsacorpsInv,infoscorps};
 
     t_sorts tabSorts[23]={vitesseExtreme,fatalFoudre,bouleElek,couDjus,cageEclair,boulArmure,reposS,coupDboule,seismeS,chargeS,rugissement,aurasphere,closeCombat,vitesseExtremeL,hateS,toxicS,psykoS,teleportS,autoSoinS,vaguePsyS,torgnolesS,soinS,berceuseS};
 

@@ -106,9 +106,9 @@ int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* pag
     int nombrePv;
     BITMAP* rate = load_bitmap("phrases/phraseRate.bmp",NULL);
     ///Attaque en zone
-    if (sort1.typePortee == 1)
+    if (sort1.typePortee == 3)
     {
-        if (((joueurA->ligne-joueurB->ligne)+(joueurA->colonne-joueurB->colonne)>=sort1.pMin)&& ((joueurA->ligne-joueurB->ligne)+(joueurA->colonne-joueurB->colonne)<=sort1.pMax))
+        if (((abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)>=sort1.pMin)&&(abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)<=sort1.pMax)))
         {
             probabilite=rand() % 100;
             if (probabilite<sort1.chance)
@@ -139,9 +139,10 @@ int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* pag
         }
     }
     ///Attaque en ligne droite
-    if (sort1.typePortee == 3)
+    if (sort1.typePortee == 1)
     {
-        if(1==1)
+        if ((joueurA->ligne/32==joueurB->ligne/32) && ((abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)>=sort1.pMin)&&(abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)<=sort1.pMax)) || ((joueurA->colonne/30==joueurB->colonne/30) && ((abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)>=sort1.pMin)&&(abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)<=sort1.pMax))))
+
         {
             probabilite=rand() % 100;
             if (probabilite<sort1.chance)
@@ -228,7 +229,7 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
                 show_mouse(page);
                 blit(page,screen,0,0,0,0,1200,711);
             }
-            while ((((joueurA->ligne-caseChoisieLigne)+(joueurA->colonne-caseChoisieColonne)>=sort1.pMin)&& ((joueurA->ligne-caseChoisieLigne)+(joueurA->colonne-caseChoisieColonne)<=sort1.pMax))|| (sortie_mouv != 1));
+            while ((((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)&&(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax)))|| (sortie_mouv != 1));
             if (sortie_mouv == 0)
             {
                 probabilite=rand() % 100 ;
@@ -258,7 +259,8 @@ int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page
 {
     int probabilite;
     BITMAP* rate = load_bitmap("phrases/phraseRate.bmp",NULL);
-    if (((joueurA->ligne-joueurB->ligne)+(joueurA->colonne-joueurB->colonne)>=sort1.pMin)&& ((joueurA->ligne-joueurB->ligne)+(joueurA->colonne-joueurB->colonne)<=sort1.pMax))
+    if (((abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)>=sort1.pMin)&&(abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)<=sort1.pMax)))
+
     {
         probabilite=rand() % 100;
         if (probabilite<sort1.chance)
@@ -348,7 +350,8 @@ int sortSoin(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page)
     {
         if (joueurB->equipe==joueurA->equipe)
         {
-            if (((joueurA->ligne-joueurB->ligne)+(joueurA->colonne-joueurB->colonne)>=sort1.pMin)&& ((joueurA->ligne-joueurB->ligne)+(joueurA->colonne-joueurB->colonne)<=sort1.pMax))
+            if (((abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)>=sort1.pMin)&&(abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)<=sort1.pMax)))
+
             {
                 probabilite=rand() % 100;
                 if (probabilite<sort1.chance)

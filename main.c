@@ -295,7 +295,29 @@ int main()
                         //if(((mouse_x>=(casex*30)&& mouse_x<=(casex*30+100))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+100))&&(mouse_b && 1))
                         //{
                         //}
-
+                        for (int z=0; z<nbJoueurs; z++)
+                        {
+                            if (tabJoueur[z].numeroClasse==1)///Pikachu
+                            {
+                                afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            }
+                            if (tabJoueur[z].numeroClasse==2)///Ronflex
+                            {
+                                afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            }
+                            if (tabJoueur[z].numeroClasse==3)///Lucario
+                            {
+                                afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            }
+                            if (tabJoueur[z].numeroClasse==4)///Alakazam
+                            {
+                                afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            }
+                            if (tabJoueur[z].numeroClasse==5)///Rondoudou
+                            {
+                                afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            }
+                        }
                         if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b && 1))
                         {
                             while(test==1)
@@ -360,6 +382,31 @@ int main()
                             temps1=time(NULL);
                             tabJoueur[j].pa=10;
                             tabJoueur[j].pm=pmDebut;
+                            if(tabJoueur[j].tourBouclier>0)
+                            {
+                               tabJoueur[j].tourBouclier--;
+                            }
+                            if(tabJoueur[j].tourDodo>0)
+                            {
+                               tabJoueur[j].tourDodo--;
+                            }
+                            if(tabJoueur[j].tourHate>0)
+                            {
+                               tabJoueur[j].tourHate--;
+                            }
+                            if(tabJoueur[j].tourParalysie>0)
+                            {
+                               tabJoueur[j].tourParalysie--;
+                            }
+                            if(tabJoueur[j].tourPeur>0)
+                            {
+                               tabJoueur[j].tourPeur--;
+                            }
+                            if(tabJoueur[j].tourPoison>0)
+                            {
+                               tabJoueur[j].tourPoison--;
+                               tabJoueur[j].pv-=5;
+                            }
                             j++;
                             rest(200);
                         }
