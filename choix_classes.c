@@ -1,8 +1,8 @@
 #include "header.h"
 void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur joueur[], int* violetCity, SAMPLE* musiqueFond, int nbJoueur, int tabCases[18][36], int t)
 {
-    int xRand;
-    int yRand;
+    int xRand ;
+    int yRand ;
     do
     {
          xRand = rand()%35;
