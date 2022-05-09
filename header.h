@@ -53,7 +53,7 @@ void initialisationAllegro();
 void AffichageBouton(BITMAP* bouton,BITMAP* boutonInv, BITMAP* page,int sourcex,int sourcey,int destx,int desty,int longueur, int hauteur);
 void AffichageSorts(BITMAP* bouton,BITMAP* boutonInv,BITMAP* infos, BITMAP* page,int sourcex,int sourcey,int destx,int desty,int longueur, int hauteur, int hauteurinfos, int longueurinfos);
 //choix_classes
-void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur* joueur,int* violetCity,SAMPLE* musiqueFond,int nbJoueur,int tabCases[18][36]);
+void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur joueur[], int* violetCity, SAMPLE* musiqueFond, int nbJoueur, int tabCases[18][36], int t);
 //informations_classe
 void information_Pikachu(BITMAP* page, BITMAP* fond);
 void information_Lucario(BITMAP* page, BITMAP* fond);
@@ -99,4 +99,5 @@ int sortSoin(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page);
 int test_clique_Suppr(int destx, int desty, int longueur, int hauteur,int compteur,char pseudo[15]);
 int test_clique_Entree(int destx, int desty, int longueur, int hauteur,int boule,char pseudo[15]);
 int test_clique(int destx, int desty, int longueur, int hauteur,char lettre,int compteur,char pseudo[15]);
+void ordreJoueurs(t_joueur ordreJoueur[],t_joueur tabJoueur[], int nbrJoueur);
 #endif // HEADER_H_INCLUDED

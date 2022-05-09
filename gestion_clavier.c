@@ -154,7 +154,7 @@ void Saisir_nom(t_joueur* joueur, BITMAP* page)
     BITMAP*barreNom;
 
     makecol(255, 0, 255);
-    fondMenu=load_bitmap("fondMenu.bmp",NULL);
+    fondMenu=load_bitmap("fond/fondMenu.bmp",NULL);
     //logo=load_bitmap("logo_pokemon_bien.bmp",NULL);
     choixpseudo=load_bitmap("clavier/choixpseudo.bmp",NULL);
     barreNom=load_bitmap("clavier/barreNom.bmp",NULL);

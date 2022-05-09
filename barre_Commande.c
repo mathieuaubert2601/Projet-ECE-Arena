@@ -5,19 +5,19 @@ void afficher_commande (BITMAP* buffer,t_joueur tab[],int nbJ, int j)
     FONT* maPolice = load_font("police_ecriture/calibri.pcx",NULL,NULL);
 
     BITMAP* casefiltre = load_bitmap("casefiltre.bmp",NULL);
-    BITMAP* fondbas = load_bitmap("fondbas.bmp",NULL);
-    BITMAP* fondcote = load_bitmap("fondcote.bmp",NULL);
+    BITMAP* fondbas = load_bitmap("fond/fondbas.bmp",NULL);
+    BITMAP* fondcote = load_bitmap("fond/fondcote.bmp",NULL);
 
-    BITMAP* PA = load_bitmap("PA.bmp",NULL);
-    BITMAP* PM = load_bitmap("PM.bmp",NULL);
-    BITMAP* PV = load_bitmap("PV.bmp",NULL);
+    BITMAP* PA = load_bitmap("boutons/PA.bmp",NULL);
+    BITMAP* PM = load_bitmap("boutons/PM.bmp",NULL);
+    BITMAP* PV = load_bitmap("boutons/PV.bmp",NULL);
 
-    BITMAP* JoueurS = load_bitmap("JoueurSuivant.bmp",NULL);
-    BITMAP* JoueurSInv = load_bitmap("JoueurSuivantInv.bmp",NULL);
+    BITMAP* JoueurS = load_bitmap("boutons/JoueurSuivant.bmp",NULL);
+    BITMAP* JoueurSInv = load_bitmap("boutons/JoueurSuivantInv.bmp",NULL);
 
     BITMAP* fond = load_bitmap("fond/fondflou",NULL);
-    BITMAP* menu = load_bitmap("fond/Menu.bmp",NULL);
-    BITMAP* menuInv = load_bitmap("fond/MenuInv.bmp",NULL);
+    BITMAP* menu = load_bitmap("boutons/Menu.bmp",NULL);
+    BITMAP* menuInv = load_bitmap("boutons/MenuInv.bmp",NULL);
 
     int casex, casey, casex2, casey2;
     casex = -30;

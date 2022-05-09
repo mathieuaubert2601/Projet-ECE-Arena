@@ -24,7 +24,7 @@
 	</File>
 	<File name="barre_Commande.c" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="95" topLine="0" />
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="menuJeu.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -35,6 +35,11 @@
 	<File name="boutons_menu.c" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="367" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="affichage_Personnages.c" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="107" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="choix_classes.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -52,7 +57,7 @@
 			<Cursor1 position="304" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="carte.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="carte.c" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="834" topLine="24" />
 		</Cursor>
