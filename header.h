@@ -72,6 +72,7 @@ void casebleu_foncee(BITMAP* buffer, int posy, int posx);
 void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18][36]);
 void remettre_case_obstacle(int matrice_A_Modifier[18][36]);
 void afficher_lac(BITMAP* buffer);
+void caserouge(BITMAP* buffer, int posx, int posy);
 //affichage_Personnages
 void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int y);
 void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int y);
