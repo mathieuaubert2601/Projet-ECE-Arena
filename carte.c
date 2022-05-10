@@ -35,7 +35,7 @@ void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18]
     }
 }
 
-void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_cases[18][36])
+void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_cases[18][36], int tableau_a_rendre[18][36])
 {
     //int tableau_case_tmp[18][36];
     int tableau_case_tmp[18][36] ;
@@ -46,6 +46,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
         for(int j = 0 ; j<36 ; j++)
         {
             tableau_case_tmp[i][j] = tableau_cases[i][j];
+            tableau_a_rendre[i][j] = 0;
 
         }
 
@@ -95,6 +96,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
             {
                 casebleu(buffer,j,i);
             }
+            tableau_a_rendre[i][j] = tableau_case_tmp[i][j];
         }
     }
     //On met la case sur laquelle on est en bleu foncé
@@ -170,4 +172,14 @@ void afficher_lac(BITMAP* buffer)
     blit(lac4,buffer,0,0,casex*0,casey*13,61,129);
     blit(lac5,buffer,0,0,casex*17,casey*13,121,97);
 
+}
+
+void caserouge(BITMAP* buffer, int posx, int posy)
+{
+    //déclaration des variables
+    BITMAP* caserouge= load_bitmap("map/caserouge.bmp",NULL);
+    int casex = -30, casey = -32;
+
+    //On affiche la bitmap sur le buffer
+    blit(caserouge,buffer,posx * casex,posy * casey,0,0,buffer->w,buffer->h);
 }

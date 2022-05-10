@@ -55,6 +55,9 @@
 		<Unit filename="deplacement_joueur.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="deplacement_plus_court.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="gestionSorts.c">
 			<Option compilerVar="CC" />
 		</Unit>

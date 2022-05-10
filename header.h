@@ -67,7 +67,7 @@ void afficher_tout_arbre(BITMAP* buffer, int matrice_arbre[18][36]);
 void afficher_coordonnees(BITMAP* buffer);
 void casebleu(BITMAP* buffer, int posy, int posx);
 void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer);
-void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y , int pm,int tableau_cases[18][36]);
+void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_cases[18][36], int tableau_a_rendre[18][36]);
 void casebleu_foncee(BITMAP* buffer, int posy, int posx);
 void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18][36]);
 void remettre_case_obstacle(int matrice_A_Modifier[18][36]);
