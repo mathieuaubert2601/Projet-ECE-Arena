@@ -79,11 +79,11 @@ void affichage_profil(BITMAP* buffer,t_joueur tab[], int nbJoueurs,int j)
     {
         if(i==j)
         {
-            masked_blit(tab[i].classe.profilvert,buffer,0,0,1100,casey*i*3+90,90,80);
+            masked_blit(tab[i].classe.profilvert,buffer,0,0,1105,casey*i*3+90,90,80);
         }
         else
         {
-            masked_blit(tab[i].classe.profil,buffer,0,0,1100,casey*i*3+90,90,80);
+            masked_blit(tab[i].classe.profil,buffer,0,0,1105,casey*i*3+90,90,80);
         }
     }
 }

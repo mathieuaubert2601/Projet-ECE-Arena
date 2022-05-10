@@ -3,6 +3,7 @@
 void information_Pikachu(BITMAP* page, BITMAP* fond)
 {
     int sortie = 0;
+    FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
     //déclaration des variables
     BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
     BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
@@ -10,6 +11,23 @@ void information_Pikachu(BITMAP* page, BITMAP* fond)
     BITMAP* pika1 = load_bitmap("pikachu/pikachuInfo1.bmp",NULL);
     BITMAP* pika2 = load_bitmap("pikachu/pikachu2.bmp",NULL);
     BITMAP* tableauBitmapPikachu[2] = {pika1,pika2};
+
+    //Declaration Bitmap Pikachu sorts
+    BITMAP* cageE = load_bitmap("pikachu/CageEclair.bmp",NULL);
+    BITMAP* cageEInv = load_bitmap("pikachu/CageEclairInv.bmp",NULL);
+    BITMAP* infoscageE = load_bitmap("pikachu/InfosCageEclair.bmp",NULL);
+    BITMAP* fatF = load_bitmap("pikachu/FatalFoudre.bmp",NULL);
+    BITMAP* fatFInv = load_bitmap("pikachu/FatalFoudreInv.bmp",NULL);
+    BITMAP* infosfatF = load_bitmap("pikachu/InfosFatalFoudre.bmp",NULL);
+    BITMAP* boulE = load_bitmap("pikachu/BouleElek.bmp",NULL);
+    BITMAP* boulEInv = load_bitmap("pikachu/BouleElekInv.bmp",NULL);
+    BITMAP* infosboulE = load_bitmap("pikachu/InfosBouleElek.bmp",NULL);
+    BITMAP* coupJ = load_bitmap("pikachu/CoupJus.bmp",NULL);
+    BITMAP* coupJInv = load_bitmap("pikachu/CoupJusInv.bmp",NULL);
+    BITMAP* infoscoupJ = load_bitmap("pikachu/InfosCoupJus.bmp",NULL);
+    BITMAP* vitEx = load_bitmap("pikachu/VitesseExtreme.bmp",NULL);
+    BITMAP* vitExInv = load_bitmap("pikachu/VitesseExtremeInv.bmp",NULL);
+    BITMAP* infosvitEx = load_bitmap("pikachu/InfosVitesseExtreme.bmp",NULL);
 
     //Boucle d'affichage du gif
     while(sortie!=1)
@@ -19,6 +37,9 @@ void information_Pikachu(BITMAP* page, BITMAP* fond)
         masked_blit(tableauBitmapPikachu[0],page,0,0,600,200,500,490);
         masked_blit(info_pika,page,0,0,50,0,571,670);
         AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
+        AffichageSorts(cageE,cageEInv,infoscageE,page,0,0,380,350,75,54,200,54);
+        AffichageSorts(boulE,boulEInv,infosboulE,page,0,0,380,500,75,54,200,54);
+        textprintf_ex(page,maPolice,0,0,makecol(255,255,0),-1,"%d","%d",mouse_x,mouse_y);
         show_mouse(page);
         if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
             {
@@ -32,6 +53,9 @@ void information_Pikachu(BITMAP* page, BITMAP* fond)
         masked_blit(tableauBitmapPikachu[1],page,0,0,600,200,500,500);
         masked_blit(info_pika,page,0,0,50,0,571,670);
         AffichageBouton(quitter,quitterInv,page,0,0,1000,50,181,59);
+        AffichageSorts(cageE,cageEInv,infoscageE,page,0,0,380,350,75,54,200,54);
+        AffichageSorts(boulE,boulEInv,infosboulE,page,0,0,380,500,75,54,200,54);
+        textprintf_ex(page,maPolice,0,0,makecol(255,255,0),-1,"%d","%d",mouse_x,mouse_y);
         show_mouse(page);
         if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
             {

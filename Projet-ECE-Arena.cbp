@@ -34,6 +34,9 @@
 		<Unit filename="affichage_Personnages.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="afficherPortee.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="barre_Commande.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -50,6 +53,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="deplacement_joueur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="deplacement_plus_court.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="gestionSorts.c">
@@ -72,6 +78,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="menuNbJoueur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ordreJoueurs.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
