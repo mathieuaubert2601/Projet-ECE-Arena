@@ -74,7 +74,7 @@ int main()
     BITMAP* logo = load_bitmap("fond/logo.bmp",NULL);
 
 
-    int x=3,y=5;
+    int x=0,y=0;
 
     BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
@@ -425,10 +425,10 @@ int main()
         afficher_map(page);
         afficher_cases_dispo_joueur(page,x,y,6,tableau_Cases);
         afficher_tout_arbre(page,tableau_affichage_arbre);
-        casebleu_foncee(page,x,y);
+        //casebleu_foncee(page,x,y);
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
-        allegro_message("ok");
+        //allegro_message("ok");
         x++;
         if(x==36)
         {

@@ -85,7 +85,7 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
 
 
 
-    ///On met les cases disponibles en bleu
+    //On met les cases disponibles en bleu
     for(int i = 0 ; i<18 ; i++)
     {
         for(int j = 0 ; j<36 ; j++)
@@ -97,6 +97,8 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
             }
         }
     }
+    //On met la case sur laquelle on est en bleu foncé
+    casebleu_foncee(buffer,x,y);
 }
 
 void afficher_arbre(BITMAP* buffer, int x, int y)
