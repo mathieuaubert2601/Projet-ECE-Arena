@@ -82,15 +82,15 @@ int main()
 
     while(!key[KEY_ESC])
     {
-        /*sortieMenu=0;
-        clear_bitmap(page);*/
-        /*if (violetCity==0)
+        sortieMenu=0;
+        clear_bitmap(page);
+        if (violetCity==0)
         {
             play_sample(musiqueFond,200,0,1000,1);
             violetCity++;
-        }*/
+        }
 
-        /*menuJeu(page,fondMenu,logo);
+        menuJeu(page,fondMenu,logo);
         if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b && 1))
         {
             rest(100);
@@ -418,13 +418,13 @@ int main()
 
         }
         show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);*/
+        blit(page,screen,0,0,0,0,1200,711);
 
 
-        clear_bitmap(page);
+        /*clear_bitmap(page);
         afficher_map(page);
         afficher_cases_dispo_joueur(page,x,y,6,tableau_Cases);
-        afficher_tout_arbre(page,tableau_affichage_arbre);
+        afficher_tout_arbre(page,tableau_affichage_arbre);*/
         //casebleu_foncee(page,x,y);
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
