@@ -1,6 +1,308 @@
 #include "header.h"
 
 
+int test_clavier_suppr(int compteur, char pseudo[15],BITMAP*page,FONT* maPolice)
+{
+    if(key[KEY_BACKSPACE])
+    {
+        compteur--;
+        pseudo[compteur]=' ';
+        rest(200);
+    }
+    return compteur;
+}
+
+int test_clavier_entree(char pseudo[15],int boule)
+{
+    if(key[KEY_ENTER])
+    {
+        if(pseudo[0]==' ')
+        {
+            boule=0;
+            rest(200);
+
+        }
+        if(pseudo[0]!=' ')
+        {
+            boule=1;
+            rest(200);
+
+        }
+    }
+    return boule;
+}
+
+
+int test_clavierA(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_Q])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierW(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_Z])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierZ(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_W])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierE(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_E])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierR(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_R])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierT(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_T])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierY(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_Y])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierU(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_U])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierI(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_I])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierO(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_O])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierP(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_P])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierQ(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_A])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierD(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_D])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierF(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_F])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierG(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_G])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierH(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_H])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+
+int test_clavierJ(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_J])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierK(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_K])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierL(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_L])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierS(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_S])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+int test_clavierM(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_SEMICOLON])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+
+int test_clavierX(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_X])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+
+int test_clavierC(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_C])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+
+int test_clavierV(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_V])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+
+int test_clavierB(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_B])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+
+int test_clavierN(int compteur,char pseudo[15],char lettre)
+{
+    if(key[KEY_N])
+    {
+        pseudo[compteur]=lettre;
+        compteur++;
+        rest(200);
+    }
+    return compteur;
+}
+
+
+
+
 int test_clique(int destx, int desty, int longueur, int hauteur,char lettre,int compteur,char pseudo[15])
 {
     if((mouse_x>=(destx)&& mouse_x<=(destx+longueur))&& (mouse_y)>=(desty)&& mouse_y<=(desty+hauteur)&&(mouse_b && 1))
@@ -308,6 +610,34 @@ void Saisir_nom(t_joueur* joueur, BITMAP* page)
         compteur =test_clique(420,400,75,75,Vl,compteur,pseudo);
         compteur =test_clique(495,400,75,75,Bl,compteur,pseudo);
         compteur =test_clique(570,400,75,75,Nl,compteur,pseudo);
+        compteur =test_clavierA(compteur,pseudo,Al);
+        compteur =test_clavierZ(compteur,pseudo,Zl);
+        compteur =test_clavierE(compteur,pseudo,El);
+        compteur =test_clavierR(compteur,pseudo,Rl);
+        compteur =test_clavierT(compteur,pseudo,Tl);
+        compteur =test_clavierY(compteur,pseudo,Yl);
+        compteur =test_clavierM(compteur,pseudo,Ml);
+        compteur =test_clavierU(compteur,pseudo,Ul);
+        compteur =test_clavierI(compteur,pseudo,Il);
+        compteur =test_clavierO(compteur,pseudo,Ol);
+        compteur =test_clavierP(compteur,pseudo,Pl);
+        compteur =test_clavierQ(compteur,pseudo,Ql);
+        compteur =test_clavierS(compteur,pseudo,Sl);
+        compteur =test_clavierD(compteur,pseudo,Dl);
+        compteur =test_clavierF(compteur,pseudo,Fl);
+        compteur =test_clavierG(compteur,pseudo,Gl);
+        compteur =test_clavierH(compteur,pseudo,Hl);
+        compteur =test_clavierJ(compteur,pseudo,Jl);
+        compteur =test_clavierK(compteur,pseudo,Kl);
+        compteur =test_clavierL(compteur,pseudo,Ll);
+        compteur =test_clavierX(compteur,pseudo,Xl);
+        compteur =test_clavierC(compteur,pseudo,Cl);
+        compteur =test_clavierV(compteur,pseudo,Vl);
+        compteur =test_clavierB(compteur,pseudo,Bl);
+        compteur =test_clavierN(compteur,pseudo,Nl);
+        compteur =test_clavierW(compteur,pseudo,Wl);
+        arret=test_clavier_entree(pseudo,arret);
+        compteur=test_clavier_suppr(compteur,pseudo,page,maPolice);
 
         arret=test_clique_Entree(645,400,150,75,arret,pseudo);
         compteur=test_clique_Suppr(795,400,150,75,compteur,pseudo);
