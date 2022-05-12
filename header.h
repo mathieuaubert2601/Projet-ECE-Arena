@@ -83,6 +83,7 @@ void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int
 void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo,int* violetCity);
 //menuJeu
 void menuJeu(BITMAP* page, BITMAP* fond,BITMAP* logo);
+void Saisir_nom(char nom_joueur[15], BITMAP* page);
 //barre_commande
 void afficher_commande(BITMAP* buffer,t_joueur tab[],int nbJ, int j);
 void affichage_profil(BITMAP* buffer,t_joueur tab[],int nbJ, int j);

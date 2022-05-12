@@ -106,8 +106,8 @@ int main()
                 {
 
                     nbJoueurs = 2;
-                    Saisir_nom(tabJoueurInit[0],page);
-                    Saisir_nom(tabJoueurInit[1],page);
+                    Saisir_nom(tabJoueurInit[0].pseudo,page);
+                    Saisir_nom(tabJoueurInit[1].pseudo,page);
 
                     for(i=0; i<nbJoueurs; i++)
                     {
@@ -119,9 +119,9 @@ int main()
                 if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 3 joueurs
                 {
                     nbJoueurs = 3;
-                    Saisir_nom(&joueur1,page);
-                    Saisir_nom(&joueur2,page);
-                    Saisir_nom(&joueur3,page);
+                    Saisir_nom(tabJoueurInit[0].pseudo,page);
+                    Saisir_nom(tabJoueurInit[1].pseudo,page);
+                    Saisir_nom(tabJoueurInit[2].pseudo,page);
                     //ordreJoueurs3(tabJoueur,nbJoueurs,joueur1,joueur2,joueur3);
                     for(i=0; i<nbJoueurs; i++)
                     {
@@ -133,10 +133,10 @@ int main()
                 if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 4 joueurs
                 {
                     nbJoueurs = 4;
-                    Saisir_nom(&joueur1,page);
-                    Saisir_nom(&joueur2,page);
-                    Saisir_nom(&joueur3,page);
-                    Saisir_nom(&joueur4,page);
+                    Saisir_nom(tabJoueurInit[0].pseudo,page);
+                    Saisir_nom(tabJoueurInit[1].pseudo,page);
+                    Saisir_nom(tabJoueurInit[2].pseudo,page);
+                    Saisir_nom(tabJoueurInit[3].pseudo,page);
                     for(i=0; i<nbJoueurs; i++)
                     {
                         menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,tabJoueurInit,violetCity,musiqueFond,i, tableau_Cases,i);

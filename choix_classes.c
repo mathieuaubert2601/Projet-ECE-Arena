@@ -287,7 +287,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
 
         masked_stretch_blit(logo,page,0,0,755,374,300,5,600,300);
 
-        //textprintf_ex(page,maPolice,800,50,makecol(255,255,0),-1,"%s",joueur[t].pseudo);
+        textprintf_ex(page,maPolice,800,50,makecol(255,255,0),-1,"%s",joueur[t].pseudo);
         /*if(nbJoueur==0)
         {
             masked_stretch_blit(phrase1,page,0,0,phrase1->w,phrase1->h,5,50,300,38);

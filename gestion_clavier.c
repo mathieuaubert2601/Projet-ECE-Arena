@@ -353,7 +353,7 @@ int test_clique_Suppr(int destx, int desty, int longueur, int hauteur,int compte
 
 }
 
-void Saisir_nom(t_joueur* joueur, BITMAP* page)
+void Saisir_nom(char nom_joueur[15], BITMAP* page)
 {
     FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
     int arret=0;
@@ -643,13 +643,13 @@ void Saisir_nom(t_joueur* joueur, BITMAP* page)
         compteur=test_clique_Suppr(795,400,150,75,compteur,pseudo);
         for (int v=0; v<15; v++)
         {
-            joueur->pseudo[v]=pseudo[v];
+            nom_joueur[v]=pseudo[v];
         }
 
 
         for(int y=0; y<15; y++)
         {
-            textprintf_ex(page, maPolice, 210+25*y, 460, makecol(255,255, 0), -1,"%c",joueur->pseudo[y]);
+            textprintf_ex(page, maPolice, 210+25*y, 460, makecol(255,255, 0), -1,"%c",nom_joueur[y]);
 
         }
 
@@ -663,7 +663,7 @@ void Saisir_nom(t_joueur* joueur, BITMAP* page)
     textprintf_ex(page, maPolice, 340, 300, makecol(255, 255, 0), -1," Tu es ");
     for(int z=0; z<15; z++)
     {
-        textprintf_ex(page, maPolice, 515+30*z, 300, makecol(255, 255, 0), -1,"%c",joueur->pseudo[z]);
+        textprintf_ex(page, maPolice, 515+30*z, 300, makecol(255, 255, 0), -1,"%c",nom_joueur[z]);
 
     }
 
