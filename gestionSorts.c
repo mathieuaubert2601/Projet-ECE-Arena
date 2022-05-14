@@ -189,7 +189,7 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
             probabilite=rand() % 100 ;
             if (probabilite<sort1.chance)
             {
-                joueurA->tourHate = 2;
+                joueurA->tourHate += 3;
             }
             else if (probabilite>=sort1.chance)
             {
@@ -199,9 +199,10 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
         }
         else
         {
+
             do
             {
-                if (mouse_b && 1)
+                if (mouse_b & 1)
                 {
                     caseChoisieColonne = mouse_x/30;
                     caseChoisieLigne = mouse_y/32;
@@ -222,21 +223,21 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
                 {
                     masked_blit(rouler,page,0,0,300,300,rouler->w,rouler->h);
                 }
-                if (mouse_b && 0)
+                if (mouse_b & 2)
                 {
                     sortie_mouv = 1;
                 }
                 show_mouse(page);
                 blit(page,screen,0,0,0,0,1200,711);
             }
-            while ((((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)&&(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax)))|| (sortie_mouv != 1));
+            while ((((abs((joueurA->ligne)-caseChoisieLigne)+abs((joueurA->colonne)-caseChoisieColonne)>=sort1.pMin)&&(abs((joueurA->ligne)-caseChoisieLigne)+abs((joueurA->colonne)-caseChoisieColonne)<=sort1.pMax)))|| (sortie_mouv != 1));
             if (sortie_mouv == 0)
             {
                 probabilite=rand() % 100 ;
                 if (probabilite<sort1.chance)
                 {
-                    joueurA->ligne= caseChoisieLigne;
-                    joueurA->colonne=caseChoisieColonne;
+                    joueurA->ligne = caseChoisieLigne;
+                    joueurA->colonne = caseChoisieColonne;
                 }
                 else if (probabilite>=sort1.chance)
                 {

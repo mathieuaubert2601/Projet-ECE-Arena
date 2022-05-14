@@ -9,7 +9,7 @@ int main()
     srand(time(NULL));
 
     t_joueur tabJoueur[4],tabJoueurInit[4];
-    int pmDebut;
+    int tempohate=0;
     int sortieMenu = 0;
     int nbJoueurs;
     int i=0;
@@ -90,19 +90,19 @@ int main()
             violetCity++;
         }*/
 
-        /*menuJeu(page,fondMenu,logo);
-        if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b && 1))
+        menuJeu(page,fondMenu,logo);
+        if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b & 1))
         {
             rest(100);
             sortieMenu=0;
             while(sortieMenu!=1)
             {
                 menuNbJoueur(page,fondMenu,logo,&violetCity);
-                if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
+                if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b & 1))
                 {
                     sortieMenu=1;
                 }
-                if(((mouse_x>=(320) && mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 2 joueurs
+                if(((mouse_x>=(320) && mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 2 joueurs
                 {
 
                     nbJoueurs = 2;
@@ -116,7 +116,7 @@ int main()
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
                 }
-                if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 3 joueurs
+                if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 3 joueurs
                 {
                     nbJoueurs = 3;
                     Saisir_nom(&joueur1,page);
@@ -130,7 +130,7 @@ int main()
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
                 }
-                if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b && 1))///Choix 4 joueurs
+                if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 4 joueurs
                 {
                     nbJoueurs = 4;
                     Saisir_nom(&joueur1,page);
@@ -150,6 +150,11 @@ int main()
                     sortieJeu=0;
                     for (int z=0; z<nbJoueurs; z++)
                         {
+                            tabJoueur[z].tourHate=0;
+                            tabJoueur[z].tourDodo=0;
+                            tabJoueur[z].tourParalysie=0;
+                            tabJoueur[z].tourPeur=0;
+                            tabJoueur[z].tourPoison=0;
                             if (tabJoueur[z].numeroClasse==1)///Pikachu
                             {
                                 tabJoueur[z].pm=pikachuPm;
@@ -178,7 +183,11 @@ int main()
                         {
                             j=0;
                         }
-                        pmDebut=tabJoueur[j].pm;
+                        if (tabJoueur[j].tourHate >0 && tempohate==0 )
+                        {
+                            tabJoueur[j].pm=tabJoueur[j].pm*2;
+                            tempohate=1;
+                        }
                         afficher_map(page);
                         for (int z=0; z<nbJoueurs; z++)
                         {
@@ -219,7 +228,7 @@ int main()
                                 afficherPorteeDroite(tabJoueur[j].classe.sort1,tabJoueur[j],page);
                             }
                         }
-                        if(((mouse_x>=(casex*10)&& mouse_x<=(casex*10+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b && 1))
+                        if(((mouse_x>=(casex*10)&& mouse_x<=(casex*10+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
                             lancerSort(tabJoueur[j].classe.sort1,&tabJoueur[j],tabJoueur,nbJoueurs,j,page);
                             rest(200);
@@ -236,7 +245,7 @@ int main()
                                 afficherPorteeDroite(tabJoueur[j].classe.sort2,tabJoueur[j],page);
                             }
                         }
-                        if(((mouse_x>=(casex*14)&& mouse_x<=(casex*14+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b && 1))
+                        if(((mouse_x>=(casex*14)&& mouse_x<=(casex*14+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
                             lancerSort(tabJoueur[j].classe.sort2,&tabJoueur[j],tabJoueur,nbJoueurs,j,page);
                             rest(200);
@@ -253,7 +262,7 @@ int main()
                                 afficherPorteeDroite(tabJoueur[j].classe.sort3,tabJoueur[j],page);
                             }
                         }
-                        if(((mouse_x>=(casex*18)&& mouse_x<=(casex*18+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b && 1))
+                        if(((mouse_x>=(casex*18)&& mouse_x<=(casex*18+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
                             lancerSort(tabJoueur[j].classe.sort3,&tabJoueur[j],tabJoueur,nbJoueurs,j,page);
                             rest(200);
@@ -270,7 +279,7 @@ int main()
                                 afficherPorteeDroite(tabJoueur[j].classe.sort4,tabJoueur[j],page);
                             }
                         }
-                        if(((mouse_x>=(casex*22)&& mouse_x<=(casex*22+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b && 1))
+                        if(((mouse_x>=(casex*22)&& mouse_x<=(casex*22+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
                             lancerSort(tabJoueur[j].classe.sort4,&tabJoueur[j],tabJoueur,nbJoueurs,j,page);
                             rest(200);
@@ -287,12 +296,12 @@ int main()
                                 afficherPorteeDroite(tabJoueur[j].classe.sort5,tabJoueur[j],page);
                             }
                         }
-                        if(((mouse_x>=(casex*26)&& mouse_x<=(casex*26+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b && 1))
+                        if(((mouse_x>=(casex*26)&& mouse_x<=(casex*26+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
                             lancerSort(tabJoueur[j].classe.sort5,&tabJoueur[j],tabJoueur,nbJoueurs,j,page);
                             rest(200);
                         }
-                        //if(((mouse_x>=(casex*30)&& mouse_x<=(casex*30+100))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+100))&&(mouse_b && 1))
+                        //if(((mouse_x>=(casex*30)&& mouse_x<=(casex*30+100))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+100))&&(mouse_b & 1))
                         //{
                         //}
                         for (int z=0; z<nbJoueurs; z++)
@@ -318,7 +327,7 @@ int main()
                                 afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
                         }
-                        if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b && 1))
+                        if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b & 1))
                         {
                             while(test==1)
                             {
@@ -326,11 +335,11 @@ int main()
                                 blit(fond,page,0,0,0,0,1200,711);
                                 AffichageBouton(quitter,quitterInv,fond,0,0,200,210,200,73);
                                 AffichageBouton(reprendre,reprendreInv,fond,0,0,400,210,200,73);
-                                if (((mouse_x>=(400)&& mouse_x<=(600))&& (mouse_y)>=(210)&& mouse_y<=(283))&&(mouse_b && 1))
+                                if (((mouse_x>=(400)&& mouse_x<=(600))&& (mouse_y)>=(210)&& mouse_y<=(283))&&(mouse_b & 1))
                                 {
                                     test=0;
                                 }
-                                if (((mouse_x>=(200)&& mouse_x<=(400))&& (mouse_y)>=(210)&& mouse_y<=(283))&&(mouse_b && 1))
+                                if (((mouse_x>=(200)&& mouse_x<=(400))&& (mouse_y)>=(210)&& mouse_y<=(283))&&(mouse_b & 1))
                                 {
                                     sortieMenu=1;
                                     sortieJeu=1;
@@ -348,7 +357,26 @@ int main()
                         {
                             temps1=time(NULL);
                             tabJoueur[j].pa=10;
-                            tabJoueur[j].pm=pmDebut;
+                            if (tabJoueur[j].numeroClasse==1)///Pikachu
+                            {
+                                tabJoueur[j].pm=pikachuPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==2)///Ronflex
+                            {
+                                tabJoueur[j].pm=ronflexPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==3)///Lucario
+                            {
+                                tabJoueur[j].pm=lucarioPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==4)///Alakazam
+                            {
+                                tabJoueur[j].pm=alakazamPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==5)///Rondoudou
+                            {
+                                tabJoueur[j].pm=rondoudouPm;
+                            }
                             if(tabJoueur[j].tourBouclier>0)
                             {
                                tabJoueur[j].tourBouclier--;
@@ -356,10 +384,6 @@ int main()
                             if(tabJoueur[j].tourDodo>0)
                             {
                                tabJoueur[j].tourDodo--;
-                            }
-                            if(tabJoueur[j].tourHate>0)
-                            {
-                               tabJoueur[j].tourHate--;
                             }
                             if(tabJoueur[j].tourParalysie>0)
                             {
@@ -373,15 +397,39 @@ int main()
                             {
                                tabJoueur[j].tourPoison--;
                                tabJoueur[j].pv-=5;
+                            }
+                            if(tabJoueur[j].tourHate>0)
+                            {
+                                tabJoueur[j].tourHate--;
+                                tempohate--;
                             }
                             j++;
                             rest(200);
                         }
-                        if(((mouse_x>=(30*37)&& mouse_x<=((30*37)+130))&& (mouse_y)>=(620)&& mouse_y<=(620+115))&&(mouse_b && 1))
+                        if(((mouse_x>=(30*37)&& mouse_x<=((30*37)+130))&& (mouse_y)>=(620)&& mouse_y<=(620+115))&&(mouse_b & 1))
                         {
                             temps1=time(NULL);
                             tabJoueur[j].pa=10;
-                            tabJoueur[j].pm=pmDebut;
+                             if (tabJoueur[j].numeroClasse==1)///Pikachu
+                            {
+                                tabJoueur[j].pm=pikachuPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==2)///Ronflex
+                            {
+                                tabJoueur[j].pm=ronflexPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==3)///Lucario
+                            {
+                                tabJoueur[j].pm=lucarioPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==4)///Alakazam
+                            {
+                                tabJoueur[j].pm=alakazamPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==5)///Rondoudou
+                            {
+                                tabJoueur[j].pm=rondoudouPm;
+                            }
                             if(tabJoueur[j].tourBouclier>0)
                             {
                                tabJoueur[j].tourBouclier--;
@@ -389,10 +437,6 @@ int main()
                             if(tabJoueur[j].tourDodo>0)
                             {
                                tabJoueur[j].tourDodo--;
-                            }
-                            if(tabJoueur[j].tourHate>0)
-                            {
-                               tabJoueur[j].tourHate--;
                             }
                             if(tabJoueur[j].tourParalysie>0)
                             {
@@ -406,6 +450,11 @@ int main()
                             {
                                tabJoueur[j].tourPoison--;
                                tabJoueur[j].pv-=5;
+                            }
+                            if(tabJoueur[j].tourHate>0)
+                            {
+                                tabJoueur[j].tourHate--;
+                                tempohate--;
                             }
                             j++;
                             rest(200);
@@ -418,10 +467,10 @@ int main()
 
         }
         show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);*/
+        blit(page,screen,0,0,0,0,1200,711);
 
 
-        clear_bitmap(page);
+        /*clear_bitmap(page);
         afficher_map(page);
         afficher_cases_dispo_joueur(page,x,y,6,tableau_Cases);
         afficher_tout_arbre(page,tableau_affichage_arbre);
@@ -434,7 +483,7 @@ int main()
         {
             x=0;
             y++;
-        }
+        }*/
 
     }
     destroy_bitmap(page);

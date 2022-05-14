@@ -8,7 +8,7 @@ void afficherPorteeCirc (t_sorts sort1, t_joueur joueur, BITMAP* page)
         {
             if (((abs((joueur.ligne/32)-x)+abs((joueur.colonne/30)-y)>=sort1.pMin)&&(abs((joueur.ligne/32)-x)+abs((joueur.colonne/30)-y)<=sort1.pMax)))
             {
-                casebleu(page,y,x);
+                caserouge(page,y,x);
             }
         }
     }
@@ -22,7 +22,7 @@ void afficherPorteeDroite (t_sorts sort1, t_joueur joueur, BITMAP* page)
         {
             if ((joueur.ligne/32==x) && ((abs((joueur.ligne/32)-x)+abs((joueur.colonne/30)-y)>=sort1.pMin)&&(abs((joueur.ligne/32)-x)+abs((joueur.colonne/30)-y)<=sort1.pMax)) || ((joueur.colonne/30==y) && ((abs((joueur.ligne/32)-x)+abs((joueur.colonne/30)-y)>=sort1.pMin)&&(abs((joueur.ligne/32)-x)+abs((joueur.colonne/30)-y)<=sort1.pMax))))
             {
-                casebleu(page,y,x);
+                caserouge(page,y,x);
             }
         }
     }
