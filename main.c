@@ -26,6 +26,8 @@ int main()
     casex = 30;
     casey = 32;
 
+    FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
+
     t_joueur joueur1,joueur2,joueur3,joueur4;
     for (int c=0;i<15;i++)
     {
@@ -69,7 +71,8 @@ int main()
     BITMAP* pikachu = load_bitmap("pikachu/pikachu1.bmp",NULL);
     BITMAP* ronflex = load_bitmap("ronflex/ronflex1.bmp",NULL);
     BITMAP* alakazam = load_bitmap("alakazam/alakazam1.bmp",NULL);
-
+    BITMAP* confirmer = load_bitmap("boutons/Confirmer.bmp",NULL);
+    BITMAP* confirmerInv = load_bitmap("boutons/ConfirmerInv.bmp",NULL);
 
     BITMAP* logo = load_bitmap("fond/logo.bmp",NULL);
 
@@ -82,13 +85,13 @@ int main()
 
     while(!key[KEY_ESC])
     {
-        /*sortieMenu=0;
-        clear_bitmap(page);*/
-        /*if (violetCity==0)
+        sortieMenu=0;
+        clear_bitmap(page);
+        if (violetCity==0)
         {
             play_sample(musiqueFond,200,0,1000,1);
             violetCity++;
-        }*/
+        }
 
         menuJeu(page,fondMenu,logo);
         if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b & 1))
@@ -106,8 +109,8 @@ int main()
                 {
 
                     nbJoueurs = 2;
-                    Saisir_nom(tabJoueurInit[0],page);
-                    Saisir_nom(tabJoueurInit[1],page);
+                    Saisir_nom(tabJoueurInit[0].pseudo,page);
+                    Saisir_nom(tabJoueurInit[1].pseudo,page);
 
                     for(i=0; i<nbJoueurs; i++)
                     {
@@ -119,9 +122,9 @@ int main()
                 if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 3 joueurs
                 {
                     nbJoueurs = 3;
-                    Saisir_nom(&joueur1,page);
-                    Saisir_nom(&joueur2,page);
-                    Saisir_nom(&joueur3,page);
+                    Saisir_nom(tabJoueurInit[0].pseudo,page);
+                    Saisir_nom(tabJoueurInit[1].pseudo,page);
+                    Saisir_nom(tabJoueurInit[2].pseudo,page);
                     //ordreJoueurs3(tabJoueur,nbJoueurs,joueur1,joueur2,joueur3);
                     for(i=0; i<nbJoueurs; i++)
                     {
@@ -133,10 +136,10 @@ int main()
                 if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 4 joueurs
                 {
                     nbJoueurs = 4;
-                    Saisir_nom(&joueur1,page);
-                    Saisir_nom(&joueur2,page);
-                    Saisir_nom(&joueur3,page);
-                    Saisir_nom(&joueur4,page);
+                    Saisir_nom(tabJoueurInit[0].pseudo,page);
+                    Saisir_nom(tabJoueurInit[1].pseudo,page);
+                    Saisir_nom(tabJoueurInit[2].pseudo,page);
+                    Saisir_nom(tabJoueurInit[3].pseudo,page);
                     for(i=0; i<nbJoueurs; i++)
                     {
                         menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,tabJoueurInit,violetCity,musiqueFond,i, tableau_Cases,i);
@@ -193,7 +196,19 @@ int main()
                         {
                             if (tabJoueur[z].numeroClasse==1)///Pikachu
                             {
-                                afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                textprintf_ex(page,maPolice,500,300,makecol(255,255,0),-1,"%s choisit ton placement", tabJoueur[z].pseudo);
+                                if(((mouse_x>=(0)&& mouse_x<=(1080))&& ((mouse_y)>=(0)&& mouse_y<=(576)))&&(mouse_b && 1))
+                                {
+                                    int m=mouse_x/30;
+                                    int n=mouse_y/32;
+                                    casebleu(page,m,n);
+                                }
+                                AffichageBouton(confirmer,confirmerInv,page,0,0,casex*16,casey*19,200,70);
+                                if(((mouse_x>=(casex*30)&& mouse_x<=(casex*30+200))&& ((mouse_y)>=(casey*20)&& mouse_y<=(casey*20+70)))&&(mouse_b && 1))
+                                {
+                                    textprintf_ex(page,maPolice,500,300,makecol(255,255,0),-1,"good");
+                                }
+                                //afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
                             if (tabJoueur[z].numeroClasse==2)///Ronflex
                             {
@@ -473,7 +488,7 @@ int main()
         /*clear_bitmap(page);
         afficher_map(page);
         afficher_cases_dispo_joueur(page,x,y,6,tableau_Cases);
-        afficher_tout_arbre(page,tableau_affichage_arbre);
+        afficher_tout_arbre(page,tableau_affichage_arbre);*/
         //casebleu_foncee(page,x,y);
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);

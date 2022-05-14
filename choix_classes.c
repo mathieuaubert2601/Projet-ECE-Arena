@@ -13,10 +13,10 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     FONT* maPolice = load_font("police_ecriture/calibri.pcx",NULL,NULL);
 
 
-    BITMAP* phrase1 = load_bitmap("phrases/phrase1.bmp",NULL);
+    /*BITMAP* phrase1 = load_bitmap("phrases/phrase1.bmp",NULL);
     BITMAP* phrase2 = load_bitmap("phrases/phrase2.bmp",NULL);
     BITMAP* phrase3 = load_bitmap("phrases/phrase3.bmp",NULL);
-    BITMAP* phrase4 = load_bitmap("phrases/phrase4.bmp",NULL);
+    BITMAP* phrase4 = load_bitmap("phrases/phrase4.bmp",NULL);*/
     BITMAP* tabPhrases[4];
     BITMAP* corpsacorps = load_bitmap("CAC/corpsacorps.bmp",NULL);
     BITMAP* corpsacorpsInv = load_bitmap("CAC/corpsacorpsInv.bmp",NULL);
@@ -286,8 +286,9 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
 
 
         masked_stretch_blit(logo,page,0,0,755,374,300,5,600,300);
+
         textprintf_ex(page,maPolice,800,50,makecol(255,255,0),-1,"%s",joueur[t].pseudo);
-        if(nbJoueur==0)
+        /*if(nbJoueur==0)
         {
             masked_stretch_blit(phrase1,page,0,0,phrase1->w,phrase1->h,5,50,300,38);
         }
@@ -302,7 +303,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         if(nbJoueur==3)
         {
             masked_stretch_blit(phrase4,page,0,0,phrase4->w,phrase4->h,5,50,300,38);
-        }
+        }*/
 
 
         if(((mouse_x>=(68)&& mouse_x<=(68+100))&& (mouse_y)>=(625)&& mouse_y<=(625+50))&& (mouse_b && 1))
@@ -411,6 +412,11 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 sortieClasses=1;
                 menuNbJoueur(page,fondMenu,logo, violetCity);
             }
+            for(int u;u<15;u++)
+        {
+            textprintf_ex(page,maPolice,800,200,makecol(255,255,0),-1,"%c",joueur[1].pseudo[u]);
+
+        }
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
     }

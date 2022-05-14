@@ -141,7 +141,12 @@ int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* pag
     ///Attaque en ligne droite
     if (sort1.typePortee == 1)
     {
-        if ((joueurA->ligne/32==joueurB->ligne/32) && ((abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)>=sort1.pMin)&&(abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)<=sort1.pMax)) || ((joueurA->colonne/30==joueurB->colonne/30) && ((abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)>=sort1.pMin)&&(abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)<=sort1.pMax))))
+        if ((joueurA->ligne/32==joueurB->ligne/32)
+             && ((abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)>=sort1.pMin)
+                 &&(abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)<=sort1.pMax))
+             || ((joueurA->colonne/30==joueurB->colonne/30)
+                  && ((abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)>=sort1.pMin)
+                      &&(abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)<=sort1.pMax))))
 
         {
             probabilite=rand() % 100;
