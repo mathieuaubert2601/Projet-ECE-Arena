@@ -246,3 +246,34 @@ void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int
     }
 
 }
+
+/*void choix_placement (BITMAP* buffer,t_joueur joueur,int nbJoueurs)
+{
+    FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
+    for (int z=0; z<nbJoueurs; z++)
+    {
+        if (tabJoueur[z].numeroClasse==1)///Pikachu
+        {
+            //Demande le placement
+            textprintf_centre(buffer,maPolice,700,500,makecol(255,255,0),"%s choisit ton placement", joueur.pseudo);
+
+            afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+        }
+        if (tabJoueur[z].numeroClasse==2)///Ronflex
+        {
+            afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+        }
+        if (tabJoueur[z].numeroClasse==3)///Lucario
+        {
+            afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+        }
+        if (tabJoueur[z].numeroClasse==4)///Alakazam
+        {
+            afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+        }
+        if (tabJoueur[z].numeroClasse==5)///Rondoudou
+        {
+            afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+        }
+    }
+}*/

@@ -26,6 +26,8 @@ int main()
     casex = 30;
     casey = 32;
 
+    FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
+
     t_joueur joueur1,joueur2,joueur3,joueur4;
     for (int c=0;i<15;i++)
     {
@@ -69,7 +71,8 @@ int main()
     BITMAP* pikachu = load_bitmap("pikachu/pikachu1.bmp",NULL);
     BITMAP* ronflex = load_bitmap("ronflex/ronflex1.bmp",NULL);
     BITMAP* alakazam = load_bitmap("alakazam/alakazam1.bmp",NULL);
-
+    BITMAP* confirmer = load_bitmap("boutons/Confirmer.bmp",NULL);
+    BITMAP* confirmerInv = load_bitmap("boutons/ConfirmerInv.bmp",NULL);
 
     BITMAP* logo = load_bitmap("fond/logo.bmp",NULL);
 
@@ -184,7 +187,19 @@ int main()
                         {
                             if (tabJoueur[z].numeroClasse==1)///Pikachu
                             {
-                                afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                textprintf_ex(page,maPolice,500,300,makecol(255,255,0),-1,"%s choisit ton placement", tabJoueur[z].pseudo);
+                                if(((mouse_x>=(0)&& mouse_x<=(1080))&& ((mouse_y)>=(0)&& mouse_y<=(576)))&&(mouse_b && 1))
+                                {
+                                    int m=mouse_x/30;
+                                    int n=mouse_y/32;
+                                    casebleu(page,m,n);
+                                }
+                                AffichageBouton(confirmer,confirmerInv,page,0,0,casex*16,casey*19,200,70);
+                                if(((mouse_x>=(casex*30)&& mouse_x<=(casex*30+200))&& ((mouse_y)>=(casey*20)&& mouse_y<=(casey*20+70)))&&(mouse_b && 1))
+                                {
+                                    textprintf_ex(page,maPolice,500,300,makecol(255,255,0),-1,"good");
+                                }
+                                //afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
                             if (tabJoueur[z].numeroClasse==2)///Ronflex
                             {
