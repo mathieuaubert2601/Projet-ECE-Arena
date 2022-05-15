@@ -78,7 +78,7 @@ int main()
     BITMAP* logo = load_bitmap("fond/logo.bmp",NULL);
 
 
-    int x=3,y=0,souris_x = 0,souris_y = 0;
+    int x=3,y=0,case_prec_x = 0,case_prec_y = 0;
 
     BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
