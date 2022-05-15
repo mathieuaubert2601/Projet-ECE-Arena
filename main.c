@@ -52,7 +52,8 @@ int main()
     //DÃ©claration du tableau de case :
     int tableau_Cases[18][36];
     int tableau_affichage_arbre[18][36];
-
+    int tableau_case_possible[18][36];
+    int tableau_chemin_court[18][36];
     //initialisation des tableaux
     mettre_arbre_ou_non(tableau_Cases);
     remettre_case_obstacle(tableau_Cases);
@@ -77,7 +78,7 @@ int main()
     BITMAP* logo = load_bitmap("fond/logo.bmp",NULL);
 
 
-    int x=0,y=0;
+    int x=3,y=0,souris_x = 0,souris_y = 0;
 
     BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
@@ -85,7 +86,7 @@ int main()
 
     while(!key[KEY_ESC])
     {
-        sortieMenu=0;
+       /* sortieMenu=0;
         clear_bitmap(page);
         if (violetCity==0)
         {
@@ -482,24 +483,29 @@ int main()
 
         }
         show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);
+        blit(page,screen,0,0,0,0,1200,711);*/
 
 
-        /*clear_bitmap(page);
+        clear_bitmap(page);
         afficher_map(page);
-        afficher_cases_dispo_joueur(page,x,y,6,tableau_Cases);
-        afficher_tout_arbre(page,tableau_affichage_arbre);*/
-        //casebleu_foncee(page,x,y);
+        afficher_cases_dispo_joueur(page,x,y,6,tableau_Cases,tableau_case_possible);
+        changement_case_souris(page,mouse_x,mouse_y,&souris_x,&souris_y,tableau_case_possible,tableau_chemin_court,x,y);
+        afficher_chemin(page,tableau_chemin_court);
+        afficher_tout_arbre(page,tableau_affichage_arbre);
+        if(mouse_b & 1)
+        {
+            deplacement_joueur(page,y,x,2,tableau_chemin_court,tableau_affichage_arbre);
+            x++;
+            if(x==36)
+            {
+                x=0;
+                y++;
+            }
+        }
+
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
         //allegro_message("ok");
-        x++;
-        if(x==36)
-        {
-            x=0;
-            y++;
-        }*/
-
     }
     destroy_bitmap(page);
 
