@@ -53,7 +53,10 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
     }
 
     //On met la case sur laquelle on est à 2
-    tableau_case_tmp[y][x] = 2;
+    if(tableau_case_tmp[y][x] !=1)
+    {
+        tableau_case_tmp[y][x] = 2;
+    }
 
     for(int i= 2; i<pm+2 ; i++)
     {
