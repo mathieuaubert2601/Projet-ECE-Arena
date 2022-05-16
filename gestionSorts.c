@@ -1,6 +1,6 @@
 #include "header.h"
 
-void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur, BITMAP* page)
+void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur, BITMAP* page, int tab[18][36])
 {
     BITMAP* pasPA = load_bitmap("phrases/phrasePA.bmp",NULL);
     BITMAP* pasZone = load_bitmap("phrases/phraseZoneImpact.bmp",NULL);
@@ -8,35 +8,11 @@ void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int no
     int touche=0;
     if (sort1.type == 1)
     {
-        if (joueurA->pa>=sort1.nbrPa)
-        {
-            while((tourJoueur+1) != (joueurA->numero))
-            {
-                touche = sortAttaque(sort1,joueurA,tabJoueurs[tourJoueur+1],page);
-                totalTouche+=touche;
-                tourJoueur++;
-                if (tourJoueur == nombreJoueur-1)
-                {
-                    tourJoueur=0;
-                }
-            }
-            if(totalTouche>=1)
-            {
-                joueurA->pa-=sort1.nbrPa;
-            }
-            else if (totalTouche<1)
-            {
-                masked_blit(pasZone,page,0,0,300,300,pasZone->w,pasZone->h);
-            }
-        }
-        else if (joueurA->pa<sort1.nbrPa)
-        {
-            masked_blit(pasPA,page,0,0,300,300,pasPA->w,pasPA->h);
-        }
+        sortAttaque(sort1,joueurA,tab,tourJoueur,page, nombreJoueur);
     }
     if (sort1.type == 2)
     {
-        sortMouvement(sort1,joueurA,page);
+        sortMouvement(sort1,joueurA,page,tab, nombreJoueur,tabJoueurs);
     }
     if (sort1.type == 3)
     {
@@ -100,83 +76,200 @@ void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int no
     }
 }
 
-int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page )
+void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* tabjoueur[],int tour, BITMAP* page, int nbjoueur )
 {
-    int probabilite;
+    int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, i=joueurA->numero+1;
     int nombrePv;
     BITMAP* rate = load_bitmap("phrases/phraseRate.bmp",NULL);
     ///Attaque en zone
     if (sort1.typePortee == 3)
     {
-        if (((abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)>=sort1.pMin)&&(abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)<=sort1.pMax)))
+        rest(400);
+        do
         {
-            probabilite=rand() % 100;
-            if (probabilite<sort1.chance)
+            if (mouse_b & 1)
             {
-                if (joueurB->tourBouclier==1)
+                printf("puteInitiale");
+                caseChoisieColonne = mouse_x/30;
+                caseChoisieLigne = mouse_y/32;
+                printf("%d\n %d",i,tour);
+                while(i!=tour)
                 {
-                    return 1;
+                    printf("%d",i);
+                    if (i>nbjoueur-1)
+                    {
+                        i=0;
+                    }
+                    //ligne= abs((tabjoueur[i]->ligne/32)-caseChoisieLigne);
+                    //colonne= abs((tabjoueur[i]->colonne/30)-caseChoisieColonne);
+                    printf("%d\n",&tabjoueur[i]->ligne);
+                    printf("%d",&tabjoueur[i]->colonne);
+                    if ((caseChoisieColonne==tabjoueur[i]->colonne/30)&& (caseChoisieLigne==tabjoueur[i]->ligne/32))
+                    {
+                        testTouche = 1;
+                        printf("pute2");
+                    }
+                    i++;
+
                 }
-                else
+            }
+            if (mouse_b & 2)
+            {
+                sortie_mouv = 1;
+            }
+            /*for (int z=0; z<nbJoueurs; z++)
+                {
+                    if (tabJoueur[z]->numeroClasse==1)///Pikachu
+                    {
+                        afficher_personnage_pikachu(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                    }
+                    if (tabJoueur[z]->numeroClasse==2)///Ronflex
+                    {
+                        afficher_personnage_ronflex(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                    }
+                    if (tabJoueur[z]->numeroClasse==3)///Lucario
+                    {
+                        afficher_personnage_lucario(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                    }
+                    if (tabJoueur[z]->numeroClasse==4)///Alakazam
+                    {
+                        afficher_personnage_alakazam(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                    }
+                    if (tabJoueur[z]->numeroClasse==5)///Rondoudou
+                    {
+                        afficher_personnage_rondoudou(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                    }*/
+
+
+            show_mouse(page);
+            blit(page,screen,0,0,0,0,1200,711);
+        }
+        while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
+        printf("pute3");
+        if (sortie_mouv == 0)
+        {
+            if (tabjoueur[i]->tourBouclier>0)
+            {
+                joueurA->pa-=sort1.nbrPa;
+            }
+            else
+            {
+                probabilite=rand() % 100 ;
+                if (probabilite<sort1.chance)
                 {
                     nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                    joueurB->pv -= nombrePv;
-                    if (joueurB->pv <0)
+                    tabjoueur[i]->pv -= nombrePv;
+                    if (tabjoueur[i]->pv <0)
                     {
-                        joueurB->pv = 0;
+                        tabjoueur[i]->pv = 0;
                     }
                 }
+                else if (probabilite>=sort1.chance)
+                {
+                    masked_blit(rate,page,0,0,330,400,rate->w,rate->h);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(500);
+                }
             }
-            else if (probabilite>=sort1.chance)
-            {
-                masked_blit(rate,page,0,0,300,300,rate->w,rate->h);
-            }
-            return 1;
-        }
-        else
-        {
-            return 0;
+
+            joueurA->pa-=sort1.nbrPa;
         }
     }
-    ///Attaque en ligne droite
+
+///Attaque en ligne droite
     if (sort1.typePortee == 1)
     {
-        if ((joueurA->ligne/32==joueurB->ligne/32) && ((abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)>=sort1.pMin)&&(abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)<=sort1.pMax)) || ((joueurA->colonne/30==joueurB->colonne/30) && ((abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)>=sort1.pMin)&&(abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)<=sort1.pMax))))
-
+        rest(400);
+        do
         {
-            probabilite=rand() % 100;
-            if (probabilite<sort1.chance)
+            if (mouse_b & 1)
             {
-                if (joueurB->tourBouclier==1)
+                caseChoisieColonne = mouse_x/30;
+                caseChoisieLigne = mouse_y/32;
+                for (int i=joueurA->numero; i!=tour; i++)
                 {
-                    return 1;
-                }
-                else
-                {
-                    nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                    joueurB->pv -= nombrePv;
-                    if (joueurB->pv <0)
+                    if (i>nbjoueur-1)
                     {
-                        joueurB->pv = 0;
+                        i=0;
+                    }
+                    if (caseChoisieColonne==tabjoueur[i]->colonne && caseChoisieLigne==tabjoueur[i]->ligne)
+                    {
+                        testTouche = i;
                     }
                 }
             }
-            else if (probabilite>=sort1.chance)
+            if (mouse_b & 2)
             {
-                masked_blit(rate,page,0,0,300,300,rate->w,rate->h);
+                sortie_mouv = 1;
             }
-            return 1;
+            /*for (int z=0; z<nbJoueurs; z++)
+                {
+                    if (tabJoueur[z]->numeroClasse==1)///Pikachu
+                    {
+                        afficher_personnage_pikachu(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                    }
+                    if (tabJoueur[z]->numeroClasse==2)///Ronflex
+                    {
+                        afficher_personnage_ronflex(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                    }
+                    if (tabJoueur[z]->numeroClasse==3)///Lucario
+                    {
+                        afficher_personnage_lucario(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                    }
+                    if (tabJoueur[z]->numeroClasse==4)///Alakazam
+                    {
+                        afficher_personnage_alakazam(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                    }
+                    if (tabJoueur[z]->numeroClasse==5)///Rondoudou
+                    {
+                        afficher_personnage_rondoudou(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                    }*/
+
+
+            show_mouse(page);
+            blit(page,screen,0,0,0,0,1200,711);
         }
-        else
+        while          ((((joueurA->ligne/32==caseChoisieLigne)
+                          || ((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)
+                              ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))
+                          && ((joueurA->colonne/30==caseChoisieColonne)
+                              || ((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)
+                                  ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))))
+                         || (testTouche==0)) && (sortie_mouv == 0));
+        if (sortie_mouv == 0)
         {
-            return 0;
+            if (tabjoueur[testTouche]->tourBouclier>0)
+            {
+                joueurA->pa-=sort1.nbrPa;
+            }
+            else
+            {
+                probabilite=rand() % 100 ;
+                if (probabilite<sort1.chance)
+                {
+                    nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                    tabjoueur[testTouche]->pv -= nombrePv;
+                    if (tabjoueur[testTouche]->pv <0)
+                    {
+                        tabjoueur[testTouche]->pv = 0;
+                    }
+                }
+                else if (probabilite>=sort1.chance)
+                {
+                    masked_blit(rate,page,0,0,330,400,rate->w,rate->h);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(500);
+                }
+            }
+
+            joueurA->pa-=sort1.nbrPa;
         }
     }
 }
 
-void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
+void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page, int tab[18][36], int nbJoueurs,t_joueur* tabJoueur[])
 {
-    int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite;
+    int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testClic=0;
     BITMAP* pasPA = load_bitmap("phrases/phrasePA.bmp",NULL);
     BITMAP* rate = load_bitmap("phrases/phraseRate.bmp",NULL);
     BITMAP* rouler = load_bitmap("phrases/phraseRouler.bmp",NULL);
@@ -189,7 +282,7 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
             probabilite=rand() % 100 ;
             if (probabilite<sort1.chance)
             {
-                joueurA->tourHate = 2;
+                joueurA->tourHate += 3;
             }
             else if (probabilite>=sort1.chance)
             {
@@ -199,13 +292,21 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
         }
         else
         {
+            rest(400);
             do
             {
-                if (mouse_b && 1)
+                if (mouse_b & 1)
                 {
                     caseChoisieColonne = mouse_x/30;
                     caseChoisieLigne = mouse_y/32;
+                    if (tab[caseChoisieLigne][caseChoisieColonne]==1)
+                    {
+                        caseChoisieColonne = 3;
+                        caseChoisieLigne = 0;
+                    }
+
                 }
+
                 if(sort1.numero==22)
                 {
                     masked_blit(deplacer,page,0,0,300,300,deplacer->w,deplacer->h);
@@ -218,29 +319,55 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
                 {
                     masked_blit(teleporter,page,0,0,300,300,teleporter->w,teleporter->h);
                 }
-                if(sort1.numero==22)
+                if(sort1.numero==9)
                 {
                     masked_blit(rouler,page,0,0,300,300,rouler->w,rouler->h);
                 }
-                if (mouse_b && 0)
+                if (mouse_b & 2)
                 {
                     sortie_mouv = 1;
                 }
+                /*for (int z=0; z<nbJoueurs; z++)
+                    {
+                        if (tabJoueur[z]->numeroClasse==1)///Pikachu
+                        {
+                            afficher_personnage_pikachu(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                        }
+                        if (tabJoueur[z]->numeroClasse==2)///Ronflex
+                        {
+                            afficher_personnage_ronflex(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                        }
+                        if (tabJoueur[z]->numeroClasse==3)///Lucario
+                        {
+                            afficher_personnage_lucario(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                        }
+                        if (tabJoueur[z]->numeroClasse==4)///Alakazam
+                        {
+                            afficher_personnage_alakazam(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                        }
+                        if (tabJoueur[z]->numeroClasse==5)///Rondoudou
+                        {
+                            afficher_personnage_rondoudou(page,0,0,tabJoueur[z]->colonne,tabJoueur[z]->ligne);
+                        }*/
+
+
                 show_mouse(page);
                 blit(page,screen,0,0,0,0,1200,711);
             }
-            while ((((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)&&(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax)))|| (sortie_mouv != 1));
+            while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax)) && (sortie_mouv == 0));
             if (sortie_mouv == 0)
             {
                 probabilite=rand() % 100 ;
                 if (probabilite<sort1.chance)
                 {
-                    joueurA->ligne= caseChoisieLigne;
-                    joueurA->colonne=caseChoisieColonne;
+                    joueurA->ligne = caseChoisieLigne*32;
+                    joueurA->colonne = caseChoisieColonne*30;
                 }
                 else if (probabilite>=sort1.chance)
                 {
-                    masked_blit(rate,page,0,0,300,300,rate->w,rate->h);
+                    masked_blit(rate,page,0,0,330,400,rate->w,rate->h);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(500);
                 }
                 joueurA->pa-=sort1.nbrPa;
             }

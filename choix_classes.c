@@ -284,7 +284,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         AffichageBouton(boutonI,boutonInvI,page,0,0,1020,625,100,50);
 
 
-
         masked_stretch_blit(logo,page,0,0,755,374,300,5,600,300);
 
         textprintf_ex(page,maPolice,10,180,makecol(255,255,0),-1,"%s",joueur[t].pseudo);
@@ -327,7 +326,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             information_Rondoudou(page,fond);
         }
 
-
         //Choix de Pikachu
         if((mouse_x>=(15) && mouse_x<=(227)) && (mouse_y)<=(617) && mouse_y>=(550))
         {
@@ -339,7 +337,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].numeroClasse=1;
                 joueur[t].colonne = xRand*30;
                 joueur[t].ligne=yRand*32;
-                play_sample(joueur[t].classe.sonClasse,600,0,1000,0);
+                //play_sample(joueur[t].classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
         }
@@ -355,7 +353,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].numeroClasse=2;
                 joueur[t].colonne = xRand*30;
                 joueur[t].ligne=yRand*32;
-                play_sample(joueur[t].classe.sonClasse,600,0,1000,0);
+                //play_sample(joueur[t].classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
         }
@@ -371,7 +369,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].numeroClasse=3;
                 joueur[t].colonne = xRand*30;
                 joueur[t].ligne=yRand*32;
-                play_sample(joueur[t].classe.sonClasse,600,0,1000,0);
+                //play_sample(joueur[t].classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
         }
@@ -387,7 +385,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].numeroClasse=4;
                 joueur[t].colonne = xRand*30;
                 joueur[t].ligne=yRand*32;
-                play_sample(joueur[t].classe.sonClasse,600,0,1000,0);
+                //play_sample(joueur[t].classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
         }
@@ -403,7 +401,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].numeroClasse=5;
                 joueur[t].colonne = xRand*30;
                 joueur[t].ligne=yRand*32;
-                play_sample(joueur[t].classe.sonClasse,600,0,1000,0);
+                //play_sample(joueur[t].classe.sonClasse,600,0,1000,0);
                 sortieClasses=1;
             }
         }
