@@ -92,9 +92,9 @@ void menu_pause(BITMAP* buffer);
 //deplacement_joueur
 void deplacement_joueur(BITMAP* buffer, int indice_ligne_finale, int indice_colonne_finale, int indice_ligne_ini, int indice_colonne_ini, int personnage, int tableau_affichage_arbre[18][36]);
 //gestionSorts
-void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur,BITMAP* page);
-int sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB,BITMAP* page);
-void sortMouvement(t_sorts sort1, t_joueur* joueurA,BITMAP* page);
+void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur, BITMAP* page, int tab[18][36]);
+void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* tabjoueur[],int tour, BITMAP* page, int nbjoueur);
+void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page, int tab[18][36], int nbJoueurs,t_joueur* tabJoueur[]);
 int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB,BITMAP* page);
 void sortVie(t_sorts sort1, t_joueur* joueurA,BITMAP* page);
 int sortSoin(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page);
