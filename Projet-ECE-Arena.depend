@@ -26,10 +26,10 @@
 1651736559 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
 	"header.h"
 
-1651768579 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\main.c
+1652629472 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\main.c
 	"header.h"
 
-1652525531 c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\header.h
+1652628849 c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -38,7 +38,7 @@
 1651656526 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\boutons_menu.c
 	"header.h"
 
-1652525531 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\choix_classes.c
+1652631652 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\choix_classes.c
 	"header.h"
 
 1651400328 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\init_allegro.c
@@ -119,7 +119,7 @@
 1652525531 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\gestion_clavier.c
 	"header.h"
 
-1652166216 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\barre_commande.c
+1652631348 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\barre_commande.c
 	"header.h"
 
 1652102963 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\barre_commande.c
@@ -134,7 +134,7 @@
 1652608834 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\deplacement_joueur.c
 	"header.h"
 
-1652288131 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\carte.c
+1652604262 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\carte.c
 	"header.h"
 
 1651837586 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\deplacement_joueur.c
@@ -146,7 +146,7 @@
 1652163959 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\barre_commande.c
 	"header.h"
 
-1652205783 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\gestionsorts.c
+1652604216 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\gestionsorts.c
 	"header.h"
 
 1652184890 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\informations_classe.c
@@ -213,5 +213,17 @@
 	"header.h"
 
 1652607440 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\deplacement_plus_court.c
+	"header.h"
+
+1652526475 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\afficherportee.c
+	"header.h"
+
+1651837586 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\chargement_map_fichier.c
+	"header.h"
+
+1652166216 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\ordrejoueurs.c
+	"header.h"
+
+1652604262 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\deplacement_plus_court.c
 	"header.h"
 
