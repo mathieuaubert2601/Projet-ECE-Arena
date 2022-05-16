@@ -107,7 +107,7 @@
 1651507984 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\affichage_personnages.c
 	"header.h"
 
-1652184890 c:\users\augus\onedrive\documents\github\projet-ece-arena\header.h
+1652381597 c:\users\augus\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -161,7 +161,7 @@
 1651827264 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\deplacement_joueur.c
 	"header.h"
 
-1652381297 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\gestion_clavier.c
+1652381597 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\gestion_clavier.c
 	"header.h"
 
 1651582329 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\menujeu.c
@@ -176,10 +176,10 @@
 1652184890 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\carte.c
 	"header.h"
 
-1652260807 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\choix_classes.c
+1652385846 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
-1652259490 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\main.c
+1652381597 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\main.c
 	"header.h"
 
 1651827264 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\chargement_map_fichier.c
