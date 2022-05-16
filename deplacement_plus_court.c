@@ -48,6 +48,7 @@ void afficher_deplacement_plus_court(int tableau_case_dispo[18][36],int x,int y,
 
     }
 
+    //On copie les information dans le tableau à rendre
     for(int i = 0 ; i<18 ; i++)
     {
         for(int j = 0 ; j<36 ; j++)

@@ -54,7 +54,8 @@ int main()
     //DÃ©claration du tableau de case :
     int tableau_Cases[18][36];
     int tableau_affichage_arbre[18][36];
-
+    int tableau_case_possible[18][36];
+    int tableau_chemin_court[18][36];
     //initialisation des tableaux
     mettre_arbre_ou_non(tableau_Cases);
     remettre_case_obstacle(tableau_Cases);
@@ -79,7 +80,7 @@ int main()
     BITMAP* logo = load_bitmap("fond/logo.bmp",NULL);
 
 
-    int x=0,y=0;
+    int x=3,y=0,case_prec_x = 0,case_prec_y = 0;
 
     BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
@@ -87,7 +88,7 @@ int main()
 
     while(!key[KEY_ESC])
     {
-        sortieMenu=0;
+       /* sortieMenu=0;
         clear_bitmap(page);
         /*if (violetCity==0)
         {
@@ -182,8 +183,145 @@ int main()
                             }
                             tabJoueur[z].pa=10;
                         }
+                    while(sortieJeu!=1)
+                    {
+                        if (j==nbJoueurs)
+                        {
+                            j=0;
+                        }
+                        if (tabJoueur[j].tourHate >0 && tempohate==0 )
+                        {
+                            tabJoueur[j].pm=tabJoueur[j].pm*2;
+                            tempohate=1;
+                        }
+                        afficher_map(page);
+                        for (int z=0; z<nbJoueurs; z++)
+                        {
+                            if (tabJoueur[z].numeroClasse==1)///Pikachu
+                            {
+                                textprintf_ex(page,maPolice,500,300,makecol(255,255,0),-1,"%s choisit ton placement", tabJoueur[z].pseudo);
+                                if(((mouse_x>=(0)&& mouse_x<=(1080))&& ((mouse_y)>=(0)&& mouse_y<=(576)))&&(mouse_b && 1))
+                                {
+                                    int m=mouse_x/30;
+                                    int n=mouse_y/32;
+                                    casebleu(page,m,n);
+                                }
+                                AffichageBouton(confirmer,confirmerInv,page,0,0,casex*16,casey*19,200,70);
+                                if(((mouse_x>=(casex*30)&& mouse_x<=(casex*30+200))&& ((mouse_y)>=(casey*20)&& mouse_y<=(casey*20+70)))&&(mouse_b && 1))
+                                {
+                                    textprintf_ex(page,maPolice,500,300,makecol(255,255,0),-1,"good");
+                                }
+                            afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            }
+                            if (tabJoueur[z].numeroClasse==2)///Ronflex
+                            {
+                                afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            }
+                            if (tabJoueur[z].numeroClasse==3)///Lucario
+                            {
+                                afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            }
+                            if (tabJoueur[z].numeroClasse==4)///Alakazam
+                            {
+                                afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            }
+                            if (tabJoueur[z].numeroClasse==5)///Rondoudou
+                            {
+                                afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            }
+                        }
+                        afficher_tout_arbre(page,tableau_affichage_arbre);
+                        afficher_commande(page,tabJoueur,nbJoueurs,j);
 
-                        sortieJeu=0;
+                        ///SORTS
+                        //Sort1
+                        if((mouse_x>=(casex*10)&& mouse_x<=(casex*10+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))
+                        {
+                            if (tabJoueur[j].classe.sort1.typePortee==3)
+                            {
+                                afficherPorteeCirc(tabJoueur[j].classe.sort1,tabJoueur[j],page);
+                            }
+                            if (tabJoueur[j].classe.sort1.typePortee==1)
+                            {
+                                afficherPorteeDroite(tabJoueur[j].classe.sort1,tabJoueur[j],page);
+                            }
+                        }
+                        if(((mouse_x>=(casex*10)&& mouse_x<=(casex*10+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
+                        {
+                            lancerSort(tabJoueur[j].classe.sort1,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
+                            rest(200);
+                        }
+                        //Sort2
+                        if((mouse_x>=(casex*14)&& mouse_x<=(casex*14+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))
+                        {
+                            if (tabJoueur[j].classe.sort2.typePortee==3)
+                            {
+                                afficherPorteeCirc(tabJoueur[j].classe.sort2,tabJoueur[j],page);
+                            }
+                            if (tabJoueur[j].classe.sort2.typePortee==1)
+                            {
+                                afficherPorteeDroite(tabJoueur[j].classe.sort2,tabJoueur[j],page);
+                            }
+                        }
+                        if(((mouse_x>=(casex*14)&& mouse_x<=(casex*14+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
+                        {
+                            lancerSort(tabJoueur[j].classe.sort2,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
+                            rest(200);
+                        }
+                        //Sort3
+                        if((mouse_x>=(casex*18)&& mouse_x<=(casex*18+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))
+                        {
+                            if (tabJoueur[j].classe.sort3.typePortee==3)
+                            {
+                                afficherPorteeCirc(tabJoueur[j].classe.sort3,tabJoueur[j],page);
+                            }
+                            if (tabJoueur[j].classe.sort3.typePortee==1)
+                            {
+                                afficherPorteeDroite(tabJoueur[j].classe.sort3,tabJoueur[j],page);
+                            }
+                        }
+                        if(((mouse_x>=(casex*18)&& mouse_x<=(casex*18+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
+                        {
+                            lancerSort(tabJoueur[j].classe.sort3,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
+                            rest(200);
+                        }
+                        //Sort4
+                        if((mouse_x>=(casex*22)&& mouse_x<=(casex*22+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))
+                        {
+                            if (tabJoueur[j].classe.sort4.typePortee==3)
+                            {
+                                afficherPorteeCirc(tabJoueur[j].classe.sort4,tabJoueur[j],page);
+                            }
+                            if (tabJoueur[j].classe.sort4.typePortee==1)
+                            {
+                                afficherPorteeDroite(tabJoueur[j].classe.sort4,tabJoueur[j],page);
+                            }
+                        }
+                        if(((mouse_x>=(casex*22)&& mouse_x<=(casex*22+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
+                        {
+                            lancerSort(tabJoueur[j].classe.sort4,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
+                            rest(200);
+                        }
+                        //Sort5
+                        if((mouse_x>=(casex*26)&& mouse_x<=(casex*26+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))
+                        {
+                            if (tabJoueur[j].classe.sort5.typePortee==3)
+                            {
+                                afficherPorteeCirc(tabJoueur[j].classe.sort5,tabJoueur[j],page);
+                            }
+                            if (tabJoueur[j].classe.sort5.typePortee==1)
+                            {
+                                afficherPorteeDroite(tabJoueur[j].classe.sort5,tabJoueur[j],page);
+                            }
+                        }
+                        if(((mouse_x>=(casex*26)&& mouse_x<=(casex*26+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
+                        {
+                            lancerSort(tabJoueur[j].classe.sort5,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
+                            rest(200);
+                        }
+                        //if(((mouse_x>=(casex*30)&& mouse_x<=(casex*30+100))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+100))&&(mouse_b & 1))
+                        //{
+                        //}
                         for (int z=0; z<nbJoueurs; z++)
                         {
                             if (tabJoueur[z].numeroClasse==1)///Pikachu
@@ -214,6 +352,12 @@ int main()
                             rest(2000);
                         }
                         while(sortieJeu!=1)
+
+                        }
+                        time_t temps3=time(NULL);
+                        int diff=difftime(temps3,temps1);
+                        textprintf_ex(page,maPolice,1150,550,makecol(0,0,0),-1,"%d",diff);
+                        if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b & 1))
                         {
                             if (j==nbJoueurs)
                             {
@@ -480,14 +624,26 @@ int main()
             }
         }
         show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);
+        blit(page,screen,0,0,0,0,1200,711);*/
 
 
-        /*clear_bitmap(page);
+        clear_bitmap(page);
         afficher_map(page);
-        afficher_cases_dispo_joueur(page,x,y,6,tableau_Cases);
-        afficher_tout_arbre(page,tableau_affichage_arbre);*/
-        //casebleu_foncee(page,x,y);
+        afficher_cases_dispo_joueur(page,x,y,6,tableau_Cases,tableau_case_possible);
+        changement_case_souris(page,mouse_x,mouse_y,&souris_x,&souris_y,tableau_case_possible,tableau_chemin_court,x,y);
+        afficher_chemin(page,tableau_chemin_court);
+        afficher_tout_arbre(page,tableau_affichage_arbre);
+        if(mouse_b & 1)
+        {
+            deplacement_joueur(page,y,x,2,tableau_chemin_court,tableau_affichage_arbre);
+            x++;
+            if(x==36)
+            {
+                x=0;
+                y++;
+            }
+        }
+
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
         //allegro_message("ok");
