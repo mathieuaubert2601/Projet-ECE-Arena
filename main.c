@@ -487,10 +487,10 @@ int main()
 
         }
         show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);*/
+        blit(page,screen,0,0,0,0,1200,711);
 
 
-        clear_bitmap(page);
+        /*clear_bitmap(page);
         afficher_map(page);
         afficher_cases_dispo_joueur(page,x,y,6,tableau_Cases,tableau_case_possible);
         changement_case_souris(page,mouse_x,mouse_y,&souris_x,&souris_y,tableau_case_possible,tableau_chemin_court,x,y);
@@ -509,7 +509,7 @@ int main()
 
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
-        //allegro_message("ok");
+        //allegro_message("ok");*/
     }
     destroy_bitmap(page);
 

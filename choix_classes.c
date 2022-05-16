@@ -407,11 +407,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 sortieClasses=1;
             }
         }
-        if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
-            {
-                sortieClasses=1;
-                menuNbJoueur(page,fondMenu,logo, violetCity);
-            }
             for(int u;u<15;u++)
         {
             textprintf_ex(page,maPolice,800,200,makecol(255,255,0),-1,"%c",joueur[1].pseudo[u]);
