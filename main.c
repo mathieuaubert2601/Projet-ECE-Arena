@@ -351,9 +351,9 @@ int main()
                             }
                             rest(2000);
                         }
-                        while(sortieJeu!=1)
+                        //while(sortieJeu!=1)
 
-                        }
+                        //}
                         time_t temps3=time(NULL);
                         int diff=difftime(temps3,temps1);
                         textprintf_ex(page,maPolice,1150,550,makecol(0,0,0),-1,"%d",diff);

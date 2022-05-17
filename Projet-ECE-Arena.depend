@@ -107,7 +107,7 @@
 1652169907 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\affichage_personnages.c
 	"header.h"
 
-1652381597 c:\users\augus\onedrive\documents\github\projet-ece-arena\header.h
+1652716208 c:\users\augus\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -155,10 +155,10 @@
 1651483118 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\init_allegro.c
 	"header.h"
 
-1651501227 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\affichage_personnages.c
+1652716208 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\affichage_personnages.c
 	"header.h"
 
-1651827264 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\deplacement_joueur.c
+1652716208 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\deplacement_joueur.c
 	"header.h"
 
 1652381597 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\gestion_clavier.c
@@ -170,13 +170,13 @@
 1652108563 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\menunbjoueur.c
 	"header.h"
 
-1652184890 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\barre_commande.c
+1652716208 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\barre_commande.c
 	"header.h"
 
-1652184890 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\carte.c
+1652716208 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\carte.c
 	"header.h"
 
-1652385846 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\choix_classes.c
+1652716227 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
 1652381597 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\main.c
@@ -197,7 +197,7 @@
 1652527732 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\gestionsorts.c
 	"header.h"
 
-1652184890 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\gestionsorts.c
+1652716208 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\gestionsorts.c
 	"header.h"
 
 1652288357 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\afficherportee.c
@@ -225,5 +225,14 @@
 	"header.h"
 
 1652604262 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\deplacement_plus_court.c
+	"header.h"
+
+1652184890 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\ordrejoueurs.c
+	"header.h"
+
+1652716208 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\afficherportee.c
+	"header.h"
+
+1652716208 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\deplacement_plus_court.c
 	"header.h"
 
