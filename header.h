@@ -96,8 +96,8 @@ void afficher_deplacement_plus_court(int tableau_case_dispo[18][36],int x,int y,
 void changement_case_souris(BITMAP* buffer,int x_souris,int y_souris, int* case_x, int* case_y,int tableau_case_dispo[18][36],int tableau_chemin_court[18][36],int x,int y);
 void afficher_chemin(BITMAP* buffer, int tableau_a_afficher[18][36]);
 //gestionSorts
-void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur, BITMAP* page, int tab[18][36]);
-void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* tabjoueur[],int tour, BITMAP* page, int nbjoueur);
+void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur tabJoueurs[], int nombreJoueur, int tourJoueur, BITMAP* page, int tab[18][36]);
+void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur tabjoueur[],int tour, BITMAP* page, int nbjoueur);
 void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page, int tab[18][36], int nbJoueurs,t_joueur* tabJoueur[]);
 int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB,BITMAP* page);
 void sortVie(t_sorts sort1, t_joueur* joueurA,BITMAP* page);
