@@ -504,14 +504,7 @@ int main()
 
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
-        //allegro_message("ok");
-        x++;
-        if(x==36)
-        {
-            x=0;
-            y++;
-        }
-
+        //allegro_message("ok");*/
     }
     destroy_bitmap(page);
 

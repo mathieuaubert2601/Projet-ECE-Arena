@@ -288,8 +288,24 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
 
         masked_stretch_blit(logo,page,0,0,755,374,300,5,600,300);
 
-        textprintf_ex(page,maPolice,10,10,makecol(0,0,0),-1,"Choisit ta classe !");
-        textprintf_ex(page,maPolice,10,50,makecol(0,0,0),-1,"%s",joueur[t].pseudo);
+        textprintf_ex(page,maPolice,10,180,makecol(255,255,0),-1,"%s",joueur[t].pseudo);
+        /*if(nbJoueur==0)
+        {
+            masked_stretch_blit(phrase1,page,0,0,phrase1->w,phrase1->h,5,50,300,38);
+        }
+        if(nbJoueur==1)
+        {
+            masked_stretch_blit(phrase2,page,0,0,phrase2->w,phrase2->h,5,50,300,38);
+        }
+        if(nbJoueur==2)
+        {
+            masked_stretch_blit(phrase3,page,0,0,phrase3->w,phrase3->h,5,50,300,38);
+        }
+        if(nbJoueur==3)
+        {
+            masked_stretch_blit(phrase4,page,0,0,phrase4->w,phrase4->h,5,50,300,38);
+        }*/
+
 
         if(((mouse_x>=(68)&& mouse_x<=(68+100))&& (mouse_y)>=(625)&& mouse_y<=(625+50))&& (mouse_b && 1))
         {
@@ -396,11 +412,15 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 sortieClasses=1;
                 menuNbJoueur(page,fondMenu,logo, violetCity);
             }
-            for(int u;u<15;u++)
-        {
-            textprintf_ex(page,maPolice,800,200,makecol(255,255,0),-1,"%c",joueur[1].pseudo[u]);
 
-        }
+
+            /*for(int u;u<15;u++)
+        {
+            textprintf_ex(page,maPolice,100,200,makecol(255,255,0),-1,"%c",joueur[1].pseudo[u]);
+
+        }*/
+        textprintf_ex(page,maPolice,10,140,makecol(255,255,0),-1,"Choisis ta classe :");
+
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
     }

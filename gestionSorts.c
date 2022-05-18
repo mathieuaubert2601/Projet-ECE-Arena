@@ -79,7 +79,7 @@ void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur tabJoueurs[], int nom
 void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur tabjoueur[],int tour, BITMAP* page, int nbjoueur )
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, i=joueurA->numero+1;
-    int nombrePv, colonneJ, ligneJ;
+    int nombrePv;
     BITMAP* rate = load_bitmap("phrases/phraseRate.bmp",NULL);
     ///Attaque en zone
     if (sort1.typePortee == 3)
@@ -92,6 +92,7 @@ void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur tabjoueur[],int tour
                 printf("puteInitiale");
                 caseChoisieColonne = mouse_x/30;
                 caseChoisieLigne = mouse_y/32;
+                printf("%d\n %d",i,tour);
                 while(i!=tour)
                 {
                     if (i>nbjoueur-1)
@@ -100,11 +101,9 @@ void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur tabjoueur[],int tour
                     }
                     //ligne= abs((tabjoueur[i]->ligne/32)-caseChoisieLigne);
                     //colonne= abs((tabjoueur[i]->colonne/30)-caseChoisieColonne);
-                    printf("%d\n",tabjoueur[i].ligne);
-                    printf("%d\n",tabjoueur[i].colonne);
-                    colonneJ = tabjoueur[i].ligne;
-                    ligneJ = tabjoueur[i].colonne;
-                    if ((caseChoisieColonne==colonneJ)&& (caseChoisieLigne==ligneJ))
+                    printf("%d\n",&tabjoueur[i]->ligne);
+                    printf("%d",&tabjoueur[i]->colonne);
+                    if ((caseChoisieColonne==tabjoueur[i]->colonne/30)&& (caseChoisieLigne==tabjoueur[i]->ligne/32))
                     {
                         testTouche = 1;
                         printf("pute2");
