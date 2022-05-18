@@ -1,6 +1,6 @@
 #include "header.h"
 
-void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int nombreJoueur, int tourJoueur, BITMAP* page, int tab[18][36])
+void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur tabJoueurs[], int nombreJoueur, int tourJoueur, BITMAP* page, int tab[18][36])
 {
     BITMAP* pasPA = load_bitmap("phrases/phrasePA.bmp",NULL);
     BITMAP* pasZone = load_bitmap("phrases/phraseZoneImpact.bmp",NULL);
@@ -20,7 +20,7 @@ void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int no
         {
             while((tourJoueur+1) != (joueurA->numero))
             {
-                touche = sortStatut(sort1,joueurA,tabJoueurs[tourJoueur+1],page);
+                touche = sortStatut(sort1,joueurA,&tabJoueurs[tourJoueur+1],page);
                 totalTouche+=touche;
                 tourJoueur++;
                 if (tourJoueur == nombreJoueur-1)
@@ -52,7 +52,7 @@ void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int no
         {
             while((tourJoueur+1) != (joueurA->numero))
             {
-                touche = sortSoin(sort1,joueurA,tabJoueurs[tourJoueur+1],page);
+                touche = sortSoin(sort1,joueurA,&tabJoueurs[tourJoueur+1],page);
                 totalTouche+=touche;
                 tourJoueur++;
                 if (tourJoueur == nombreJoueur-1)
@@ -76,10 +76,10 @@ void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur* tabJoueurs[], int no
     }
 }
 
-void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* tabjoueur[],int tour, BITMAP* page, int nbjoueur )
+void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur tabjoueur[],int tour, BITMAP* page, int nbjoueur )
 {
-    int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, i=joueurA->numero;
-    int nombrePv;
+    int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, i=joueurA->numero+1;
+    int nombrePv, colonneJ, ligneJ;
     BITMAP* rate = load_bitmap("phrases/phraseRate.bmp",NULL);
     ///Attaque en zone
     if (sort1.typePortee == 3)
@@ -94,12 +94,17 @@ void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* tabjoueur[],int tou
                 caseChoisieLigne = mouse_y/32;
                 while(i!=tour)
                 {
-                    printf("%d",i);
                     if (i>nbjoueur-1)
                     {
                         i=0;
                     }
-                    if (((abs((tabjoueur[i]->ligne/32)-caseChoisieLigne)+abs((tabjoueur[i]->colonne/30)-caseChoisieColonne)>=1)&&(abs((tabjoueur[i]->ligne/32)-caseChoisieLigne)+abs((tabjoueur[i]->colonne/30)-caseChoisieColonne)<=1)))
+                    //ligne= abs((tabjoueur[i]->ligne/32)-caseChoisieLigne);
+                    //colonne= abs((tabjoueur[i]->colonne/30)-caseChoisieColonne);
+                    printf("%d\n",tabjoueur[i].ligne);
+                    printf("%d\n",tabjoueur[i].colonne);
+                    colonneJ = tabjoueur[i].ligne;
+                    ligneJ = tabjoueur[i].colonne;
+                    if ((caseChoisieColonne==colonneJ)&& (caseChoisieLigne==ligneJ))
                     {
                         testTouche = 1;
                         printf("pute2");
@@ -143,7 +148,7 @@ void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* tabjoueur[],int tou
         printf("pute3");
         if (sortie_mouv == 0)
         {
-            if (tabjoueur[i]->tourBouclier>0)
+            if (tabjoueur[i].tourBouclier>0)
             {
                 joueurA->pa-=sort1.nbrPa;
             }
@@ -153,10 +158,10 @@ void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* tabjoueur[],int tou
                 if (probabilite<sort1.chance)
                 {
                     nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                    tabjoueur[i]->pv -= nombrePv;
-                    if (tabjoueur[i]->pv <0)
+                    tabjoueur[i].pv -= nombrePv;
+                    if (tabjoueur[i].pv <0)
                     {
-                        tabjoueur[i]->pv = 0;
+                        tabjoueur[i].pv = 0;
                     }
                 }
                 else if (probabilite>=sort1.chance)
@@ -187,7 +192,7 @@ void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* tabjoueur[],int tou
                     {
                         i=0;
                     }
-                    if (caseChoisieColonne==tabjoueur[i]->colonne && caseChoisieLigne==tabjoueur[i]->ligne)
+                    if (caseChoisieColonne==tabjoueur[i].colonne && caseChoisieLigne==tabjoueur[i].ligne)
                     {
                         testTouche = i;
                     }
@@ -233,7 +238,7 @@ void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* tabjoueur[],int tou
                          || (testTouche==0)) && (sortie_mouv == 0));
         if (sortie_mouv == 0)
         {
-            if (tabjoueur[testTouche]->tourBouclier>0)
+            if (tabjoueur[testTouche].tourBouclier>0)
             {
                 joueurA->pa-=sort1.nbrPa;
             }
@@ -243,10 +248,10 @@ void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur* tabjoueur[],int tou
                 if (probabilite<sort1.chance)
                 {
                     nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                    tabjoueur[testTouche]->pv -= nombrePv;
-                    if (tabjoueur[testTouche]->pv <0)
+                    tabjoueur[testTouche].pv -= nombrePv;
+                    if (tabjoueur[testTouche].pv <0)
                     {
-                        tabjoueur[testTouche]->pv = 0;
+                        tabjoueur[testTouche].pv = 0;
                     }
                 }
                 else if (probabilite>=sort1.chance)

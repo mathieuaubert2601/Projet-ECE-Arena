@@ -21,6 +21,8 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     BITMAP* corpsacorps = load_bitmap("CAC/corpsacorps.bmp",NULL);
     BITMAP* corpsacorpsInv = load_bitmap("CAC/corpsacorpsInv.bmp",NULL);
     BITMAP* infoscorps = load_bitmap("CAC/infoscorps.bmp",NULL);
+    BITMAP* cac = load_bitmap("CAC/cac.bmp",NULL);
+    BITMAP* cacInv = load_bitmap("CAC/cacInv.bmp",NULL);
 
     //Declaration Bitmap Pikachu sorts
     BITMAP* cageE = load_bitmap("pikachu/CageEclair.bmp",NULL);
@@ -125,7 +127,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     t_sorts torgnolesS={8,19,2,80,1,0,2,0,5,3,0,0,torgnoles,torgnolesInv,infostorgnoles};
     t_sorts soinS={50,20,10,75,2,0,2,0,10,3,0,3,soin,soinInv,infossoin};
     t_sorts berceuseS={0,21,0,50,2,0,3,0,6,3,2,0,berceuse,berceuseInv,infosberceuse};
-    t_sorts corps={1,22,0,100,1,0,1,0,1,3,0,0,corpsacorps,corpsacorpsInv,infoscorps};
+    t_sorts corps={1,22,0,100,1,0,1,0,1,3,0,0,cac,cacInv,infoscorps};
 
     t_sorts tabSorts[23]={vitesseExtreme,fatalFoudre,bouleElek,couDjus,cageEclair,boulArmure,reposS,coupDboule,seismeS,chargeS,rugissement,aurasphere,closeCombat,vitesseExtremeL,hateS,toxicS,psykoS,teleportS,autoSoinS,vaguePsyS,torgnolesS,soinS,berceuseS};
 
