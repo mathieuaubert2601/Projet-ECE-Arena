@@ -353,7 +353,8 @@ int main()
                         }
                         while(sortieJeu!=1)
 
-                        }
+                        {
+
                         time_t temps3=time(NULL);
                         int diff=difftime(temps3,temps1);
                         textprintf_ex(page,maPolice,1150,550,makecol(0,0,0),-1,"%d",diff);
@@ -388,7 +389,7 @@ int main()
                             }
                             if(((mouse_x>=(casex*10)&& mouse_x<=(casex*10+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                             {
-                                lancerSort(tabJoueur[j].classe.sort1,&tabJoueur[j],tabJoueur,nbJoueurs,j,page);
+                                lancerSort(tabJoueur[j].classe.sort1,&tabJoueur[j],tabJoueur,nbJoueurs,j,page, tableau_Cases);
                                 rest(200);
                             }
                             //Sort2
@@ -405,7 +406,7 @@ int main()
                             }
                             if(((mouse_x>=(casex*14)&& mouse_x<=(casex*14+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                             {
-                                lancerSort(tabJoueur[j].classe.sort2,&tabJoueur[j],tabJoueur,nbJoueurs,j,page);
+                                lancerSort(tabJoueur[j].classe.sort2,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
                             }
                             //Sort3
@@ -422,7 +423,7 @@ int main()
                             }
                             if(((mouse_x>=(casex*18)&& mouse_x<=(casex*18+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                             {
-                                lancerSort(tabJoueur[j].classe.sort3,&tabJoueur[j],tabJoueur,nbJoueurs,j,page);
+                                lancerSort(tabJoueur[j].classe.sort3,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
                             }
                             //Sort4
@@ -439,7 +440,7 @@ int main()
                             }
                             if(((mouse_x>=(casex*22)&& mouse_x<=(casex*22+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                             {
-                                lancerSort(tabJoueur[j].classe.sort4,&tabJoueur[j],tabJoueur,nbJoueurs,j,page);
+                                lancerSort(tabJoueur[j].classe.sort4,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
                             }
                             //Sort5
@@ -456,7 +457,7 @@ int main()
                             }
                             if(((mouse_x>=(casex*26)&& mouse_x<=(casex*26+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                             {
-                                lancerSort(tabJoueur[j].classe.sort5,&tabJoueur[j],tabJoueur,nbJoueurs,j,page);
+                                lancerSort(tabJoueur[j].classe.sort5,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
                             }
                             //if(((mouse_x>=(casex*30)&& mouse_x<=(casex*30+100))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+100))&&(mouse_b & 1))
