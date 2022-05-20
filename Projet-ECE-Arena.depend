@@ -5,7 +5,7 @@
 
 1651337454 ated upstream
 
-1653060504 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
+1653062603 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -24,7 +24,7 @@
 1652974278 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
-1651736559 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
+1653062603 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
 	"header.h"
 
 1653056245 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\main.c
@@ -64,7 +64,7 @@
 1652772807 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
-1652288270 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\informations_classe.c
+1653062603 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\informations_classe.c
 	"header.h"
 
 1652896509 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\informations_classe.c
@@ -142,7 +142,7 @@
 1652865465 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\deplacement_joueur.c
 	"header.h"
 
-1653060538 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\gestionsorts.c
+1653063095 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\gestionsorts.c
 	"header.h"
 
 1652772807 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\barre_commande.c

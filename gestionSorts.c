@@ -677,69 +677,6 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page, int tab[18][3
 
 void sortStatut2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page)
 {
-    int probabilite;
-    if (((abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)>=sort1.pMin)&&(abs((joueurA->ligne/32)-joueurB->ligne/32)+abs((joueurA->colonne/30)-joueurB->colonne/30)<=sort1.pMax)))
-    {
-        if (mouse_b & 1)
-        {
-            caseChoisieColonne = mouse_x/30;
-            caseChoisieLigne = mouse_y/32;
-            if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
-            {
-                testTouche = 1;
-                joueurBTouche = 1;
-            }
-        }
-        if (mouse_b & 2)
-        {
-            phrases(page,1);
-        }
-        show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);
-    }
-    while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
-    if (sortie_mouv == 0)
-    {
-        if (joueurB->tourBouclier>0)
-        {
-            joueurA->pa-=sort1.nbrPa;
-        }
-        else
-        {
-            probabilite=rand() % 100;
-            if (probabilite<sort1.chance)
-            {
-                if (sort1.typeStatus == 1)
-                {
-                    joueurB->tourPoison = 5;
-                }
-                if (sort1.typeStatus == 2)
-                {
-                    joueurB->tourDodo = 3;
-                }
-                if (sort1.typeStatus == 3)
-                {
-                    joueurB->tourParalysie = 2;
-                }
-                if (sort1.typeStatus == 4)
-                {
-                    joueurB->tourPeur = 1;
-                }
-            }
-            else if (probabilite>=sort1.chance)
-            {
-                masked_blit(rate,page,0,0,330,400,rate->w,rate->h);
-                blit(page,screen,0,0,0,0,1200,711);
-                rest(500);
-            }
-        }
-
-        joueurA->pa-=sort1.nbrPa;
-    }
-}
-
-void sortSatut2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page)
-{
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0;
     int nombrePv;
     do
