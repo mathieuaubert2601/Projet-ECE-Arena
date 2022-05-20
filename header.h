@@ -97,11 +97,17 @@ void changement_case_souris(BITMAP* buffer,int x_souris,int y_souris, int* case_
 void afficher_chemin(BITMAP* buffer, int tableau_a_afficher[18][36]);
 //gestionSorts
 void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur tabJoueurs[], int nombreJoueur, int tourJoueur, BITMAP* page, int tab[18][36]);
-void sortAttaque(t_sorts sort1, t_joueur* joueurA, t_joueur tabjoueur[],int tour, BITMAP* page, int nbjoueur);
+void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page);
+void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* joueurC, BITMAP* page);
+void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* joueurC, t_joueur* joueurD, BITMAP* page);
 void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page, int tab[18][36], int nbJoueurs,t_joueur* tabJoueur[]);
-int sortStatut(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB,BITMAP* page);
+void sortStatut2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page);
+void sortStatut3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* joueurC, BITMAP* page);
+void sortStatut4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* joueurC, t_joueur* joueurD, BITMAP* page);
 void sortVie(t_sorts sort1, t_joueur* joueurA,BITMAP* page);
-int sortSoin(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page);
+void sortSoin2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page);
+void sortSoin3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* joueurC, BITMAP* page);
+void sortSoin4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* joueurC, t_joueur* joueurD, BITMAP* page);
 int test_clique_Suppr(int destx, int desty, int longueur, int hauteur,int compteur,char pseudo[15]);
 int test_clique_Entree(int destx, int desty, int longueur, int hauteur,int boule,char pseudo[15]);
 int test_clique(int destx, int desty, int longueur, int hauteur,char lettre,int compteur,char pseudo[15]);

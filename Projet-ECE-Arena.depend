@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1651338522 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\init_allegro.c
+1652974214 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\init_allegro.c
+	"header.h"
 	"header.h"
 
 1651337454 ated upstream
 
-1652691705 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
+1653060504 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -17,10 +18,10 @@
 	"header.h"
 	"header.h"
 
-1652684821 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
+1653060378 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
 	"header.h"
 
-1652691819 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
+1652974278 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
 1651736559 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
@@ -90,7 +91,7 @@
 1652017286 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\menunbjoueur.c
 	"header.h"
 
-1652526362 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\affichage_personnages.c
+1652974214 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\affichage_personnages.c
 	"header.h"
 
 1652684689 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\carte.c
@@ -129,7 +130,7 @@
 1652526362 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\gestion_clavier.c
 	"header.h"
 
-1652684788 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\deplacement_joueur.c
+1652974214 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\deplacement_joueur.c
 	"header.h"
 
 1652608834 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\deplacement_joueur.c
@@ -141,7 +142,7 @@
 1652691474 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\deplacement_joueur.c
 	"header.h"
 
-1652691257 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\gestionsorts.c
+1653060538 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\gestionsorts.c
 	"header.h"
 
 1652772807 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\barre_commande.c
