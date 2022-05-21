@@ -51,6 +51,39 @@ void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int 
 
 }
 
+void attaque_Pikachu(BITMAP* page)
+{
+    BITMAP* pika1 = load_bitmap("pikachu\pikaAttaque1.bmp",NULL);
+    BITMAP* pika2 = load_bitmap("pikachu\pikaAttaque2.bmp",NULL);
+    BITMAP* pika3 = load_bitmap("pikachu\pikaAttaque3.bmp",NULL);
+    BITMAP* pika4 = load_bitmap("pikachu\pikaAttaque4.bmp",NULL);
+    BITMAP* pika5 = load_bitmap("pikachu\pikaAttaque5.bmp",NULL);
+    BITMAP* pika6 = load_bitmap("pikachu\pikaAttaque6.bmp",NULL);
+    BITMAP* pika7 = load_bitmap("pikachu\pikaAttaque7.bmp",NULL);
+    BITMAP* pika8 = load_bitmap("pikachu\pikaAttaque8.bmp",NULL);
+    BITMAP* pika9 = load_bitmap("pikachu\pikaAttaque9.bmp",NULL);
+    BITMAP* pika10 = load_bitmap("pikachu\pikaAttaque10.bmp",NULL);
+    BITMAP* pika11 = load_bitmap("pikachu\pikaAttaque11.bmp",NULL);
+    BITMAP* pika12 = load_bitmap("pikachu\pikaAttaque12.bmp",NULL);
+    BITMAP* pika13 = load_bitmap("pikachu\pikaAttaque13.bmp",NULL);
+    BITMAP* pika14 = load_bitmap("pikachu\pikaAttaque14.bmp",NULL);
+    BITMAP* pika15 = load_bitmap("pikachu\pikaAttaque15.bmp",NULL);
+
+    BITMAP* tab_attaque_pika[15] = {pika1,pika2,pika3,pika4,pika5,pika6,pika7,pika8,pika9,pika10,pika11,pika12,pika13,pika14,pika15};
+
+    for (int i=0;i<15;i++)
+    {
+        clear_bitmap(page);
+        printf("%d",i);
+        blit(tab_attaque_pika[i],page,0,0,0,0,1200,711);
+
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(30);
+    }
+
+
+}
+
 void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int y)
 {
     //Déclaration des variables pour lucario de face

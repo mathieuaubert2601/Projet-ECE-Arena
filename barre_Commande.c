@@ -85,6 +85,7 @@ void affichage_profil(BITMAP* buffer,t_joueur tab[], int nbJoueurs,int j)
             textprintf_ex(buffer,ecrit,1105,casey*i*4+170,makecol(34,177,76),-1,"PV : %d",tab[i].pv);
             textprintf_ex(buffer,ecrit,1105,casey*i*4+190,makecol(34,177,76),-1,"%s",tab[i].pseudo);
         }
+
         else
         {
             masked_blit(tab[i].classe.profil,buffer,0,0,1105,casey*i*4+90,90,80);
