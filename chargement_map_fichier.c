@@ -10,7 +10,7 @@ void lecture_fichier_matrice_map_base(int matrice_a_remplir[18][36])
     if(fichier_a_lire == NULL)
     {
         printf("erreur d'ouverture du fichier");
-        return 1;
+        exit(EXIT_FAILURE);
     }
 
     //lecture dans le fichier
@@ -61,7 +61,7 @@ void lecture_fichier_matrice_map_arbre(int matrice_a_remplir[18][36])
     if(fichier_a_lire == NULL)
     {
         printf("erreur d'ouverture du fichier");
-        return 1;
+        exit(EXIT_FAILURE);
     }
 
     //lecture dans le fichier
@@ -114,7 +114,7 @@ void mettre_arbre_ou_non(int matrice_a_analyse[18][36])
     if(matrice_enregistrer == NULL)
     {
         printf("erreur dans l'ouverture du fichier");
-        return 1;
+        exit(EXIT_FAILURE);
     }
 
     //boucle pour placer des arbres dans la matrice aléatoirement

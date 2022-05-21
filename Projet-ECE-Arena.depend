@@ -49,20 +49,19 @@
 1653122918 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\boutons_menu.c
 	"header.h"
 
-1653124953 c:\users\aubert mathieu\documents\github\projet-ece-arena\header.h
+1653128505 c:\users\aubert mathieu\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
 	"time.h"
 
-1653051237 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\init_allegro.c
-	"header.h"
-	"header.h"
-
-1653126066 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\main.c
+1653129506 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\init_allegro.c
 	"header.h"
 
-1653120994 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\choix_classes.c
+1653128726 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\main.c
+	"header.h"
+
+1653129425 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
 1653062603 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\informations_classe.c
@@ -71,10 +70,10 @@
 1652896509 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\informations_classe.c
 	"header.h"
 
-1653120897 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\informations_classe.c
+1653129623 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\informations_classe.c
 	"header.h"
 
-1652529657 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\carte.c
+1653129221 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\carte.c
 	"header.h"
 
 1652775259 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\affichage_personnages.c
@@ -98,7 +97,7 @@
 1652684689 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\carte.c
 	"header.h"
 
-1652527732 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\gestion_clavier.c
+1653129506 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\gestion_clavier.c
 	"header.h"
 
 1651505717 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\menujeu.c
@@ -134,7 +133,7 @@
 1652974214 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\deplacement_joueur.c
 	"header.h"
 
-1653125816 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\deplacement_joueur.c
+1653128960 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\deplacement_joueur.c
 	"header.h"
 
 1652604262 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\carte.c
@@ -146,7 +145,7 @@
 1653121561 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\gestionsorts.c
 	"header.h"
 
-1653123689 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\barre_commande.c
+1653129154 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\barre_commande.c
 	"header.h"
 
 1653060260 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\gestionsorts.c
@@ -194,10 +193,10 @@
 1652124414 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\ordrejoueurs.c
 	"header.h"
 
-1651753897 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\chargement_map_fichier.c
+1653129069 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\chargement_map_fichier.c
 	"header.h"
 
-1653122918 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\gestionsorts.c
+1653129693 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\gestionsorts.c
 	"header.h"
 
 1652716208 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\gestionsorts.c
@@ -215,7 +214,7 @@
 1652684791 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\deplacement_plus_court.c
 	"header.h"
 
-1652607440 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\deplacement_plus_court.c
+1653128609 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\deplacement_plus_court.c
 	"header.h"
 
 1652526475 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\afficherportee.c

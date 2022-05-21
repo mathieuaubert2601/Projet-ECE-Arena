@@ -4,7 +4,6 @@ void afficher_map(BITMAP* buffer)
 {
     //d�claration des variables
     BITMAP* carte = load_bitmap("map/map.bmp",NULL);
-    BITMAP* arbre = load_bitmap("map/arbre1.bmp",NULL);
 
     //affichage de la carte sur le buffer
     blit(carte,buffer,0,0,0,0,buffer->w,buffer->h);
@@ -35,7 +34,7 @@ void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18]
     }
 }
 
-void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_cases[18][36], int tableau_a_rendre[18][36])
+void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_cases[18][36], int tableau_a_rendre[18][36],t_joueur tabJoueur[],int nbJoueur,int indice)
 {
     //int tableau_case_tmp[18][36];
     int tableau_case_tmp[18][36] ;
@@ -52,6 +51,14 @@ void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_
 
     }
 
+    //On indique les lieux où sont les autres joueurs
+    for(int k = 0 ; k < nbJoueur ; k++)
+    {
+        if(k != indice)
+        {
+            tableau_case_tmp[(tabJoueur[k].ligne)/32][(tabJoueur[k].colonne)/30] = 1;
+        }
+    }
     //On met la case sur laquelle on est à 2
     if(tableau_case_tmp[y][x] !=1)
     {
@@ -151,11 +158,6 @@ void casebleu_foncee(BITMAP* buffer, int posx, int posy)
 
     //On affiche la bitmap sur le buffer
     blit(casefiltre_foncee,buffer,posx * casex,posy * casey,0,0,buffer->w,buffer->h);
-}
-
-void afficher_coordonnees(BITMAP* buffer)
-{
-    textprintf(buffer,font,150,150,makecol(255,255,255),"x : %d, y : %d",mouse_x/30,mouse_y/32);
 }
 
 void afficher_lac(BITMAP* buffer)
