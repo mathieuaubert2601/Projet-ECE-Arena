@@ -230,6 +230,69 @@ int main()
 
                         afficher_tout_arbre(page,tableau_affichage_arbre);
                         afficher_commande(page,tabJoueur,nbJoueurs,j);
+                        ///CAC
+                        if((mouse_x>=(casex*30)&& mouse_x<=(casex*30+100))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+100))
+                        {
+                            afficherPorteeCirc(tabJoueur[j].classe.corps,tabJoueur[j],page);
+                        }
+                        if(((mouse_x>=(casex*10)&& mouse_x<=(casex*10+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
+                        {
+                            if (nbJoueurs == 2)
+                            {
+                                if (tabJoueur[j].classe.corps.type == 1)
+                                {
+                                    if (j == 0)
+                                    {
+                                        sortAttaque2J(tabJoueur[j].classe.corps,&tabJoueur[j],&tabJoueur[1],page);
+                                    }
+                                    if (j == 1)
+                                    {
+                                        sortAttaque2J(tabJoueur[j].classe.corps,&tabJoueur[j],&tabJoueur[0],page);
+                                    }
+                                }
+                            }
+                            if (nbJoueurs == 3)
+                            {
+                                if (tabJoueur[j].classe.corps.type == 1)
+                                {
+                                    if (j == 0)
+                                    {
+                                        sortAttaque3J(tabJoueur[j].classe.corps,&tabJoueur[j],&tabJoueur[1],&tabJoueur[2],page);
+                                    }
+                                    if (j == 1)
+                                    {
+                                        sortAttaque3J(tabJoueur[j].classe.corps,&tabJoueur[j],&tabJoueur[0],&tabJoueur[2],page);
+                                    }
+                                    if (j == 2)
+                                    {
+                                        sortAttaque3J(tabJoueur[j].classe.corps,&tabJoueur[j],&tabJoueur[0],&tabJoueur[1],page);
+                                    }
+                                }
+                            }
+                            if (nbJoueurs == 4)
+                            {
+                                if (tabJoueur[j].classe.corps.type == 1)
+                                {
+                                    if (j == 0)
+                                    {
+                                        sortAttaque4J(tabJoueur[j].classe.corps,&tabJoueur[j],&tabJoueur[1],&tabJoueur[2],&tabJoueur[3],page);
+                                    }
+                                    if (j == 1)
+                                    {
+                                        sortAttaque4J(tabJoueur[j].classe.corps,&tabJoueur[j],&tabJoueur[0],&tabJoueur[2],&tabJoueur[3],page);
+                                    }
+                                    if (j == 2)
+                                    {
+                                        sortAttaque4J(tabJoueur[j].classe.corps,&tabJoueur[j],&tabJoueur[1],&tabJoueur[0],&tabJoueur[3],page);
+                                    }
+                                    if (j == 3)
+                                    {
+                                        sortAttaque4J(tabJoueur[j].classe.corps,&tabJoueur[j],&tabJoueur[1],&tabJoueur[2],&tabJoueur[0],page);
+                                    }
+                                }
+                            }
+                        }
+
 
                         ///SORTS
                         //Sort1
@@ -1076,7 +1139,7 @@ int main()
                                 }
                             }
                             time_t temps3=time(NULL);
-                            int diff=difftime(temps3,temps1);
+                            unsigned long diff=difftime(temps3,temps1);
                             textprintf_ex(page,maPolice,1150,550,makecol(0,0,0),-1,"%d",diff);
                             if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b & 1))
                             {
@@ -1105,7 +1168,8 @@ int main()
                             show_mouse(page);
                             blit(page,screen,0,0,0,0,1200,711);
                             time_t temps2=time(NULL);
-                            if (difftime(temps2,temps1)>=15)
+                            unsigned long tempo = difftime(temps2,temps1);
+                            if (tempo>=15)
                             {
                                 temps1=time(NULL);
                                 tabJoueur[j].pa=10;
