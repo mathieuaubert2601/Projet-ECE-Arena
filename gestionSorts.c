@@ -19,211 +19,226 @@ void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* 
     int nombrePv;
     FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
 
-    ///Attaque en zone
-    if (sort1.typePortee == 3)
+    if (joueurA->pa>=sort1.nbrPa)
     {
-        rest(400);
-        do
+        ///Attaque en zone
+        if (sort1.typePortee == 3)
         {
-            if (mouse_b & 1)
+            rest(400);
+            do
             {
-                caseChoisieColonne = mouse_x/30;
-                caseChoisieLigne = mouse_y/32;
-                if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                if (mouse_b & 1)
                 {
-                    testTouche = 1;
-                    joueurBTouche = 1;
+                    caseChoisieColonne = mouse_x/30;
+                    caseChoisieLigne = mouse_y/32;
+                    if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                    {
+                        testTouche = 1;
+                        joueurBTouche = 1;
+                    }
                 }
-            }
-            if (mouse_b & 2)
-            {
-                sortie_mouv = 1;
-            }
-            ///Afficher joueurA
-            if (joueurA->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
+                if (mouse_b & 2)
+                {
+                    sortie_mouv = 1;
+                }
+                ///Afficher joueurA
+                if (joueurA->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
 
-            ///Afficher joueurB
-            if (joueurB->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+                ///Afficher joueurB
+                if (joueurB->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                show_mouse(page);
+                blit(page,screen,0,0,0,0,1200,711);
             }
-            if (joueurB->numeroClasse==2)///Ronflex
+            while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
+            if (sortie_mouv == 0)
             {
-                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            show_mouse(page);
-            blit(page,screen,0,0,0,0,1200,711);
-        }
-        while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
-        if (sortie_mouv == 0)
-        {
-            if (joueurB->tourBouclier>0)
-            {
+                if (joueurB->tourBouclier>0)
+                {
+                    joueurA->pa-=sort1.nbrPa;
+                }
+                else
+                {
+                    probabilite=rand() % 100 ;
+                    if (probabilite<sort1.chance)
+                    {
+                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                        joueurB->pv -= nombrePv;
+                        if (joueurB->pv <0)
+                        {
+                            joueurB->pv = 0;
+                            joueurB->mort=1;
+                            joueurB->colonne=2000;
+                            joueurB->ligne=2000;
+                        }
+                        textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(1000);
+
+                    }
+                    else if (probabilite>=sort1.chance)
+                    {
+                        phrases(page,1);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(1000);
+                    }
+                }
+
                 joueurA->pa-=sort1.nbrPa;
             }
-            else
-            {
-                probabilite=rand() % 100 ;
-                if (probabilite<sort1.chance)
-                {
-                    nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                    joueurB->pv -= nombrePv;
-                    if (joueurB->pv <0)
-                    {
-                        joueurB->pv = 0;
-                    }
-                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-
-                }
-                else if (probabilite>=sort1.chance)
-                {
-                    phrases(page,1);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                }
-            }
-
-            joueurA->pa-=sort1.nbrPa;
         }
-    }
 
 ///Attaque en ligne droite
-    if (sort1.typePortee == 1)
-    {
-        rest(400);
-        do
+        if (sort1.typePortee == 1)
         {
-            if (mouse_b & 1)
+            rest(400);
+            do
             {
-                caseChoisieColonne = mouse_x/30;
-                caseChoisieLigne = mouse_y/32;
-                if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                if (mouse_b & 1)
                 {
-                    testTouche = 1;
-                    joueurBTouche = 1;
+                    caseChoisieColonne = mouse_x/30;
+                    caseChoisieLigne = mouse_y/32;
+                    if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                    {
+                        testTouche = 1;
+                        joueurBTouche = 1;
+                    }
                 }
-            }
-            if (mouse_b & 2)
-            {
-                sortie_mouv = 1;
-            }
-                        ///Afficher joueurA
-            if (joueurA->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
+                if (mouse_b & 2)
+                {
+                    sortie_mouv = 1;
+                }
+                ///Afficher joueurA
+                if (joueurA->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
 
-            ///Afficher joueurB
-            if (joueurB->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+                ///Afficher joueurB
+                if (joueurB->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                show_mouse(page);
+                blit(page,screen,0,0,0,0,1200,711);
             }
-            if (joueurB->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            show_mouse(page);
-            blit(page,screen,0,0,0,0,1200,711);
-        }
-        while          ((((joueurA->ligne/32==caseChoisieLigne)
-                          && ((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)
-                              ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))
-                          && ((joueurA->colonne/30==caseChoisieColonne)
+            while          ((((joueurA->ligne/32==caseChoisieLigne)
                               && ((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)
-                                  ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))))
-                         || (testTouche==0)) && (sortie_mouv == 0));
-        if (sortie_mouv == 0)
-        {
-            if (joueurB->tourBouclier>0)
+                                  ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))
+                              && ((joueurA->colonne/30==caseChoisieColonne)
+                                  && ((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)
+                                      ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))))
+                             || (testTouche==0)) && (sortie_mouv == 0));
+            if (sortie_mouv == 0)
             {
+                if (joueurB->tourBouclier>0)
+                {
+                    joueurA->pa-=sort1.nbrPa;
+                }
+                else
+                {
+                    probabilite=rand() % 100 ;
+                    if (probabilite<sort1.chance)
+                    {
+                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                        joueurB->pv -= nombrePv;
+                        if (joueurB->pv <0)
+                        {
+                            joueurB->pv = 0;
+                            joueurB->mort=1;
+                            joueurB->colonne=2000;
+                            joueurB->ligne=2000;
+                        }
+                        textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(1000);
+                    }
+                    else if (probabilite>=sort1.chance)
+                    {
+                        phrases(page,1);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(1000);
+                    }
+                }
+
                 joueurA->pa-=sort1.nbrPa;
             }
-            else
-            {
-                probabilite=rand() % 100 ;
-                if (probabilite<sort1.chance)
-                {
-                    nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                    joueurB->pv -= nombrePv;
-                    if (joueurB->pv <0)
-                    {
-                        joueurB->pv = 0;
-                    }
-                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                }
-                else if (probabilite>=sort1.chance)
-                {
-                    phrases(page,1);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                }
-            }
-
-            joueurA->pa-=sort1.nbrPa;
         }
+    }
+    else
+    {
+        phrases(page,2);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
 }
 
@@ -233,327 +248,348 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
     int nombrePv;
     FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
 
-    ///Attaque en zone
-    if (sort1.typePortee == 3)
+    if (joueurA->pa>=sort1.nbrPa)
     {
-        rest(400);
-        do
+        ///Attaque en zone
+        if (sort1.typePortee == 3)
         {
-            if (mouse_b & 1)
+            rest(400);
+            do
             {
-                caseChoisieColonne = mouse_x/30;
-                caseChoisieLigne = mouse_y/32;
-                if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                if (mouse_b & 1)
                 {
-                    testTouche = 1;
-                    joueurBTouche = 1;
+                    caseChoisieColonne = mouse_x/30;
+                    caseChoisieLigne = mouse_y/32;
+                    if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                    {
+                        testTouche = 1;
+                        joueurBTouche = 1;
+                    }
+                    if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+                    {
+                        testTouche = 1;
+                        joueurCTouche = 1;
+                    }
                 }
-                if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+                if (mouse_b & 2)
                 {
-                    testTouche = 1;
-                    joueurCTouche = 1;
+                    sortie_mouv = 1;
                 }
-            }
-            if (mouse_b & 2)
-            {
-                sortie_mouv = 1;
-            }
-                        ///Afficher joueurA
-            if (joueurA->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
+                ///Afficher joueurA
+                if (joueurA->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
 
-            ///Afficher joueurB
-            if (joueurB->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
+                ///Afficher joueurB
+                if (joueurB->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
 
-            ///Afficher joueurC
-            if (joueurC->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurC->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurC->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurB->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurB->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            show_mouse(page);
-            blit(page,screen,0,0,0,0,1200,711);
-        }
-        while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
-        if (sortie_mouv == 0)
-        {
-            if (joueurBTouche == 1)
-            {
-                if (joueurB->tourBouclier>0)
+                ///Afficher joueurC
+                if (joueurC->numeroClasse==1)///Pikachu
                 {
-                    //Afficher joueur a un bouclier ou attaque echou�e
+                    afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
                 }
-                else
+                if (joueurC->numeroClasse==2)///Ronflex
                 {
-                    probabilite=rand() % 100 ;
-                    if (probabilite<sort1.chance)
+                    afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurC->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurB->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurB->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                show_mouse(page);
+                blit(page,screen,0,0,0,0,1200,711);
+            }
+            while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
+            if (sortie_mouv == 0)
+            {
+                if (joueurBTouche == 1)
+                {
+                    if (joueurB->tourBouclier>0)
                     {
-                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                        joueurB->pv -= nombrePv;
-                        if (joueurB->pv <0)
+                        //Afficher joueur a un bouclier ou attaque echou�e
+                    }
+                    else
+                    {
+                        probabilite=rand() % 100 ;
+                        if (probabilite<sort1.chance)
                         {
-                            joueurB->pv = 0;
+                            nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                            joueurB->pv -= nombrePv;
+                            if (joueurB->pv <0)
+                            {
+                                joueurB->pv = 0;
+                                joueurB->mort=1;
+                                joueurB->colonne=2000;
+                                joueurB->ligne=2000;
+                            }
+                            textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
                         }
-                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                    }
-                    else if (probabilite>=sort1.chance)
-                    {
-                        phrases(page,1);
-                        blit(page,screen,0,0,0,0,1200,711);
-                        rest(1000);
-                    }
-                }
-            }
-            if (joueurCTouche == 1)
-            {
-                if (joueurC->tourBouclier>0)
-                {
-                    //Afficher joueur a un bouclier ou attaque echou�e
-                }
-                else
-                {
-                    probabilite=rand() % 100 ;
-                    if (probabilite<sort1.chance)
-                    {
-                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                        joueurC->pv -= nombrePv;
-                        if (joueurC->pv < 0)
+                        else if (probabilite>=sort1.chance)
                         {
-                            joueurC->pv = 0;
+                            phrases(page,1);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
                         }
-                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                    }
-                    else if (probabilite>=sort1.chance)
-                    {
-                        phrases(page,1);
-                        blit(page,screen,0,0,0,0,1200,711);
-                        rest(1000);
                     }
                 }
+                if (joueurCTouche == 1)
+                {
+                    if (joueurC->tourBouclier>0)
+                    {
+                        //Afficher joueur a un bouclier ou attaque echou�e
+                    }
+                    else
+                    {
+                        probabilite=rand() % 100 ;
+                        if (probabilite<sort1.chance)
+                        {
+                            nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                            joueurC->pv -= nombrePv;
+                            if (joueurC->pv < 0)
+                            {
+                                joueurC->pv = 0;
+                                joueurC->mort=1;
+                                joueurC->colonne=2000;
+                                joueurC->ligne=2000;
+                            }
+                            textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
+                        }
+                        else if (probabilite>=sort1.chance)
+                        {
+                            phrases(page,1);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
+                        }
+                    }
+                }
+                joueurA->pa-=sort1.nbrPa;
             }
-            joueurA->pa-=sort1.nbrPa;
         }
-    }
 
 ///Attaque en ligne droite
-    if (sort1.typePortee == 1)
-    {
-        rest(400);
-        do
+        if (sort1.typePortee == 1)
         {
-            if (mouse_b & 1)
+            rest(400);
+            do
             {
-                caseChoisieColonne = mouse_x/30;
-                caseChoisieLigne = mouse_y/32;
-                if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                if (mouse_b & 1)
                 {
-                    testTouche = 1;
-                    joueurBTouche = 1;
+                    caseChoisieColonne = mouse_x/30;
+                    caseChoisieLigne = mouse_y/32;
+                    if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                    {
+                        testTouche = 1;
+                        joueurBTouche = 1;
+                    }
+                    if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+                    {
+                        testTouche = 1;
+                        joueurCTouche = 1;
+                    }
                 }
-                if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+                if (mouse_b & 2)
                 {
-                    testTouche = 1;
-                    joueurCTouche = 1;
+                    sortie_mouv = 1;
                 }
-            }
-            if (mouse_b & 2)
-            {
-                sortie_mouv = 1;
-            }
 
-                                    ///Afficher joueurA
-            if (joueurA->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
+                ///Afficher joueurA
+                if (joueurA->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
 
-            ///Afficher joueurB
-            if (joueurB->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
+                ///Afficher joueurB
+                if (joueurB->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
 
-            ///Afficher joueurC
-            if (joueurC->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
+                ///Afficher joueurC
+                if (joueurC->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurC->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurC->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurB->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurB->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                show_mouse(page);
+                blit(page,screen,0,0,0,0,1200,711);
             }
-            if (joueurC->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurC->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurB->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurB->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            show_mouse(page);
-            blit(page,screen,0,0,0,0,1200,711);
-        }
-        while          ((((joueurA->ligne/32==caseChoisieLigne)
-                          && ((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)
-                              ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))
-                          && ((joueurA->colonne/30==caseChoisieColonne)
+            while          ((((joueurA->ligne/32==caseChoisieLigne)
                               && ((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)
-                                  ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))))
-                         || (testTouche==0)) && (sortie_mouv == 0));
-        if (sortie_mouv == 0)
-        {
-            if (joueurBTouche == 1)
+                                  ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))
+                              && ((joueurA->colonne/30==caseChoisieColonne)
+                                  && ((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)
+                                      ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))))
+                             || (testTouche==0)) && (sortie_mouv == 0));
+            if (sortie_mouv == 0)
             {
-                if (joueurB->tourBouclier>0)
+                if (joueurBTouche == 1)
                 {
-                    //Afficher joueur a un bouclier ou attaque echou�e
-                }
-                else
-                {
-                    probabilite=rand() % 100 ;
-                    if (probabilite<sort1.chance)
+                    if (joueurB->tourBouclier>0)
                     {
-                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                        joueurB->pv -= nombrePv;
-                        if (joueurB->pv <0)
+                        //Afficher joueur a un bouclier ou attaque echou�e
+                    }
+                    else
+                    {
+                        probabilite=rand() % 100 ;
+                        if (probabilite<sort1.chance)
                         {
-                            joueurB->pv = 0;
+                            nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                            joueurB->pv -= nombrePv;
+                            if (joueurB->pv <0)
+                            {
+                                joueurB->pv = 0;
+                                joueurB->mort=1;
+                                joueurB->colonne=2000;
+                                joueurB->ligne=2000;
+                            }
+                            textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
                         }
-                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                    }
-                    else if (probabilite>=sort1.chance)
-                    {
-                        phrases(page,1);
-                        blit(page,screen,0,0,0,0,1200,711);
-                        rest(1000);
-                    }
-                }
-            }
-            if (joueurCTouche == 1)
-            {
-                if (joueurC->tourBouclier>0)
-                {
-                    //Afficher joueur a un bouclier ou attaque echou�e
-                }
-                else
-                {
-                    probabilite=rand() % 100 ;
-                    if (probabilite<sort1.chance)
-                    {
-                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                        joueurC->pv -= nombrePv;
-                        if (joueurC->pv <0)
+                        else if (probabilite>=sort1.chance)
                         {
-                            joueurC->pv = 0;
+                            phrases(page,1);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
                         }
-                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                    }
-                    else if (probabilite>=sort1.chance)
-                    {
-                        phrases(page,1);
-                        blit(page,screen,0,0,0,0,1200,711);
-                        rest(1000);
                     }
                 }
+                if (joueurCTouche == 1)
+                {
+                    if (joueurC->tourBouclier>0)
+                    {
+                        //Afficher joueur a un bouclier ou attaque echou�e
+                    }
+                    else
+                    {
+                        probabilite=rand() % 100 ;
+                        if (probabilite<sort1.chance)
+                        {
+                            nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                            joueurC->pv -= nombrePv;
+                            if (joueurC->pv <0)
+                            {
+                                joueurC->pv = 0;
+                                joueurC->mort=1;
+                                joueurC->colonne=2000;
+                                joueurC->ligne=2000;
+                            }
+                            textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
+                        }
+                        else if (probabilite>=sort1.chance)
+                        {
+                            phrases(page,1);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
+                        }
+                    }
+                }
+                joueurA->pa-=sort1.nbrPa;
             }
-            joueurA->pa-=sort1.nbrPa;
         }
+    }
+    else
+    {
+        phrases(page,2);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
 }
 
@@ -564,443 +600,469 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
     int nombrePv;
     FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
 
-    ///Attaque en zone
-    if (sort1.typePortee == 3)
+    if (joueurA->pa>=sort1.nbrPa)
     {
-        rest(400);
-        do
+        ///Attaque en zone
+        if (sort1.typePortee == 3)
         {
-            if (mouse_b & 1)
+            rest(400);
+            do
             {
-                caseChoisieColonne = mouse_x/30;
-                caseChoisieLigne = mouse_y/32;
-                if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                if (mouse_b & 1)
                 {
-                    testTouche = 1;
-                    joueurBTouche = 1;
-                }
-                if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
-                {
-                    testTouche = 1;
-                    joueurCTouche = 1;
-                }
-                if ((caseChoisieColonne==joueurD->colonne/30)&& (caseChoisieLigne==joueurD->ligne/32))
-                {
-                    testTouche = 1;
-                    joueurDTouche = 1;
-                }
-            }
-            if (mouse_b & 2)
-            {
-                sortie_mouv = 1;
-            }
-
-                                    ///Afficher joueurA
-            if (joueurA->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-
-            ///Afficher joueurB
-            if (joueurB->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-
-            ///Afficher joueurC
-            if (joueurC->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurC->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurC->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurC->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurC->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-
-            ///Afficher joueurD
-            if (joueurD->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurD->colonne,joueurD->ligne);
-            }
-            if (joueurD->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurD->colonne,joueurD->ligne);
-            }
-            if (joueurD->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurD->colonne,joueurD->ligne);
-            }
-            if (joueurD->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurD->colonne,joueurD->ligne);
-            }
-            if (joueurD->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurD->colonne,joueurD->ligne);
-            }
-            show_mouse(page);
-            blit(page,screen,0,0,0,0,1200,711);
-        }
-        while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
-        if (sortie_mouv == 0)
-        {
-            if (joueurBTouche == 1)
-            {
-                if (joueurB->tourBouclier>0)
-                {
-                    //Afficher joueur a un bouclier ou attaque echou�e
-                }
-                else
-                {
-                    probabilite=rand() % 100 ;
-                    if (probabilite<sort1.chance)
+                    caseChoisieColonne = mouse_x/30;
+                    caseChoisieLigne = mouse_y/32;
+                    if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
                     {
-                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                        joueurB->pv -= nombrePv;
-                        if (joueurB->pv <0)
+                        testTouche = 1;
+                        joueurBTouche = 1;
+                    }
+                    if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+                    {
+                        testTouche = 1;
+                        joueurCTouche = 1;
+                    }
+                    if ((caseChoisieColonne==joueurD->colonne/30)&& (caseChoisieLigne==joueurD->ligne/32))
+                    {
+                        testTouche = 1;
+                        joueurDTouche = 1;
+                    }
+                }
+                if (mouse_b & 2)
+                {
+                    sortie_mouv = 1;
+                }
+
+                ///Afficher joueurA
+                if (joueurA->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+
+                ///Afficher joueurB
+                if (joueurB->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+
+                ///Afficher joueurC
+                if (joueurC->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurC->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurC->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurC->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurC->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+
+                ///Afficher joueurD
+                if (joueurD->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurD->colonne,joueurD->ligne);
+                }
+                if (joueurD->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurD->colonne,joueurD->ligne);
+                }
+                if (joueurD->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurD->colonne,joueurD->ligne);
+                }
+                if (joueurD->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurD->colonne,joueurD->ligne);
+                }
+                if (joueurD->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurD->colonne,joueurD->ligne);
+                }
+                show_mouse(page);
+                blit(page,screen,0,0,0,0,1200,711);
+            }
+            while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
+            if (sortie_mouv == 0)
+            {
+                if (joueurBTouche == 1)
+                {
+                    if (joueurB->tourBouclier>0)
+                    {
+                        //Afficher joueur a un bouclier ou attaque echou�e
+                    }
+                    else
+                    {
+                        probabilite=rand() % 100 ;
+                        if (probabilite<sort1.chance)
                         {
-                            joueurB->pv = 0;
+                            nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                            joueurB->pv -= nombrePv;
+                            if (joueurB->pv <0)
+                            {
+                                joueurB->pv = 0;
+                                joueurB->mort=1;
+                                joueurB->colonne=2000;
+                                joueurB->ligne=2000;
+                            }
+                            textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
                         }
-                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                    }
-                    else if (probabilite>=sort1.chance)
-                    {
-                        phrases(page,1);
-                        blit(page,screen,0,0,0,0,1200,711);
-                        rest(1000);
-                    }
-                }
-            }
-            if (joueurCTouche == 1)
-            {
-                if (joueurC->tourBouclier>0)
-                {
-                    //Afficher joueur a un bouclier ou attaque echou�e
-                }
-                else
-                {
-                    probabilite=rand() % 100 ;
-                    if (probabilite<sort1.chance)
-                    {
-                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                        joueurC->pv -= nombrePv;
-                        if (joueurC->pv <0)
+                        else if (probabilite>=sort1.chance)
                         {
-                            joueurC->pv = 0;
+                            phrases(page,1);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
                         }
-                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                    }
-                    else if (probabilite>=sort1.chance)
-                    {
-                        phrases(page,1);
-                        blit(page,screen,0,0,0,0,1200,711);
-                        rest(1000);
                     }
                 }
-            }
-            if (joueurDTouche == 1)
-            {
-                if (joueurD->tourBouclier>0)
+                if (joueurCTouche == 1)
                 {
-                    //Afficher joueur a un bouclier ou attaque echou�e
-                }
-                else
-                {
-                    probabilite=rand() % 100 ;
-                    if (probabilite<sort1.chance)
+                    if (joueurC->tourBouclier>0)
                     {
-                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                        joueurD->pv -= nombrePv;
-                        if (joueurD->pv <0)
+                        //Afficher joueur a un bouclier ou attaque echou�e
+                    }
+                    else
+                    {
+                        probabilite=rand() % 100 ;
+                        if (probabilite<sort1.chance)
                         {
-                            joueurD->pv = 0;
+                            nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                            joueurC->pv -= nombrePv;
+                            if (joueurC->pv <0)
+                            {
+                                joueurC->pv = 0;
+                                joueurC->mort=1;
+                                joueurC->colonne=2000;
+                                joueurC->ligne=2000;
+                            }
+                            textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
                         }
-                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                    }
-                    else if (probabilite>=sort1.chance)
-                    {
-                        phrases(page,1);
-                        blit(page,screen,0,0,0,0,1200,711);
-                        rest(1000);
-                    }
-                }
-            }
-            joueurA->pa-=sort1.nbrPa;
-        }
-    }
-
-///Attaque en ligne droite
-    if (sort1.typePortee == 1)
-    {
-        rest(400);
-        do
-        {
-            if (mouse_b & 1)
-            {
-                caseChoisieColonne = mouse_x/30;
-                caseChoisieLigne = mouse_y/32;
-                if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
-                {
-                    testTouche = 1;
-                    joueurBTouche = 1;
-                }
-                if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
-                {
-                    testTouche = 1;
-                    joueurCTouche = 1;
-                }
-                if ((caseChoisieColonne==joueurD->colonne/30)&& (caseChoisieLigne==joueurD->ligne/32))
-                {
-                    testTouche = 1;
-                    joueurDTouche = 1;
-                }
-            }
-            if (mouse_b & 2)
-            {
-                sortie_mouv = 1;
-            }
-
-                                                ///Afficher joueurA
-            if (joueurA->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-            if (joueurA->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
-            }
-
-            ///Afficher joueurB
-            if (joueurB->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-            if (joueurB->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
-            }
-
-            ///Afficher joueurC
-            if (joueurC->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurC->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurC->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurC->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-            if (joueurC->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
-            }
-
-            ///Afficher joueurD
-            if (joueurD->numeroClasse==1)///Pikachu
-            {
-                afficher_personnage_pikachu(page,0,0,joueurD->colonne,joueurD->ligne);
-            }
-            if (joueurD->numeroClasse==2)///Ronflex
-            {
-                afficher_personnage_ronflex(page,0,0,joueurD->colonne,joueurD->ligne);
-            }
-            if (joueurD->numeroClasse==3)///Lucario
-            {
-                afficher_personnage_lucario(page,0,0,joueurD->colonne,joueurD->ligne);
-            }
-            if (joueurD->numeroClasse==4)///Alakazam
-            {
-                afficher_personnage_alakazam(page,0,0,joueurD->colonne,joueurD->ligne);
-            }
-            if (joueurD->numeroClasse==5)///Rondoudou
-            {
-                afficher_personnage_rondoudou(page,0,0,joueurD->colonne,joueurD->ligne);
-            }
-            show_mouse(page);
-            blit(page,screen,0,0,0,0,1200,711);
-        }
-        while          ((((joueurA->ligne/32==caseChoisieLigne)
-                          && ((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)
-                              ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))
-                          && ((joueurA->colonne/30==caseChoisieColonne)
-                              && ((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)
-                                  ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))))
-                         || (testTouche==0)) && (sortie_mouv == 0));
-        if (sortie_mouv == 0)
-        {
-            if (joueurBTouche == 1)
-            {
-                if (joueurB->tourBouclier>0)
-                {
-                    //Afficher joueur a un bouclier ou attaque echou�e
-                }
-                else
-                {
-                    probabilite=rand() % 100 ;
-                    if (probabilite<sort1.chance)
-                    {
-                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                        joueurB->pv -= nombrePv;
-                        if (joueurB->pv <0)
+                        else if (probabilite>=sort1.chance)
                         {
-                            joueurB->pv = 0;
+                            phrases(page,1);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
                         }
-                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                    }
-                    else if (probabilite>=sort1.chance)
-                    {
-                        phrases(page,1);
-                        blit(page,screen,0,0,0,0,1200,711);
-                        rest(1000);
                     }
                 }
-            }
-            if (joueurCTouche == 1)
-            {
-                if (joueurC->tourBouclier>0)
+                if (joueurDTouche == 1)
                 {
-                    //Afficher joueur a un bouclier ou attaque echou�e
-                }
-                else
-                {
-                    probabilite=rand() % 100 ;
-                    if (probabilite<sort1.chance)
+                    if (joueurD->tourBouclier>0)
                     {
-                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                        joueurC->pv -= nombrePv;
-                        if (joueurC->pv <0)
+                        //Afficher joueur a un bouclier ou attaque echou�e
+                    }
+                    else
+                    {
+                        probabilite=rand() % 100 ;
+                        if (probabilite<sort1.chance)
                         {
-                            joueurC->pv = 0;
+                            nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                            joueurD->pv -= nombrePv;
+                            if (joueurD->pv <0)
+                            {
+                                joueurD->pv = 0;
+                                joueurD->mort=1;
+                                joueurD->colonne=2000;
+                                joueurD->ligne=2000;
+                            }
+                            textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
                         }
-                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                    }
-                    else if (probabilite>=sort1.chance)
-                    {
-                        phrases(page,1);
-                        blit(page,screen,0,0,0,0,1200,711);
-                        rest(1000);
-                    }
-                }
-            }
-            if (joueurDTouche == 1)
-            {
-                if (joueurD->tourBouclier>0)
-                {
-                    //Afficher joueur a un bouclier ou attaque echou�e
-                }
-                else
-                {
-                    probabilite=rand() % 100 ;
-                    if (probabilite<sort1.chance)
-                    {
-                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                        joueurD->pv -= nombrePv;
-                        if (joueurD->pv <0)
+                        else if (probabilite>=sort1.chance)
                         {
-                            joueurD->pv = 0;
+                            phrases(page,1);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
                         }
-                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                    }
-                    else if (probabilite>=sort1.chance)
-                    {
-                        phrases(page,1);
-                        blit(page,screen,0,0,0,0,1200,711);
-                        rest(1000);
                     }
                 }
                 joueurA->pa-=sort1.nbrPa;
             }
         }
+
+///Attaque en ligne droite
+        if (sort1.typePortee == 1)
+        {
+            rest(400);
+            do
+            {
+                if (mouse_b & 1)
+                {
+                    caseChoisieColonne = mouse_x/30;
+                    caseChoisieLigne = mouse_y/32;
+                    if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                    {
+                        testTouche = 1;
+                        joueurBTouche = 1;
+                    }
+                    if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+                    {
+                        testTouche = 1;
+                        joueurCTouche = 1;
+                    }
+                    if ((caseChoisieColonne==joueurD->colonne/30)&& (caseChoisieLigne==joueurD->ligne/32))
+                    {
+                        testTouche = 1;
+                        joueurDTouche = 1;
+                    }
+                }
+                if (mouse_b & 2)
+                {
+                    sortie_mouv = 1;
+                }
+
+                ///Afficher joueurA
+                if (joueurA->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+                if (joueurA->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+                }
+
+                ///Afficher joueurB
+                if (joueurB->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+                if (joueurB->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+                }
+
+                ///Afficher joueurC
+                if (joueurC->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurC->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurC->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurC->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+                if (joueurC->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
+                }
+
+                ///Afficher joueurD
+                if (joueurD->numeroClasse==1)///Pikachu
+                {
+                    afficher_personnage_pikachu(page,0,0,joueurD->colonne,joueurD->ligne);
+                }
+                if (joueurD->numeroClasse==2)///Ronflex
+                {
+                    afficher_personnage_ronflex(page,0,0,joueurD->colonne,joueurD->ligne);
+                }
+                if (joueurD->numeroClasse==3)///Lucario
+                {
+                    afficher_personnage_lucario(page,0,0,joueurD->colonne,joueurD->ligne);
+                }
+                if (joueurD->numeroClasse==4)///Alakazam
+                {
+                    afficher_personnage_alakazam(page,0,0,joueurD->colonne,joueurD->ligne);
+                }
+                if (joueurD->numeroClasse==5)///Rondoudou
+                {
+                    afficher_personnage_rondoudou(page,0,0,joueurD->colonne,joueurD->ligne);
+                }
+                show_mouse(page);
+                blit(page,screen,0,0,0,0,1200,711);
+            }
+            while          ((((joueurA->ligne/32==caseChoisieLigne)
+                              && ((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)
+                                  ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))
+                              && ((joueurA->colonne/30==caseChoisieColonne)
+                                  && ((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>=sort1.pMin)
+                                      ||(abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<=sort1.pMax))))
+                             || (testTouche==0)) && (sortie_mouv == 0));
+            if (sortie_mouv == 0)
+            {
+                if (joueurBTouche == 1)
+                {
+                    if (joueurB->tourBouclier>0)
+                    {
+                        //Afficher joueur a un bouclier ou attaque echou�e
+                    }
+                    else
+                    {
+                        probabilite=rand() % 100 ;
+                        if (probabilite<sort1.chance)
+                        {
+                            nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                            joueurB->pv -= nombrePv;
+                            if (joueurB->pv <0)
+                            {
+                                joueurB->pv = 0;
+                                joueurB->mort=1;
+                                joueurB->colonne=2000;
+                                joueurB->ligne=2000;
+                            }
+                            textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
+                        }
+                        else if (probabilite>=sort1.chance)
+                        {
+                            phrases(page,1);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
+                        }
+                    }
+                }
+                if (joueurCTouche == 1)
+                {
+                    if (joueurC->tourBouclier>0)
+                    {
+                        //Afficher joueur a un bouclier ou attaque echou�e
+                    }
+                    else
+                    {
+                        probabilite=rand() % 100 ;
+                        if (probabilite<sort1.chance)
+                        {
+                            nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                            joueurC->pv -= nombrePv;
+                            if (joueurC->pv <0)
+                            {
+                                joueurC->pv = 0;
+                                joueurC->mort=1;
+                                joueurC->colonne=2000;
+                                joueurC->ligne=2000;
+                            }
+                            textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
+                        }
+                        else if (probabilite>=sort1.chance)
+                        {
+                            phrases(page,1);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
+                        }
+                    }
+                }
+                if (joueurDTouche == 1)
+                {
+                    if (joueurD->tourBouclier>0)
+                    {
+                        //Afficher joueur a un bouclier ou attaque echou�e
+                    }
+                    else
+                    {
+                        probabilite=rand() % 100 ;
+                        if (probabilite<sort1.chance)
+                        {
+                            nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                            joueurD->pv -= nombrePv;
+                            if (joueurD->pv <=0)
+                            {
+                                joueurD->pv = 0;
+                                joueurD->mort=1;
+                                joueurD->colonne=2000;
+                                joueurD->ligne=2000;
+                            }
+                            textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
+                        }
+                        else if (probabilite>=sort1.chance)
+                        {
+                            phrases(page,1);
+                            blit(page,screen,0,0,0,0,1200,711);
+                            rest(1000);
+                        }
+                    }
+                    joueurA->pa-=sort1.nbrPa;
+                }
+            }
+        }
+    }
+    else
+    {
+        phrases(page,2);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
 }
-
 
 
 
@@ -1115,23 +1177,26 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page, int tab[18][3
 void sortStatut2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page)
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0;
-    do
+    int nombrePv;
+    if (joueurA->pa>=sort1.nbrPa)
     {
-        if (mouse_b & 1)
+        do
         {
-            caseChoisieColonne = mouse_x/30;
-            caseChoisieLigne = mouse_y/32;
-            if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+            if (mouse_b & 1)
             {
-                testTouche = 1;
-                joueurBTouche = 1;
+                caseChoisieColonne = mouse_x/30;
+                caseChoisieLigne = mouse_y/32;
+                if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                {
+                    testTouche = 1;
+                    joueurBTouche = 1;
+                }
             }
-        }
-        if (mouse_b & 2)
-        {
-            sortie_mouv = 1;
-        }
-                                         ///Afficher joueurA
+            if (mouse_b & 2)
+            {
+                sortie_mouv = 1;
+            }
+            ///Afficher joueurA
             if (joueurA->numeroClasse==1)///Pikachu
             {
                 afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
@@ -1175,47 +1240,54 @@ void sortStatut2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* p
                 afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
             }
 
-        show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);
-    }
-    while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
-    if (sortie_mouv == 0)
-    {
-        if (joueurB->tourBouclier>0)
+            show_mouse(page);
+            blit(page,screen,0,0,0,0,1200,711);
+        }
+        while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
+        if (sortie_mouv == 0)
         {
+            if (joueurB->tourBouclier>0)
+            {
+                joueurA->pa-=sort1.nbrPa;
+            }
+            else
+            {
+                probabilite=rand() % 100;
+                if (probabilite<sort1.chance)
+                {
+                    if (sort1.typeStatus == 1)
+                    {
+                        joueurB->tourPoison = 5;
+                    }
+                    if (sort1.typeStatus == 2)
+                    {
+                        joueurB->tourDodo = 3;
+                    }
+                    if (sort1.typeStatus == 3)
+                    {
+                        joueurB->tourParalysie = 2;
+                    }
+                    if (sort1.typeStatus == 4)
+                    {
+                        joueurB->tourPeur = 1;
+                    }
+                }
+                else if (probabilite>=sort1.chance)
+                {
+                    phrases(page,1);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
+                }
+            }
+
             joueurA->pa-=sort1.nbrPa;
         }
-        else
-        {
-            probabilite=rand() % 100;
-            if (probabilite<sort1.chance)
-            {
-                if (sort1.typeStatus == 1)
-                {
-                    joueurB->tourPoison = 5;
-                }
-                if (sort1.typeStatus == 2)
-                {
-                    joueurB->tourDodo = 3;
-                }
-                if (sort1.typeStatus == 3)
-                {
-                    joueurB->tourParalysie = 2;
-                }
-                if (sort1.typeStatus == 4)
-                {
-                    joueurB->tourPeur = 1;
-                }
-            }
-            else if (probabilite>=sort1.chance)
-            {
-                phrases(page,1);
-                blit(page,screen,0,0,0,0,1200,711);
-                rest(1000);
-            }
-        }
-
-        joueurA->pa-=sort1.nbrPa;
+    }
+    else
+    {
+        phrases(page,2);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
 }
 
@@ -1223,28 +1295,31 @@ void sortStatut2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* p
 void sortStatut3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* joueurC, BITMAP* page)
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0, joueurCTouche=0;
-    do
+    int nombrePv;
+    if (joueurA->pa>=sort1.nbrPa)
     {
-        if (mouse_b & 1)
+        do
         {
-            caseChoisieColonne = mouse_x/30;
-            caseChoisieLigne = mouse_y/32;
-            if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+            if (mouse_b & 1)
             {
-                testTouche = 1;
-                joueurBTouche = 1;
+                caseChoisieColonne = mouse_x/30;
+                caseChoisieLigne = mouse_y/32;
+                if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                {
+                    testTouche = 1;
+                    joueurBTouche = 1;
+                }
+                if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+                {
+                    testTouche = 1;
+                    joueurCTouche = 1;
+                }
             }
-            if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+            if (mouse_b & 2)
             {
-                testTouche = 1;
-                joueurCTouche = 1;
+                sortie_mouv = 1;
             }
-        }
-        if (mouse_b & 2)
-        {
-            sortie_mouv = 1;
-        }
-                                            ///Afficher joueurA
+            ///Afficher joueurA
             if (joueurA->numeroClasse==1)///Pikachu
             {
                 afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
@@ -1309,119 +1384,129 @@ void sortStatut3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur*
             {
                 afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
             }
-        show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);
+            show_mouse(page);
+            blit(page,screen,0,0,0,0,1200,711);
+        }
+        while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
+        if (sortie_mouv == 0)
+        {
+            if (joueurBTouche == 1)
+            {
+                if (joueurB->tourBouclier>0)
+                {
+                    //Afficher joueur a un bouclier ou attaque echou�e
+                }
+                else
+                {
+                    probabilite=rand() % 100;
+                    if (probabilite<sort1.chance)
+                    {
+                        if (sort1.typeStatus == 1)
+                        {
+                            joueurB->tourPoison = 5;
+                        }
+                        if (sort1.typeStatus == 2)
+                        {
+                            joueurB->tourDodo = 3;
+                        }
+                        if (sort1.typeStatus == 3)
+                        {
+                            joueurB->tourParalysie = 2;
+                        }
+                        if (sort1.typeStatus == 4)
+                        {
+                            joueurB->tourPeur = 1;
+                        }
+                    }
+                    else if (probabilite>=sort1.chance)
+                    {
+                        phrases(page,1);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(500);
+                    }
+                }
+            }
+            if (joueurCTouche == 1)
+            {
+                if (joueurC->tourBouclier>0)
+                {
+                    //Afficher joueur a un bouclier ou attaque echou�e
+                }
+                else
+                {
+                    probabilite=rand() % 100;
+                    if (probabilite<sort1.chance)
+                    {
+                        if (sort1.typeStatus == 1)
+                        {
+                            joueurC->tourPoison = 5;
+                        }
+                        if (sort1.typeStatus == 2)
+                        {
+                            joueurC->tourDodo = 3;
+                        }
+                        if (sort1.typeStatus == 3)
+                        {
+                            joueurC->tourParalysie = 2;
+                        }
+                        if (sort1.typeStatus == 4)
+                        {
+                            joueurC->tourPeur = 1;
+                        }
+                    }
+                    else if (probabilite>=sort1.chance)
+                    {
+                        phrases(page,1);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(1000);
+                    }
+                }
+            }
+            joueurA->pa-=sort1.nbrPa;
+        }
     }
-    while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
-    if (sortie_mouv == 0)
+    else
     {
-        if (joueurBTouche == 1)
-        {
-            if (joueurB->tourBouclier>0)
-            {
-                //Afficher joueur a un bouclier ou attaque echou�e
-            }
-            else
-            {
-                probabilite=rand() % 100;
-                if (probabilite<sort1.chance)
-                {
-                    if (sort1.typeStatus == 1)
-                    {
-                        joueurB->tourPoison = 5;
-                    }
-                    if (sort1.typeStatus == 2)
-                    {
-                        joueurB->tourDodo = 3;
-                    }
-                    if (sort1.typeStatus == 3)
-                    {
-                        joueurB->tourParalysie = 2;
-                    }
-                    if (sort1.typeStatus == 4)
-                    {
-                        joueurB->tourPeur = 1;
-                    }
-                }
-                else if (probabilite>=sort1.chance)
-                {
-                    phrases(page,1);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(500);
-                }
-            }
-        }
-        if (joueurCTouche == 1)
-        {
-            if (joueurC->tourBouclier>0)
-            {
-                //Afficher joueur a un bouclier ou attaque echou�e
-            }
-            else
-            {
-                probabilite=rand() % 100;
-                if (probabilite<sort1.chance)
-                {
-                    if (sort1.typeStatus == 1)
-                    {
-                        joueurC->tourPoison = 5;
-                    }
-                    if (sort1.typeStatus == 2)
-                    {
-                        joueurC->tourDodo = 3;
-                    }
-                    if (sort1.typeStatus == 3)
-                    {
-                        joueurC->tourParalysie = 2;
-                    }
-                    if (sort1.typeStatus == 4)
-                    {
-                        joueurC->tourPeur = 1;
-                    }
-                }
-                else if (probabilite>=sort1.chance)
-                {
-                    phrases(page,1);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                }
-            }
-        }
-        joueurA->pa-=sort1.nbrPa;
+        phrases(page,2);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
 }
 
 void sortStatut4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* joueurC, t_joueur* joueurD, BITMAP* page)
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0, joueurCTouche=0, joueurDTouche=0;
-    do
+    int nombrePv;
+    if (joueurA->pa>=sort1.nbrPa)
     {
-        if (mouse_b & 1)
+        do
         {
-            caseChoisieColonne = mouse_x/30;
-            caseChoisieLigne = mouse_y/32;
-            if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+            if (mouse_b & 1)
             {
-                testTouche = 1;
-                joueurBTouche = 1;
+                caseChoisieColonne = mouse_x/30;
+                caseChoisieLigne = mouse_y/32;
+                if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                {
+                    testTouche = 1;
+                    joueurBTouche = 1;
+                }
+                if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+                {
+                    testTouche = 1;
+                    joueurCTouche = 1;
+                }
+                if ((caseChoisieColonne==joueurD->colonne/30)&& (caseChoisieLigne==joueurD->ligne/32))
+                {
+                    testTouche = 1;
+                    joueurDTouche = 1;
+                }
             }
-            if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+            if (mouse_b & 2)
             {
-                testTouche = 1;
-                joueurCTouche = 1;
+                sortie_mouv = 1;
             }
-            if ((caseChoisieColonne==joueurD->colonne/30)&& (caseChoisieLigne==joueurD->ligne/32))
-            {
-                testTouche = 1;
-                joueurDTouche = 1;
-            }
-        }
-        if (mouse_b & 2)
-        {
-            sortie_mouv = 1;
-        }
 
-                                                        ///Afficher joueurA
+            ///Afficher joueurA
             if (joueurA->numeroClasse==1)///Pikachu
             {
                 afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
@@ -1508,121 +1593,128 @@ void sortStatut4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur*
             {
                 afficher_personnage_rondoudou(page,0,0,joueurD->colonne,joueurD->ligne);
             }
-        show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);
+            show_mouse(page);
+            blit(page,screen,0,0,0,0,1200,711);
+        }
+        while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
+        if (sortie_mouv == 0)
+        {
+            if (joueurBTouche == 1)
+            {
+                if (joueurB->tourBouclier>0)
+                {
+                    //Afficher joueur a un bouclier ou attaque echou�e
+                }
+                else
+                {
+                    probabilite=rand() % 100;
+                    if (probabilite<sort1.chance)
+                    {
+                        if (sort1.typeStatus == 1)
+                        {
+                            joueurB->tourPoison = 5;
+                        }
+                        if (sort1.typeStatus == 2)
+                        {
+                            joueurB->tourDodo = 3;
+                        }
+                        if (sort1.typeStatus == 3)
+                        {
+                            joueurB->tourParalysie = 2;
+                        }
+                        if (sort1.typeStatus == 4)
+                        {
+                            joueurB->tourPeur = 1;
+                        }
+                    }
+                    else if (probabilite>=sort1.chance)
+                    {
+                        phrases(page,1);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(1000);
+                    }
+                }
+            }
+            if (joueurCTouche == 1)
+            {
+                if (joueurC->tourBouclier>0)
+                {
+                    //Afficher joueur a un bouclier ou attaque echou�e
+                }
+                else
+                {
+                    probabilite=rand() % 100;
+                    if (probabilite<sort1.chance)
+                    {
+                        if (sort1.typeStatus == 1)
+                        {
+                            joueurC->tourPoison = 5;
+                        }
+                        if (sort1.typeStatus == 2)
+                        {
+                            joueurC->tourDodo = 3;
+                        }
+                        if (sort1.typeStatus == 3)
+                        {
+                            joueurC->tourParalysie = 2;
+                        }
+                        if (sort1.typeStatus == 4)
+                        {
+                            joueurC->tourPeur = 1;
+                        }
+                    }
+                    else if (probabilite>=sort1.chance)
+                    {
+                        phrases(page,1);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(1000);
+                    }
+                }
+            }
+            if (joueurDTouche == 1)
+            {
+                if (joueurD->tourBouclier>0)
+                {
+                    //Afficher joueur a un bouclier ou attaque echou�e
+                }
+                else
+                {
+                    probabilite=rand() % 100;
+                    if (probabilite<sort1.chance)
+                    {
+                        if (sort1.typeStatus == 1)
+                        {
+                            joueurD->tourPoison = 5;
+                        }
+                        if (sort1.typeStatus == 2)
+                        {
+                            joueurD->tourDodo = 3;
+                        }
+                        if (sort1.typeStatus == 3)
+                        {
+                            joueurD->tourParalysie = 2;
+                        }
+                        if (sort1.typeStatus == 4)
+                        {
+                            joueurD->tourPeur = 1;
+                        }
+                    }
+                    else if (probabilite>=sort1.chance)
+                    {
+                        phrases(page,1);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(1000);
+                    }
+                }
+            }
+            joueurA->pa-=sort1.nbrPa;
+        }
     }
-    while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
-    if (sortie_mouv == 0)
+    else
     {
-        if (joueurBTouche == 1)
-        {
-            if (joueurB->tourBouclier>0)
-            {
-                //Afficher joueur a un bouclier ou attaque echou�e
-            }
-            else
-            {
-                probabilite=rand() % 100;
-                if (probabilite<sort1.chance)
-                {
-                    if (sort1.typeStatus == 1)
-                    {
-                        joueurB->tourPoison = 5;
-                    }
-                    if (sort1.typeStatus == 2)
-                    {
-                        joueurB->tourDodo = 3;
-                    }
-                    if (sort1.typeStatus == 3)
-                    {
-                        joueurB->tourParalysie = 2;
-                    }
-                    if (sort1.typeStatus == 4)
-                    {
-                        joueurB->tourPeur = 1;
-                    }
-                }
-                else if (probabilite>=sort1.chance)
-                {
-                    phrases(page,1);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                }
-            }
-        }
-        if (joueurCTouche == 1)
-        {
-            if (joueurC->tourBouclier>0)
-            {
-                //Afficher joueur a un bouclier ou attaque echou�e
-            }
-            else
-            {
-                probabilite=rand() % 100;
-                if (probabilite<sort1.chance)
-                {
-                    if (sort1.typeStatus == 1)
-                    {
-                        joueurC->tourPoison = 5;
-                    }
-                    if (sort1.typeStatus == 2)
-                    {
-                        joueurC->tourDodo = 3;
-                    }
-                    if (sort1.typeStatus == 3)
-                    {
-                        joueurC->tourParalysie = 2;
-                    }
-                    if (sort1.typeStatus == 4)
-                    {
-                        joueurC->tourPeur = 1;
-                    }
-                }
-                else if (probabilite>=sort1.chance)
-                {
-                    phrases(page,1);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                }
-            }
-        }
-        if (joueurDTouche == 1)
-        {
-            if (joueurD->tourBouclier>0)
-            {
-                //Afficher joueur a un bouclier ou attaque echou�e
-            }
-            else
-            {
-                probabilite=rand() % 100;
-                if (probabilite<sort1.chance)
-                {
-                    if (sort1.typeStatus == 1)
-                    {
-                        joueurD->tourPoison = 5;
-                    }
-                    if (sort1.typeStatus == 2)
-                    {
-                        joueurD->tourDodo = 3;
-                    }
-                    if (sort1.typeStatus == 3)
-                    {
-                        joueurD->tourParalysie = 2;
-                    }
-                    if (sort1.typeStatus == 4)
-                    {
-                        joueurD->tourPeur = 1;
-                    }
-                }
-                else if (probabilite>=sort1.chance)
-                {
-                    phrases(page,1);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                }
-            }
-        }
-        joueurA->pa-=sort1.nbrPa;
+        phrases(page,2);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
 }
 
@@ -1677,23 +1769,25 @@ void sortSoin2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* pag
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0;
     int nombrePv;
     rest(400);
-    do
+    if (joueurA->pa>=sort1.nbrPa)
     {
-        if (mouse_b & 1)
+        do
         {
-            caseChoisieColonne = mouse_x/30;
-            caseChoisieLigne = mouse_y/32;
-            if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+            if (mouse_b & 1)
             {
-                testTouche = 1;
-                joueurBTouche = 1;
+                caseChoisieColonne = mouse_x/30;
+                caseChoisieLigne = mouse_y/32;
+                if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                {
+                    testTouche = 1;
+                    joueurBTouche = 1;
+                }
             }
-        }
-        if (mouse_b & 2)
-        {
-            sortie_mouv = 1;
-        }
-                                         ///Afficher joueurA
+            if (mouse_b & 2)
+            {
+                sortie_mouv = 1;
+            }
+            ///Afficher joueurA
             if (joueurA->numeroClasse==1)///Pikachu
             {
                 afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
@@ -1737,70 +1831,78 @@ void sortSoin2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* pag
                 afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
             }
 
-        show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);
-    }
-    while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
-    if (sortie_mouv == 0)
-    {
-        if (joueurA->equipe==joueurB->equipe)
+            show_mouse(page);
+            blit(page,screen,0,0,0,0,1200,711);
+        }
+        while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
+        if (sortie_mouv == 0)
         {
-            probabilite=rand() % 100 ;
-            if (probabilite<sort1.chance)
+            if (joueurA->equipe==joueurB->equipe)
             {
-                nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                joueurB->pv += nombrePv;
-                if (joueurB->pv > joueurB->classe.pv)
+                probabilite=rand() % 100 ;
+                if (probabilite<sort1.chance)
                 {
-                    joueurB->pv = joueurB->classe.pv ;
+                    nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                    joueurB->pv += nombrePv;
+                    if (joueurB->pv > joueurB->classe.pv)
+                    {
+                        joueurB->pv = joueurB->classe.pv ;
+                    }
                 }
+                else if (probabilite>=sort1.chance)
+                {
+                    phrases(page,1);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
+                }
+                joueurA->pa-=sort1.nbrPa;
             }
-            else if (probabilite>=sort1.chance)
+            else
             {
-                phrases(page,1);
-                blit(page,screen,0,0,0,0,1200,711);
-                rest(1000);
+                //Afficher pas meme equipe
             }
-            joueurA->pa-=sort1.nbrPa;
-        }
-        else
-        {
-            //Afficher pas meme equipe
-        }
 
 
+        }
+    }
+    else
+    {
+        phrases(page,2);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
 }
-
 
 
 void sortSoin3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* joueurC, BITMAP* page)
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0, joueurCTouche=0;
     int nombrePv;
-    do
+    if (joueurA->pa>=sort1.nbrPa)
     {
-        if (mouse_b & 1)
+        do
         {
-            caseChoisieColonne = mouse_x/30;
-            caseChoisieLigne = mouse_y/32;
-            if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+            if (mouse_b & 1)
             {
-                testTouche = 1;
-                joueurBTouche = 1;
+                caseChoisieColonne = mouse_x/30;
+                caseChoisieLigne = mouse_y/32;
+                if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                {
+                    testTouche = 1;
+                    joueurBTouche = 1;
+                }
+                if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+                {
+                    testTouche = 1;
+                    joueurCTouche = 1;
+                }
             }
-            if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+            if (mouse_b & 2)
             {
-                testTouche = 1;
-                joueurCTouche = 1;
+                sortie_mouv = 1;
             }
-        }
-        if (mouse_b & 2)
-        {
-            sortie_mouv = 1;
-        }
 
-                                            ///Afficher joueurA
+            ///Afficher joueurA
             if (joueurA->numeroClasse==1)///Pikachu
             {
                 afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
@@ -1865,66 +1967,73 @@ void sortSoin3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* j
             {
                 afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
             }
-        show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);
+            show_mouse(page);
+            blit(page,screen,0,0,0,0,1200,711);
+        }
+        while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
+        if (sortie_mouv == 0)
+        {
+            if (joueurBTouche == 1)
+            {
+                if (joueurA->equipe==joueurB->equipe)
+                {
+                    probabilite=rand() % 100 ;
+                    if (probabilite<sort1.chance)
+                    {
+                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                        joueurB->pv += nombrePv;
+                        if (joueurB->pv > joueurB->classe.pv)
+                        {
+                            joueurB->pv = joueurB->classe.pv ;
+                        }
+                    }
+                    else if (probabilite>=sort1.chance)
+                    {
+                        phrases(page,1);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(1000);
+                    }
+                    joueurA->pa-=sort1.nbrPa;
+                }
+                else
+                {
+                    //Afficher pas meme equipe
+                }
+            }
+            if (joueurCTouche == 1)
+            {
+                if (joueurA->equipe==joueurC->equipe)
+                {
+                    probabilite=rand() % 100 ;
+                    if (probabilite<sort1.chance)
+                    {
+                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                        joueurC->pv += nombrePv;
+                        if (joueurC->pv > joueurC->classe.pv)
+                        {
+                            joueurC->pv = joueurC->classe.pv ;
+                        }
+                    }
+                    else if (probabilite>=sort1.chance)
+                    {
+                        phrases(page,1);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(1000);
+                    }
+                    joueurA->pa-=sort1.nbrPa;
+                }
+                else
+                {
+                    //Afficher pas meme equipe
+                }
+            }
+        }
     }
-    while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
-    if (sortie_mouv == 0)
+    else
     {
-        if (joueurBTouche == 1)
-        {
-            if (joueurA->equipe==joueurB->equipe)
-            {
-                probabilite=rand() % 100 ;
-                if (probabilite<sort1.chance)
-                {
-                    nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                    joueurB->pv += nombrePv;
-                    if (joueurB->pv > joueurB->classe.pv)
-                    {
-                        joueurB->pv = joueurB->classe.pv ;
-                    }
-                }
-                else if (probabilite>=sort1.chance)
-                {
-                    phrases(page,1);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                }
-                joueurA->pa-=sort1.nbrPa;
-            }
-            else
-            {
-                //Afficher pas meme equipe
-            }
-        }
-        if (joueurCTouche == 1)
-        {
-            if (joueurA->equipe==joueurC->equipe)
-            {
-                probabilite=rand() % 100 ;
-                if (probabilite<sort1.chance)
-                {
-                    nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                    joueurC->pv += nombrePv;
-                    if (joueurC->pv > joueurC->classe.pv)
-                    {
-                        joueurC->pv = joueurC->classe.pv ;
-                    }
-                }
-                else if (probabilite>=sort1.chance)
-                {
-                    phrases(page,1);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                }
-                joueurA->pa-=sort1.nbrPa;
-            }
-            else
-            {
-                //Afficher pas meme equipe
-            }
-        }
+        phrases(page,2);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
 }
 
@@ -1932,33 +2041,35 @@ void sortSoin4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* j
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0, joueurCTouche=0, joueurDTouche=0;
     int nombrePv;
-    do
+    if (joueurA->pa>=sort1.nbrPa)
     {
-        if (mouse_b & 1)
+        do
         {
-            caseChoisieColonne = mouse_x/30;
-            caseChoisieLigne = mouse_y/32;
-            if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+            if (mouse_b & 1)
             {
-                testTouche = 1;
-                joueurBTouche = 1;
+                caseChoisieColonne = mouse_x/30;
+                caseChoisieLigne = mouse_y/32;
+                if ((caseChoisieColonne==joueurB->colonne/30)&& (caseChoisieLigne==joueurB->ligne/32))
+                {
+                    testTouche = 1;
+                    joueurBTouche = 1;
+                }
+                if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+                {
+                    testTouche = 1;
+                    joueurCTouche = 1;
+                }
+                if ((caseChoisieColonne==joueurD->colonne/30)&& (caseChoisieLigne==joueurD->ligne/32))
+                {
+                    testTouche = 1;
+                    joueurDTouche = 1;
+                }
             }
-            if ((caseChoisieColonne==joueurC->colonne/30)&& (caseChoisieLigne==joueurC->ligne/32))
+            if (mouse_b & 2)
             {
-                testTouche = 1;
-                joueurCTouche = 1;
+                sortie_mouv = 1;
             }
-            if ((caseChoisieColonne==joueurD->colonne/30)&& (caseChoisieLigne==joueurD->ligne/32))
-            {
-                testTouche = 1;
-                joueurDTouche = 1;
-            }
-        }
-        if (mouse_b & 2)
-        {
-            sortie_mouv = 1;
-        }
-                                                        ///Afficher joueurA
+            ///Afficher joueurA
             if (joueurA->numeroClasse==1)///Pikachu
             {
                 afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
@@ -2045,92 +2156,99 @@ void sortSoin4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* j
             {
                 afficher_personnage_rondoudou(page,0,0,joueurD->colonne,joueurD->ligne);
             }
-        show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);
+            show_mouse(page);
+            blit(page,screen,0,0,0,0,1200,711);
+        }
+        while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
+        if (sortie_mouv == 0)
+        {
+            if (joueurBTouche == 1)
+            {
+                if (joueurA->equipe==joueurB->equipe)
+                {
+                    probabilite=rand() % 100 ;
+                    if (probabilite<sort1.chance)
+                    {
+                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                        joueurB->pv += nombrePv;
+                        if (joueurB->pv > joueurB->classe.pv)
+                        {
+                            joueurB->pv = joueurB->classe.pv ;
+                        }
+                    }
+                    else if (probabilite>=sort1.chance)
+                    {
+                        phrases(page,1);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(1000);
+                    }
+                    joueurA->pa-=sort1.nbrPa;
+                }
+                else
+                {
+                    //Afficher pas meme equipe
+                }
+            }
+            if (joueurCTouche == 1)
+            {
+                if (joueurA->equipe==joueurC->equipe)
+                {
+                    probabilite=rand() % 100 ;
+                    if (probabilite<sort1.chance)
+                    {
+                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                        joueurC->pv += nombrePv;
+                        if (joueurC->pv > joueurC->classe.pv)
+                        {
+                            joueurC->pv = joueurC->classe.pv ;
+                        }
+                    }
+                    else if (probabilite>=sort1.chance)
+                    {
+                        phrases(page,1);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(1000);
+                    }
+                    joueurA->pa-=sort1.nbrPa;
+                }
+                else
+                {
+                    //Afficher pas meme equipe
+                }
+            }
+            if (joueurDTouche == 1)
+            {
+                if (joueurA->equipe==joueurD->equipe)
+                {
+                    probabilite=rand() % 100 ;
+                    if (probabilite<sort1.chance)
+                    {
+                        nombrePv = sort1.degats + rand()%(sort1.plusMoins);
+                        joueurD->pv += nombrePv;
+                        if (joueurD->pv > joueurD->classe.pv)
+                        {
+                            joueurD->pv = joueurD->classe.pv;
+                        }
+                    }
+                    else if (probabilite>=sort1.chance)
+                    {
+                        phrases(page,1);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        rest(1000);
+                    }
+                    joueurA->pa-=sort1.nbrPa;
+                }
+                else
+                {
+                    //Afficher pas meme equipe
+                }
+            }
+        }
     }
-    while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax) || (testTouche==0)) && (sortie_mouv == 0));
-    if (sortie_mouv == 0)
+    else
     {
-        if (joueurBTouche == 1)
-        {
-            if (joueurA->equipe==joueurB->equipe)
-            {
-                probabilite=rand() % 100 ;
-                if (probabilite<sort1.chance)
-                {
-                    nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                    joueurB->pv += nombrePv;
-                    if (joueurB->pv > joueurB->classe.pv)
-                    {
-                        joueurB->pv = joueurB->classe.pv ;
-                    }
-                }
-                else if (probabilite>=sort1.chance)
-                {
-                    phrases(page,1);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                }
-                joueurA->pa-=sort1.nbrPa;
-            }
-            else
-            {
-                //Afficher pas meme equipe
-            }
-        }
-        if (joueurCTouche == 1)
-        {
-            if (joueurA->equipe==joueurC->equipe)
-            {
-                probabilite=rand() % 100 ;
-                if (probabilite<sort1.chance)
-                {
-                    nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                    joueurC->pv += nombrePv;
-                    if (joueurC->pv > joueurC->classe.pv)
-                    {
-                        joueurC->pv = joueurC->classe.pv ;
-                    }
-                }
-                else if (probabilite>=sort1.chance)
-                {
-                    phrases(page,1);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                }
-                joueurA->pa-=sort1.nbrPa;
-            }
-            else
-            {
-                //Afficher pas meme equipe
-            }
-        }
-        if (joueurDTouche == 1)
-        {
-            if (joueurA->equipe==joueurD->equipe)
-            {
-                probabilite=rand() % 100 ;
-                if (probabilite<sort1.chance)
-                {
-                    nombrePv = sort1.degats + rand()%(sort1.plusMoins);
-                    joueurD->pv += nombrePv;
-                    if (joueurD->pv > joueurD->classe.pv)
-                    {
-                        joueurD->pv = joueurD->classe.pv;
-                    }
-                }
-                else if (probabilite>=sort1.chance)
-                {
-                    phrases(page,1);
-                    blit(page,screen,0,0,0,0,1200,711);
-                    rest(1000);
-                }
-                joueurA->pa-=sort1.nbrPa;
-            }
-            else
-            {
-                //Afficher pas meme equipe
-            }
-        }
+        phrases(page,2);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
 }

@@ -107,7 +107,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     t_sorts boulArmure={0,5,0,50,4,0,0,0,7,0,0,1,boulA,boulAInv,infosboulA};
     t_sorts reposS={100,6,25,60,4,0,0,0,10,0,1,2,repos,reposInv,infosrepos};
     t_sorts coupDboule={5,7,4,95,1,1,3,0,3,3,0,0,coupB,coupBInv,infoscoupB};
-    t_sorts seismeS={9,8,15,50,1,1,4,0,10,3,0,0,seisme,seismeInv,infosseisme};
+    t_sorts seismeS={9,8,15,50,1,1,4,0,7,3,0,0,seisme,seismeInv,infosseisme};
     t_sorts chargeS={0,9,0,50,2,0,5,0,7,3,0,0,charge,chargeInv,infoscharge};
     t_sorts rugissement={0,10,0,40,3,0,2,0,3,3,4,0,rugis,rugisInv,infosrugis};
     t_sorts aurasphere={12,11,5,75,1,3,6,0,6,1,0,0,aura,auraInv,infosaura};
@@ -324,6 +324,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur[t].classe=pikachu;
+                joueur[t].mort=0;
                 joueur[t].pv = pikachu.pv;
                 joueur[t].numero=nbJoueur;
                 joueur[t].numeroClasse=1;
@@ -340,6 +341,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur[t].classe=ronflex;
+                joueur[t].mort=0;
                 joueur[t].pv = ronflex.pv;
                 joueur[t].numero=nbJoueur;
                 joueur[t].numeroClasse=2;
@@ -356,6 +358,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur[t].classe=lucario;
+                joueur[t].mort=0;
                 joueur[t].pv = lucario.pv;
                 joueur[t].numero=nbJoueur;
                 joueur[t].numeroClasse=3;
@@ -372,6 +375,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur[t].classe=alakazam;
+                joueur[t].mort=0;
                 joueur[t].pv = alakazam.pv;
                 joueur[t].numero=nbJoueur;
                 joueur[t].numeroClasse=4;
@@ -388,6 +392,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             if(mouse_b && 1)
             {
                 joueur[t].classe=rondoudou;
+                joueur[t].mort=0;
                 joueur[t].pv = rondoudou.pv;
                 joueur[t].numero=nbJoueur;
                 joueur[t].numeroClasse=5;

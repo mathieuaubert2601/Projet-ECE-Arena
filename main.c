@@ -11,7 +11,7 @@ int main()
     t_joueur tabJoueur[4],tabJoueurInit[4];
     int tempohate=0;
     int sortieMenu = 0;
-    int nbJoueurs;
+    int nbJoueurs,compteurMort;
     int i=0;
     int j=0;
     int pikachuPm=6;
@@ -79,6 +79,7 @@ int main()
 
     BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
+
 
 
     while(!key[KEY_ESC])
@@ -212,10 +213,15 @@ int main()
                         time_t temps1 = time(NULL);
                     while(sortieJeu!=1)
                     {
+                        if (tabJoueur[j].mort==1)
+                        {
+                            j++;
+                        }
                         if (j==nbJoueurs)
                         {
                             j=0;
                         }
+
                         if (tabJoueur[j].tourHate >0 && tempohate==0 )
                         {
                             tabJoueur[j].pm=tabJoueur[j].pm*2;
@@ -247,7 +253,7 @@ int main()
                                 show_mouse(page);
                                 blit(page,screen,0,0,0,0,1200,711);
                             }
-
+                        temps1=time(NULL);
                         }
                         deplacement = 0;
 
@@ -1162,6 +1168,20 @@ int main()
                             time_t temps3=time(NULL);
                             unsigned long diff=difftime(temps3,temps1);
                             textprintf_ex(page,maPolice,1150,550,makecol(0,0,0),-1,"%d",diff);
+                            compteurMort=0;
+                            for (int d=0;d<nbJoueurs;d++)
+                            {
+                                if (tabJoueur[d].mort==0)
+                                {
+                                    compteurMort++;
+                                }
+                            }
+                            if (compteurMort == 1)
+                            {
+                                //Afficher classement
+                                sortieJeu=1;
+                                sortieMenu=1;
+                            }
                             if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b & 1))
                             {
                                 while(test==1)
