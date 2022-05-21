@@ -3,7 +3,6 @@
 void information_Pikachu(BITMAP* page, BITMAP* fond)
 {
     int sortie = 0;
-    FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
     //déclaration des variables
     BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
     BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
@@ -234,14 +233,6 @@ void information_Alakazam(BITMAP* page, BITMAP* fond)
     BITMAP* alakazam15 = load_bitmap("alakazam/frame15.bmp",NULL);
     BITMAP* alakazam16 = load_bitmap("alakazam/frame16.bmp",NULL);
     BITMAP* alakazam17 = load_bitmap("alakazam/frame17.bmp",NULL);
-    BITMAP* alakazam18 = load_bitmap("alakazam/frame18.bmp",NULL);
-    BITMAP* alakazam19 = load_bitmap("alakazam/frame19.bmp",NULL);
-    BITMAP* alakazam20 = load_bitmap("alakazam/frame20.bmp",NULL);
-    BITMAP* alakazam21 = load_bitmap("alakazam/frame21.bmp",NULL);
-    BITMAP* alakazam22 = load_bitmap("alakazam/frame22.bmp",NULL);
-    BITMAP* alakazam23 = load_bitmap("alakazam/frame23.bmp",NULL);
-    BITMAP* alakazam24 = load_bitmap("alakazam/frame24.bmp",NULL);
-    BITMAP* alakazam25 = load_bitmap("alakazam/frame25.bmp",NULL);
     BITMAP* tableau_alakazam[17] = {alakazam1,alakazam2,alakazam3,alakazam4,alakazam5,alakazam6,alakazam7,alakazam8,alakazam9,alakazam10,alakazam11,alakazam12,alakazam13,alakazam14,alakazam15,alakazam16,alakazam17};
 
     //Declaration Bitmap Alakazam sorts

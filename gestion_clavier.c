@@ -448,10 +448,7 @@ void Saisir_nom(char nom_joueur[15], BITMAP* page)
     BITMAP*SupprInv;
     BITMAP*Entree;
     BITMAP*EntreeInv;
-    BITMAP*clavier;
     BITMAP*fondMenu;
-    BITMAP*logo;
-    BITMAP*phrase1;
     BITMAP*choixpseudo;
     BITMAP*barreNom;
 

@@ -15,7 +15,7 @@ void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur tabJoueurs[], int nom
 
 void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page)
 {
-    int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0;
+    int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0,joueurBTouche = 0;
     int nombrePv;
     FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
 
@@ -1006,7 +1006,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
 
 void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page, int tab[18][36], int nbJoueurs,t_joueur* tabJoueur[])
 {
-    int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testClic=0;
+    int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite;
     if(joueurA->pa>=sort1.nbrPa)
     {
         if (sort1.numero==13)
@@ -1115,7 +1115,6 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page, int tab[18][3
 void sortStatut2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page)
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0;
-    int nombrePv;
     do
     {
         if (mouse_b & 1)
@@ -1224,7 +1223,6 @@ void sortStatut2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* p
 void sortStatut3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* joueurC, BITMAP* page)
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0, joueurCTouche=0;
-    int nombrePv;
     do
     {
         if (mouse_b & 1)
@@ -1396,7 +1394,6 @@ void sortStatut3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur*
 void sortStatut4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* joueurC, t_joueur* joueurD, BITMAP* page)
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0, joueurCTouche=0, joueurDTouche=0;
-    int nombrePv;
     do
     {
         if (mouse_b & 1)

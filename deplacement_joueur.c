@@ -3,7 +3,7 @@
 void deplacement_joueur(BITMAP* buffer, int indice_ligne_ini, int indice_colonne_ini, int personnage,int tableau_chemin_court[18][36],int tableau_affichage_arbre[18][32],t_joueur tableau_joueur[],int nombre_joueur, int indice_joueur)
 {
     //Déclaration de la taille de cases
-    int cote_X = 30,cote_y = 32,indice = 0,case_x_tmp = indice_colonne_ini,case_y_tmp = indice_ligne_ini, case_x_prec = indice_colonne_ini, case_y_prec = indice_ligne_ini, changement = 0;
+    int cote_X = 30,cote_y = 32,indice = 0,case_x_tmp = indice_colonne_ini,case_y_tmp = indice_ligne_ini,changement = 0;
 
     //Si déplacement avec pikachu
     if(personnage == 1)
