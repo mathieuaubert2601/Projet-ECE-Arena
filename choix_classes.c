@@ -138,6 +138,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     //Déclaration pikachu
     BITMAP* profilpik = load_bitmap("pikachu/profil.bmp",NULL);
     BITMAP* profilvertpik = load_bitmap("pikachu/profilvert.bmp",NULL);
+    BITMAP* profilrougepik = load_bitmap("pikachu/profilrouge.bmp",NULL);
 
     pikachu.classe = 1;
     strcpy(pikachu.nom,"Pikachu");
@@ -151,11 +152,13 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     pikachu.sort5=cageEclair;
     pikachu.profil=profilpik;
     pikachu.profilvert=profilvertpik;
+    pikachu.profilrouge=profilrougepik;
     pikachu.corps=corps;
 
     //Déclaration ronflex
     BITMAP* profilronf = load_bitmap("ronflex/profil.bmp",NULL);
     BITMAP* profilvertronf = load_bitmap("ronflex/profilvert.bmp",NULL);
+    BITMAP* profilrougeronf = load_bitmap("ronflex/profilrouge.bmp",NULL);
 
     ronflex.classe = 2;
     strcpy(ronflex.nom,"Ronflex");
@@ -169,11 +172,13 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     ronflex.sort5=chargeS;
     ronflex.profil=profilronf;
     ronflex.profilvert=profilvertronf;
+    ronflex.profilrouge=profilrougeronf;
     ronflex.corps=corps;
 
     //Déclaration lucario
     BITMAP* profillu = load_bitmap("lucario/profil.bmp",NULL);
     BITMAP* profilvertlu = load_bitmap("lucario/profilvert.bmp",NULL);
+    BITMAP* profilrougelu = load_bitmap("lucario/profilrouge.bmp",NULL);
 
     lucario.classe = 3;
     strcpy(lucario.nom,"Lucario");
@@ -187,11 +192,13 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     lucario.sort5=hateS;
     lucario.profil=profillu;
     lucario.profilvert=profilvertlu;
+    lucario.profilrouge=profilrougelu;
     lucario.corps=corps;
 
     //Déclaration alakazam
     BITMAP* profilal = load_bitmap("alakazam/profil.bmp",NULL);
     BITMAP* profilvertal = load_bitmap("alakazam/profilvert.bmp",NULL);
+    BITMAP* profilrougeal = load_bitmap("alakazam/profilrouge.bmp",NULL);
 
     alakazam.classe = 4;
     strcpy(alakazam.nom,"Alakazam");
@@ -205,11 +212,13 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     alakazam.sort5=autoSoinS;
     alakazam.profil=profilal;
     alakazam.profilvert=profilvertal;
+    alakazam.profilrouge=profilrougeal;
     alakazam.corps=corps;
 
     //Déclaration rondoudou
     BITMAP* profilron = load_bitmap("rondoudou/profil.bmp",NULL);
     BITMAP* profilvertron = load_bitmap("rondoudou/profilvert.bmp",NULL);
+    BITMAP* profilrougeron = load_bitmap("rondoudou/profilrouge.bmp",NULL);
 
     rondoudou.classe = 5;
     strcpy(rondoudou.nom,"Rondoudou");
@@ -223,6 +232,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     rondoudou.sort5=berceuseS;
     rondoudou.profil=profilron;
     rondoudou.profilvert=profilvertron;
+    rondoudou.profilrouge=profilrougeron;
     rondoudou.corps=corps;
 
     int sortieClasses = 0;

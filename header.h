@@ -25,6 +25,7 @@ typedef struct classe
     t_sorts sort1,sort2,sort3,sort4,sort5,corps;
     BITMAP* profil;
     BITMAP* profilvert;
+    BITMAP* profilrouge;
     SAMPLE* sonClasse;
 }t_classe;
 
