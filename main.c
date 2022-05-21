@@ -11,8 +11,9 @@ int main()
     t_joueur tabJoueur[4],tabJoueurInit[4];
     int tempohate=0;
     int sortieMenu = 0;
-    int nbJoueurs;
+    int nbJoueurs,compteurMort;
     int i=0;
+    int joueurSuivant = 0;
     int j=0;
     int pikachuPm=6;
     int ronflexPm=2;
@@ -22,12 +23,14 @@ int main()
     int test=1;
     int sortieJeu=0;
     int test3=1;
+    int test4=1;
     int casex, casey;
     casex = 30;
     casey = 32;
 
     FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
 
+    t_joueur joueur1,joueur2,joueur3,joueur4;
     for (int c=0;i<15;i++)
     {
         tabJoueurInit[0].pseudo[c]=' ';
@@ -71,14 +74,17 @@ int main()
     BITMAP* pikachu = load_bitmap("pikachu/pikachu1.bmp",NULL);
     BITMAP* ronflex = load_bitmap("ronflex/ronflex1.bmp",NULL);
     BITMAP* alakazam = load_bitmap("alakazam/alakazam1.bmp",NULL);
+    BITMAP* confirmer = load_bitmap("boutons/Confirmer.bmp",NULL);
+    BITMAP* confirmerInv = load_bitmap("boutons/ConfirmerInv.bmp",NULL);
 
     BITMAP* logo = load_bitmap("fond/logo.bmp",NULL);
 
 
-    int case_prec_x = 0,case_prec_y = 0,deplacement = 0;
+    int x=3,y=0,case_prec_x = 0,case_prec_y = 0,deplacement = 0;
 
     BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
+
 
 
     while(!key[KEY_ESC])
@@ -183,27 +189,27 @@ int main()
                         {
                             if (tabJoueur[z].numeroClasse==1)///Pikachu
                             {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre);
+                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
                                 afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
                             if (tabJoueur[z].numeroClasse==2)///Ronflex
                             {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre);
+                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
                                 afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
                             if (tabJoueur[z].numeroClasse==3)///Lucario
                             {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre);
+                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
                                 afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
                             if (tabJoueur[z].numeroClasse==4)///Alakazam
                             {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre);
+                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
                                 afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
                             if (tabJoueur[z].numeroClasse==5)///Rondoudou
                             {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre);
+                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
                                 afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
 
@@ -212,10 +218,15 @@ int main()
                         time_t temps1 = time(NULL);
                     while(sortieJeu!=1)
                     {
+                        if (tabJoueur[j].mort==1)
+                        {
+                            j++;
+                        }
                         if (j==nbJoueurs)
                         {
                             j=0;
                         }
+
                         if (tabJoueur[j].tourHate >0 && tempohate==0 )
                         {
                             tabJoueur[j].pm=tabJoueur[j].pm*2;
@@ -229,7 +240,7 @@ int main()
                         if (((mouse_x>=(175)&& mouse_x<=(175+90))&& (mouse_y)>=(620)&& mouse_y<=(620+80))&&(mouse_b & 1))
                         {
                             rest(100);
-                            while(deplacement == 0 && tabJoueur[j].pm >0)
+                            while(deplacement == 0)
                             {
                                 clear_bitmap(page);
                                 afficher_map(page);
@@ -247,7 +258,7 @@ int main()
                                 show_mouse(page);
                                 blit(page,screen,0,0,0,0,1200,711);
                             }
-
+                        temps1=time(NULL);
                         }
                         deplacement = 0;
 
@@ -1161,7 +1172,21 @@ int main()
                             }
                             time_t temps3=time(NULL);
                             unsigned long diff=difftime(temps3,temps1);
-                            textprintf_ex(page,maPolice,1150,565,makecol(0,0,0),-1,"%d",diff);
+                            textprintf_ex(page,maPolice,1150,550,makecol(0,0,0),-1,"%d",diff);
+                            compteurMort=0;
+                            for (int d=0;d<nbJoueurs;d++)
+                            {
+                                if (tabJoueur[d].mort==0)
+                                {
+                                    compteurMort++;
+                                }
+                            }
+                            if (compteurMort == 1)
+                            {
+                                //Afficher classement
+                                sortieJeu=1;
+                                sortieMenu=1;
+                            }
                             if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b & 1))
                             {
                                 while(test==1)

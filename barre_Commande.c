@@ -107,14 +107,28 @@ void affichage_barres(BITMAP* buffer)
     blit(fondcote,buffer,casex*36,0,0,0,buffer->w,buffer->h);
 }
 
-void demande_placement (BITMAP* buffer, t_joueur* joueur,int tab[18][36], int tab_arbres[18][36])
+void demande_placement (BITMAP* buffer, t_joueur* joueur,int tableau[18][36], int tab_arbres[18][36], t_joueur tabJoueur[], int indice)
 {
     FONT* maPolice = load_font("police_ecriture/calibri.pcx",NULL,NULL);
     int test4=0;
     int clic=0;
     int testclic=0;
+    int tab[18][36];
 
     int m,n;
+
+    for(int i=0 ; i<18 ; i++)
+    {
+        for(int j=0 ; j<36 ; j++)
+        {
+            tab[i][j] = tableau[i][j];
+        }
+    }
+
+    for(int k=0 ; k<indice ; k++)
+    {
+        tab[(tabJoueur[k].ligne)/32][(tabJoueur[k].colonne)/30] = 1;
+    }
 
     BITMAP* confirmer = load_bitmap("boutons/Confirmer.bmp",NULL);
     BITMAP* confirmerInv = load_bitmap("boutons/ConfirmerInv.bmp",NULL);
