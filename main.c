@@ -230,6 +230,8 @@ int main()
 
                         afficher_tout_arbre(page,tableau_affichage_arbre);
                         afficher_commande(page,tabJoueur,nbJoueurs,j);
+
+
                         ///CAC
                         if((mouse_x>=(casex*30)&& mouse_x<=(casex*30+100))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+100))
                         {

@@ -659,6 +659,7 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page, int tab[18][3
                     joueurA->ligne = caseChoisieLigne*32;
                     joueurA->colonne = caseChoisieColonne*30;
                 }
+
                 else if (probabilite>=sort1.chance)
                 {
                     phrases(page,1);

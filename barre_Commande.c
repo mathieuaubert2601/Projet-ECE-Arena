@@ -32,25 +32,25 @@ void afficher_commande (BITMAP* buffer,t_joueur tab[],int nbJ, int j)
     commande_pokemon(buffer,tab,j);
     affichage_profil(buffer,tab,nbJ,j);
 
-    masked_blit(PA,buffer,casex*5,-600,0,0,buffer->w,buffer->h);
-    masked_blit(PM,buffer,casex*5,-660,0,0,buffer->w,buffer->h);
-    masked_blit(PV,buffer,casex*2,-620,0,0,buffer->w,buffer->h);
+    masked_blit(PA,buffer,casex*3,-600,0,0,buffer->w,buffer->h);
+    masked_blit(PM,buffer,casex*3,-660,0,0,buffer->w,buffer->h);
+    masked_blit(PV,buffer,-15,-620,0,0,buffer->w,buffer->h);
     if ( tab[j].pa == 10)
     {
-        textprintf_ex(buffer,maPolice,161,575,makecol(255,255,255),-1,"%d",tab[j].pa);
+        textprintf_ex(buffer,maPolice,101,575,makecol(255,255,255),-1,"%d",tab[j].pa);
     }
     if (tab[j].pa<10)
     {
-        textprintf_ex(buffer,maPolice,165,580,makecol(255,255,255),-1,"%d",tab[j].pa);
+        textprintf_ex(buffer,maPolice,105,580,makecol(255,255,255),-1,"%d",tab[j].pa);
     }
-    textprintf_ex(buffer,maPolice,165,633,makecol(255,255,255),-1,"%d",tab[j].pm);
+    textprintf_ex(buffer,maPolice,105,633,makecol(255,255,255),-1,"%d",tab[j].pm);
     if(tab[j].pv <100)
     {
-        textprintf_ex(buffer,maPolice,68,600,makecol(255,255,255),-1,"%d",tab[j].pv);
+        textprintf_ex(buffer,maPolice,23,600,makecol(255,255,255),-1,"%d",tab[j].pv);
     }
     if(tab[j].pv >= 100)
     {
-        textprintf_ex(buffer,maPolice,65,600,makecol(255,255,255),-1,"%d",tab[j].pv);
+        textprintf_ex(buffer,maPolice,20,600,makecol(255,255,255),-1,"%d",tab[j].pv);
     }
 
     AffichageBouton(JoueurS,JoueurSInv,buffer,0,0,casex2*37,620,130,115);
