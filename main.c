@@ -252,6 +252,7 @@ int main()
                                 show_mouse(page);
                                 blit(page,screen,0,0,0,0,1200,711);
                             }
+
                         }
                         deplacement = 0;
 
@@ -260,7 +261,7 @@ int main()
                         {
                             afficherPorteeCirc(tabJoueur[j].classe.corps,tabJoueur[j],page);
                         }
-                        if(((mouse_x>=(casex*10)&& mouse_x<=(casex*10+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
+                        if(((mouse_x>=(casex*30)&& mouse_x<=(casex*30+100))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+100))&&(mouse_b & 1))
                         {
                             if (nbJoueurs == 2)
                             {

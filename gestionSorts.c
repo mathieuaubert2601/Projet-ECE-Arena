@@ -58,6 +58,7 @@ void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* 
                     {
                         joueurB->pv = 0;
                     }
+
                 }
                 else if (probabilite>=sort1.chance)
                 {
@@ -206,7 +207,7 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                     {
                         nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                         joueurC->pv -= nombrePv;
-                        if (joueurC->pv <0)
+                        if (joueurC->pv < 0)
                         {
                             joueurC->pv = 0;
                         }
