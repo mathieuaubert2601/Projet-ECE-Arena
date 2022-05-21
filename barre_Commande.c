@@ -11,6 +11,8 @@ void afficher_commande (BITMAP* buffer,t_joueur tab[],int nbJ, int j)
     BITMAP* PA = load_bitmap("boutons/PA.bmp",NULL);
     BITMAP* PM = load_bitmap("boutons/PM.bmp",NULL);
     BITMAP* PV = load_bitmap("boutons/PV.bmp",NULL);
+    BITMAP* Pas = load_bitmap("boutons/pas.bmp",NULL);
+    BITMAP* PasInv = load_bitmap("boutons/pasInv.bmp",NULL);
 
     BITMAP* JoueurS = load_bitmap("boutons/JoueurSuivant.bmp",NULL);
     BITMAP* JoueurSInv = load_bitmap("boutons/JoueurSuivantInv.bmp",NULL);
@@ -35,6 +37,7 @@ void afficher_commande (BITMAP* buffer,t_joueur tab[],int nbJ, int j)
     masked_blit(PA,buffer,casex*3,-600,0,0,buffer->w,buffer->h);
     masked_blit(PM,buffer,casex*3,-660,0,0,buffer->w,buffer->h);
     masked_blit(PV,buffer,-15,-620,0,0,buffer->w,buffer->h);
+    AffichageBouton(Pas,PasInv,buffer,0,0,175,620,Pas->w,Pas->h);
     if ( tab[j].pa == 10)
     {
         textprintf_ex(buffer,maPolice,101,575,makecol(255,255,255),-1,"%d",tab[j].pa);
