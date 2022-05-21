@@ -38,8 +38,8 @@ void phrases(BITMAP* page,int p)
     BITMAP* rate = load_bitmap("phrases/phraseRate.bmp",NULL);
     BITMAP* barreBasRouge = load_bitmap("fond/barreBasRouge.bmp",NULL);
     BITMAP* barreCoteRouge = load_bitmap("fond/barreCoteRouge.bmp",NULL);
+
     BITMAP* pasPA = load_bitmap("phrases/phrasePA.bmp",NULL);
-    BITMAP* pasZone = load_bitmap("phrases/phraseZoneImpact.bmp",NULL);
     BITMAP* deplacer = load_bitmap("phrases/phraseDeplacer.bmp",NULL);
     BITMAP* teleporter = load_bitmap("phrases/phraseTeleporter.bmp",NULL);
     BITMAP* rouler = load_bitmap("phrases/phraseRouler.bmp",NULL);

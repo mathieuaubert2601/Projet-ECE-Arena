@@ -53,7 +53,7 @@ void afficher_commande (BITMAP* buffer,t_joueur tab[],int nbJ, int j)
         textprintf_ex(buffer,maPolice,65,600,makecol(255,255,255),-1,"%d",tab[j].pv);
     }
 
-    AffichageBouton(JoueurS,JoueurSInv,buffer,0,0,casex2*37,620,130,115);
+    AffichageBouton(JoueurS,JoueurSInv,buffer,0,0,casex2*37,640,130,115);
     AffichageBouton(menu,menuInv,buffer,0,0,1100,0,90,70);
 }
 
