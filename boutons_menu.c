@@ -69,4 +69,8 @@ void phrases(BITMAP* page,int p)
     {
         masked_blit(rouler,page,0,0,300,300,rouler->w,rouler->h);
     }
+    if(p==6)
+    {
+        masked_blit(zoneImpact,page,0,0,300,300,zoneImpact->w,zoneImpact->h);
+    }
 }
