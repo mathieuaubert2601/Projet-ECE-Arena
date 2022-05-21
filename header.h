@@ -75,6 +75,7 @@ void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18]
 void remettre_case_obstacle(int matrice_A_Modifier[18][36]);
 void afficher_lac(BITMAP* buffer);
 void caserouge(BITMAP* buffer, int posx, int posy);
+void demande_placement (BITMAP* buffer, t_joueur* joueur,int tableau[18][36], int tab_arbres[18][36], t_joueur tabJoueur[], int indice);
 //affichage_Personnages
 void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int y);
 void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int y);
@@ -91,7 +92,6 @@ void afficher_commande(BITMAP* buffer,t_joueur tab[],int nbJ, int j);
 void affichage_profil(BITMAP* buffer,t_joueur tab[],int nbJ, int j);
 void commande_pokemon (BITMAP* buffer,t_joueur joueur[],int j);
 void menu_pause(BITMAP* buffer);
-void demande_placement (BITMAP* buffer, t_joueur* joueur,int tab[18][36], int tab_arbres[18][36]);
 //deplacement_joueur
 
 void deplacement_joueur(BITMAP* buffer, int indice_ligne_ini, int indice_colonne_ini, int personnage,int tableau_chemin_court[18][36],int tableau_affichage_arbre[18][32],t_joueur tableau_joueur[],int nombre_joueur, int indice_joueur);
