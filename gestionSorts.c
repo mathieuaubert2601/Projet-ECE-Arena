@@ -17,6 +17,8 @@ void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* 
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0;
     int nombrePv;
+    FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
+
     ///Attaque en zone
     if (sort1.typePortee == 3)
     {
@@ -36,6 +38,49 @@ void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* 
             if (mouse_b & 2)
             {
                 sortie_mouv = 1;
+            }
+            ///Afficher joueurA
+            if (joueurA->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+
+            ///Afficher joueurB
+            if (joueurB->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
             }
             show_mouse(page);
             blit(page,screen,0,0,0,0,1200,711);
@@ -58,6 +103,9 @@ void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* 
                     {
                         joueurB->pv = 0;
                     }
+                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
 
                 }
                 else if (probabilite>=sort1.chance)
@@ -92,6 +140,49 @@ void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* 
             {
                 sortie_mouv = 1;
             }
+                        ///Afficher joueurA
+            if (joueurA->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+
+            ///Afficher joueurB
+            if (joueurB->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
             show_mouse(page);
             blit(page,screen,0,0,0,0,1200,711);
         }
@@ -119,6 +210,9 @@ void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* 
                     {
                         joueurB->pv = 0;
                     }
+                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                 }
                 else if (probabilite>=sort1.chance)
                 {
@@ -137,6 +231,8 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0, joueurCTouche=0;
     int nombrePv;
+    FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
+
     ///Attaque en zone
     if (sort1.typePortee == 3)
     {
@@ -162,6 +258,71 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
             {
                 sortie_mouv = 1;
             }
+                        ///Afficher joueurA
+            if (joueurA->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+
+            ///Afficher joueurB
+            if (joueurB->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+
+            ///Afficher joueurC
+            if (joueurC->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
             show_mouse(page);
             blit(page,screen,0,0,0,0,1200,711);
         }
@@ -185,6 +346,9 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             joueurB->pv = 0;
                         }
+                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                     }
                     else if (probabilite>=sort1.chance)
                     {
@@ -211,6 +375,9 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             joueurC->pv = 0;
                         }
+                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                     }
                     else if (probabilite>=sort1.chance)
                     {
@@ -249,6 +416,72 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
             {
                 sortie_mouv = 1;
             }
+
+                                    ///Afficher joueurA
+            if (joueurA->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+
+            ///Afficher joueurB
+            if (joueurB->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+
+            ///Afficher joueurC
+            if (joueurC->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
             show_mouse(page);
             blit(page,screen,0,0,0,0,1200,711);
         }
@@ -278,6 +511,9 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             joueurB->pv = 0;
                         }
+                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                     }
                     else if (probabilite>=sort1.chance)
                     {
@@ -304,6 +540,9 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             joueurC->pv = 0;
                         }
+                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                     }
                     else if (probabilite>=sort1.chance)
                     {
@@ -323,6 +562,8 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0, joueurCTouche=0, joueurDTouche=0;
     int nombrePv;
+    FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
+
     ///Attaque en zone
     if (sort1.typePortee == 3)
     {
@@ -353,6 +594,94 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
             {
                 sortie_mouv = 1;
             }
+
+                                    ///Afficher joueurA
+            if (joueurA->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+
+            ///Afficher joueurB
+            if (joueurB->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+
+            ///Afficher joueurC
+            if (joueurC->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+
+            ///Afficher joueurD
+            if (joueurD->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
             show_mouse(page);
             blit(page,screen,0,0,0,0,1200,711);
         }
@@ -376,6 +705,9 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             joueurB->pv = 0;
                         }
+                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                     }
                     else if (probabilite>=sort1.chance)
                     {
@@ -402,6 +734,9 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             joueurC->pv = 0;
                         }
+                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                     }
                     else if (probabilite>=sort1.chance)
                     {
@@ -428,6 +763,9 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             joueurD->pv = 0;
                         }
+                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                     }
                     else if (probabilite>=sort1.chance)
                     {
@@ -471,6 +809,94 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
             {
                 sortie_mouv = 1;
             }
+
+                                                ///Afficher joueurA
+            if (joueurA->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+
+            ///Afficher joueurB
+            if (joueurB->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+
+            ///Afficher joueurC
+            if (joueurC->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+
+            ///Afficher joueurD
+            if (joueurD->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
             show_mouse(page);
             blit(page,screen,0,0,0,0,1200,711);
         }
@@ -500,6 +926,9 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             joueurB->pv = 0;
                         }
+                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                     }
                     else if (probabilite>=sort1.chance)
                     {
@@ -526,6 +955,9 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             joueurC->pv = 0;
                         }
+                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                     }
                     else if (probabilite>=sort1.chance)
                     {
@@ -552,6 +984,9 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             joueurD->pv = 0;
                         }
+                    textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                     }
                     else if (probabilite>=sort1.chance)
                     {
@@ -697,6 +1132,50 @@ void sortStatut2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* p
         {
             sortie_mouv = 1;
         }
+                                         ///Afficher joueurA
+            if (joueurA->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+
+            ///Afficher joueurB
+            if (joueurB->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
     }
@@ -767,6 +1246,71 @@ void sortStatut3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur*
         {
             sortie_mouv = 1;
         }
+                                            ///Afficher joueurA
+            if (joueurA->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+
+            ///Afficher joueurB
+            if (joueurB->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+
+            ///Afficher joueurC
+            if (joueurC->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
     }
@@ -879,6 +1423,94 @@ void sortStatut4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur*
         {
             sortie_mouv = 1;
         }
+
+                                                        ///Afficher joueurA
+            if (joueurA->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+
+            ///Afficher joueurB
+            if (joueurB->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+
+            ///Afficher joueurC
+            if (joueurC->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+
+            ///Afficher joueurD
+            if (joueurD->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
     }
@@ -1064,6 +1696,50 @@ void sortSoin2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* pag
         {
             sortie_mouv = 1;
         }
+                                         ///Afficher joueurA
+            if (joueurA->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+
+            ///Afficher joueurB
+            if (joueurB->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
     }
@@ -1126,6 +1802,72 @@ void sortSoin3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* j
         {
             sortie_mouv = 1;
         }
+
+                                            ///Afficher joueurA
+            if (joueurA->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+
+            ///Afficher joueurB
+            if (joueurB->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+
+            ///Afficher joueurC
+            if (joueurC->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
     }
@@ -1219,6 +1961,93 @@ void sortSoin4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* j
         {
             sortie_mouv = 1;
         }
+                                                        ///Afficher joueurA
+            if (joueurA->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+            if (joueurA->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurA->colonne,joueurA->ligne);
+            }
+
+            ///Afficher joueurB
+            if (joueurB->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+            if (joueurB->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurB->colonne,joueurB->ligne);
+            }
+
+            ///Afficher joueurC
+            if (joueurC->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+            if (joueurC->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurC->colonne,joueurC->ligne);
+            }
+
+            ///Afficher joueurD
+            if (joueurD->numeroClasse==1)///Pikachu
+            {
+                afficher_personnage_pikachu(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==2)///Ronflex
+            {
+                afficher_personnage_ronflex(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==3)///Lucario
+            {
+                afficher_personnage_lucario(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==4)///Alakazam
+            {
+                afficher_personnage_alakazam(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
+            if (joueurD->numeroClasse==5)///Rondoudou
+            {
+                afficher_personnage_rondoudou(page,0,0,joueurD->colonne,joueurD->ligne);
+            }
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
     }
