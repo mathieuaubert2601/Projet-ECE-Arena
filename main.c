@@ -184,27 +184,27 @@ int main()
                         {
                             if (tabJoueur[z].numeroClasse==1)///Pikachu
                             {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre);
+                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
                                 afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
                             if (tabJoueur[z].numeroClasse==2)///Ronflex
                             {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre);
+                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
                                 afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
                             if (tabJoueur[z].numeroClasse==3)///Lucario
                             {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre);
+                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
                                 afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
                             if (tabJoueur[z].numeroClasse==4)///Alakazam
                             {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre);
+                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
                                 afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
                             if (tabJoueur[z].numeroClasse==5)///Rondoudou
                             {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre);
+                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
                                 afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
 
