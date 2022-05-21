@@ -93,7 +93,8 @@ void commande_pokemon (BITMAP* buffer,t_joueur joueur[],int j);
 void menu_pause(BITMAP* buffer);
 void demande_placement (BITMAP* buffer, t_joueur* joueur,int tab[18][36], int tab_arbres[18][36]);
 //deplacement_joueur
-void deplacement_joueur(BITMAP* buffer, int indice_ligne_ini, int indice_colonne_ini, int personnage,int tableau_chemin_court[18][36],int tableau_affichage_arbre[18][32]);
+
+void deplacement_joueur(BITMAP* buffer, int indice_ligne_ini, int indice_colonne_ini, int personnage,int tableau_chemin_court[18][36],int tableau_affichage_arbre[18][32],t_joueur tableau_joueur[],int nombre_joueur, int indice_joueur);
 void afficher_deplacement_plus_court(int tableau_case_dispo[18][36],int x,int y, int x_souris, int y_souris, int tableau_a_rendre[18][36]);
 void changement_case_souris(BITMAP* buffer,int x_souris,int y_souris, int* case_x, int* case_y,int tableau_case_dispo[18][36],int tableau_chemin_court[18][36],int x,int y);
 void afficher_chemin(BITMAP* buffer, int tableau_a_afficher[18][36]);

@@ -80,7 +80,7 @@ int main()
     BITMAP* logo = load_bitmap("fond/logo.bmp",NULL);
 
 
-    int x=3,y=0,case_prec_x = 0,case_prec_y = 0;
+    int x=3,y=0,case_prec_x = 0,case_prec_y = 0,deplacement = 0;
 
     BITMAP* page=create_bitmap(1200,711);
     clear_bitmap(page);
@@ -233,8 +233,27 @@ int main()
 
                         if (((mouse_x>=(175)&& mouse_x<=(175+90))&& (mouse_y)>=(620)&& mouse_y<=(620+80))&&(mouse_b & 1))
                         {
-                            qfoiqnefo
+                            rest(100);
+                            while(deplacement == 0)
+                            {
+                                clear_bitmap(page);
+                                afficher_map(page);
+                                afficher_cases_dispo_joueur(page,(tabJoueur[j].colonne)/30,(tabJoueur[j].ligne)/32,tabJoueur[j].pm,tableau_Cases,tableau_case_possible);
+                                changement_case_souris(page,mouse_x,mouse_y,&case_prec_x,&case_prec_y,tableau_case_possible,tableau_chemin_court,(tabJoueur[j].colonne)/30,(tabJoueur[j].ligne)/32);
+                                afficher_chemin(page,tableau_chemin_court);
+                                afficher_tout_arbre(page,tableau_affichage_arbre);
+                                afficher_commande(page,tabJoueur,nbJoueurs,j);
+
+                                if(mouse_b & 1)
+                                {
+                                    deplacement_joueur(page,(tabJoueur[j].ligne)/32,(tabJoueur[j].colonne)/30,tabJoueur[j].numeroClasse,tableau_chemin_court,tableau_affichage_arbre,tabJoueur,nbJoueurs,j);
+                                    deplacement = 1;
+                                }
+                                show_mouse(page);
+                                blit(page,screen,0,0,0,0,1200,711);
+                            }
                         }
+                        deplacement = 0;
 
                         ///CAC
                         if((mouse_x>=(casex*30)&& mouse_x<=(casex*30+100))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+100))
@@ -1295,10 +1314,10 @@ int main()
         afficher_cases_dispo_joueur(page,x,y,6,tableau_Cases,tableau_case_possible);
         //changement_case_souris(page,mouse_x,mouse_y,&souris_x,&souris_y,tableau_case_possible,tableau_chemin_court,x,y);
         afficher_chemin(page,tableau_chemin_court);
-        afficher_tout_arbre(page,tableau_affichage_arbre);*/
+        afficher_tout_arbre(page,tableau_affichage_arbre);
         if(mouse_b & 1)
         {
-            deplacement_joueur(page,y,x,2,tableau_chemin_court,tableau_affichage_arbre);
+            deplacement_joueur(page,y,x,2,tableau_chemin_court,tableau_affichage_arbre,);
             x++;
             if(x==36)
             {
@@ -1308,8 +1327,8 @@ int main()
         }
 
         show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);
-        //allegro_message("ok");*/
+        blit(page,screen,0,0,0,0,1200,711);*/
+        //allegro_message("ok");
     }
     destroy_bitmap(page);
 
