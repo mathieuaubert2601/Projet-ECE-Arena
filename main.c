@@ -97,6 +97,8 @@ int main()
             violetCity++;
         }*/
 
+        //attaque_Pikachu(page);
+
         menuJeu(page,fondMenu,logo);
         if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b & 1))
         {
@@ -218,10 +220,11 @@ int main()
                         time_t temps1 = time(NULL);
                     while(sortieJeu!=1)
                     {
-                        if (tabJoueur[j].mort==1)
+                        if (tabJoueur[j].mort==1 || tabJoueur[j].tourDodo>=1 || tabJoueur[j].tourParalysie>=1 || tabJoueur[j].tourPeur>=1)
                         {
                             j++;
                         }
+
                         if (j==nbJoueurs)
                         {
                             j=0;
@@ -1172,7 +1175,7 @@ int main()
                             }
                             time_t temps3=time(NULL);
                             unsigned long diff=difftime(temps3,temps1);
-                            textprintf_ex(page,maPolice,1145,565,makecol(0,0,0),-1,"%d",diff);
+                            textprintf_ex(page,maPolice,1150,550,makecol(0,0,0),-1,"%d",diff);
                             compteurMort=0;
                             for (int d=0;d<nbJoueurs;d++)
                             {

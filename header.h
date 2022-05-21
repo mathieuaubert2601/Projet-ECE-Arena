@@ -63,6 +63,7 @@ void information_Lucario(BITMAP* page, BITMAP* fond);
 void information_Ronflex(BITMAP* page, BITMAP* fond);
 void information_Alakazam(BITMAP* page, BITMAP* fond);
 void information_Rondoudou(BITMAP* page, BITMAP* fond);
+void attaque_Pikachu(BITMAP* page);
 //carte
 void afficher_map(BITMAP* buffer);
 void afficher_arbre(BITMAP* buffer, int x, int y);
