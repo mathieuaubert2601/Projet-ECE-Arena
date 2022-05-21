@@ -233,7 +233,7 @@ int main()
 
                         if (((mouse_x>=(175)&& mouse_x<=(175+90))&& (mouse_y)>=(620)&& mouse_y<=(620+80))&&(mouse_b & 1))
                         {
-                            qfoiqnefo
+
                         }
 
                         ///CAC
@@ -241,7 +241,7 @@ int main()
                         {
                             afficherPorteeCirc(tabJoueur[j].classe.corps,tabJoueur[j],page);
                         }
-                        if(((mouse_x>=(casex*10)&& mouse_x<=(casex*10+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
+                        if(((mouse_x>=(casex*30)&& mouse_x<=(casex*30+100))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+100))&&(mouse_b & 1))
                         {
                             if (nbJoueurs == 2)
                             {
