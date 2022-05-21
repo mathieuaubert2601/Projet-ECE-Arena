@@ -47,6 +47,12 @@ void phrases(BITMAP* page,int p)
     BITMAP* nom = load_bitmap("phrases/phraseNom.bmp",NULL);
     BITMAP* allieSoin = load_bitmap("phrases/phraseAllieSoin.bmp",NULL);
 
+    BITMAP* endormi = load_bitmap("phrases/phraseEndormi.bmp",NULL);
+    BITMAP* paralyse = load_bitmap("phrases/phraseParalyse.bmp",NULL);
+    BITMAP* apeure = load_bitmap("phrases/phraseApeure.bmp",NULL);
+    BITMAP* protege = load_bitmap("phrases/phraseProtege.bmp",NULL);
+    BITMAP* empoisonne = load_bitmap("phrases/phraseEmpoisonne.bmp",NULL);
+
     if(p==1)
     {
         masked_blit(rate,page,0,0,300,300,rate->w,rate->h);
@@ -71,6 +77,22 @@ void phrases(BITMAP* page,int p)
     }
     if(p==6)
     {
-        masked_blit(zoneImpact,page,0,0,300,300,zoneImpact->w,zoneImpact->h);
+        masked_blit(endormi,page,0,0,300,300,endormi->w,endormi->h);
+    }
+    if(p==7)
+    {
+        masked_blit(paralyse,page,0,0,300,300,paralyse->w,paralyse->h);
+    }
+    if(p==8)
+    {
+        masked_blit(apeure,page,0,0,300,300,apeure->w,apeure->h);
+    }
+    if(p==9)
+    {
+        masked_blit(protege,page,0,0,300,300,protege->w,protege->h);
+    }
+    if(p==10)
+    {
+        masked_blit(empoisonne,page,0,0,300,300,empoisonne->w,empoisonne->h);
     }
 }
