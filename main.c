@@ -1166,7 +1166,7 @@ int main()
                             }
                             time_t temps3=time(NULL);
                             unsigned long diff=difftime(temps3,temps1);
-                            textprintf_ex(page,maPolice,1150,550,makecol(0,0,0),-1,"%d",diff);
+                            textprintf_ex(page,maPolice,1150,565,makecol(0,0,0),-1,"%d",diff);
                             if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b & 1))
                             {
                                 while(test==1)
