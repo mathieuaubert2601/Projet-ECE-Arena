@@ -76,16 +76,50 @@ void affichage_profil(BITMAP* buffer,t_joueur tab[], int nbJoueurs,int j)
 {
     FONT* ecrit = load_font("police_ecriture/police_pv_petite.pcx",NULL,NULL);
 
+    BITMAP* endormi=load_bitmap("Statut/endormi.bmp",NULL);
+    BITMAP* paralyse=load_bitmap("Statut/paralyse.bmp",NULL);
+    BITMAP* protege=load_bitmap("Statut/protege.bmp",NULL);
+    BITMAP* apeure=load_bitmap("Statut/apeure.bmp",NULL);
+    BITMAP* empoisonne=load_bitmap("Statut/empoisonne.bmp",NULL);
+
     int casey = 32;
     for (int i=0; i<nbJoueurs; i++)
     {
-        if(i==j)
+        if(i==j && tab[i].mort!=1)
         {
             masked_blit(tab[i].classe.profilvert,buffer,0,0,1105,casey*i*4+90,90,80);
             textprintf_ex(buffer,ecrit,1105,casey*i*4+170,makecol(34,177,76),-1,"PV : %d",tab[i].pv);
             textprintf_ex(buffer,ecrit,1105,casey*i*4+190,makecol(34,177,76),-1,"%s",tab[i].pseudo);
         }
-
+        /*if(tab[i].mort==1)
+        {
+            masked_blit(tab[i].classe.profilrouge,buffer,0,0,1105,casey*i*4+90,90,80);
+        }*/
+        if(tab[i].tourDodo<0)
+        {
+            phrases(buffer,6);
+            blit(endormi,buffer,0,0,1105,casey*i*4-10,endormi->w,endormi->h);
+        }
+        if(tab[i].tourParalysie<0)
+        {
+            phrases(buffer,7);
+            blit(paralyse,buffer,0,0,1105,casey*i*4-10,paralyse->w,paralyse->h);
+        }
+        if(tab[i].tourPeur<0)
+        {
+            phrases(buffer,8);
+            blit(apeure,buffer,0,0,1105,casey*i*4-10,apeure->w,apeure->h);
+        }
+        if(tab[i].tourBouclier<0)
+        {
+            phrases(buffer,9);
+            blit(protege,buffer,0,0,1105,casey*i*4-10,protege->w,protege->h);
+        }
+        if(tab[i].tourPoison<0)
+        {
+            phrases(buffer,7);
+            blit(empoisonne,buffer,0,0,1105,casey*i*4-10,empoisonne->w,empoisonne->h);
+        }
         else
         {
             masked_blit(tab[i].classe.profil,buffer,0,0,1105,casey*i*4+90,90,80);
