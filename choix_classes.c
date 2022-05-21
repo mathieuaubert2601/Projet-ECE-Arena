@@ -12,12 +12,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
 
     FONT* maPolice = load_font("police_ecriture/calibri.pcx",NULL,NULL);
 
-
-    /*BITMAP* phrase1 = load_bitmap("phrases/phrase1.bmp",NULL);
-    BITMAP* phrase2 = load_bitmap("phrases/phrase2.bmp",NULL);
-    BITMAP* phrase3 = load_bitmap("phrases/phrase3.bmp",NULL);
-    BITMAP* phrase4 = load_bitmap("phrases/phrase4.bmp",NULL);*/
-    BITMAP* tabPhrases[4];
     BITMAP* corpsacorps = load_bitmap("CAC/corpsacorps.bmp",NULL);
     BITMAP* corpsacorpsInv = load_bitmap("CAC/corpsacorpsInv.bmp",NULL);
     BITMAP* infoscorps = load_bitmap("CAC/infoscorps.bmp",NULL);
@@ -129,8 +123,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     t_sorts berceuseS={0,21,0,50,2,0,3,0,6,3,2,0,berceuse,berceuseInv,infosberceuse};
     t_sorts corps={2,22,2,100,1,0,1,0,1,3,0,0,cac,cacInv,infoscorps};
 
-    t_sorts tabSorts[23]={vitesseExtreme,fatalFoudre,bouleElek,couDjus,cageEclair,boulArmure,reposS,coupDboule,seismeS,chargeS,rugissement,aurasphere,closeCombat,vitesseExtremeL,hateS,toxicS,psykoS,teleportS,autoSoinS,vaguePsyS,torgnolesS,soinS,berceuseS};
-
     SAMPLE* pikachuSon = load_sample("sons_pokemons/pikachu.wav");
     SAMPLE* ronflexSon = load_sample("sons_pokemons/ronflex.wav");
     SAMPLE* lucarioSon = load_sample("sons_pokemons/lucario.wav");
@@ -235,9 +227,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
 
     int sortieClasses = 0;
     ///Déclaration des BITMAP
-    BITMAP* quitter = load_bitmap("boutons/boutonQuitter.bmp",NULL);
-    BITMAP* quitterInv = load_bitmap("boutons/boutonInvQuitter.bmp",NULL);
-
     BITMAP* bouton1 = load_bitmap("boutons/boutonPik.bmp",NULL);
     BITMAP* boutonInv1 = load_bitmap("boutons/boutonInvPik.bmp",NULL);
 
@@ -258,7 +247,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
 
     BITMAP* logo = load_bitmap("fond/logo.bmp",NULL);
     BITMAP* fond = load_bitmap("fond/fond1.bmp",NULL);
-    BITMAP* fondMenu = load_bitmap("fond/fondMenu.bmp",NULL);
 
     rest(300);
     while(sortieClasses!=1)
@@ -414,18 +402,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 sortieClasses=1;
             }
         }
-        if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b && 1))
-            {
-                sortieClasses=1;
-                menuNbJoueur(page,fondMenu,logo, violetCity);
-            }
 
-
-            /*for(int u;u<15;u++)
-        {
-            textprintf_ex(page,maPolice,100,200,makecol(255,255,0),-1,"%c",joueur[1].pseudo[u]);
-
-        }*/
         textprintf_ex(page,maPolice,10,140,makecol(255,255,0),-1,"Choisis ta classe :");
 
         show_mouse(page);

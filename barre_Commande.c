@@ -4,7 +4,6 @@ void afficher_commande (BITMAP* buffer,t_joueur tab[],int nbJ, int j)
 {
     FONT* maPolice = load_font("police_ecriture/calibri.pcx",NULL,NULL);
 
-    BITMAP* casefiltre = load_bitmap("casefiltre.bmp",NULL);
     BITMAP* fondbas = load_bitmap("fond/fondbas.bmp",NULL);
     BITMAP* fondcote = load_bitmap("fond/fondcote.bmp",NULL);
 
@@ -17,15 +16,14 @@ void afficher_commande (BITMAP* buffer,t_joueur tab[],int nbJ, int j)
     BITMAP* JoueurS = load_bitmap("boutons/JoueurSuivant.bmp",NULL);
     BITMAP* JoueurSInv = load_bitmap("boutons/JoueurSuivantInv.bmp",NULL);
 
-    BITMAP* fond = load_bitmap("fond/fondflou",NULL);
+
     BITMAP* menu = load_bitmap("boutons/Menu.bmp",NULL);
     BITMAP* menuInv = load_bitmap("boutons/MenuInv.bmp",NULL);
 
-    int casex, casey, casex2, casey2;
+    int casex, casey, casex2;
     casex = -30;
     casey = -32;
     casex2 = 30;
-    casey2 = 32;
 
 
     blit(fondbas,buffer,0,casey*18,0,0,buffer->w,buffer->h);

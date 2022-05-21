@@ -59,7 +59,7 @@ void afficher_deplacement_plus_court(int tableau_case_dispo[18][36],int x,int y,
 
 }
 
-void afficher_chemin(BITMAP* buffer, int tableau_a_afficher[18][36])
+void afficher_chemin(BITMAP* buffer, int tableau_a_afficher[18][36],t_joueur tableau_joueur[],int nombre_joueur, int indice_joueur)
 {
     for(int i = 0 ; i<18 ; i++)
     {
@@ -70,6 +70,31 @@ void afficher_chemin(BITMAP* buffer, int tableau_a_afficher[18][36])
                 casebleu_foncee(buffer,j,i);
             }
         }
+    }
+    for(int k=0 ; k<nombre_joueur ; k++)
+    {
+
+            if(tableau_joueur[k].numeroClasse == 1)
+            {
+                afficher_personnage_pikachu(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne);
+            }
+            if(tableau_joueur[k].numeroClasse == 2)
+            {
+                afficher_personnage_ronflex(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne);
+            }
+            if(tableau_joueur[k].numeroClasse == 3)
+            {
+                afficher_personnage_lucario(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne);
+            }
+            if(tableau_joueur[k].numeroClasse == 4)
+            {
+                afficher_personnage_alakazam(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne);
+            }
+            if(tableau_joueur[k].numeroClasse == 5)
+            {
+                afficher_personnage_rondoudou(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne);
+            }
+
     }
 }
 

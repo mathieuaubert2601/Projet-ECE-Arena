@@ -69,7 +69,7 @@ void afficher_tout_arbre(BITMAP* buffer, int matrice_arbre[18][36]);
 void afficher_coordonnees(BITMAP* buffer);
 void casebleu(BITMAP* buffer, int posy, int posx);
 void afficher_cases_non_obstacles(int tab_cases[18][36],BITMAP* buffer);
-void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_cases[18][36], int tableau_a_rendre[18][36]);
+void afficher_cases_dispo_joueur(BITMAP* buffer,int x,int y, int pm,int tableau_cases[18][36], int tableau_a_rendre[18][36],t_joueur tabJoueur[],int nbJoueur,int indice);
 void casebleu_foncee(BITMAP* buffer, int posy, int posx);
 void copier_tableau_case(int tableau_source[18][36], int tableau_destination[18][36]);
 void remettre_case_obstacle(int matrice_A_Modifier[18][36]);
@@ -97,7 +97,7 @@ void demande_placement (BITMAP* buffer, t_joueur* joueur,int tab[18][36], int ta
 void deplacement_joueur(BITMAP* buffer, int indice_ligne_ini, int indice_colonne_ini, int personnage,int tableau_chemin_court[18][36],int tableau_affichage_arbre[18][32],t_joueur tableau_joueur[],int nombre_joueur, int indice_joueur);
 void afficher_deplacement_plus_court(int tableau_case_dispo[18][36],int x,int y, int x_souris, int y_souris, int tableau_a_rendre[18][36]);
 void changement_case_souris(BITMAP* buffer,int x_souris,int y_souris, int* case_x, int* case_y,int tableau_case_dispo[18][36],int tableau_chemin_court[18][36],int x,int y);
-void afficher_chemin(BITMAP* buffer, int tableau_a_afficher[18][36]);
+void afficher_chemin(BITMAP* buffer, int tableau_a_afficher[18][36],t_joueur tableau_joueur[],int nombre_joueur, int indice_joueur);
 //gestionSorts
 void lancerSort(t_sorts sort1, t_joueur* joueurA, t_joueur tabJoueurs[], int nombreJoueur, int tourJoueur, BITMAP* page, int tab[18][36]);
 void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* page);
