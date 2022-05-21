@@ -1172,7 +1172,7 @@ int main()
                             }
                             time_t temps3=time(NULL);
                             unsigned long diff=difftime(temps3,temps1);
-                            textprintf_ex(page,maPolice,1150,550,makecol(0,0,0),-1,"%d",diff);
+                            textprintf_ex(page,maPolice,1145,565,makecol(0,0,0),-1,"%d",diff);
                             compteurMort=0;
                             for (int d=0;d<nbJoueurs;d++)
                             {
