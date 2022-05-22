@@ -1230,7 +1230,7 @@ int main()
                                 compteurMort++;
                             }
                         }
-                        if (compteurMort == 1)
+                        if (compteurMort == 1 || (compteurMort == 2 && modeEquipe==1))
                         {
                             if (nbJoueurs==2)
                             {
