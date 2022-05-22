@@ -107,6 +107,7 @@ void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* 
                             joueurB->mort=1;
                             joueurB->colonne=2000;
                             joueurB->ligne=2000;
+                            joueurA->kills++;
                         }
                         textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
                         blit(page,screen,0,0,0,0,1200,711);
@@ -217,6 +218,7 @@ void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* 
                             joueurB->mort=1;
                             joueurB->colonne=2000;
                             joueurB->ligne=2000;
+                            joueurA->kills = joueurA->kills+1 ;
                         }
                         textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
                         blit(page,screen,0,0,0,0,1200,711);
@@ -365,6 +367,7 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 joueurB->mort=1;
                                 joueurB->colonne=2000;
                                 joueurB->ligne=2000;
+                                joueurA->kills++;
                             }
                             textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
                             blit(page,screen,0,0,0,0,1200,711);
@@ -397,6 +400,7 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 joueurC->mort=1;
                                 joueurC->colonne=2000;
                                 joueurC->ligne=2000;
+                                joueurA->kills++;
                             }
                             textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
                             blit(page,screen,0,0,0,0,1200,711);
@@ -530,12 +534,13 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                             joueurB->pv -= nombrePv;
-                            if (joueurB->pv <0)
+                            if (joueurB->pv <=0)
                             {
                                 joueurB->pv = 0;
                                 joueurB->mort=1;
                                 joueurB->colonne=2000;
                                 joueurB->ligne=2000;
+                                joueurA->kills++;
                             }
                             textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
                             blit(page,screen,0,0,0,0,1200,711);
@@ -568,6 +573,7 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 joueurC->mort=1;
                                 joueurC->colonne=2000;
                                 joueurC->ligne=2000;
+                                joueurA->kills++;
                             }
                             textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
                             blit(page,screen,0,0,0,0,1200,711);
@@ -745,6 +751,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 joueurB->mort=1;
                                 joueurB->colonne=2000;
                                 joueurB->ligne=2000;
+                                joueurA->kills++;
                             }
                             textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
                             blit(page,screen,0,0,0,0,1200,711);
@@ -777,6 +784,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 joueurC->mort=1;
                                 joueurC->colonne=2000;
                                 joueurC->ligne=2000;
+                                joueurA->kills++;
                             }
                             textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
                             blit(page,screen,0,0,0,0,1200,711);
@@ -809,6 +817,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 joueurD->mort=1;
                                 joueurD->colonne=2000;
                                 joueurD->ligne=2000;
+                                joueurA->kills++;
                             }
                             textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
                             blit(page,screen,0,0,0,0,1200,711);
@@ -975,6 +984,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 joueurB->mort=1;
                                 joueurB->colonne=2000;
                                 joueurB->ligne=2000;
+                                joueurA->kills++;
                             }
                             textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
                             blit(page,screen,0,0,0,0,1200,711);
@@ -1007,6 +1017,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 joueurC->mort=1;
                                 joueurC->colonne=2000;
                                 joueurC->ligne=2000;
+                                joueurA->kills++;
                             }
                             textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
                             blit(page,screen,0,0,0,0,1200,711);
@@ -1039,6 +1050,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 joueurD->mort=1;
                                 joueurD->colonne=2000;
                                 joueurD->ligne=2000;
+                                joueurA->kills++;
                             }
                             textprintf_ex(page,maPolice,300,300,makecol(255,0,0),-1,"Vous avez inflige %d degats",nombrePv);
                             blit(page,screen,0,0,0,0,1200,711);
@@ -1085,7 +1097,6 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page, int tab[18][3
             joueurA->pa-=sort1.nbrPa;
         }
         else
-        {
             rest(400);
             do
             {
@@ -1167,10 +1178,11 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page, int tab[18][3
                 joueurA->pa-=sort1.nbrPa;
             }
         }
-    }
     else
     {
         phrases(page,2);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
 }
 

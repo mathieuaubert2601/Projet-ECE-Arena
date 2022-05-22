@@ -123,7 +123,6 @@ void affichage_profil(BITMAP* buffer,t_joueur tab[], int nbJoueurs,int j)
         }
     }
 }
-
 void affichage_barres(BITMAP* buffer)
 {
     int casex, casey;
