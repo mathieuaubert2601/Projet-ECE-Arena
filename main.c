@@ -111,7 +111,7 @@ int main()
                 {
                     sortieMenu=1;
                 }
-                if(((mouse_x>=(320) && mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 2 joueurs
+                if(((mouse_x>=(320) && mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1)||(key[KEY_2]))///Choix 2 joueurs
                 {
 
                     nbJoueurs = 2;
@@ -125,7 +125,7 @@ int main()
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
                 }
-                if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 3 joueurs
+                if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1)||(key[KEY_3]))///Choix 3 joueurs
                 {
                     nbJoueurs = 3;
                     Saisir_nom(tabJoueurInit[0].pseudo,page);
@@ -139,7 +139,7 @@ int main()
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
                 }
-                if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 4 joueurs
+                if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1)||(key[KEY_4]))///Choix 4 joueurs
                 {
                     nbJoueurs = 4;
                     Saisir_nom(tabJoueurInit[0].pseudo,page);
