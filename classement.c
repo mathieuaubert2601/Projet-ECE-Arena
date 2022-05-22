@@ -146,7 +146,17 @@ void classementEquipe(BITMAP* buffer,t_joueur joueurG1, t_joueur joueurG2,t_joue
 
         blit(fond,buffer,0,0,0,0,1200,711);
         blit(classement,buffer,0,0,300,50,classement->w,classement->h);
+        masked_stretch_blit(joueurG1.classe.profil,buffer,0,0,joueurG1.classe.profil->w,joueurG1.classe.profil->h,350,110,joueurG1.classe.profil->w*1.5,joueurG1.classe.profil->h*1.5);
+        masked_stretch_blit(joueurG2.classe.profil,buffer,0,0,joueurG2.classe.profil->w,joueurG2.classe.profil->h,500,110,joueurG2.classe.profil->w*1.5,joueurG2.classe.profil->h*1.5);
 
+        textprintf_ex(buffer,maPolice,370,240,makecol(0,0,0),-1,"1er : %s",joueurG1.pseudo);
+        textprintf_ex(buffer,maPolice,500,285,makecol(0,0,0),-1,"%s",joueurG2.pseudo);
+        textprintf_ex(buffer,maPolice,370,320,makecol(0,0,0),-1,"degats : %d",joueurG1.degats + joueurG2.degats);
 
+        textprintf_ex(buffer,maPolice,370,385,makecol(0,0,0),-1,"2e : %s",joueurP1.pseudo);
+        textprintf_ex(buffer,maPolice,500,425,makecol(0,0,0),-1,"%s",joueurP2.pseudo);
+        textprintf_ex(buffer,maPolice,370,465,makecol(0,0,0),-1,"degats : %d",joueurP1.degats + joueurP2.degats);
+
+        blit(buffer,screen,0,0,0,0,1200,711);
     }
 

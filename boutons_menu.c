@@ -59,45 +59,64 @@ void phrases(BITMAP* page,int p)
         masked_blit(rate,page,0,0,300,100,rate->w,rate->h);
         blit(barreCoteRouge,page,0,0,1060,0,barreCoteRouge->w,barreCoteRouge->h);
         blit(barreBasRouge,page,0,0,0,576,barreBasRouge->w,barreBasRouge->h);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
     if(p==2)
     {
         masked_blit(pasPA,page,0,0,150,300,pasPA->w,pasPA->h);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
     if(p==3)
     {
         masked_blit(deplacer,page,0,0,150,300,deplacer->w,deplacer->h);
+        blit(page,screen,0,0,0,0,1200,711);
     }
     if(p==4)
     {
         masked_blit(teleporter,page,0,0,150,300,teleporter->w,teleporter->h);
+        blit(page,screen,0,0,0,0,1200,711);
     }
     if(p==5)
     {
         masked_blit(rouler,page,0,0,150,300,rouler->w,rouler->h);
+        blit(page,screen,0,0,0,0,1200,711);
     }
     if(p==6)
     {
         masked_blit(endormi,page,0,0,150,300,endormi->w,endormi->h);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
     if(p==7)
     {
         masked_blit(paralyse,page,0,0,150,300,paralyse->w,paralyse->h);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
     if(p==8)
     {
         masked_blit(apeure,page,0,0,150,300,apeure->w,apeure->h);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
     if(p==9)
     {
         masked_blit(protege,page,0,0,150,300,protege->w,protege->h);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
     if(p==10)
     {
         masked_blit(empoisonne,page,0,0,150,300,empoisonne->w,empoisonne->h);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
     if(p==11)
     {
         masked_blit(memeEquipe,page,0,0,150,300,memeEquipe->w,memeEquipe->h);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
     }
 }

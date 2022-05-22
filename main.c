@@ -114,7 +114,7 @@ int main()
                 {
                     sortieMenu=1;
                 }
-                if(((mouse_x>=(320) && mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 2 joueurs
+                if(((mouse_x>=(200) && mouse_x<=(200+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 2 joueurs
                 {
 
                     nbJoueurs = 2;
@@ -128,13 +128,12 @@ int main()
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
                 }
-                if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 3 joueurs
+                if(((mouse_x>=(400)&& mouse_x<=(400+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 3 joueurs
                 {
                     nbJoueurs = 3;
                     Saisir_nom(tabJoueurInit[0].pseudo,page);
                     Saisir_nom(tabJoueurInit[1].pseudo,page);
                     Saisir_nom(tabJoueurInit[2].pseudo,page);
-                    //ordreJoueurs3(tabJoueur,nbJoueurs,joueur1,joueur2,joueur3);
                     for(i=0; i<nbJoueurs; i++)
                     {
                         menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,tabJoueurInit,violetCity,musiqueFond,i, tableau_Cases,i,modeEquipe);
@@ -142,7 +141,7 @@ int main()
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
                 }
-                if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 4 joueurs
+                if(((mouse_x>=(600)&& mouse_x<=(600+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 4 joueurs
                 {
                     nbJoueurs = 4;
                     Saisir_nom(tabJoueurInit[0].pseudo,page);
@@ -156,7 +155,7 @@ int main()
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
                 }
-                    if(((mouse_x>=(920)&& mouse_x<=(920+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 4 joueurs
+                    if(((mouse_x>=(800)&& mouse_x<=(800+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 4 joueurs
                 {
                     nbJoueurs = 4;
                     modeEquipe=1;
@@ -1221,7 +1220,7 @@ int main()
                         }
                         time_t temps3=time(NULL);
                         unsigned long diff=difftime(temps3,temps1);
-                        textprintf_ex(page,maPolice,1150,550,makecol(0,0,0),-1,"%d",diff);
+                        textprintf_ex(page,maPolice,1150,565,makecol(0,0,0),-1,"%d",diff);
                         compteurMort=0;
                         for (int d=0; d<nbJoueurs; d++)
                         {
@@ -1405,7 +1404,7 @@ int main()
                         blit(page,screen,0,0,0,0,1200,711);
                         time_t temps2=time(NULL);
                         unsigned long tempo = difftime(temps2,temps1);
-                        if (tempo>=15)
+                        if (tempo>=20)
                         {
                             temps1=time(NULL);
                             tabJoueur[j].pa=10;

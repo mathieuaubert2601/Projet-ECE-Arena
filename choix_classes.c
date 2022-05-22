@@ -143,7 +143,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     pikachu.classe = 1;
     strcpy(pikachu.nom,"Pikachu");
     pikachu.pm = 6;
-    pikachu.pv = 75;
+    pikachu.pv = 2;
     pikachu.sonClasse = pikachuSon;
     pikachu.sort1=vitesseExtreme;
     pikachu.sort2=fatalFoudre;
@@ -319,6 +319,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].classe=pikachu;
                 joueur[t].mort=0;
                 joueur[t].equipe=t+1;
+                joueur[t].degats = 0;
                 if (equipe==1)
                 {
                     if (t<=1)
@@ -349,6 +350,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].classe=ronflex;
                 joueur[t].mort=0;
                 joueur[t].equipe=t+1;
+                joueur[t].degats = 0;
                 if (equipe==1)
                 {
                     if (t<=1)
@@ -380,6 +382,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].mort=0;
                 joueur[t].kills=0;
                 joueur[t].equipe=t+1;
+                joueur[t].degats = 0;
                 if (equipe==1)
                 {
                     if (t<=1)
@@ -409,6 +412,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].classe=alakazam;
                 joueur[t].mort=0;
                 joueur[t].equipe=t+1;
+                joueur[t].degats = 0;
                 if (equipe==1)
                 {
                     if (t<=1)
@@ -440,6 +444,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].mort=0;
                 joueur[t].kills=0;
                 joueur[t].equipe=t+1;
+                joueur[t].degats = 0;
                 if (equipe==1)
                 {
                     if (t<=1)
