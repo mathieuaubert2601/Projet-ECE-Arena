@@ -1,0 +1,1287 @@
+\hypertarget{header_8h}{}\doxysection{header.\+h File Reference}
+\label{header_8h}\index{header.h@{header.h}}
+{\ttfamily \#include $<$allegro.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}time.\+h\char`\"{}}\newline
+Include dependency graph for header.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{header_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{header_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsorts}{sorts}}
+\begin{DoxyCompactList}\small\item\em Declaration des biblioth{\ucr}ques. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structclasse}{classe}}
+\item 
+struct \mbox{\hyperlink{structjoueur}{joueur}}
+\item 
+struct \mbox{\hyperlink{structcases}{cases}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structsorts}{sorts}} \mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}
+\begin{DoxyCompactList}\small\item\em Declaration des biblioth{\ucr}ques. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structclasse}{classe}} \mbox{\hyperlink{header_8h_a8b7c0ab3e1974f08898b7049dbdb69e5}{t\+\_\+classe}}
+\item 
+typedef struct \mbox{\hyperlink{structjoueur}{joueur}} \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}
+\item 
+typedef struct \mbox{\hyperlink{structcases}{cases}} \mbox{\hyperlink{header_8h_a4c5d991f24fcc9f661278996bee425cf}{t\+\_\+cases}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{header_8h_abea32f881116ef84f63fcddc375312ea}{initialisation\+Allegro}} ()
+\begin{DoxyCompactList}\small\item\em Declaration des prototypes des sous programmes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{header_8h_a6c074c85d88f526c0876ef831110fd51}{Affichage\+Bouton}} (BITMAP $\ast$bouton, BITMAP $\ast$bouton\+Inv, BITMAP $\ast$page, int sourcex, int sourcey, int destx, int desty, int longueur, int hauteur)
+\item 
+void \mbox{\hyperlink{header_8h_ae479b4b6bb4a2ac35544035a04d9e977}{Affichage\+Sorts}} (BITMAP $\ast$bouton, BITMAP $\ast$bouton\+Inv, BITMAP $\ast$infos, BITMAP $\ast$page, int sourcex, int sourcey, int destx, int desty, int longueur, int hauteur, int hauteurinfos, int longueurinfos)
+\item 
+void \mbox{\hyperlink{header_8h_a84ad03893ba4eb2edeb2842cd7591299}{Affichage\+Sorts2}} (BITMAP $\ast$bouton, BITMAP $\ast$bouton\+Inv, BITMAP $\ast$infos, BITMAP $\ast$page, int sourcex, int sourcey, int destx, int desty, int longueur, int hauteur, int longueurinfos, int hauteurinfos)
+\item 
+void \mbox{\hyperlink{header_8h_a45805ddb3ce1a68e5071cff3463f428d}{phrases}} (BITMAP $\ast$page, int p)
+\item 
+void \mbox{\hyperlink{header_8h_a9ab11a1ad716b7abc08e9358a6b4bf03}{afficher\+\_\+attaque\+\_\+ronflex}} (BITMAP $\ast$buffer)
+\item 
+void \mbox{\hyperlink{header_8h_afa4f9523e8083318467dd5e607396970}{afficher\+\_\+attaque\+\_\+rondoudou}} (BITMAP $\ast$buffer)
+\item 
+void \mbox{\hyperlink{header_8h_a01984adf09bfcdbf1d1dcc10471d8fb8}{afficher\+\_\+attaque\+\_\+alakazam}} (BITMAP $\ast$buffer)
+\item 
+void \mbox{\hyperlink{header_8h_abc764c4e6af6f606f1da3b18512ae5fe}{afficher\+\_\+attaque\+\_\+lucario}} (BITMAP $\ast$buffer)
+\item 
+void \mbox{\hyperlink{header_8h_a082b8685174f689d5002889041513895}{afficher\+\_\+attaque\+\_\+pikachu}} (BITMAP $\ast$buffer)
+\item 
+void \mbox{\hyperlink{header_8h_a9f09b95b3f2d1cf78fb6ef0634ec4277}{menu\+\_\+classes}} (BITMAP $\ast$classe1, BITMAP $\ast$classe2, BITMAP $\ast$classe3, BITMAP $\ast$classe4, BITMAP $\ast$classe5, BITMAP $\ast$page, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} \mbox{\hyperlink{structjoueur}{joueur}}\mbox{[}$\,$\mbox{]}, int $\ast$violet\+City, SAMPLE $\ast$musique\+Fond, int nb\+Joueur, int tab\+Cases\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, int t)
+\item 
+void \mbox{\hyperlink{header_8h_a6df547fff87c5f3280f9e67de56d3928}{information\+\_\+\+Pikachu}} (BITMAP $\ast$page, BITMAP $\ast$fond)
+\item 
+void \mbox{\hyperlink{header_8h_a0080df4e61564bda894844ff467e6014}{information\+\_\+\+Lucario}} (BITMAP $\ast$page, BITMAP $\ast$fond)
+\item 
+void \mbox{\hyperlink{header_8h_ae5d218bb0b78ec8cb412b0f28c96a09e}{information\+\_\+\+Ronflex}} (BITMAP $\ast$page, BITMAP $\ast$fond)
+\item 
+void \mbox{\hyperlink{header_8h_ad3cf45f452e9b57ed1532052c1d3ab86}{information\+\_\+\+Alakazam}} (BITMAP $\ast$page, BITMAP $\ast$fond)
+\item 
+void \mbox{\hyperlink{header_8h_ac3affb88bc661ff840f77f883b8979cc}{information\+\_\+\+Rondoudou}} (BITMAP $\ast$page, BITMAP $\ast$fond)
+\item 
+void \mbox{\hyperlink{header_8h_aa6112d3e462c592863ea736a3824775e}{attaque\+\_\+\+Pikachu}} (BITMAP $\ast$page)
+\item 
+void \mbox{\hyperlink{header_8h_a6810b15bfad1f5d0007080bb1a5b10c5}{afficher\+\_\+map}} (BITMAP $\ast$buffer)
+\item 
+void \mbox{\hyperlink{header_8h_ab0712e522820c13f68267a13f57aabbb}{afficher\+\_\+arbre}} (BITMAP $\ast$buffer, int x, int y)
+\item 
+void \mbox{\hyperlink{header_8h_a1e1048cffbe1bd6b8c2f5119b7bfd449}{afficher\+\_\+tout\+\_\+arbre}} (BITMAP $\ast$buffer, int matrice\+\_\+arbre\mbox{[}18\mbox{]}\mbox{[}36\mbox{]})
+\item 
+void \mbox{\hyperlink{header_8h_ab41fe4f65333c5f7fe7f630f133ac284}{afficher\+\_\+coordonnees}} (BITMAP $\ast$buffer)
+\item 
+void \mbox{\hyperlink{header_8h_a5326787611be11aeaffb1d87498cd976}{casebleu}} (BITMAP $\ast$buffer, int posy, int posx)
+\item 
+void \mbox{\hyperlink{header_8h_a288aa4b6d1f7ca9d289c668642c461ce}{afficher\+\_\+cases\+\_\+non\+\_\+obstacles}} (int tab\+\_\+cases\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, BITMAP $\ast$buffer)
+\item 
+void \mbox{\hyperlink{header_8h_aa2f8fe16757ba2992a7a0c6c9d62f0d8}{afficher\+\_\+cases\+\_\+dispo\+\_\+joueur}} (BITMAP $\ast$buffer, int x, int y, int pm, int tableau\+\_\+cases\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, int tableau\+\_\+a\+\_\+rendre\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} tab\+Joueur\mbox{[}$\,$\mbox{]}, int nb\+Joueur, int indice)
+\item 
+void \mbox{\hyperlink{header_8h_ae7cbc0c1beee6306de9ca8e025e1d96d}{casebleu\+\_\+foncee}} (BITMAP $\ast$buffer, int posy, int posx)
+\item 
+void \mbox{\hyperlink{header_8h_a4dcf40adb64ba1106af935980c551fb7}{copier\+\_\+tableau\+\_\+case}} (int tableau\+\_\+source\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, int tableau\+\_\+destination\mbox{[}18\mbox{]}\mbox{[}36\mbox{]})
+\item 
+void \mbox{\hyperlink{header_8h_a823a89cbb39c49684c89addb86b002b6}{remettre\+\_\+case\+\_\+obstacle}} (int matrice\+\_\+\+A\+\_\+\+Modifier\mbox{[}18\mbox{]}\mbox{[}36\mbox{]})
+\item 
+void \mbox{\hyperlink{header_8h_a2cdf33c73b720ed1c35435269192e195}{afficher\+\_\+lac}} (BITMAP $\ast$buffer)
+\item 
+void \mbox{\hyperlink{header_8h_a4f43be17644b1544a80bd4f2188c410c}{caserouge}} (BITMAP $\ast$buffer, int posx, int posy)
+\item 
+void \mbox{\hyperlink{header_8h_a6686f0c8e8186d8d22b5a707b157279a}{demande\+\_\+placement}} (BITMAP $\ast$buffer, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$\mbox{\hyperlink{structjoueur}{joueur}}, int tableau\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, int tab\+\_\+arbres\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} tab\+Joueur\mbox{[}$\,$\mbox{]}, int indice)
+\item 
+void \mbox{\hyperlink{header_8h_a317e8be237fe970fc979f1c958473162}{afficher\+\_\+personnage\+\_\+pikachu}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y)
+\item 
+void \mbox{\hyperlink{header_8h_a32e1ccd53c5f1e9230f0bfd3b9c77190}{afficher\+\_\+personnage\+\_\+lucario}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y)
+\item 
+void \mbox{\hyperlink{header_8h_a34fc19a91831c7c4b0a2b9af8cf3819d}{afficher\+\_\+personnage\+\_\+ronflex}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y)
+\item 
+void \mbox{\hyperlink{header_8h_a187b2d06c58648db5061bbda2b5efe6e}{afficher\+\_\+personnage\+\_\+rondoudou}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y)
+\item 
+void \mbox{\hyperlink{header_8h_aa05314aa6d69e4ced5a2f5df6afbb75a}{afficher\+\_\+personnage\+\_\+alakazam}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y)
+\item 
+void \mbox{\hyperlink{header_8h_a3535848b79eba86b4fbe6c5ca9b0044d}{menu\+Nb\+Joueur}} (BITMAP $\ast$page, BITMAP $\ast$fond, BITMAP $\ast$logo, int $\ast$violet\+City)
+\item 
+void \mbox{\hyperlink{header_8h_ab6adbce81780ca6469b952558a5f8e77}{menu\+Jeu}} (BITMAP $\ast$page, BITMAP $\ast$fond, BITMAP $\ast$logo)
+\item 
+void \mbox{\hyperlink{header_8h_ac7dfe0178da1524d969eaa71d24c3ca5}{Saisir\+\_\+nom}} (char nom\+\_\+joueur\mbox{[}15\mbox{]}, BITMAP $\ast$page)
+\item 
+void \mbox{\hyperlink{header_8h_a1c1c57591427d50d39116db9cb6f53f8}{afficher\+\_\+commande}} (BITMAP $\ast$buffer, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} tab\mbox{[}$\,$\mbox{]}, int nbJ, int j)
+\item 
+void \mbox{\hyperlink{header_8h_a952b06ff7a85255c698c0cf16a13cc52}{affichage\+\_\+profil}} (BITMAP $\ast$buffer, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} tab\mbox{[}$\,$\mbox{]}, int nbJ, int j)
+\item 
+void \mbox{\hyperlink{header_8h_ab37b6e34230aa3e1039a7629081fedc0}{commande\+\_\+pokemon}} (BITMAP $\ast$buffer, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} \mbox{\hyperlink{structjoueur}{joueur}}\mbox{[}$\,$\mbox{]}, int j)
+\item 
+void \mbox{\hyperlink{header_8h_a734c0863e3646e03819095278e02918d}{menu\+\_\+pause}} (BITMAP $\ast$buffer)
+\item 
+void \mbox{\hyperlink{header_8h_ae6e2d42f66ef1867da14fb0cd952a96e}{deplacement\+\_\+joueur}} (BITMAP $\ast$buffer, int indice\+\_\+ligne\+\_\+ini, int indice\+\_\+colonne\+\_\+ini, int personnage, int tableau\+\_\+chemin\+\_\+court\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, int tableau\+\_\+affichage\+\_\+arbre\mbox{[}18\mbox{]}\mbox{[}32\mbox{]}, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} tableau\+\_\+joueur\mbox{[}$\,$\mbox{]}, int nombre\+\_\+joueur, int indice\+\_\+joueur)
+\item 
+void \mbox{\hyperlink{header_8h_ac133d7f50b2c99d6eff2c4f3a8359664}{afficher\+\_\+deplacement\+\_\+plus\+\_\+court}} (int tableau\+\_\+case\+\_\+dispo\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, int x, int y, int x\+\_\+souris, int y\+\_\+souris, int tableau\+\_\+a\+\_\+rendre\mbox{[}18\mbox{]}\mbox{[}36\mbox{]})
+\item 
+void \mbox{\hyperlink{header_8h_a5ab1e014765882dd89cebab874f7694b}{changement\+\_\+case\+\_\+souris}} (BITMAP $\ast$buffer, int x\+\_\+souris, int y\+\_\+souris, int $\ast$case\+\_\+x, int $\ast$case\+\_\+y, int tableau\+\_\+case\+\_\+dispo\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, int tableau\+\_\+chemin\+\_\+court\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, int x, int y)
+\item 
+void \mbox{\hyperlink{header_8h_a439c3fbd0381223cae750552d0ea8d08}{afficher\+\_\+chemin}} (BITMAP $\ast$buffer, int tableau\+\_\+a\+\_\+afficher\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} tableau\+\_\+joueur\mbox{[}$\,$\mbox{]}, int nombre\+\_\+joueur, int indice\+\_\+joueur)
+\item 
+void \mbox{\hyperlink{header_8h_a78442cd1056159c1f7211e232af284d9}{lancer\+Sort}} (\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}} sort1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurA, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} tab\+Joueurs\mbox{[}$\,$\mbox{]}, int nombre\+Joueur, int tour\+Joueur, BITMAP $\ast$page, int tab\mbox{[}18\mbox{]}\mbox{[}36\mbox{]})
+\item 
+void \mbox{\hyperlink{header_8h_a0ce02801e0ebb20c6d87064a70115ad2}{sort\+Attaque2J}} (\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}} sort1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurA, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurB, BITMAP $\ast$page)
+\item 
+void \mbox{\hyperlink{header_8h_a8cadcf720fc99b309d2a47ce1d3dad61}{sort\+Attaque3J}} (\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}} sort1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurA, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurB, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurC, BITMAP $\ast$page)
+\item 
+void \mbox{\hyperlink{header_8h_a5e06244e31f20a4a26e4fd99e97b8fae}{sort\+Attaque4J}} (\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}} sort1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurA, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurB, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurC, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurD, BITMAP $\ast$page)
+\item 
+void \mbox{\hyperlink{header_8h_a19c71b1ec2c163de14147a68ecd94ae2}{sort\+Mouvement}} (\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}} sort1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurA, BITMAP $\ast$page, int tab\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, int nb\+Joueurs, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$tab\+Joueur\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{header_8h_a91a3b8bd39f5b4e4d1ee00d331f2a92d}{sort\+Statut2J}} (\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}} sort1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurA, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurB, BITMAP $\ast$page)
+\item 
+void \mbox{\hyperlink{header_8h_a1faf448257f964ee6f74a41d6f8dc99a}{sort\+Statut3J}} (\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}} sort1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurA, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurB, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurC, BITMAP $\ast$page)
+\item 
+void \mbox{\hyperlink{header_8h_a5c4b4ff92fa943af851756598de55f1a}{sort\+Statut4J}} (\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}} sort1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurA, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurB, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurC, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurD, BITMAP $\ast$page)
+\item 
+void \mbox{\hyperlink{header_8h_a9d60aa2c1e1f66bf87139408b746d946}{sort\+Vie}} (\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}} sort1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurA, BITMAP $\ast$page)
+\item 
+void \mbox{\hyperlink{header_8h_a4b2a23ed704814cbb431ed5986f795be}{sort\+Soin2J}} (\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}} sort1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurA, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurB, BITMAP $\ast$page)
+\item 
+void \mbox{\hyperlink{header_8h_a7f205c49612277da36dd239532161b97}{sort\+Soin3J}} (\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}} sort1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurA, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurB, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurC, BITMAP $\ast$page)
+\item 
+void \mbox{\hyperlink{header_8h_a378d7d9c6a515a23a4fd2cec4358076b}{sort\+Soin4J}} (\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}} sort1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurA, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurB, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurC, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$joueurD, BITMAP $\ast$page)
+\item 
+int \mbox{\hyperlink{header_8h_a53ae418fcb4a387ae6237971f8e3036a}{test\+\_\+clique\+\_\+\+Suppr}} (int destx, int desty, int longueur, int hauteur, int compteur, char pseudo\mbox{[}15\mbox{]})
+\item 
+int \mbox{\hyperlink{header_8h_a7a424d5372c1fa56f672fab7a8ce0531}{test\+\_\+clique\+\_\+\+Entree}} (int destx, int desty, int longueur, int hauteur, int boule, char pseudo\mbox{[}15\mbox{]})
+\item 
+int \mbox{\hyperlink{header_8h_a132ef4c0ca9e66c3e4bee1451c1d463f}{test\+\_\+clique}} (int destx, int desty, int longueur, int hauteur, char lettre, int compteur, char pseudo\mbox{[}15\mbox{]})
+\item 
+void \mbox{\hyperlink{header_8h_abfba72c80d3cc019576e9631d9eae63e}{ordre\+Joueurs}} (\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} ordre\+Joueur\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} tab\+Joueur\mbox{[}$\,$\mbox{]}, int nbr\+Joueur)
+\item 
+void \mbox{\hyperlink{header_8h_ab3bb8554c74f95f95f566417c8769ecd}{classement2J}} (BITMAP $\ast$buffer, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} joueurG, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} joueur\+P1)
+\item 
+void \mbox{\hyperlink{header_8h_a58e8538d70a1a103ce630254713ccff9}{classement3J}} (BITMAP $\ast$buffer, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} joueurG, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} joueur\+P1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} joueur\+P2)
+\item 
+void \mbox{\hyperlink{header_8h_a54672d1ff6fdd918bd9c11fd392f0164}{classement4J}} (BITMAP $\ast$buffer, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} joueurG, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} joueur\+P1, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} joueur\+P2, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} joueur\+P3)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{header_8h_a4c5d991f24fcc9f661278996bee425cf}\label{header_8h_a4c5d991f24fcc9f661278996bee425cf}} 
+\index{header.h@{header.h}!t\_cases@{t\_cases}}
+\index{t\_cases@{t\_cases}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{t\_cases}{t\_cases}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structcases}{cases}} \mbox{\hyperlink{header_8h_a4c5d991f24fcc9f661278996bee425cf}{t\+\_\+cases}}}
+
+\mbox{\Hypertarget{header_8h_a8b7c0ab3e1974f08898b7049dbdb69e5}\label{header_8h_a8b7c0ab3e1974f08898b7049dbdb69e5}} 
+\index{header.h@{header.h}!t\_classe@{t\_classe}}
+\index{t\_classe@{t\_classe}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{t\_classe}{t\_classe}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structclasse}{classe}} \mbox{\hyperlink{header_8h_a8b7c0ab3e1974f08898b7049dbdb69e5}{t\+\_\+classe}}}
+
+\mbox{\Hypertarget{header_8h_a3e417dda93856044faf7542bf6c70682}\label{header_8h_a3e417dda93856044faf7542bf6c70682}} 
+\index{header.h@{header.h}!t\_joueur@{t\_joueur}}
+\index{t\_joueur@{t\_joueur}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{t\_joueur}{t\_joueur}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structjoueur}{joueur}} \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}
+
+\mbox{\Hypertarget{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}\label{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}} 
+\index{header.h@{header.h}!t\_sorts@{t\_sorts}}
+\index{t\_sorts@{t\_sorts}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{t\_sorts}{t\_sorts}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structsorts}{sorts}} \mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}
+
+
+
+Declaration des biblioth{\ucr}ques. 
+
+Declaration des structures 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{header_8h_a952b06ff7a85255c698c0cf16a13cc52}\label{header_8h_a952b06ff7a85255c698c0cf16a13cc52}} 
+\index{header.h@{header.h}!affichage\_profil@{affichage\_profil}}
+\index{affichage\_profil@{affichage\_profil}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{affichage\_profil()}{affichage\_profil()}}
+{\footnotesize\ttfamily void affichage\+\_\+profil (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{tab\mbox{[}$\,$\mbox{]},  }\item[{int}]{nbJ,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a6c074c85d88f526c0876ef831110fd51}\label{header_8h_a6c074c85d88f526c0876ef831110fd51}} 
+\index{header.h@{header.h}!AffichageBouton@{AffichageBouton}}
+\index{AffichageBouton@{AffichageBouton}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{AffichageBouton()}{AffichageBouton()}}
+{\footnotesize\ttfamily void Affichage\+Bouton (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{bouton,  }\item[{BITMAP $\ast$}]{bouton\+Inv,  }\item[{BITMAP $\ast$}]{page,  }\item[{int}]{sourcex,  }\item[{int}]{sourcey,  }\item[{int}]{destx,  }\item[{int}]{desty,  }\item[{int}]{longueur,  }\item[{int}]{hauteur }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_ae479b4b6bb4a2ac35544035a04d9e977}\label{header_8h_ae479b4b6bb4a2ac35544035a04d9e977}} 
+\index{header.h@{header.h}!AffichageSorts@{AffichageSorts}}
+\index{AffichageSorts@{AffichageSorts}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{AffichageSorts()}{AffichageSorts()}}
+{\footnotesize\ttfamily void Affichage\+Sorts (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{bouton,  }\item[{BITMAP $\ast$}]{bouton\+Inv,  }\item[{BITMAP $\ast$}]{infos,  }\item[{BITMAP $\ast$}]{page,  }\item[{int}]{sourcex,  }\item[{int}]{sourcey,  }\item[{int}]{destx,  }\item[{int}]{desty,  }\item[{int}]{longueur,  }\item[{int}]{hauteur,  }\item[{int}]{hauteurinfos,  }\item[{int}]{longueurinfos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a84ad03893ba4eb2edeb2842cd7591299}\label{header_8h_a84ad03893ba4eb2edeb2842cd7591299}} 
+\index{header.h@{header.h}!AffichageSorts2@{AffichageSorts2}}
+\index{AffichageSorts2@{AffichageSorts2}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{AffichageSorts2()}{AffichageSorts2()}}
+{\footnotesize\ttfamily void Affichage\+Sorts2 (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{bouton,  }\item[{BITMAP $\ast$}]{bouton\+Inv,  }\item[{BITMAP $\ast$}]{infos,  }\item[{BITMAP $\ast$}]{page,  }\item[{int}]{sourcex,  }\item[{int}]{sourcey,  }\item[{int}]{destx,  }\item[{int}]{desty,  }\item[{int}]{longueur,  }\item[{int}]{hauteur,  }\item[{int}]{longueurinfos,  }\item[{int}]{hauteurinfos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_ab0712e522820c13f68267a13f57aabbb}\label{header_8h_ab0712e522820c13f68267a13f57aabbb}} 
+\index{header.h@{header.h}!afficher\_arbre@{afficher\_arbre}}
+\index{afficher\_arbre@{afficher\_arbre}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_arbre()}{afficher\_arbre()}}
+{\footnotesize\ttfamily void afficher\+\_\+arbre (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a01984adf09bfcdbf1d1dcc10471d8fb8}\label{header_8h_a01984adf09bfcdbf1d1dcc10471d8fb8}} 
+\index{header.h@{header.h}!afficher\_attaque\_alakazam@{afficher\_attaque\_alakazam}}
+\index{afficher\_attaque\_alakazam@{afficher\_attaque\_alakazam}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_attaque\_alakazam()}{afficher\_attaque\_alakazam()}}
+{\footnotesize\ttfamily void afficher\+\_\+attaque\+\_\+alakazam (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_abc764c4e6af6f606f1da3b18512ae5fe}\label{header_8h_abc764c4e6af6f606f1da3b18512ae5fe}} 
+\index{header.h@{header.h}!afficher\_attaque\_lucario@{afficher\_attaque\_lucario}}
+\index{afficher\_attaque\_lucario@{afficher\_attaque\_lucario}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_attaque\_lucario()}{afficher\_attaque\_lucario()}}
+{\footnotesize\ttfamily void afficher\+\_\+attaque\+\_\+lucario (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a082b8685174f689d5002889041513895}\label{header_8h_a082b8685174f689d5002889041513895}} 
+\index{header.h@{header.h}!afficher\_attaque\_pikachu@{afficher\_attaque\_pikachu}}
+\index{afficher\_attaque\_pikachu@{afficher\_attaque\_pikachu}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_attaque\_pikachu()}{afficher\_attaque\_pikachu()}}
+{\footnotesize\ttfamily void afficher\+\_\+attaque\+\_\+pikachu (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_afa4f9523e8083318467dd5e607396970}\label{header_8h_afa4f9523e8083318467dd5e607396970}} 
+\index{header.h@{header.h}!afficher\_attaque\_rondoudou@{afficher\_attaque\_rondoudou}}
+\index{afficher\_attaque\_rondoudou@{afficher\_attaque\_rondoudou}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_attaque\_rondoudou()}{afficher\_attaque\_rondoudou()}}
+{\footnotesize\ttfamily void afficher\+\_\+attaque\+\_\+rondoudou (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a9ab11a1ad716b7abc08e9358a6b4bf03}\label{header_8h_a9ab11a1ad716b7abc08e9358a6b4bf03}} 
+\index{header.h@{header.h}!afficher\_attaque\_ronflex@{afficher\_attaque\_ronflex}}
+\index{afficher\_attaque\_ronflex@{afficher\_attaque\_ronflex}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_attaque\_ronflex()}{afficher\_attaque\_ronflex()}}
+{\footnotesize\ttfamily void afficher\+\_\+attaque\+\_\+ronflex (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_aa2f8fe16757ba2992a7a0c6c9d62f0d8}\label{header_8h_aa2f8fe16757ba2992a7a0c6c9d62f0d8}} 
+\index{header.h@{header.h}!afficher\_cases\_dispo\_joueur@{afficher\_cases\_dispo\_joueur}}
+\index{afficher\_cases\_dispo\_joueur@{afficher\_cases\_dispo\_joueur}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_cases\_dispo\_joueur()}{afficher\_cases\_dispo\_joueur()}}
+{\footnotesize\ttfamily void afficher\+\_\+cases\+\_\+dispo\+\_\+joueur (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{pm,  }\item[{int}]{tableau\+\_\+cases\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{tableau\+\_\+a\+\_\+rendre\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{tab\+Joueur\mbox{[}$\,$\mbox{]},  }\item[{int}]{nb\+Joueur,  }\item[{int}]{indice }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{header_8h_aa2f8fe16757ba2992a7a0c6c9d62f0d8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a288aa4b6d1f7ca9d289c668642c461ce}\label{header_8h_a288aa4b6d1f7ca9d289c668642c461ce}} 
+\index{header.h@{header.h}!afficher\_cases\_non\_obstacles@{afficher\_cases\_non\_obstacles}}
+\index{afficher\_cases\_non\_obstacles@{afficher\_cases\_non\_obstacles}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_cases\_non\_obstacles()}{afficher\_cases\_non\_obstacles()}}
+{\footnotesize\ttfamily void afficher\+\_\+cases\+\_\+non\+\_\+obstacles (\begin{DoxyParamCaption}\item[{int}]{tab\+\_\+cases\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{header_8h_a288aa4b6d1f7ca9d289c668642c461ce_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a439c3fbd0381223cae750552d0ea8d08}\label{header_8h_a439c3fbd0381223cae750552d0ea8d08}} 
+\index{header.h@{header.h}!afficher\_chemin@{afficher\_chemin}}
+\index{afficher\_chemin@{afficher\_chemin}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_chemin()}{afficher\_chemin()}}
+{\footnotesize\ttfamily void afficher\+\_\+chemin (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{tableau\+\_\+a\+\_\+afficher\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{tableau\+\_\+joueur\mbox{[}$\,$\mbox{]},  }\item[{int}]{nombre\+\_\+joueur,  }\item[{int}]{indice\+\_\+joueur }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{header_8h_a439c3fbd0381223cae750552d0ea8d08_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a1c1c57591427d50d39116db9cb6f53f8}\label{header_8h_a1c1c57591427d50d39116db9cb6f53f8}} 
+\index{header.h@{header.h}!afficher\_commande@{afficher\_commande}}
+\index{afficher\_commande@{afficher\_commande}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_commande()}{afficher\_commande()}}
+{\footnotesize\ttfamily void afficher\+\_\+commande (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{tab\mbox{[}$\,$\mbox{]},  }\item[{int}]{nbJ,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{header_8h_a1c1c57591427d50d39116db9cb6f53f8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_ab41fe4f65333c5f7fe7f630f133ac284}\label{header_8h_ab41fe4f65333c5f7fe7f630f133ac284}} 
+\index{header.h@{header.h}!afficher\_coordonnees@{afficher\_coordonnees}}
+\index{afficher\_coordonnees@{afficher\_coordonnees}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_coordonnees()}{afficher\_coordonnees()}}
+{\footnotesize\ttfamily void afficher\+\_\+coordonnees (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_ac133d7f50b2c99d6eff2c4f3a8359664}\label{header_8h_ac133d7f50b2c99d6eff2c4f3a8359664}} 
+\index{header.h@{header.h}!afficher\_deplacement\_plus\_court@{afficher\_deplacement\_plus\_court}}
+\index{afficher\_deplacement\_plus\_court@{afficher\_deplacement\_plus\_court}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_deplacement\_plus\_court()}{afficher\_deplacement\_plus\_court()}}
+{\footnotesize\ttfamily void afficher\+\_\+deplacement\+\_\+plus\+\_\+court (\begin{DoxyParamCaption}\item[{int}]{tableau\+\_\+case\+\_\+dispo\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{x\+\_\+souris,  }\item[{int}]{y\+\_\+souris,  }\item[{int}]{tableau\+\_\+a\+\_\+rendre\mbox{[}18\mbox{]}\mbox{[}36\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a2cdf33c73b720ed1c35435269192e195}\label{header_8h_a2cdf33c73b720ed1c35435269192e195}} 
+\index{header.h@{header.h}!afficher\_lac@{afficher\_lac}}
+\index{afficher\_lac@{afficher\_lac}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_lac()}{afficher\_lac()}}
+{\footnotesize\ttfamily void afficher\+\_\+lac (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a6810b15bfad1f5d0007080bb1a5b10c5}\label{header_8h_a6810b15bfad1f5d0007080bb1a5b10c5}} 
+\index{header.h@{header.h}!afficher\_map@{afficher\_map}}
+\index{afficher\_map@{afficher\_map}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_map()}{afficher\_map()}}
+{\footnotesize\ttfamily void afficher\+\_\+map (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_aa05314aa6d69e4ced5a2f5df6afbb75a}\label{header_8h_aa05314aa6d69e4ced5a2f5df6afbb75a}} 
+\index{header.h@{header.h}!afficher\_personnage\_alakazam@{afficher\_personnage\_alakazam}}
+\index{afficher\_personnage\_alakazam@{afficher\_personnage\_alakazam}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_personnage\_alakazam()}{afficher\_personnage\_alakazam()}}
+{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+alakazam (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a32e1ccd53c5f1e9230f0bfd3b9c77190}\label{header_8h_a32e1ccd53c5f1e9230f0bfd3b9c77190}} 
+\index{header.h@{header.h}!afficher\_personnage\_lucario@{afficher\_personnage\_lucario}}
+\index{afficher\_personnage\_lucario@{afficher\_personnage\_lucario}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_personnage\_lucario()}{afficher\_personnage\_lucario()}}
+{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+lucario (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a317e8be237fe970fc979f1c958473162}\label{header_8h_a317e8be237fe970fc979f1c958473162}} 
+\index{header.h@{header.h}!afficher\_personnage\_pikachu@{afficher\_personnage\_pikachu}}
+\index{afficher\_personnage\_pikachu@{afficher\_personnage\_pikachu}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_personnage\_pikachu()}{afficher\_personnage\_pikachu()}}
+{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+pikachu (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a187b2d06c58648db5061bbda2b5efe6e}\label{header_8h_a187b2d06c58648db5061bbda2b5efe6e}} 
+\index{header.h@{header.h}!afficher\_personnage\_rondoudou@{afficher\_personnage\_rondoudou}}
+\index{afficher\_personnage\_rondoudou@{afficher\_personnage\_rondoudou}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_personnage\_rondoudou()}{afficher\_personnage\_rondoudou()}}
+{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+rondoudou (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a34fc19a91831c7c4b0a2b9af8cf3819d}\label{header_8h_a34fc19a91831c7c4b0a2b9af8cf3819d}} 
+\index{header.h@{header.h}!afficher\_personnage\_ronflex@{afficher\_personnage\_ronflex}}
+\index{afficher\_personnage\_ronflex@{afficher\_personnage\_ronflex}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_personnage\_ronflex()}{afficher\_personnage\_ronflex()}}
+{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+ronflex (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a1e1048cffbe1bd6b8c2f5119b7bfd449}\label{header_8h_a1e1048cffbe1bd6b8c2f5119b7bfd449}} 
+\index{header.h@{header.h}!afficher\_tout\_arbre@{afficher\_tout\_arbre}}
+\index{afficher\_tout\_arbre@{afficher\_tout\_arbre}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_tout\_arbre()}{afficher\_tout\_arbre()}}
+{\footnotesize\ttfamily void afficher\+\_\+tout\+\_\+arbre (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{matrice\+\_\+arbre\mbox{[}18\mbox{]}\mbox{[}36\mbox{]} }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{header_8h_a1e1048cffbe1bd6b8c2f5119b7bfd449_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_aa6112d3e462c592863ea736a3824775e}\label{header_8h_aa6112d3e462c592863ea736a3824775e}} 
+\index{header.h@{header.h}!attaque\_Pikachu@{attaque\_Pikachu}}
+\index{attaque\_Pikachu@{attaque\_Pikachu}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{attaque\_Pikachu()}{attaque\_Pikachu()}}
+{\footnotesize\ttfamily void attaque\+\_\+\+Pikachu (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a5326787611be11aeaffb1d87498cd976}\label{header_8h_a5326787611be11aeaffb1d87498cd976}} 
+\index{header.h@{header.h}!casebleu@{casebleu}}
+\index{casebleu@{casebleu}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{casebleu()}{casebleu()}}
+{\footnotesize\ttfamily void casebleu (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{posy,  }\item[{int}]{posx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_ae7cbc0c1beee6306de9ca8e025e1d96d}\label{header_8h_ae7cbc0c1beee6306de9ca8e025e1d96d}} 
+\index{header.h@{header.h}!casebleu\_foncee@{casebleu\_foncee}}
+\index{casebleu\_foncee@{casebleu\_foncee}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{casebleu\_foncee()}{casebleu\_foncee()}}
+{\footnotesize\ttfamily void casebleu\+\_\+foncee (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{posy,  }\item[{int}]{posx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a4f43be17644b1544a80bd4f2188c410c}\label{header_8h_a4f43be17644b1544a80bd4f2188c410c}} 
+\index{header.h@{header.h}!caserouge@{caserouge}}
+\index{caserouge@{caserouge}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{caserouge()}{caserouge()}}
+{\footnotesize\ttfamily void caserouge (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{posx,  }\item[{int}]{posy }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{header_8h_a4f43be17644b1544a80bd4f2188c410c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a5ab1e014765882dd89cebab874f7694b}\label{header_8h_a5ab1e014765882dd89cebab874f7694b}} 
+\index{header.h@{header.h}!changement\_case\_souris@{changement\_case\_souris}}
+\index{changement\_case\_souris@{changement\_case\_souris}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{changement\_case\_souris()}{changement\_case\_souris()}}
+{\footnotesize\ttfamily void changement\+\_\+case\+\_\+souris (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{x\+\_\+souris,  }\item[{int}]{y\+\_\+souris,  }\item[{int $\ast$}]{case\+\_\+x,  }\item[{int $\ast$}]{case\+\_\+y,  }\item[{int}]{tableau\+\_\+case\+\_\+dispo\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{tableau\+\_\+chemin\+\_\+court\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{header_8h_a5ab1e014765882dd89cebab874f7694b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_ab3bb8554c74f95f95f566417c8769ecd}\label{header_8h_ab3bb8554c74f95f95f566417c8769ecd}} 
+\index{header.h@{header.h}!classement2J@{classement2J}}
+\index{classement2J@{classement2J}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{classement2J()}{classement2J()}}
+{\footnotesize\ttfamily void classement2J (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueurG,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur\+P1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a58e8538d70a1a103ce630254713ccff9}\label{header_8h_a58e8538d70a1a103ce630254713ccff9}} 
+\index{header.h@{header.h}!classement3J@{classement3J}}
+\index{classement3J@{classement3J}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{classement3J()}{classement3J()}}
+{\footnotesize\ttfamily void classement3J (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueurG,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur\+P1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur\+P2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a54672d1ff6fdd918bd9c11fd392f0164}\label{header_8h_a54672d1ff6fdd918bd9c11fd392f0164}} 
+\index{header.h@{header.h}!classement4J@{classement4J}}
+\index{classement4J@{classement4J}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{classement4J()}{classement4J()}}
+{\footnotesize\ttfamily void classement4J (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueurG,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur\+P1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur\+P2,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur\+P3 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_ab37b6e34230aa3e1039a7629081fedc0}\label{header_8h_ab37b6e34230aa3e1039a7629081fedc0}} 
+\index{header.h@{header.h}!commande\_pokemon@{commande\_pokemon}}
+\index{commande\_pokemon@{commande\_pokemon}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{commande\_pokemon()}{commande\_pokemon()}}
+{\footnotesize\ttfamily void commande\+\_\+pokemon (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur\mbox{[}$\,$\mbox{]},  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{header_8h_ab37b6e34230aa3e1039a7629081fedc0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a4dcf40adb64ba1106af935980c551fb7}\label{header_8h_a4dcf40adb64ba1106af935980c551fb7}} 
+\index{header.h@{header.h}!copier\_tableau\_case@{copier\_tableau\_case}}
+\index{copier\_tableau\_case@{copier\_tableau\_case}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{copier\_tableau\_case()}{copier\_tableau\_case()}}
+{\footnotesize\ttfamily void copier\+\_\+tableau\+\_\+case (\begin{DoxyParamCaption}\item[{int}]{tableau\+\_\+source\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{tableau\+\_\+destination\mbox{[}18\mbox{]}\mbox{[}36\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a6686f0c8e8186d8d22b5a707b157279a}\label{header_8h_a6686f0c8e8186d8d22b5a707b157279a}} 
+\index{header.h@{header.h}!demande\_placement@{demande\_placement}}
+\index{demande\_placement@{demande\_placement}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{demande\_placement()}{demande\_placement()}}
+{\footnotesize\ttfamily void demande\+\_\+placement (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueur,  }\item[{int}]{tableau\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{tab\+\_\+arbres\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{tab\+Joueur\mbox{[}$\,$\mbox{]},  }\item[{int}]{indice }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{header_8h_a6686f0c8e8186d8d22b5a707b157279a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_ae6e2d42f66ef1867da14fb0cd952a96e}\label{header_8h_ae6e2d42f66ef1867da14fb0cd952a96e}} 
+\index{header.h@{header.h}!deplacement\_joueur@{deplacement\_joueur}}
+\index{deplacement\_joueur@{deplacement\_joueur}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{deplacement\_joueur()}{deplacement\_joueur()}}
+{\footnotesize\ttfamily void deplacement\+\_\+joueur (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{indice\+\_\+ligne\+\_\+ini,  }\item[{int}]{indice\+\_\+colonne\+\_\+ini,  }\item[{int}]{personnage,  }\item[{int}]{tableau\+\_\+chemin\+\_\+court\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{tableau\+\_\+affichage\+\_\+arbre\mbox{[}18\mbox{]}\mbox{[}32\mbox{]},  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{tableau\+\_\+joueur\mbox{[}$\,$\mbox{]},  }\item[{int}]{nombre\+\_\+joueur,  }\item[{int}]{indice\+\_\+joueur }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{header_8h_ae6e2d42f66ef1867da14fb0cd952a96e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_ad3cf45f452e9b57ed1532052c1d3ab86}\label{header_8h_ad3cf45f452e9b57ed1532052c1d3ab86}} 
+\index{header.h@{header.h}!information\_Alakazam@{information\_Alakazam}}
+\index{information\_Alakazam@{information\_Alakazam}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{information\_Alakazam()}{information\_Alakazam()}}
+{\footnotesize\ttfamily void information\+\_\+\+Alakazam (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{header_8h_ad3cf45f452e9b57ed1532052c1d3ab86_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a0080df4e61564bda894844ff467e6014}\label{header_8h_a0080df4e61564bda894844ff467e6014}} 
+\index{header.h@{header.h}!information\_Lucario@{information\_Lucario}}
+\index{information\_Lucario@{information\_Lucario}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{information\_Lucario()}{information\_Lucario()}}
+{\footnotesize\ttfamily void information\+\_\+\+Lucario (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{header_8h_a0080df4e61564bda894844ff467e6014_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a6df547fff87c5f3280f9e67de56d3928}\label{header_8h_a6df547fff87c5f3280f9e67de56d3928}} 
+\index{header.h@{header.h}!information\_Pikachu@{information\_Pikachu}}
+\index{information\_Pikachu@{information\_Pikachu}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{information\_Pikachu()}{information\_Pikachu()}}
+{\footnotesize\ttfamily void information\+\_\+\+Pikachu (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{header_8h_a6df547fff87c5f3280f9e67de56d3928_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_ac3affb88bc661ff840f77f883b8979cc}\label{header_8h_ac3affb88bc661ff840f77f883b8979cc}} 
+\index{header.h@{header.h}!information\_Rondoudou@{information\_Rondoudou}}
+\index{information\_Rondoudou@{information\_Rondoudou}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{information\_Rondoudou()}{information\_Rondoudou()}}
+{\footnotesize\ttfamily void information\+\_\+\+Rondoudou (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{header_8h_ac3affb88bc661ff840f77f883b8979cc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_ae5d218bb0b78ec8cb412b0f28c96a09e}\label{header_8h_ae5d218bb0b78ec8cb412b0f28c96a09e}} 
+\index{header.h@{header.h}!information\_Ronflex@{information\_Ronflex}}
+\index{information\_Ronflex@{information\_Ronflex}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{information\_Ronflex()}{information\_Ronflex()}}
+{\footnotesize\ttfamily void information\+\_\+\+Ronflex (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{header_8h_ae5d218bb0b78ec8cb412b0f28c96a09e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_abea32f881116ef84f63fcddc375312ea}\label{header_8h_abea32f881116ef84f63fcddc375312ea}} 
+\index{header.h@{header.h}!initialisationAllegro@{initialisationAllegro}}
+\index{initialisationAllegro@{initialisationAllegro}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{initialisationAllegro()}{initialisationAllegro()}}
+{\footnotesize\ttfamily void initialisation\+Allegro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Declaration des prototypes des sous programmes. 
+
+\mbox{\Hypertarget{header_8h_a78442cd1056159c1f7211e232af284d9}\label{header_8h_a78442cd1056159c1f7211e232af284d9}} 
+\index{header.h@{header.h}!lancerSort@{lancerSort}}
+\index{lancerSort@{lancerSort}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{lancerSort()}{lancerSort()}}
+{\footnotesize\ttfamily void lancer\+Sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{tab\+Joueurs\mbox{[}$\,$\mbox{]},  }\item[{int}]{nombre\+Joueur,  }\item[{int}]{tour\+Joueur,  }\item[{BITMAP $\ast$}]{page,  }\item[{int}]{tab\mbox{[}18\mbox{]}\mbox{[}36\mbox{]} }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{header_8h_a78442cd1056159c1f7211e232af284d9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a9f09b95b3f2d1cf78fb6ef0634ec4277}\label{header_8h_a9f09b95b3f2d1cf78fb6ef0634ec4277}} 
+\index{header.h@{header.h}!menu\_classes@{menu\_classes}}
+\index{menu\_classes@{menu\_classes}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{menu\_classes()}{menu\_classes()}}
+{\footnotesize\ttfamily void menu\+\_\+classes (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{classe1,  }\item[{BITMAP $\ast$}]{classe2,  }\item[{BITMAP $\ast$}]{classe3,  }\item[{BITMAP $\ast$}]{classe4,  }\item[{BITMAP $\ast$}]{classe5,  }\item[{BITMAP $\ast$}]{page,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{violet\+City,  }\item[{SAMPLE $\ast$}]{musique\+Fond,  }\item[{int}]{nb\+Joueur,  }\item[{int}]{tab\+Cases\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{t }\end{DoxyParamCaption})}
+
+Déclaration sorts
+
+Déclaration des BITMAP
+
+Affichage des pok{\ucr}mons
+
+Affichage nom des pok{\ucr}mons
+
+Affichage bouton infosHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{header_8h_a9f09b95b3f2d1cf78fb6ef0634ec4277_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a734c0863e3646e03819095278e02918d}\label{header_8h_a734c0863e3646e03819095278e02918d}} 
+\index{header.h@{header.h}!menu\_pause@{menu\_pause}}
+\index{menu\_pause@{menu\_pause}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{menu\_pause()}{menu\_pause()}}
+{\footnotesize\ttfamily void menu\+\_\+pause (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_ab6adbce81780ca6469b952558a5f8e77}\label{header_8h_ab6adbce81780ca6469b952558a5f8e77}} 
+\index{header.h@{header.h}!menuJeu@{menuJeu}}
+\index{menuJeu@{menuJeu}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{menuJeu()}{menuJeu()}}
+{\footnotesize\ttfamily void menu\+Jeu (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond,  }\item[{BITMAP $\ast$}]{logo }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{header_8h_ab6adbce81780ca6469b952558a5f8e77_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a3535848b79eba86b4fbe6c5ca9b0044d}\label{header_8h_a3535848b79eba86b4fbe6c5ca9b0044d}} 
+\index{header.h@{header.h}!menuNbJoueur@{menuNbJoueur}}
+\index{menuNbJoueur@{menuNbJoueur}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{menuNbJoueur()}{menuNbJoueur()}}
+{\footnotesize\ttfamily void menu\+Nb\+Joueur (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond,  }\item[{BITMAP $\ast$}]{logo,  }\item[{int $\ast$}]{violet\+City }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{header_8h_a3535848b79eba86b4fbe6c5ca9b0044d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_abfba72c80d3cc019576e9631d9eae63e}\label{header_8h_abfba72c80d3cc019576e9631d9eae63e}} 
+\index{header.h@{header.h}!ordreJoueurs@{ordreJoueurs}}
+\index{ordreJoueurs@{ordreJoueurs}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{ordreJoueurs()}{ordreJoueurs()}}
+{\footnotesize\ttfamily void ordre\+Joueurs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{ordre\+Joueur\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{tab\+Joueur\mbox{[}$\,$\mbox{]},  }\item[{int}]{nbr\+Joueur }\end{DoxyParamCaption})}
+
+D�claration des variables\mbox{\Hypertarget{header_8h_a45805ddb3ce1a68e5071cff3463f428d}\label{header_8h_a45805ddb3ce1a68e5071cff3463f428d}} 
+\index{header.h@{header.h}!phrases@{phrases}}
+\index{phrases@{phrases}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{phrases()}{phrases()}}
+{\footnotesize\ttfamily void phrases (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{int}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a823a89cbb39c49684c89addb86b002b6}\label{header_8h_a823a89cbb39c49684c89addb86b002b6}} 
+\index{header.h@{header.h}!remettre\_case\_obstacle@{remettre\_case\_obstacle}}
+\index{remettre\_case\_obstacle@{remettre\_case\_obstacle}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{remettre\_case\_obstacle()}{remettre\_case\_obstacle()}}
+{\footnotesize\ttfamily void remettre\+\_\+case\+\_\+obstacle (\begin{DoxyParamCaption}\item[{int}]{matrice\+\_\+\+A\+\_\+\+Modifier\mbox{[}18\mbox{]}\mbox{[}36\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_ac7dfe0178da1524d969eaa71d24c3ca5}\label{header_8h_ac7dfe0178da1524d969eaa71d24c3ca5}} 
+\index{header.h@{header.h}!Saisir\_nom@{Saisir\_nom}}
+\index{Saisir\_nom@{Saisir\_nom}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{Saisir\_nom()}{Saisir\_nom()}}
+{\footnotesize\ttfamily void Saisir\+\_\+nom (\begin{DoxyParamCaption}\item[{char}]{nom\+\_\+joueur\mbox{[}15\mbox{]},  }\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{header_8h_ac7dfe0178da1524d969eaa71d24c3ca5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a0ce02801e0ebb20c6d87064a70115ad2}\label{header_8h_a0ce02801e0ebb20c6d87064a70115ad2}} 
+\index{header.h@{header.h}!sortAttaque2J@{sortAttaque2J}}
+\index{sortAttaque2J@{sortAttaque2J}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{sortAttaque2J()}{sortAttaque2J()}}
+{\footnotesize\ttfamily void sort\+Attaque2J (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurB,  }\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
+
+Attaque en zone
+
+Afficher joueurA
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurB
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Attaque en ligne droite
+
+Afficher joueurA
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurB
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+RondoudouHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{header_8h_a0ce02801e0ebb20c6d87064a70115ad2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a8cadcf720fc99b309d2a47ce1d3dad61}\label{header_8h_a8cadcf720fc99b309d2a47ce1d3dad61}} 
+\index{header.h@{header.h}!sortAttaque3J@{sortAttaque3J}}
+\index{sortAttaque3J@{sortAttaque3J}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{sortAttaque3J()}{sortAttaque3J()}}
+{\footnotesize\ttfamily void sort\+Attaque3J (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurB,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurC,  }\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
+
+Attaque en zone
+
+Afficher joueurA
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurB
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurC
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Attaque en ligne droite
+
+Afficher joueurA
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurB
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurC
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+RondoudouHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{header_8h_a8cadcf720fc99b309d2a47ce1d3dad61_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a5e06244e31f20a4a26e4fd99e97b8fae}\label{header_8h_a5e06244e31f20a4a26e4fd99e97b8fae}} 
+\index{header.h@{header.h}!sortAttaque4J@{sortAttaque4J}}
+\index{sortAttaque4J@{sortAttaque4J}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{sortAttaque4J()}{sortAttaque4J()}}
+{\footnotesize\ttfamily void sort\+Attaque4J (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurB,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurC,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurD,  }\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
+
+Attaque en zone
+
+Afficher joueurA
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurB
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurC
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurD
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Attaque en ligne droite
+
+Afficher joueurA
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurB
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurC
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurD
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+RondoudouHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{header_8h_a5e06244e31f20a4a26e4fd99e97b8fae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a19c71b1ec2c163de14147a68ecd94ae2}\label{header_8h_a19c71b1ec2c163de14147a68ecd94ae2}} 
+\index{header.h@{header.h}!sortMouvement@{sortMouvement}}
+\index{sortMouvement@{sortMouvement}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{sortMouvement()}{sortMouvement()}}
+{\footnotesize\ttfamily void sort\+Mouvement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{BITMAP $\ast$}]{page,  }\item[{int}]{tab\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{nb\+Joueurs,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{tab\+Joueur\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{header_8h_a19c71b1ec2c163de14147a68ecd94ae2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a4b2a23ed704814cbb431ed5986f795be}\label{header_8h_a4b2a23ed704814cbb431ed5986f795be}} 
+\index{header.h@{header.h}!sortSoin2J@{sortSoin2J}}
+\index{sortSoin2J@{sortSoin2J}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{sortSoin2J()}{sortSoin2J()}}
+{\footnotesize\ttfamily void sort\+Soin2J (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurB,  }\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
+
+Afficher joueurA
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurB
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+RondoudouHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{header_8h_a4b2a23ed704814cbb431ed5986f795be_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a7f205c49612277da36dd239532161b97}\label{header_8h_a7f205c49612277da36dd239532161b97}} 
+\index{header.h@{header.h}!sortSoin3J@{sortSoin3J}}
+\index{sortSoin3J@{sortSoin3J}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{sortSoin3J()}{sortSoin3J()}}
+{\footnotesize\ttfamily void sort\+Soin3J (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurB,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurC,  }\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
+
+Afficher joueurA
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurB
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurC
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+RondoudouHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{header_8h_a7f205c49612277da36dd239532161b97_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a378d7d9c6a515a23a4fd2cec4358076b}\label{header_8h_a378d7d9c6a515a23a4fd2cec4358076b}} 
+\index{header.h@{header.h}!sortSoin4J@{sortSoin4J}}
+\index{sortSoin4J@{sortSoin4J}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{sortSoin4J()}{sortSoin4J()}}
+{\footnotesize\ttfamily void sort\+Soin4J (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurB,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurC,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurD,  }\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
+
+Afficher joueurA
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurB
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurC
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurD
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+RondoudouHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{header_8h_a378d7d9c6a515a23a4fd2cec4358076b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a91a3b8bd39f5b4e4d1ee00d331f2a92d}\label{header_8h_a91a3b8bd39f5b4e4d1ee00d331f2a92d}} 
+\index{header.h@{header.h}!sortStatut2J@{sortStatut2J}}
+\index{sortStatut2J@{sortStatut2J}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{sortStatut2J()}{sortStatut2J()}}
+{\footnotesize\ttfamily void sort\+Statut2J (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurB,  }\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
+
+Afficher joueurA
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurB
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+RondoudouHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{header_8h_a91a3b8bd39f5b4e4d1ee00d331f2a92d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a1faf448257f964ee6f74a41d6f8dc99a}\label{header_8h_a1faf448257f964ee6f74a41d6f8dc99a}} 
+\index{header.h@{header.h}!sortStatut3J@{sortStatut3J}}
+\index{sortStatut3J@{sortStatut3J}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{sortStatut3J()}{sortStatut3J()}}
+{\footnotesize\ttfamily void sort\+Statut3J (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurB,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurC,  }\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
+
+Afficher joueurA
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurB
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurC
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+RondoudouHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{header_8h_a1faf448257f964ee6f74a41d6f8dc99a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a5c4b4ff92fa943af851756598de55f1a}\label{header_8h_a5c4b4ff92fa943af851756598de55f1a}} 
+\index{header.h@{header.h}!sortStatut4J@{sortStatut4J}}
+\index{sortStatut4J@{sortStatut4J}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{sortStatut4J()}{sortStatut4J()}}
+{\footnotesize\ttfamily void sort\+Statut4J (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurB,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurC,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurD,  }\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
+
+Afficher joueurA
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurB
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurC
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Afficher joueurD
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+RondoudouHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{header_8h_a5c4b4ff92fa943af851756598de55f1a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a9d60aa2c1e1f66bf87139408b746d946}\label{header_8h_a9d60aa2c1e1f66bf87139408b746d946}} 
+\index{header.h@{header.h}!sortVie@{sortVie}}
+\index{sortVie@{sortVie}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{sortVie()}{sortVie()}}
+{\footnotesize\ttfamily void sort\+Vie (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{header_8h_a9d60aa2c1e1f66bf87139408b746d946_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{header_8h_a132ef4c0ca9e66c3e4bee1451c1d463f}\label{header_8h_a132ef4c0ca9e66c3e4bee1451c1d463f}} 
+\index{header.h@{header.h}!test\_clique@{test\_clique}}
+\index{test\_clique@{test\_clique}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{test\_clique()}{test\_clique()}}
+{\footnotesize\ttfamily int test\+\_\+clique (\begin{DoxyParamCaption}\item[{int}]{destx,  }\item[{int}]{desty,  }\item[{int}]{longueur,  }\item[{int}]{hauteur,  }\item[{char}]{lettre,  }\item[{int}]{compteur,  }\item[{char}]{pseudo\mbox{[}15\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a7a424d5372c1fa56f672fab7a8ce0531}\label{header_8h_a7a424d5372c1fa56f672fab7a8ce0531}} 
+\index{header.h@{header.h}!test\_clique\_Entree@{test\_clique\_Entree}}
+\index{test\_clique\_Entree@{test\_clique\_Entree}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{test\_clique\_Entree()}{test\_clique\_Entree()}}
+{\footnotesize\ttfamily int test\+\_\+clique\+\_\+\+Entree (\begin{DoxyParamCaption}\item[{int}]{destx,  }\item[{int}]{desty,  }\item[{int}]{longueur,  }\item[{int}]{hauteur,  }\item[{int}]{boule,  }\item[{char}]{pseudo\mbox{[}15\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{header_8h_a53ae418fcb4a387ae6237971f8e3036a}\label{header_8h_a53ae418fcb4a387ae6237971f8e3036a}} 
+\index{header.h@{header.h}!test\_clique\_Suppr@{test\_clique\_Suppr}}
+\index{test\_clique\_Suppr@{test\_clique\_Suppr}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{test\_clique\_Suppr()}{test\_clique\_Suppr()}}
+{\footnotesize\ttfamily int test\+\_\+clique\+\_\+\+Suppr (\begin{DoxyParamCaption}\item[{int}]{destx,  }\item[{int}]{desty,  }\item[{int}]{longueur,  }\item[{int}]{hauteur,  }\item[{int}]{compteur,  }\item[{char}]{pseudo\mbox{[}15\mbox{]} }\end{DoxyParamCaption})}
+
