@@ -4,16 +4,14 @@
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}time.\+h\char`\"{}}\newline
-Include dependency graph for header.\+h\+:
-\nopagebreak
+Include dependency graph for header.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=326pt]{header_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -105,15 +103,15 @@ void \mbox{\hyperlink{header_8h_a4f43be17644b1544a80bd4f2188c410c}{caserouge}} (
 \item 
 void \mbox{\hyperlink{header_8h_a6686f0c8e8186d8d22b5a707b157279a}{demande\+\_\+placement}} (BITMAP $\ast$buffer, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$\mbox{\hyperlink{structjoueur}{joueur}}, int tableau\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, int tab\+\_\+arbres\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} tab\+Joueur\mbox{[}$\,$\mbox{]}, int indice)
 \item 
-void \mbox{\hyperlink{header_8h_a317e8be237fe970fc979f1c958473162}{afficher\+\_\+personnage\+\_\+pikachu}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y)
+void \mbox{\hyperlink{header_8h_a55c88a6e009dabf10b987961f2e7417e}{afficher\+\_\+personnage\+\_\+pikachu}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} \mbox{\hyperlink{structjoueur}{joueur}})
 \item 
-void \mbox{\hyperlink{header_8h_a32e1ccd53c5f1e9230f0bfd3b9c77190}{afficher\+\_\+personnage\+\_\+lucario}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y)
+void \mbox{\hyperlink{header_8h_a9a63e1d6ec1082952b475bfaa9a2f734}{afficher\+\_\+personnage\+\_\+lucario}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} \mbox{\hyperlink{structjoueur}{joueur}})
 \item 
-void \mbox{\hyperlink{header_8h_a34fc19a91831c7c4b0a2b9af8cf3819d}{afficher\+\_\+personnage\+\_\+ronflex}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y)
+void \mbox{\hyperlink{header_8h_adac894545577a61e9a2ea826c2bf9225}{afficher\+\_\+personnage\+\_\+ronflex}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} \mbox{\hyperlink{structjoueur}{joueur}})
 \item 
-void \mbox{\hyperlink{header_8h_a187b2d06c58648db5061bbda2b5efe6e}{afficher\+\_\+personnage\+\_\+rondoudou}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y)
+void \mbox{\hyperlink{header_8h_a74d837556e58eeba98c540ecae102fde}{afficher\+\_\+personnage\+\_\+rondoudou}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} \mbox{\hyperlink{structjoueur}{joueur}})
 \item 
-void \mbox{\hyperlink{header_8h_aa05314aa6d69e4ced5a2f5df6afbb75a}{afficher\+\_\+personnage\+\_\+alakazam}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y)
+void \mbox{\hyperlink{header_8h_a3c8b560c902a5f37d1fcc7a92f35e3a5}{afficher\+\_\+personnage\+\_\+alakazam}} (BITMAP $\ast$buffer, int compteur, int cote, int x, int y, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} \mbox{\hyperlink{structjoueur}{joueur}})
 \item 
 void \mbox{\hyperlink{header_8h_a3535848b79eba86b4fbe6c5ca9b0044d}{menu\+Nb\+Joueur}} (BITMAP $\ast$page, BITMAP $\ast$fond, BITMAP $\ast$logo, int $\ast$violet\+City)
 \item 
@@ -275,8 +273,7 @@ Declaration des structures
 \doxysubsubsection{\texorpdfstring{afficher\_cases\_dispo\_joueur()}{afficher\_cases\_dispo\_joueur()}}
 {\footnotesize\ttfamily void afficher\+\_\+cases\+\_\+dispo\+\_\+joueur (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{pm,  }\item[{int}]{tableau\+\_\+cases\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{tableau\+\_\+a\+\_\+rendre\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{tab\+Joueur\mbox{[}$\,$\mbox{]},  }\item[{int}]{nb\+Joueur,  }\item[{int}]{indice }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -289,8 +286,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{afficher\_cases\_non\_obstacles()}{afficher\_cases\_non\_obstacles()}}
 {\footnotesize\ttfamily void afficher\+\_\+cases\+\_\+non\+\_\+obstacles (\begin{DoxyParamCaption}\item[{int}]{tab\+\_\+cases\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -317,8 +313,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{afficher\_commande()}{afficher\_commande()}}
 {\footnotesize\ttfamily void afficher\+\_\+commande (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{tab\mbox{[}$\,$\mbox{]},  }\item[{int}]{nbJ,  }\item[{int}]{j }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -349,35 +344,35 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{afficher\_map()}{afficher\_map()}}
 {\footnotesize\ttfamily void afficher\+\_\+map (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{header_8h_aa05314aa6d69e4ced5a2f5df6afbb75a}\label{header_8h_aa05314aa6d69e4ced5a2f5df6afbb75a}} 
+\mbox{\Hypertarget{header_8h_a3c8b560c902a5f37d1fcc7a92f35e3a5}\label{header_8h_a3c8b560c902a5f37d1fcc7a92f35e3a5}} 
 \index{header.h@{header.h}!afficher\_personnage\_alakazam@{afficher\_personnage\_alakazam}}
 \index{afficher\_personnage\_alakazam@{afficher\_personnage\_alakazam}!header.h@{header.h}}
 \doxysubsubsection{\texorpdfstring{afficher\_personnage\_alakazam()}{afficher\_personnage\_alakazam()}}
-{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+alakazam (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+alakazam (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{header_8h_a32e1ccd53c5f1e9230f0bfd3b9c77190}\label{header_8h_a32e1ccd53c5f1e9230f0bfd3b9c77190}} 
+\mbox{\Hypertarget{header_8h_a9a63e1d6ec1082952b475bfaa9a2f734}\label{header_8h_a9a63e1d6ec1082952b475bfaa9a2f734}} 
 \index{header.h@{header.h}!afficher\_personnage\_lucario@{afficher\_personnage\_lucario}}
 \index{afficher\_personnage\_lucario@{afficher\_personnage\_lucario}!header.h@{header.h}}
 \doxysubsubsection{\texorpdfstring{afficher\_personnage\_lucario()}{afficher\_personnage\_lucario()}}
-{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+lucario (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+lucario (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{header_8h_a317e8be237fe970fc979f1c958473162}\label{header_8h_a317e8be237fe970fc979f1c958473162}} 
+\mbox{\Hypertarget{header_8h_a55c88a6e009dabf10b987961f2e7417e}\label{header_8h_a55c88a6e009dabf10b987961f2e7417e}} 
 \index{header.h@{header.h}!afficher\_personnage\_pikachu@{afficher\_personnage\_pikachu}}
 \index{afficher\_personnage\_pikachu@{afficher\_personnage\_pikachu}!header.h@{header.h}}
 \doxysubsubsection{\texorpdfstring{afficher\_personnage\_pikachu()}{afficher\_personnage\_pikachu()}}
-{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+pikachu (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+pikachu (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{header_8h_a187b2d06c58648db5061bbda2b5efe6e}\label{header_8h_a187b2d06c58648db5061bbda2b5efe6e}} 
+\mbox{\Hypertarget{header_8h_a74d837556e58eeba98c540ecae102fde}\label{header_8h_a74d837556e58eeba98c540ecae102fde}} 
 \index{header.h@{header.h}!afficher\_personnage\_rondoudou@{afficher\_personnage\_rondoudou}}
 \index{afficher\_personnage\_rondoudou@{afficher\_personnage\_rondoudou}!header.h@{header.h}}
 \doxysubsubsection{\texorpdfstring{afficher\_personnage\_rondoudou()}{afficher\_personnage\_rondoudou()}}
-{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+rondoudou (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+rondoudou (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{header_8h_a34fc19a91831c7c4b0a2b9af8cf3819d}\label{header_8h_a34fc19a91831c7c4b0a2b9af8cf3819d}} 
+\mbox{\Hypertarget{header_8h_adac894545577a61e9a2ea826c2bf9225}\label{header_8h_adac894545577a61e9a2ea826c2bf9225}} 
 \index{header.h@{header.h}!afficher\_personnage\_ronflex@{afficher\_personnage\_ronflex}}
 \index{afficher\_personnage\_ronflex@{afficher\_personnage\_ronflex}!header.h@{header.h}}
 \doxysubsubsection{\texorpdfstring{afficher\_personnage\_ronflex()}{afficher\_personnage\_ronflex()}}
-{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+ronflex (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+personnage\+\_\+ronflex (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{compteur,  }\item[{int}]{cote,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{header_8h_a1e1048cffbe1bd6b8c2f5119b7bfd449}\label{header_8h_a1e1048cffbe1bd6b8c2f5119b7bfd449}} 
 \index{header.h@{header.h}!afficher\_tout\_arbre@{afficher\_tout\_arbre}}
@@ -385,8 +380,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{afficher\_tout\_arbre()}{afficher\_tout\_arbre()}}
 {\footnotesize\ttfamily void afficher\+\_\+tout\+\_\+arbre (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{matrice\+\_\+arbre\mbox{[}18\mbox{]}\mbox{[}36\mbox{]} }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -417,8 +411,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{caserouge()}{caserouge()}}
 {\footnotesize\ttfamily void caserouge (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{posx,  }\item[{int}]{posy }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -431,8 +424,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{changement\_case\_souris()}{changement\_case\_souris()}}
 {\footnotesize\ttfamily void changement\+\_\+case\+\_\+souris (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{x\+\_\+souris,  }\item[{int}]{y\+\_\+souris,  }\item[{int $\ast$}]{case\+\_\+x,  }\item[{int $\ast$}]{case\+\_\+y,  }\item[{int}]{tableau\+\_\+case\+\_\+dispo\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{tableau\+\_\+chemin\+\_\+court\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -463,8 +455,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{commande\_pokemon()}{commande\_pokemon()}}
 {\footnotesize\ttfamily void commande\+\_\+pokemon (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{joueur\mbox{[}$\,$\mbox{]},  }\item[{int}]{j }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -483,8 +474,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{demande\_placement()}{demande\_placement()}}
 {\footnotesize\ttfamily void demande\+\_\+placement (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueur,  }\item[{int}]{tableau\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{tab\+\_\+arbres\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{tab\+Joueur\mbox{[}$\,$\mbox{]},  }\item[{int}]{indice }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -511,8 +501,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{information\_Alakazam()}{information\_Alakazam()}}
 {\footnotesize\ttfamily void information\+\_\+\+Alakazam (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -525,8 +514,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{information\_Lucario()}{information\_Lucario()}}
 {\footnotesize\ttfamily void information\+\_\+\+Lucario (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -539,8 +527,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{information\_Pikachu()}{information\_Pikachu()}}
 {\footnotesize\ttfamily void information\+\_\+\+Pikachu (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -553,8 +540,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{information\_Rondoudou()}{information\_Rondoudou()}}
 {\footnotesize\ttfamily void information\+\_\+\+Rondoudou (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -567,8 +553,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{information\_Ronflex()}{information\_Ronflex()}}
 {\footnotesize\ttfamily void information\+\_\+\+Ronflex (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -596,7 +581,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=347pt]{header_8h_a78442cd1056159c1f7211e232af284d9_cgraph}
+\includegraphics[width=350pt]{header_8h_a78442cd1056159c1f7211e232af284d9_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{header_8h_a9f09b95b3f2d1cf78fb6ef0634ec4277}\label{header_8h_a9f09b95b3f2d1cf78fb6ef0634ec4277}} 
@@ -613,8 +598,7 @@ Affichage des pok{\ucr}mons
 
 Affichage nom des pok{\ucr}mons
 
-Affichage bouton infosHere is the call graph for this function\+:
-\nopagebreak
+Affichage bouton infosHere is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -633,8 +617,7 @@ Affichage bouton infosHere is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{menuJeu()}{menuJeu()}}
 {\footnotesize\ttfamily void menu\+Jeu (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond,  }\item[{BITMAP $\ast$}]{logo }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -647,8 +630,7 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{menuNbJoueur()}{menuNbJoueur()}}
 {\footnotesize\ttfamily void menu\+Nb\+Joueur (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{page,  }\item[{BITMAP $\ast$}]{fond,  }\item[{BITMAP $\ast$}]{logo,  }\item[{int $\ast$}]{violet\+City }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -679,8 +661,7 @@ Déclaration des variables\mbox{\Hypertarget{header_8h_a45805ddb3ce1a68e5071cff34
 \doxysubsubsection{\texorpdfstring{Saisir\_nom()}{Saisir\_nom()}}
 {\footnotesize\ttfamily void Saisir\+\_\+nom (\begin{DoxyParamCaption}\item[{char}]{nom\+\_\+joueur\mbox{[}15\mbox{]},  }\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -719,6 +700,16 @@ Alakazam
 
 Rondoudou
 
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
 Attaque en ligne droite
 
 Afficher joueurA
@@ -743,12 +734,22 @@ Lucario
 
 Alakazam
 
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
 RondoudouHere is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=296pt]{header_8h_a0ce02801e0ebb20c6d87064a70115ad2_cgraph}
+\includegraphics[width=328pt]{header_8h_a0ce02801e0ebb20c6d87064a70115ad2_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{header_8h_a8cadcf720fc99b309d2a47ce1d3dad61}\label{header_8h_a8cadcf720fc99b309d2a47ce1d3dad61}} 
@@ -795,6 +796,26 @@ Alakazam
 
 Rondoudou
 
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
 Attaque en ligne droite
 
 Afficher joueurA
@@ -831,12 +852,32 @@ Lucario
 
 Alakazam
 
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
 RondoudouHere is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=296pt]{header_8h_a8cadcf720fc99b309d2a47ce1d3dad61_cgraph}
+\includegraphics[width=328pt]{header_8h_a8cadcf720fc99b309d2a47ce1d3dad61_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{header_8h_a5e06244e31f20a4a26e4fd99e97b8fae}\label{header_8h_a5e06244e31f20a4a26e4fd99e97b8fae}} 
@@ -895,6 +936,36 @@ Alakazam
 
 Rondoudou
 
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
 Attaque en ligne droite
 
 Afficher joueurA
@@ -943,12 +1014,42 @@ Lucario
 
 Alakazam
 
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
 RondoudouHere is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=296pt]{header_8h_a5e06244e31f20a4a26e4fd99e97b8fae_cgraph}
+\includegraphics[width=328pt]{header_8h_a5e06244e31f20a4a26e4fd99e97b8fae_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{header_8h_a19c71b1ec2c163de14147a68ecd94ae2}\label{header_8h_a19c71b1ec2c163de14147a68ecd94ae2}} 
@@ -957,12 +1058,30 @@ RondoudouHere is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{sortMouvement()}{sortMouvement()}}
 {\footnotesize\ttfamily void sort\+Mouvement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{BITMAP $\ast$}]{page,  }\item[{int}]{tab\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{nb\+Joueurs,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{tab\+Joueur\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+RondoudouHere is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=250pt]{header_8h_a19c71b1ec2c163de14147a68ecd94ae2_cgraph}
+\includegraphics[width=334pt]{header_8h_a19c71b1ec2c163de14147a68ecd94ae2_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{header_8h_a4b2a23ed704814cbb431ed5986f795be}\label{header_8h_a4b2a23ed704814cbb431ed5986f795be}} 
@@ -993,12 +1112,22 @@ Lucario
 
 Alakazam
 
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
 RondoudouHere is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=281pt]{header_8h_a4b2a23ed704814cbb431ed5986f795be_cgraph}
+\includegraphics[width=313pt]{header_8h_a4b2a23ed704814cbb431ed5986f795be_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{header_8h_a7f205c49612277da36dd239532161b97}\label{header_8h_a7f205c49612277da36dd239532161b97}} 
@@ -1041,12 +1170,32 @@ Lucario
 
 Alakazam
 
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
 RondoudouHere is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=281pt]{header_8h_a7f205c49612277da36dd239532161b97_cgraph}
+\includegraphics[width=313pt]{header_8h_a7f205c49612277da36dd239532161b97_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{header_8h_a378d7d9c6a515a23a4fd2cec4358076b}\label{header_8h_a378d7d9c6a515a23a4fd2cec4358076b}} 
@@ -1101,12 +1250,42 @@ Lucario
 
 Alakazam
 
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
 RondoudouHere is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=281pt]{header_8h_a378d7d9c6a515a23a4fd2cec4358076b_cgraph}
+\includegraphics[width=313pt]{header_8h_a378d7d9c6a515a23a4fd2cec4358076b_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{header_8h_a91a3b8bd39f5b4e4d1ee00d331f2a92d}\label{header_8h_a91a3b8bd39f5b4e4d1ee00d331f2a92d}} 
@@ -1137,12 +1316,22 @@ Lucario
 
 Alakazam
 
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
 RondoudouHere is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=288pt]{header_8h_a91a3b8bd39f5b4e4d1ee00d331f2a92d_cgraph}
+\includegraphics[width=320pt]{header_8h_a91a3b8bd39f5b4e4d1ee00d331f2a92d_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{header_8h_a1faf448257f964ee6f74a41d6f8dc99a}\label{header_8h_a1faf448257f964ee6f74a41d6f8dc99a}} 
@@ -1185,12 +1374,32 @@ Lucario
 
 Alakazam
 
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
 RondoudouHere is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=288pt]{header_8h_a1faf448257f964ee6f74a41d6f8dc99a_cgraph}
+\includegraphics[width=320pt]{header_8h_a1faf448257f964ee6f74a41d6f8dc99a_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{header_8h_a5c4b4ff92fa943af851756598de55f1a}\label{header_8h_a5c4b4ff92fa943af851756598de55f1a}} 
@@ -1245,12 +1454,42 @@ Lucario
 
 Alakazam
 
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
 RondoudouHere is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=288pt]{header_8h_a5c4b4ff92fa943af851756598de55f1a_cgraph}
+\includegraphics[width=320pt]{header_8h_a5c4b4ff92fa943af851756598de55f1a_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{header_8h_a9d60aa2c1e1f66bf87139408b746d946}\label{header_8h_a9d60aa2c1e1f66bf87139408b746d946}} 
@@ -1259,12 +1498,30 @@ RondoudouHere is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{sortVie()}{sortVie()}}
 {\footnotesize\ttfamily void sort\+Vie (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\+\_\+sorts}}}]{sort1,  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} $\ast$}]{joueurA,  }\item[{BITMAP $\ast$}]{page }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+Rondoudou
+
+Pikachu
+
+Ronflex
+
+Lucario
+
+Alakazam
+
+RondoudouHere is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{header_8h_a9d60aa2c1e1f66bf87139408b746d946_cgraph}
+\includegraphics[width=298pt]{header_8h_a9d60aa2c1e1f66bf87139408b746d946_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{header_8h_a132ef4c0ca9e66c3e4bee1451c1d463f}\label{header_8h_a132ef4c0ca9e66c3e4bee1451c1d463f}} 
