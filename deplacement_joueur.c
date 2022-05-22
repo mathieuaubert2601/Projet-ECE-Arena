@@ -220,7 +220,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_ini, int indice_colonne
             changement = 0;
             if(tableau_chemin_court[case_y_tmp][case_x_tmp+ 1] == 30)
             {
-                for(int i = case_x_tmp * cote_X ; i <= (case_x_tmp+ 1) * cote_X ; i = i+2)
+                for(int i = case_x_tmp * cote_X ; i <= (case_x_tmp+ 1) * cote_X ; i = i+3)
                 {
                     clear_bitmap(buffer);
                     afficher_map(buffer);
@@ -269,7 +269,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_ini, int indice_colonne
             }
             else if(tableau_chemin_court[case_y_tmp][case_x_tmp - 1] == 30)
             {
-                for(int i = case_x_tmp * cote_X ; i >= (case_x_tmp - 1) * cote_X ; i = i -2)
+                for(int i = case_x_tmp * cote_X ; i >= (case_x_tmp - 1) * cote_X ; i = i -3)
                 {
                     clear_bitmap(buffer);
                     afficher_map(buffer);
@@ -318,7 +318,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_ini, int indice_colonne
             }
             else if(tableau_chemin_court[case_y_tmp + 1][case_x_tmp] == 30)
             {
-                for(int i = case_y_tmp * cote_y ; i <= (case_y_tmp + 1) * cote_y ; i = i+2)
+                for(int i = case_y_tmp * cote_y ; i <= (case_y_tmp + 1) * cote_y ; i = i+3)
                 {
                     clear_bitmap(buffer);
                     afficher_map(buffer);
@@ -367,7 +367,7 @@ void deplacement_joueur(BITMAP* buffer, int indice_ligne_ini, int indice_colonne
             }
             else if(tableau_chemin_court[case_y_tmp - 1][case_x_tmp] == 30)
             {
-                for(int i = case_y_tmp * cote_y ; i >= (case_y_tmp - 1) * cote_y ; i = i - 2)
+                for(int i = case_y_tmp * cote_y ; i >= (case_y_tmp - 1) * cote_y ; i = i - 3)
                 {
                     clear_bitmap(buffer);
                     afficher_map(buffer);
