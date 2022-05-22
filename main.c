@@ -1405,7 +1405,7 @@ int main()
                         blit(page,screen,0,0,0,0,1200,711);
                         time_t temps2=time(NULL);
                         unsigned long tempo = difftime(temps2,temps1);
-                        if (tempo>=15)
+                        if (tempo>=20)
                         {
                             temps1=time(NULL);
                             tabJoueur[j].pa=10;

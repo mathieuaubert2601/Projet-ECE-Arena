@@ -72,19 +72,16 @@ void phrases(BITMAP* page,int p)
     {
         masked_blit(deplacer,page,0,0,150,300,deplacer->w,deplacer->h);
         blit(page,screen,0,0,0,0,1200,711);
-        rest(1000);
     }
     if(p==4)
     {
         masked_blit(teleporter,page,0,0,150,300,teleporter->w,teleporter->h);
         blit(page,screen,0,0,0,0,1200,711);
-        rest(1000);
     }
     if(p==5)
     {
         masked_blit(rouler,page,0,0,150,300,rouler->w,rouler->h);
         blit(page,screen,0,0,0,0,1200,711);
-        rest(1000);
     }
     if(p==6)
     {

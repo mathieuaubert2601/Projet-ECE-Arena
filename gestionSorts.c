@@ -1045,7 +1045,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                             phrases(page,11);
                         }
                     }
-
+                    joueurA->pa-=sort1.nbrPa;
                 }
             }
         }
@@ -1357,7 +1357,6 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 blit(page,screen,0,0,0,0,1200,711);
                                 rest(1000);
                             }
-                            joueurA->pa-=sort1.nbrPa;
                         }
                         else
                         {
@@ -1366,6 +1365,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                     }
 
                 }
+                joueurA->pa-=sort1.nbrPa;
             }
         }
     }
@@ -1992,7 +1992,7 @@ void sortStatut4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur*
                 }
                 else
                 {
-                    if(joueurA->equipe==joueurB->equipe)
+                    if(joueurA->equipe!=joueurB->equipe)
                     {
                         probabilite=rand() % 100;
                         if (probabilite<sort1.chance)
@@ -2056,7 +2056,7 @@ void sortStatut4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur*
                 }
                 else
                 {
-                    if(joueurA->equipe==joueurC->equipe)
+                    if(joueurA->equipe!=joueurC->equipe)
                     {
                         probabilite=rand() % 100;
                         if (probabilite<sort1.chance)
@@ -2119,7 +2119,7 @@ void sortStatut4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur*
                 }
                 else
                 {
-                    if(joueurA->equipe==joueurD->equipe)
+                    if(joueurA->equipe!=joueurD->equipe)
                     {
                         probabilite=rand() % 100;
                         if (probabilite<sort1.chance)
@@ -2233,6 +2233,7 @@ void sortVie(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
             {
                 nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                 joueurA->pv+=nombrePv;
+                joueurA->tourDodo=3;
 
                 if (joueurA->pv>joueurA->classe.pv)
                 {
