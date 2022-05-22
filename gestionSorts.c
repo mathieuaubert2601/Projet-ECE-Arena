@@ -101,6 +101,7 @@ void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* 
                     {
                         nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                         joueurB->pv -= nombrePv;
+                        joueurA->degats += nombrePv;
                         if (joueurB->pv <0)
                         {
                             joueurB->pv = 0;
@@ -232,6 +233,7 @@ void sortAttaque2J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, BITMAP* 
                     {
                         nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                         joueurB->pv -= nombrePv;
+                        joueurA->degats += nombrePv;
                         if (joueurB->pv <0)
                         {
                             joueurB->pv = 0;
@@ -402,6 +404,7 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                             joueurB->pv -= nombrePv;
+                            joueurA->degats += nombrePv;
                             if (joueurB->pv <0)
                             {
                                 joueurB->pv = 0;
@@ -455,6 +458,7 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                             joueurC->pv -= nombrePv;
+                            joueurA->degats += nombrePv;
                             if (joueurC->pv < 0)
                             {
                                 joueurC->pv = 0;
@@ -615,6 +619,7 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                             joueurB->pv -= nombrePv;
+                            joueurA->degats += nombrePv;
                             if (joueurB->pv <=0)
                             {
                                 joueurB->pv = 0;
@@ -668,6 +673,7 @@ void sortAttaque3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                             joueurC->pv -= nombrePv;
+                            joueurA->degats += nombrePv;
                             if (joueurC->pv <0)
                             {
                                 joueurC->pv = 0;
@@ -866,6 +872,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                             joueurB->pv -= nombrePv;
+                            joueurA->degats += nombrePv;
                             if (joueurB->pv <0)
                             {
                                 joueurB->pv = 0;
@@ -919,6 +926,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                             joueurC->pv -= nombrePv;
+                            joueurA->degats += nombrePv;
                             if (joueurC->pv <0)
                             {
                                 joueurC->pv = 0;
@@ -972,6 +980,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                             joueurD->pv -= nombrePv;
+                            joueurA->degats += nombrePv;
                             if (joueurD->pv <0)
                             {
                                 joueurD->pv = 0;
@@ -1159,6 +1168,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                             joueurB->pv -= nombrePv;
+                            joueurA->degats += nombrePv;
                             if (joueurB->pv <0)
                             {
                                 joueurB->pv = 0;
@@ -1212,6 +1222,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                             joueurC->pv -= nombrePv;
+                            joueurA->degats += nombrePv;
                             if (joueurC->pv <0)
                             {
                                 joueurC->pv = 0;
@@ -1265,6 +1276,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                         {
                             nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                             joueurD->pv -= nombrePv;
+                            joueurA->degats += nombrePv;
                             if (joueurD->pv <=0)
                             {
                                 joueurD->pv = 0;
@@ -2178,6 +2190,7 @@ void sortVie(t_sorts sort1, t_joueur* joueurA, BITMAP* page)
             {
                 nombrePv = sort1.degats + rand()%(sort1.plusMoins);
                 joueurA->pv+=nombrePv;
+
                 if (joueurA->pv>joueurA->classe.pv)
                 {
                     joueurA->pv = joueurA->classe.pv;
