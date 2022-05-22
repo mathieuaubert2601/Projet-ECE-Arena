@@ -135,6 +135,18 @@ void classement4J(BITMAP* buffer,t_joueur joueurG, t_joueur joueurP1, t_joueur j
         }
     }
 
-
     blit(buffer,screen,0,0,0,0,1200,711);
 }
+
+void classementEquipe(BITMAP* buffer,t_joueur joueurG1, t_joueur joueurG2,t_joueur joueurP1,t_joueur joueurP2)
+    {
+        FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
+        BITMAP* fond = load_bitmap("fond/fondflou.bmp",NULL);
+        BITMAP* classement = load_bitmap("fond/classement.bmp",NULL);
+
+        blit(fond,buffer,0,0,0,0,1200,711);
+        blit(classement,buffer,0,0,300,50,classement->w,classement->h);
+
+
+    }
+

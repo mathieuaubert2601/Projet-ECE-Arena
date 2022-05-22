@@ -61,7 +61,7 @@ void afficher_attaque_alakazam(BITMAP* buffer);
 void afficher_attaque_lucario(BITMAP* buffer);
 void afficher_attaque_pikachu(BITMAP* buffer);
 //choix_classes
-void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur joueur[], int* violetCity, SAMPLE* musiqueFond, int nbJoueur, int tabCases[18][36], int t);
+void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur joueur[], int* violetCity, SAMPLE* musiqueFond, int nbJoueur, int tabCases[18][36], int t, int equipe);
 //informations_classe
 void information_Pikachu(BITMAP* page, BITMAP* fond);
 void information_Lucario(BITMAP* page, BITMAP* fond);
@@ -126,4 +126,5 @@ void ordreJoueurs(t_joueur ordreJoueur[],t_joueur tabJoueur[], int nbrJoueur);
 void classement2J(BITMAP* buffer,t_joueur joueurG, t_joueur joueurP1);
 void classement3J(BITMAP* buffer,t_joueur joueurG, t_joueur joueurP1, t_joueur joueurP2);
 void classement4J(BITMAP* buffer,t_joueur joueurG, t_joueur joueurP1, t_joueur joueurP2, t_joueur joueurP3);
+void classementEquipe(BITMAP* buffer,t_joueur joueurG1, t_joueur joueurG2,t_joueur joueurP1,t_joueur joueurP2);
 #endif // HEADER_H_INCLUDED
