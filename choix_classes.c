@@ -143,7 +143,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     pikachu.classe = 1;
     strcpy(pikachu.nom,"Pikachu");
     pikachu.pm = 6;
-    pikachu.pv = 2;
+    pikachu.pv = 75;
     pikachu.sonClasse = pikachuSon;
     pikachu.sort1=vitesseExtreme;
     pikachu.sort2=fatalFoudre;
