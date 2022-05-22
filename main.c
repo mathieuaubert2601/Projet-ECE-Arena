@@ -24,6 +24,7 @@ int main()
     int sortieJeu=0;
     int test3=1;
     int test4=1;
+    int resFin;
     int casex, casey;
     casex = 30;
     casey = 32;
@@ -1260,8 +1261,58 @@ int main()
                                 }
                             }
                             rest(5000);
-                            sortieJeu=1;
-                            sortieMenu=1;
+
+                            resFin = menuFin(page);
+                                if (resFin == 1)
+                                {
+                                    for(int r=0;r<nbJoueurs;r++)
+                                    {
+                                        if (tabJoueur[r].numeroClasse==1)
+                                        {
+                                            tabJoueur[r].pv=75;
+                                        }
+                                        if (tabJoueur[r].numeroClasse==2)
+                                        {
+                                            tabJoueur[r].pv=125;
+                                        }
+                                        if (tabJoueur[r].numeroClasse==3)
+                                        {
+                                            tabJoueur[r].pv=100;
+                                        }
+                                        if (tabJoueur[r].numeroClasse==4)
+                                        {
+                                            tabJoueur[r].pv=100;
+                                        }
+                                        if (tabJoueur[r].numeroClasse==5)
+                                        {
+                                            tabJoueur[r].pv=75;
+                                        }
+                                        tabJoueur[r].degats=0;
+                                        tabJoueur[r].kills=0;
+                                        tabJoueur[r].mort=0;
+                                        tabJoueur[r].tourDodo=0;
+                                        tabJoueur[r].tourHate=0;
+                                        tabJoueur[r].tourPoison=0;
+                                        tabJoueur[r].tourPeur=0;
+                                        tabJoueur[r].tourParalysie=0;
+                                        tabJoueur[r].tourBouclier=0;
+                                        demande_placement(page,&tabJoueur[r],tableau_Cases,tableau_affichage_arbre,tabJoueur,r);
+
+                                    }
+                                }
+                                if (resFin == 2)
+                                {
+                                    sortieJeu=1;
+                                }
+                                if (resFin == 3)
+                                {
+                                    sortieJeu=1;
+                                    sortieMenu=1;
+                                    test3=1;
+                                }
+                                rest(500);
+
+
                         }
                         if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b & 1))
                         {
