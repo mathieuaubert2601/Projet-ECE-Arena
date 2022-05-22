@@ -95,30 +95,25 @@ void affichage_profil(BITMAP* buffer,t_joueur tab[], int nbJoueurs,int j)
         {
             masked_blit(tab[i].classe.profilrouge,buffer,0,0,1105,casey*i*4+90,90,80);
         }
-        if(tab[i].tourDodo<0)
+        if(tab[i].tourDodo>0)
         {
-            phrases(buffer,6);
-            masked_blit(endormi,buffer,0,0,1105,casey*i*4-10,endormi->w,endormi->h);
+            masked_blit(endormi,buffer,0,0,1175,casey*i*4+170,endormi->w,endormi->h);
         }
-        if(tab[i].tourParalysie<0)
+        if(tab[i].tourParalysie>0)
         {
-            phrases(buffer,7);
-            masked_blit(paralyse,buffer,0,0,1105,casey*i*4-10,paralyse->w,paralyse->h);
+            masked_blit(paralyse,buffer,0,0,1175,casey*i*4+170,paralyse->w,paralyse->h);
         }
-        if(tab[i].tourPeur<0)
+        if(tab[i].tourPeur>0)
         {
-            phrases(buffer,8);
-            masked_blit(apeure,buffer,0,0,1105,casey*i*4-10,apeure->w,apeure->h);
+            masked_blit(apeure,buffer,0,0,1175,casey*i*4+170,apeure->w,apeure->h);
         }
-        if(tab[i].tourBouclier<0)
+        if(tab[i].tourBouclier>0)
         {
-            phrases(buffer,9);
-            masked_blit(protege,buffer,0,0,1105,casey*i*4-10,protege->w,protege->h);
+            masked_blit(protege,buffer,0,0,1175,casey*i*4+170,protege->w,protege->h);
         }
-        if(tab[i].tourPoison<0)
+        if(tab[i].tourPoison>0)
         {
-            phrases(buffer,7);
-            masked_blit(empoisonne,buffer,0,0,1105,casey*i*4-10,empoisonne->w,empoisonne->h);
+            masked_blit(empoisonne,buffer,0,0,1175,casey*i*4+170,empoisonne->w,empoisonne->h);
         }
         if (j!=i && tab[i].mort==0)
         {

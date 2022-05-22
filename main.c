@@ -220,14 +220,13 @@ int main()
                         time_t temps1 = time(NULL);
                     while(sortieJeu!=1)
                     {
-                        if (tabJoueur[j].mort==1 || tabJoueur[j].tourDodo>=1 || tabJoueur[j].tourParalysie>=1 || tabJoueur[j].tourPeur>=1)
-                        {
-                            j++;
-                        }
-
                         if (j==nbJoueurs)
                         {
                             j=0;
+                        }
+                        if (tabJoueur[j].mort==1 || tabJoueur[j].tourDodo>=1 || tabJoueur[j].tourParalysie>=1 || tabJoueur[j].tourPeur>=1)
+                        {
+                            j++;
                         }
 
                         if (tabJoueur[j].tourHate >0 && tempohate==0 )

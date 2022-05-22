@@ -1460,7 +1460,7 @@ void sortStatut3J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur*
                         blit(page,screen,0,0,0,0,1200,711);
                         rest(1000);
                     }
-                }
+               }
             }
             joueurA->pa-=sort1.nbrPa;
         }
