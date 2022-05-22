@@ -9,9 +9,10 @@ int main()
     srand(time(NULL));
 
     t_joueur tabJoueur[4],tabJoueurInit[4];
+    int nbJeq1, nbJeq2;
     int tempohate=0;
     int sortieMenu = 0;
-    int nbJoueurs,compteurMort;
+    int nbJoueurs,compteurMort,compteurMortEquipe;
     int i=0;
     int joueurSuivant = 0;
     int j=0;
@@ -27,6 +28,7 @@ int main()
     int resFin;
     int casex, casey;
     int modeEquipe=0;
+    int equipe1[2], equipe2[2], vainqueur;
     casex = 30;
     casey = 32;
 
@@ -102,7 +104,7 @@ int main()
         menuJeu(page,fondMenu,logo);
         if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b & 1))
         {
-            rest(500);
+            rest(100);
             sortieMenu=0;
             while(sortieMenu!=1)
             {
@@ -112,7 +114,7 @@ int main()
                 {
                     sortieMenu=1;
                 }
-                if(((mouse_x>=(320) && mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1)||(key[KEY_2]))///Choix 2 joueurs
+                if(((mouse_x>=(320) && mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 2 joueurs
                 {
 
                     nbJoueurs = 2;
@@ -126,7 +128,7 @@ int main()
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
                 }
-                if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1)||(key[KEY_3]))///Choix 3 joueurs
+                if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 3 joueurs
                 {
                     nbJoueurs = 3;
                     Saisir_nom(tabJoueurInit[0].pseudo,page);
@@ -140,7 +142,7 @@ int main()
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
                 }
-                if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1)||(key[KEY_4]))///Choix 4 joueurs
+                if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 4 joueurs
                 {
                     nbJoueurs = 4;
                     Saisir_nom(tabJoueurInit[0].pseudo,page);
@@ -284,7 +286,7 @@ int main()
                         afficher_tout_arbre(page,tableau_affichage_arbre);
                         afficher_commande(page,tabJoueur,nbJoueurs,j);
 
-                        if ((((mouse_x>=(175)&& mouse_x<=(175+90))&& (mouse_y)>=(620)&& mouse_y<=(620+80))&&(mouse_b & 1)) && tabJoueur[j].pm > 0)
+                        if (((mouse_x>=(175)&& mouse_x<=(175+90))&& (mouse_y)>=(620)&& mouse_y<=(620+80))&&(mouse_b & 1))
                         {
                             rest(100);
                             while(deplacement == 0)
@@ -1258,24 +1260,70 @@ int main()
                             }
                             if (nbJoueurs==4)
                             {
-                                if (tabJoueur[0].mort==0)
+                                if(modeEquipe==1)
                                 {
-                                    classement4J(page,tabJoueur[0],tabJoueur[1],tabJoueur[2],tabJoueur[3]);
-                                }
-                                if (tabJoueur[1].mort==0)
-                                {
-                                    classement4J(page,tabJoueur[1],tabJoueur[0],tabJoueur[2],tabJoueur[3]);
-                                }
-                                if (tabJoueur[2].mort==0)
-                                {
-                                    classement4J(page,tabJoueur[2],tabJoueur[0],tabJoueur[1],tabJoueur[3]);
+                                    nbJeq1=0;
+                                    nbJeq2=0;
+                                    for (int d=0;d<4;d++)
+                                    {
+                                        if(tabJoueur[d].equipe==1)
+                                        {
+                                            equipe1[nbJeq1]=d;
+                                            nbJeq1++;
+                                        }
+                                        if(tabJoueur[d].equipe==2)
+                                        {
+                                            equipe2[nbJeq2]=d;
+                                            nbJeq2++;
+                                        }
+                                    }
+                                    compteurMortEquipe=0;
+                                    vainqueur=0;
+                                    for (int f=0;f<4;f++)
+                                    {
+                                        if (tabJoueur[f].mort==0)
+                                        {
+                                            compteurMortEquipe=f;
+                                        }
+                                    }
+                                    if (tabJoueur[compteurMortEquipe].equipe==1)
+                                    {
+                                        vainqueur=1;
+                                    }
+                                    if (tabJoueur[compteurMortEquipe].equipe==2)
+                                    {
+                                        vainqueur=2;
+                                    }
+                                    if (vainqueur==1)
+                                    {
+                                        classementEquipe(page,tabJoueur[equipe1[0]],tabJoueur[equipe1[1]],tabJoueur[equipe2[0]],tabJoueur[equipe2[1]]);
+                                    }
+                                    if (vainqueur==2)
+                                    {
+                                        classementEquipe(page,tabJoueur[equipe2[0]],tabJoueur[equipe2[1]],tabJoueur[equipe1[0]],tabJoueur[equipe1[1]]);
+                                    }
                                 }
                                 else
                                 {
-                                    classement4J(page,tabJoueur[3],tabJoueur[0],tabJoueur[1],tabJoueur[2]);
+                                    if (tabJoueur[0].mort==0)
+                                    {
+                                        classement4J(page,tabJoueur[0],tabJoueur[1],tabJoueur[2],tabJoueur[3]);
+                                    }
+                                    if (tabJoueur[1].mort==0)
+                                    {
+                                        classement4J(page,tabJoueur[1],tabJoueur[0],tabJoueur[2],tabJoueur[3]);
+                                    }
+                                    if (tabJoueur[2].mort==0)
+                                    {
+                                        classement4J(page,tabJoueur[2],tabJoueur[0],tabJoueur[1],tabJoueur[3]);
+                                    }
+                                    else
+                                    {
+                                        classement4J(page,tabJoueur[3],tabJoueur[0],tabJoueur[1],tabJoueur[2]);
+                                    }
                                 }
                             }
-                            rest(10000);
+                            rest(5000);
 
                             resFin = menuFin(page);
                                 if (resFin == 1)
@@ -1357,7 +1405,7 @@ int main()
                         blit(page,screen,0,0,0,0,1200,711);
                         time_t temps2=time(NULL);
                         unsigned long tempo = difftime(temps2,temps1);
-                        if (tempo>=20)
+                        if (tempo>=15)
                         {
                             temps1=time(NULL);
                             tabJoueur[j].pa=10;
@@ -1470,28 +1518,6 @@ int main()
         }
         show_mouse(page);
         blit(page,screen,0,0,0,0,1200,711);
-
-        /*
-        clear_bitmap(page);
-        afficher_map(page);
-        afficher_cases_dispo_joueur(page,x,y,6,tableau_Cases,tableau_case_possible);
-        //changement_case_souris(page,mouse_x,mouse_y,&souris_x,&souris_y,tableau_case_possible,tableau_chemin_court,x,y);
-        afficher_chemin(page,tableau_chemin_court);
-        afficher_tout_arbre(page,tableau_affichage_arbre);
-        if(mouse_b & 1)
-        {
-            deplacement_joueur(page,y,x,2,tableau_chemin_court,tableau_affichage_arbre,);
-            x++;
-            if(x==36)
-            {
-                x=0;
-                y++;
-            }
-        }
-
-        show_mouse(page);
-        blit(page,screen,0,0,0,0,1200,711);*/
-        //allegro_message("ok");
     }
     destroy_bitmap(page);
 

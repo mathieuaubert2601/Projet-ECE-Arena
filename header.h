@@ -126,4 +126,5 @@ void ordreJoueurs(t_joueur ordreJoueur[],t_joueur tabJoueur[], int nbrJoueur);
 void classement2J(BITMAP* buffer,t_joueur joueurG, t_joueur joueurP1);
 void classement3J(BITMAP* buffer,t_joueur joueurG, t_joueur joueurP1, t_joueur joueurP2);
 void classement4J(BITMAP* buffer,t_joueur joueurG, t_joueur joueurP1, t_joueur joueurP2, t_joueur joueurP3);
+void classementEquipe(BITMAP* buffer,t_joueur joueurG1, t_joueur joueurG2,t_joueur joueurP1,t_joueur joueurP2);
 #endif // HEADER_H_INCLUDED
