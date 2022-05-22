@@ -1423,91 +1423,95 @@ void sortMouvement(t_sorts sort1, t_joueur* joueurA, BITMAP* page, int tab[18][3
             }
             joueurA->pa-=sort1.nbrPa;
         }
-        else
-            rest(400);
-        do
+        if(sort1.numero!=13)
         {
-            if (mouse_b & 1)
-            {
-                caseChoisieColonne = mouse_x/30;
-                caseChoisieLigne = mouse_y/32;
-                if (tab[caseChoisieLigne][caseChoisieColonne]==1)
-                {
-                    caseChoisieColonne = 3;
-                    caseChoisieLigne = 0;
-                }
-
-            }
-
-            if(sort1.numero==22)
-            {
-                phrases(page,3);
-            }
-            if(sort1.numero==0)
-            {
-                phrases(page,3);
-            }
-            if(sort1.numero==16)
-            {
-                phrases(page,4);
-            }
-            if(sort1.numero==9)
-            {
-                phrases(page,5);
-            }
-            if (mouse_b & 2)
-            {
-                sortie_mouv = 1;
-            }
 
 
-            show_mouse(page);
-            blit(page,screen,0,0,0,0,1200,711);
-        }
-        while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax)) && (sortie_mouv == 0));
-        if (sortie_mouv == 0)
-        {
-            probabilite=rand() % 100 ;
-            if (probabilite<sort1.chance)
-            {
-                joueurA->ligne = caseChoisieLigne*32;
-                joueurA->colonne = caseChoisieColonne*30;
-                if (joueurA->numeroClasse==1)///Pikachu
-                {
-                    afficher_attaque_pikachu(page);
-                }
-                if (joueurA->numeroClasse==2)///Ronflex
-                {
-                    afficher_attaque_ronflex(page);
-                }
-                if (joueurA->numeroClasse==3)///Lucario
-                {
-                    afficher_attaque_lucario(page);
-                }
-                if (joueurA->numeroClasse==4)///Alakazam
-                {
-                    afficher_attaque_alakazam(page);
-                }
-                if (joueurA->numeroClasse==5)///Rondoudou
-                {
-                    afficher_attaque_rondoudou(page);
-                }
-            }
 
-            else if (probabilite>=sort1.chance)
+            do
             {
-                phrases(page,1);
+                if (mouse_b & 1)
+                {
+                    caseChoisieColonne = mouse_x/30;
+                    caseChoisieLigne = mouse_y/32;
+                    if (tab[caseChoisieLigne][caseChoisieColonne]==1)
+                    {
+                        caseChoisieColonne = 3;
+                        caseChoisieLigne = 0;
+                    }
+
+                }
+
+                if(sort1.numero==22)
+                {
+                    phrases(page,3);
+                }
+                if(sort1.numero==0)
+                {
+                    phrases(page,3);
+                }
+                if(sort1.numero==16)
+                {
+                    phrases(page,4);
+                }
+                if(sort1.numero==9)
+                {
+                    phrases(page,5);
+                }
+                if (mouse_b & 2)
+                {
+                    sortie_mouv = 1;
+                }
+
+
+                show_mouse(page);
                 blit(page,screen,0,0,0,0,1200,711);
-                rest(1000);
             }
-            joueurA->pa-=sort1.nbrPa;
+            while(((abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)<sort1.pMin) || (abs((joueurA->ligne/32)-caseChoisieLigne)+abs((joueurA->colonne/30)-caseChoisieColonne)>sort1.pMax)) && (sortie_mouv == 0));
+            if (sortie_mouv == 0)
+            {
+                probabilite=rand() % 100 ;
+                if (probabilite<sort1.chance)
+                {
+                    joueurA->ligne = caseChoisieLigne*32;
+                    joueurA->colonne = caseChoisieColonne*30;
+                    if (joueurA->numeroClasse==1)///Pikachu
+                    {
+                        afficher_attaque_pikachu(page);
+                    }
+                    if (joueurA->numeroClasse==2)///Ronflex
+                    {
+                        afficher_attaque_ronflex(page);
+                    }
+                    if (joueurA->numeroClasse==3)///Lucario
+                    {
+                        afficher_attaque_lucario(page);
+                    }
+                    if (joueurA->numeroClasse==4)///Alakazam
+                    {
+                        afficher_attaque_alakazam(page);
+                    }
+                    if (joueurA->numeroClasse==5)///Rondoudou
+                    {
+                        afficher_attaque_rondoudou(page);
+                    }
+                }
+
+                else if (probabilite>=sort1.chance)
+                {
+                    phrases(page,1);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
+                }
+                joueurA->pa-=sort1.nbrPa;
+            }
         }
-    }
-    else
-    {
-        phrases(page,2);
-        blit(page,screen,0,0,0,0,1200,711);
-        rest(1000);
+        if (joueurA->pa<sort1.nbrPa)
+        {
+            phrases(page,2);
+            blit(page,screen,0,0,0,0,1200,711);
+            rest(1000);
+        }
     }
 }
 
@@ -2789,7 +2793,9 @@ void sortSoin4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* j
                 }
                 else
                 {
-                    //Afficher pas meme equipe
+                    phrases(page,12);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                 }
             }
             if (joueurCTouche == 1)
@@ -2836,7 +2842,9 @@ void sortSoin4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* j
                 }
                 else
                 {
-                    //Afficher pas meme equipe
+                    phrases(page,12);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                 }
             }
             if (joueurDTouche == 1)
@@ -2883,7 +2891,9 @@ void sortSoin4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur* j
                 }
                 else
                 {
-                    //Afficher pas meme equipe
+                    phrases(page,12);
+                    blit(page,screen,0,0,0,0,1200,711);
+                    rest(1000);
                 }
             }
         }

@@ -122,7 +122,7 @@ void phrases(BITMAP* page,int p)
     }
     if(p==12)
     {
-        masked_blit(pasMemeEquipe,page,0,0,150,300,pasMemeEquipe->w,pasMemeEquipe->h);
+        masked_blit(pasMemeEquipe,page,0,0,100,300,pasMemeEquipe->w,pasMemeEquipe->h);
         blit(page,screen,0,0,0,0,1200,711);
         rest(1000);
     }

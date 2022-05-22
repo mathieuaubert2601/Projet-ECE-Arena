@@ -95,16 +95,16 @@ int main()
     {
         sortieMenu=0;
         clear_bitmap(page);
-        /*if (violetCity==0)
+        if (violetCity==0)
         {
             play_sample(musiqueFond,200,0,1000,1);
             violetCity++;
-        }*/
+        }
 
         menuJeu(page,fondMenu,logo);
         if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b & 1))
         {
-            rest(100);
+            rest(500);
             sortieMenu=0;
             while(sortieMenu!=1)
             {
