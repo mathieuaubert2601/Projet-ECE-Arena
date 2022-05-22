@@ -102,7 +102,7 @@ int main()
         menuJeu(page,fondMenu,logo);
         if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b & 1))
         {
-            rest(100);
+            rest(500);
             sortieMenu=0;
             while(sortieMenu!=1)
             {
@@ -112,7 +112,7 @@ int main()
                 {
                     sortieMenu=1;
                 }
-                if(((mouse_x>=(320) && mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 2 joueurs
+                if(((mouse_x>=(320) && mouse_x<=(320+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1)||(key[KEY_2]))///Choix 2 joueurs
                 {
 
                     nbJoueurs = 2;
@@ -126,7 +126,7 @@ int main()
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
                 }
-                if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 3 joueurs
+                if(((mouse_x>=(520)&& mouse_x<=(520+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1)||(key[KEY_3]))///Choix 3 joueurs
                 {
                     nbJoueurs = 3;
                     Saisir_nom(tabJoueurInit[0].pseudo,page);
@@ -140,7 +140,7 @@ int main()
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
                 }
-                if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 4 joueurs
+                if(((mouse_x>=(720)&& mouse_x<=(720+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1)||(key[KEY_4]))///Choix 4 joueurs
                 {
                     nbJoueurs = 4;
                     Saisir_nom(tabJoueurInit[0].pseudo,page);
@@ -284,7 +284,7 @@ int main()
                         afficher_tout_arbre(page,tableau_affichage_arbre);
                         afficher_commande(page,tabJoueur,nbJoueurs,j);
 
-                        if (((mouse_x>=(175)&& mouse_x<=(175+90))&& (mouse_y)>=(620)&& mouse_y<=(620+80))&&(mouse_b & 1))
+                        if ((((mouse_x>=(175)&& mouse_x<=(175+90))&& (mouse_y)>=(620)&& mouse_y<=(620+80))&&(mouse_b & 1)) && tabJoueur[j].pm > 0)
                         {
                             rest(100);
                             while(deplacement == 0)
@@ -1275,7 +1275,7 @@ int main()
                                     classement4J(page,tabJoueur[3],tabJoueur[0],tabJoueur[1],tabJoueur[2]);
                                 }
                             }
-                            rest(5000);
+                            rest(10000);
 
                             resFin = menuFin(page);
                                 if (resFin == 1)
@@ -1357,7 +1357,7 @@ int main()
                         blit(page,screen,0,0,0,0,1200,711);
                         time_t temps2=time(NULL);
                         unsigned long tempo = difftime(temps2,temps1);
-                        if (tempo>=15)
+                        if (tempo>=20)
                         {
                             temps1=time(NULL);
                             tabJoueur[j].pa=10;

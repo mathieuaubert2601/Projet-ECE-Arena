@@ -16,7 +16,6 @@ void afficher_commande (BITMAP* buffer,t_joueur tab[],int nbJ, int j)
     BITMAP* JoueurS = load_bitmap("boutons/JoueurSuivant.bmp",NULL);
     BITMAP* JoueurSInv = load_bitmap("boutons/JoueurSuivantInv.bmp",NULL);
 
-
     BITMAP* menu = load_bitmap("boutons/Menu.bmp",NULL);
     BITMAP* menuInv = load_bitmap("boutons/MenuInv.bmp",NULL);
 
@@ -194,7 +193,7 @@ void demande_placement (BITMAP* buffer, t_joueur* joueur,int tableau[18][36], in
                 casebleu(buffer,m,n);
             clic=1;
         }
-        if((mouse_x>=(casex*21)&& mouse_x<=(casex*21+200))&& ((mouse_y)>=(casey*19)&& mouse_y<=(casey*19+70))&&(mouse_b &&1))
+        if((mouse_x>=(casex*21)&& mouse_x<=(casex*21+200))&& ((mouse_y)>=(casey*19)&& mouse_y<=(casey*19+70))&&(mouse_b &&1)||(key[KEY_ENTER]))
         {
             test4=1;
         }
