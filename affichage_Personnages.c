@@ -133,6 +133,182 @@ void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int 
 
 }
 
+void afficher_attaque_ronflex(BITMAP* buffer)
+{
+    BITMAP* attaqueRonflex1 = load_bitmap("ronflex/frame-01.bmp",NULL);
+    BITMAP* attaqueRonflex2 = load_bitmap("ronflex/frame-02.bmp",NULL);
+    BITMAP* attaqueRonflex3 = load_bitmap("ronflex/frame-03.bmp",NULL);
+    BITMAP* attaqueRonflex4 = load_bitmap("ronflex/frame-04.bmp",NULL);
+    BITMAP* attaqueRonflex5 = load_bitmap("ronflex/frame-05.bmp",NULL);
+    BITMAP* attaqueRonflex6 = load_bitmap("ronflex/frame-06.bmp",NULL);
+    BITMAP* attaqueRonflex7 = load_bitmap("ronflex/frame-07.bmp",NULL);
+    BITMAP* attaqueRonflex8 = load_bitmap("ronflex/frame-08.bmp",NULL);
+    BITMAP* attaqueRonflex9 = load_bitmap("ronflex/frame-09.bmp",NULL);
+    BITMAP* attaqueRonflex10 = load_bitmap("ronflex/frame-10.bmp",NULL);
+    BITMAP* attaqueRonflex11 = load_bitmap("ronflex/frame-11.bmp",NULL);
+    BITMAP* attaqueRonflex12 = load_bitmap("ronflex/frame-12.bmp",NULL);
+    BITMAP* attaqueRonflex13 = load_bitmap("ronflex/frame-13.bmp",NULL);
+    BITMAP* attaqueRonflex14 = load_bitmap("ronflex/frame-14.bmp",NULL);
+    BITMAP* attaqueRonflex15 = load_bitmap("ronflex/frame-15.bmp",NULL);
+    BITMAP* attaqueRonflex16 = load_bitmap("ronflex/frame-16.bmp",NULL);
+    BITMAP* attaqueRonflex17 = load_bitmap("ronflex/frame-17.bmp",NULL);
+    BITMAP* attaqueRonflex18 = load_bitmap("ronflex/frame-18.bmp",NULL);
+    BITMAP* attaqueRonflex19 = load_bitmap("ronflex/frame-19.bmp",NULL);
+    BITMAP* attaqueRonflex20 = load_bitmap("ronflex/frame-20.bmp",NULL);
+    BITMAP* attaqueRonflex21 = load_bitmap("ronflex/frame-21.bmp",NULL);
+    BITMAP* attaqueRonflex22 = load_bitmap("ronflex/frame-22.bmp",NULL);
+    BITMAP* attaqueRonflex23 = load_bitmap("ronflex/frame-23.bmp",NULL);
+    BITMAP* attaqueRonflex24 = load_bitmap("ronflex/frame-24.bmp",NULL);
+    BITMAP* attaqueRonflex25 = load_bitmap("ronflex/frame-25.bmp",NULL);
+
+    BITMAP* tab[25] = {attaqueRonflex1,attaqueRonflex2,attaqueRonflex3,attaqueRonflex4,attaqueRonflex5,attaqueRonflex6,attaqueRonflex7,attaqueRonflex8,attaqueRonflex9,attaqueRonflex10,attaqueRonflex11,attaqueRonflex12,attaqueRonflex13,attaqueRonflex14,attaqueRonflex15,attaqueRonflex16,attaqueRonflex17,attaqueRonflex18,attaqueRonflex19,attaqueRonflex20,attaqueRonflex21,attaqueRonflex22,attaqueRonflex23,attaqueRonflex24,attaqueRonflex25};
+
+    for(int i=0 ; i<25 ; i++)
+    {
+        stretch_blit(tab[i],buffer,0,0,tab[i]->w,tab[i]->h,0,0,1080,576);
+        blit(buffer,screen,0,0,0,0,1200,711);
+        rest(60);
+    }
+}
+
+void afficher_attaque_rondoudou(BITMAP* buffer)
+{
+    BITMAP* attaquerondoudou1 = load_bitmap("rondoudou/rondoudouAttaque1.bmp",NULL);
+    BITMAP* attaquerondoudou2 = load_bitmap("rondoudou/rondoudouAttaque2.bmp",NULL);
+    BITMAP* attaquerondoudou3 = load_bitmap("rondoudou/rondoudouAttaque3.bmp",NULL);
+    BITMAP* attaquerondoudou4 = load_bitmap("rondoudou/rondoudouAttaque4.bmp",NULL);
+    BITMAP* attaquerondoudou5 = load_bitmap("rondoudou/rondoudouAttaque5.bmp",NULL);
+    BITMAP* attaquerondoudou6 = load_bitmap("rondoudou/rondoudouAttaque6.bmp",NULL);
+    BITMAP* attaquerondoudou7 = load_bitmap("rondoudou/rondoudouAttaque7.bmp",NULL);
+    BITMAP* attaquerondoudou8 = load_bitmap("rondoudou/rondoudouAttaque8.bmp",NULL);
+    BITMAP* attaquerondoudou9 = load_bitmap("rondoudou/rondoudouAttaque9.bmp",NULL);
+
+    BITMAP* tab[9] = {attaquerondoudou1,attaquerondoudou2, attaquerondoudou3,attaquerondoudou4,attaquerondoudou5,attaquerondoudou6,attaquerondoudou7,attaquerondoudou8,attaquerondoudou9};
+    for(int i=0 ; i<9 ; i++)
+    {
+        stretch_blit(tab[i],buffer,0,0,tab[i]->w,tab[i]->h,0,0,1080,576);
+        blit(buffer,screen,0,0,0,0,1200,711);
+        rest(60);
+    }
+}
+
+void afficher_attaque_lucario(BITMAP* buffer)
+{
+    BITMAP* attaqueLucario1 = load_bitmap("lucario/frame-01.bmp",NULL);
+    BITMAP* attaqueLucario2 = load_bitmap("lucario/frame-02.bmp",NULL);
+    BITMAP* attaqueLucario3 = load_bitmap("lucario/frame-03.bmp",NULL);
+    BITMAP* attaqueLucario4 = load_bitmap("lucario/frame-04.bmp",NULL);
+    BITMAP* attaqueLucario5 = load_bitmap("lucario/frame-05.bmp",NULL);
+    BITMAP* attaqueLucario6 = load_bitmap("lucario/frame-06.bmp",NULL);
+    BITMAP* attaqueLucario7 = load_bitmap("lucario/frame-07.bmp",NULL);
+    BITMAP* attaqueLucario8 = load_bitmap("lucario/frame-08.bmp",NULL);
+    BITMAP* attaqueLucario9 = load_bitmap("lucario/frame-09.bmp",NULL);
+    BITMAP* attaqueLucario10 = load_bitmap("lucario/frame-10.bmp",NULL);
+    BITMAP* attaqueLucario11 = load_bitmap("lucario/frame-11.bmp",NULL);
+    BITMAP* attaqueLucario12 = load_bitmap("lucario/frame-12.bmp",NULL);
+    BITMAP* attaqueLucario13 = load_bitmap("lucario/frame-13.bmp",NULL);
+    BITMAP* attaqueLucario14 = load_bitmap("lucario/frame-14.bmp",NULL);
+    BITMAP* attaqueLucario15 = load_bitmap("lucario/frame-15.bmp",NULL);
+    BITMAP* attaqueLucario16 = load_bitmap("lucario/frame-16.bmp",NULL);
+    BITMAP* attaqueLucario17 = load_bitmap("lucario/frame-17.bmp",NULL);
+    BITMAP* attaqueLucario18 = load_bitmap("lucario/frame-18.bmp",NULL);
+    BITMAP* attaqueLucario19 = load_bitmap("lucario/frame-19.bmp",NULL);
+    BITMAP* attaqueLucario20 = load_bitmap("lucario/frame-20.bmp",NULL);
+    BITMAP* attaqueLucario21 = load_bitmap("lucario/frame-21.bmp",NULL);
+    BITMAP* attaqueLucario22 = load_bitmap("lucario/frame-22.bmp",NULL);
+    BITMAP* attaqueLucario23 = load_bitmap("lucario/frame-23.bmp",NULL);
+    BITMAP* attaqueLucario24 = load_bitmap("lucario/frame-24.bmp",NULL);
+    BITMAP* attaqueLucario25 = load_bitmap("lucario/frame-25.bmp",NULL);
+    BITMAP* attaqueLucario26 = load_bitmap("lucario/frame-26.bmp",NULL);
+    BITMAP* attaqueLucario27 = load_bitmap("lucario/frame-27.bmp",NULL);
+    BITMAP* attaqueLucario28 = load_bitmap("lucario/frame-28.bmp",NULL);
+    BITMAP* attaqueLucario29 = load_bitmap("lucario/frame-29.bmp",NULL);
+    BITMAP* attaqueLucario30 = load_bitmap("lucario/frame-30.bmp",NULL);
+    BITMAP* attaqueLucario31 = load_bitmap("lucario/frame-31.bmp",NULL);
+    BITMAP* attaqueLucario32 = load_bitmap("lucario/frame-32.bmp",NULL);
+    BITMAP* attaqueLucario33 = load_bitmap("lucario/frame-33.bmp",NULL);
+    BITMAP* attaqueLucario34 = load_bitmap("lucario/frame-34.bmp",NULL);
+    BITMAP* attaqueLucario35 = load_bitmap("lucario/frame-35.bmp",NULL);
+    BITMAP* attaqueLucario36 = load_bitmap("lucario/frame-36.bmp",NULL);
+    BITMAP* attaqueLucario37 = load_bitmap("lucario/frame-37.bmp",NULL);
+    BITMAP* attaqueLucario38 = load_bitmap("lucario/frame-38.bmp",NULL);
+    BITMAP* attaqueLucario39 = load_bitmap("lucario/frame-39.bmp",NULL);
+    BITMAP* attaqueLucario40 = load_bitmap("lucario/frame-40.bmp",NULL);
+    BITMAP* attaqueLucario41 = load_bitmap("lucario/frame-41.bmp",NULL);
+    BITMAP* attaqueLucario42 = load_bitmap("lucario/frame-42.bmp",NULL);
+    BITMAP* attaqueLucario43 = load_bitmap("lucario/frame-43.bmp",NULL);
+    BITMAP* attaqueLucario44 = load_bitmap("lucario/frame-44.bmp",NULL);
+    BITMAP* attaqueLucario45 = load_bitmap("lucario/frame-45.bmp",NULL);
+    BITMAP* attaqueLucario46 = load_bitmap("lucario/frame-46.bmp",NULL);
+    BITMAP* attaqueLucario47 = load_bitmap("lucario/frame-47.bmp",NULL);
+    BITMAP* attaqueLucario48 = load_bitmap("lucario/frame-48.bmp",NULL);
+    BITMAP* attaqueLucario49 = load_bitmap("lucario/frame-49.bmp",NULL);
+    BITMAP* tab[49] = {attaqueLucario1,attaqueLucario2,attaqueLucario3,attaqueLucario4,attaqueLucario5,attaqueLucario6,attaqueLucario7,attaqueLucario8,attaqueLucario9,attaqueLucario10,attaqueLucario11,attaqueLucario12,attaqueLucario13,attaqueLucario14,attaqueLucario15,attaqueLucario16,attaqueLucario17,attaqueLucario18,attaqueLucario19,attaqueLucario20,attaqueLucario21,attaqueLucario22,attaqueLucario23,attaqueLucario24,attaqueLucario25,attaqueLucario26,attaqueLucario27,attaqueLucario28,attaqueLucario29,attaqueLucario30,attaqueLucario31,attaqueLucario32,attaqueLucario33,attaqueLucario34,attaqueLucario35,attaqueLucario36,attaqueLucario37,attaqueLucario38,attaqueLucario39,attaqueLucario40,attaqueLucario41,attaqueLucario42,attaqueLucario43,attaqueLucario44,attaqueLucario45,attaqueLucario46,attaqueLucario47,attaqueLucario48,attaqueLucario49};
+
+    for(int i=0 ; i<49 ; i++)
+    {
+        stretch_blit(tab[i],buffer,0,0,tab[i]->w,tab[i]->h,0,0,1080,576);
+        blit(buffer,screen,0,0,0,0,1200,711);
+        rest(20);
+    }
+}
+
+void afficher_attaque_alakazam(BITMAP* buffer)
+{
+    BITMAP* attaqueAlakazam1 = load_bitmap("alakazam/frame-01.bmp",NULL);
+    BITMAP* attaqueAlakazam2 = load_bitmap("alakazam/frame-02.bmp",NULL);
+    BITMAP* attaqueAlakazam3 = load_bitmap("alakazam/frame-03.bmp",NULL);
+    BITMAP* attaqueAlakazam4 = load_bitmap("alakazam/frame-04.bmp",NULL);
+    BITMAP* attaqueAlakazam5 = load_bitmap("alakazam/frame-05.bmp",NULL);
+    BITMAP* attaqueAlakazam6 = load_bitmap("alakazam/frame-06.bmp",NULL);
+    BITMAP* attaqueAlakazam7 = load_bitmap("alakazam/frame-07.bmp",NULL);
+    BITMAP* attaqueAlakazam8 = load_bitmap("alakazam/frame-08.bmp",NULL);
+    BITMAP* attaqueAlakazam9 = load_bitmap("alakazam/frame-09.bmp",NULL);
+    BITMAP* attaqueAlakazam10 = load_bitmap("alakazam/frame-10.bmp",NULL);
+    BITMAP* attaqueAlakazam11 = load_bitmap("alakazam/frame-11.bmp",NULL);
+    BITMAP* attaqueAlakazam12 = load_bitmap("alakazam/frame-12.bmp",NULL);
+    BITMAP* attaqueAlakazam13 = load_bitmap("alakazam/frame-13.bmp",NULL);
+    BITMAP* attaqueAlakazam14 = load_bitmap("alakazam/frame-14.bmp",NULL);
+    BITMAP* attaqueAlakazam15 = load_bitmap("alakazam/frame-15.bmp",NULL);
+    BITMAP* attaqueAlakazam16 = load_bitmap("alakazam/frame-16.bmp",NULL);
+
+    BITMAP* tab[16] = {attaqueAlakazam1,attaqueAlakazam2,attaqueAlakazam3,attaqueAlakazam4,attaqueAlakazam5,attaqueAlakazam6,attaqueAlakazam7,attaqueAlakazam8,attaqueAlakazam9,attaqueAlakazam10,attaqueAlakazam11,attaqueAlakazam12,attaqueAlakazam13,attaqueAlakazam14,attaqueAlakazam15,attaqueAlakazam16};
+
+    for(int i=0 ; i<16 ; i++)
+    {
+        stretch_blit(tab[i],buffer,0,0,tab[i]->w,tab[i]->h,0,0,1080,576);
+        blit(buffer,screen,0,0,0,0,1200,711);
+        rest(60);
+    }
+}
+
+void afficher_attaque_pikachu(BITMAP* buffer)
+{
+    BITMAP* pika1 = load_bitmap("pikachu/pikaAttaque1.bmp",NULL);
+    BITMAP* pika2 = load_bitmap("pikachu/pikaAttaque2.bmp",NULL);
+    BITMAP* pika3 = load_bitmap("pikachu/pikaAttaque3.bmp",NULL);
+    BITMAP* pika4 = load_bitmap("pikachu/pikaAttaque4.bmp",NULL);
+    BITMAP* pika5 = load_bitmap("pikachu/pikaAttaque5.bmp",NULL);
+    BITMAP* pika6 = load_bitmap("pikachu/pikaAttaque6.bmp",NULL);
+    BITMAP* pika7 = load_bitmap("pikachu/pikaAttaque7.bmp",NULL);
+    BITMAP* pika8 = load_bitmap("pikachu/pikaAttaque8.bmp",NULL);
+    BITMAP* pika9 = load_bitmap("pikachu/pikaAttaque9.bmp",NULL);
+    BITMAP* pika10 = load_bitmap("pikachu/pikaAttaque10.bmp",NULL);
+    BITMAP* pika11 = load_bitmap("pikachu/pikaAttaque11.bmp",NULL);
+    BITMAP* pika12 = load_bitmap("pikachu/pikaAttaque12.bmp",NULL);
+    BITMAP* pika13 = load_bitmap("pikachu/pikaAttaque13.bmp",NULL);
+    BITMAP* pika14 = load_bitmap("pikachu/pikaAttaque14.bmp",NULL);
+    BITMAP* pika15 = load_bitmap("pikachu/pikaAttaque15.bmp",NULL);
+    BITMAP* tab_attaque_pika[15] = {pika1,pika2,pika3,pika4,pika5,pika6,pika7,pika8,pika9,pika10,pika11,pika12,pika13,pika14,pika15};
+
+    for(int i=0 ; i<15 ; i++)
+    {
+        stretch_blit(tab_attaque_pika[i],buffer,0,0,tab_attaque_pika[i]->w,tab_attaque_pika[i]->h,0,0,1080,576);
+        blit(buffer,screen,0,0,0,0,1200,711);
+        rest(60);
+    }
+
+}
 void afficher_personnage_ronflex(BITMAP* buffer,int compteur,int cote,int x,int y)
 {
     //Déclaration des variables pour ronflex de face
