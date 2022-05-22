@@ -24,6 +24,7 @@ int main()
     int sortieJeu=0;
     int test3=1;
     int test4=1;
+    int resFin;
     int casex, casey;
     casex = 30;
     casey = 32;
@@ -102,7 +103,7 @@ int main()
         menuJeu(page,fondMenu,logo);
         if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b & 1))
         {
-            rest(100);
+            rest(500);
             sortieMenu=0;
             while(sortieMenu!=1)
             {
@@ -192,27 +193,27 @@ int main()
                         if (tabJoueur[z].numeroClasse==1)///Pikachu
                         {
                             demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                            afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                         }
                         if (tabJoueur[z].numeroClasse==2)///Ronflex
                         {
                             demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                            afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                         }
                         if (tabJoueur[z].numeroClasse==3)///Lucario
                         {
                             demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                            afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                         }
                         if (tabJoueur[z].numeroClasse==4)///Alakazam
                         {
                             demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                            afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                         }
                         if (tabJoueur[z].numeroClasse==5)///Rondoudou
                         {
                             demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                            afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                         }
 
                         rest(200);
@@ -268,7 +269,7 @@ int main()
                         afficher_tout_arbre(page,tableau_affichage_arbre);
                         afficher_commande(page,tabJoueur,nbJoueurs,j);
 
-                        if (((mouse_x>=(175)&& mouse_x<=(175+90))&& (mouse_y)>=(620)&& mouse_y<=(620+80))&&(mouse_b & 1))
+                        if ((((mouse_x>=(175)&& mouse_x<=(175+90))&& (mouse_y)>=(620)&& mouse_y<=(620+80))&&(mouse_b & 1)) && tabJoueur[j].pm > 0)
                         {
                             rest(100);
                             while(deplacement == 0)
@@ -372,7 +373,7 @@ int main()
                         }
                         if(((mouse_x>=(casex*10)&& mouse_x<=(casex*10+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
-                            if (tabJoueur[j].classe.sort1.type == 2 || tabJoueur[j].classe.sort1.numero == 6 || tabJoueur[j].classe.sort1.numero == 17)
+                            if (tabJoueur[j].classe.sort1.type == 2 || tabJoueur[j].classe.sort1.numero == 6 || tabJoueur[j].classe.sort1.numero == 17 || tabJoueur[j].classe.sort1.numero == 5)
                             {
                                 lancerSort(tabJoueur[j].classe.sort1,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
@@ -536,7 +537,7 @@ int main()
                         }
                         if(((mouse_x>=(casex*14)&& mouse_x<=(casex*14+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
-                            if (tabJoueur[j].classe.sort2.type == 2 || tabJoueur[j].classe.sort2.numero == 6 || tabJoueur[j].classe.sort2.numero == 17)
+                            if (tabJoueur[j].classe.sort2.type == 2 || tabJoueur[j].classe.sort2.numero == 6 || tabJoueur[j].classe.sort2.numero == 17 || tabJoueur[j].classe.sort2.numero == 5)
                             {
                                 lancerSort(tabJoueur[j].classe.sort2,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
@@ -700,7 +701,7 @@ int main()
                         }
                         if(((mouse_x>=(casex*18)&& mouse_x<=(casex*18+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
-                            if (tabJoueur[j].classe.sort3.type == 2 || tabJoueur[j].classe.sort3.numero == 6 || tabJoueur[j].classe.sort3.numero == 17)
+                            if (tabJoueur[j].classe.sort3.type == 2 || tabJoueur[j].classe.sort3.numero == 6 || tabJoueur[j].classe.sort3.numero == 17 || tabJoueur[j].classe.sort3.numero == 5)
                             {
                                 lancerSort(tabJoueur[j].classe.sort3,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
@@ -864,7 +865,7 @@ int main()
                         }
                         if(((mouse_x>=(casex*22)&& mouse_x<=(casex*22+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
-                            if (tabJoueur[j].classe.sort4.type == 2 || tabJoueur[j].classe.sort4.numero == 6 || tabJoueur[j].classe.sort4.numero == 17)
+                            if (tabJoueur[j].classe.sort4.type == 2 || tabJoueur[j].classe.sort4.numero == 6 || tabJoueur[j].classe.sort4.numero == 17||tabJoueur[j].classe.sort4.numero == 5)
                             {
                                 lancerSort(tabJoueur[j].classe.sort4,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
@@ -1028,7 +1029,7 @@ int main()
                         }
                         if(((mouse_x>=(casex*26)&& mouse_x<=(casex*26+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
-                            if (tabJoueur[j].classe.sort5.type == 2 || tabJoueur[j].classe.sort5.numero == 6 || tabJoueur[j].classe.sort5.numero == 17)
+                            if (tabJoueur[j].classe.sort5.type == 2 || tabJoueur[j].classe.sort5.numero == 6 || tabJoueur[j].classe.sort5.numero == 17 || tabJoueur[j].classe.sort5.numero == 5 )
                             {
                                 lancerSort(tabJoueur[j].classe.sort5,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
@@ -1182,23 +1183,23 @@ int main()
                         {
                             if (tabJoueur[z].numeroClasse==1)///Pikachu
                             {
-                                afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                             }
                             if (tabJoueur[z].numeroClasse==2)///Ronflex
                             {
-                                afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                             }
                             if (tabJoueur[z].numeroClasse==3)///Lucario
                             {
-                                afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                             }
                             if (tabJoueur[z].numeroClasse==4)///Alakazam
                             {
-                                afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                             }
                             if (tabJoueur[z].numeroClasse==5)///Rondoudou
                             {
-                                afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                             }
                         }
                         time_t temps3=time(NULL);
@@ -1259,9 +1260,59 @@ int main()
                                     classement4J(page,tabJoueur[3],tabJoueur[0],tabJoueur[1],tabJoueur[2]);
                                 }
                             }
-                            rest(5000);
-                            sortieJeu=1;
-                            sortieMenu=1;
+                            rest(10000);
+
+                            resFin = menuFin(page);
+                                if (resFin == 1)
+                                {
+                                    for(int r=0;r<nbJoueurs;r++)
+                                    {
+                                        if (tabJoueur[r].numeroClasse==1)
+                                        {
+                                            tabJoueur[r].pv=75;
+                                        }
+                                        if (tabJoueur[r].numeroClasse==2)
+                                        {
+                                            tabJoueur[r].pv=125;
+                                        }
+                                        if (tabJoueur[r].numeroClasse==3)
+                                        {
+                                            tabJoueur[r].pv=100;
+                                        }
+                                        if (tabJoueur[r].numeroClasse==4)
+                                        {
+                                            tabJoueur[r].pv=100;
+                                        }
+                                        if (tabJoueur[r].numeroClasse==5)
+                                        {
+                                            tabJoueur[r].pv=75;
+                                        }
+                                        tabJoueur[r].degats=0;
+                                        tabJoueur[r].kills=0;
+                                        tabJoueur[r].mort=0;
+                                        tabJoueur[r].tourDodo=0;
+                                        tabJoueur[r].tourHate=0;
+                                        tabJoueur[r].tourPoison=0;
+                                        tabJoueur[r].tourPeur=0;
+                                        tabJoueur[r].tourParalysie=0;
+                                        tabJoueur[r].tourBouclier=0;
+                                        demande_placement(page,&tabJoueur[r],tableau_Cases,tableau_affichage_arbre,tabJoueur,r);
+
+                                    }
+                                }
+                                if (resFin == 2)
+                                {
+                                    sortieJeu=1;
+                                }
+                                if (resFin == 3)
+                                {
+                                    sortieJeu=1;
+                                    sortieMenu=1;
+                                    test3=1;
+                                }
+                                rest(500);
+
+
                         }
                         if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b & 1))
                         {
@@ -1291,7 +1342,7 @@ int main()
                         blit(page,screen,0,0,0,0,1200,711);
                         time_t temps2=time(NULL);
                         unsigned long tempo = difftime(temps2,temps1);
-                        if (tempo>=15)
+                        if (tempo>=20)
                         {
                             temps1=time(NULL);
                             tabJoueur[j].pa=10;

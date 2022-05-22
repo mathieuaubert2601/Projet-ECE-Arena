@@ -1,0 +1,131 @@
+\hypertarget{header_8h_source}{}\doxysection{header.\+h}
+\mbox{\hyperlink{header_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADER\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADER\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <allegro.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}time.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{12 \textcolor{comment}{//Structure sort}}
+\DoxyCodeLine{13 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structsorts}{sorts}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} \mbox{\hyperlink{structsorts_a13264c61ae5300877b12059d228834d5}{degats}},\mbox{\hyperlink{structsorts_a2c30f43104974e72e2809fb4569804b0}{numero}},\mbox{\hyperlink{structsorts_a2ac19f1a52cd09296ddf1a4fdbd8fb34}{plusMoins}},\mbox{\hyperlink{structsorts_ae69903c47c15015781b637b9479a7154}{chance}},\mbox{\hyperlink{structsorts_ac765329451135abec74c45e1897abf26}{type}},\mbox{\hyperlink{structsorts_a70a887f22eb81b75366c3992958c9855}{pMin}},\mbox{\hyperlink{structsorts_aca7f3f7b34eb95c8217392a7533b3939}{pMax}},\mbox{\hyperlink{structsorts_a104155ea0ba383f3d696fdf8196bc0b8}{rayon}},\mbox{\hyperlink{structsorts_a93ac3971aa813e33631e11ce105cbc72}{nbrPa}},\mbox{\hyperlink{structsorts_ae9bbd9297d32b7df6837651974c6f8c4}{typePortee}},\mbox{\hyperlink{structsorts_abfdf0995702bd5dde7d40a27541a1809}{typeStatus}},\mbox{\hyperlink{structsorts_acd475d71419279c698b1ea2edb1bd262}{typeSoin}};}
+\DoxyCodeLine{16     BITMAP* \mbox{\hyperlink{structsorts_a7af9e01a2e037e618a960bcf8d760ed8}{bouton}};}
+\DoxyCodeLine{17     BITMAP* \mbox{\hyperlink{structsorts_a95e7d2d0a4aeb674f5ad6b87aeef7630}{boutonInv}};}
+\DoxyCodeLine{18     BITMAP* \mbox{\hyperlink{structsorts_aa4fa048451394cc671ad326cbd1929c0}{infos}};}
+\DoxyCodeLine{19 \}\mbox{\hyperlink{header_8h_a05aa7cec8b10c1a0ecf5a0bc04ac7e46}{t\_sorts}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structclasse}{classe}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     \textcolor{keywordtype}{char} \mbox{\hyperlink{structclasse_a5d0e4a8293141b7067e528fd0fe447ae}{nom}}[15];}
+\DoxyCodeLine{24     \textcolor{keywordtype}{int} \mbox{\hyperlink{structclasse_a6dba0a17b4b24adfd8eef72687d3f0da}{classe}},\mbox{\hyperlink{structclasse_af1b58e608320ff939118a2a719ba3e6b}{pv}},\mbox{\hyperlink{structclasse_a56512c1978f0506986901ec9dd30867b}{pm}};}
+\DoxyCodeLine{25     \mbox{\hyperlink{structsorts}{t\_sorts}} \mbox{\hyperlink{structclasse_ad474862698497cd12ca7d4e089edf829}{sort1}},\mbox{\hyperlink{structclasse_aa6dacb76cdaaace58bef7444f7139dc4}{sort2}},\mbox{\hyperlink{structclasse_a1c4c6bde56f958d4a7424f684f5b0b75}{sort3}},\mbox{\hyperlink{structclasse_a033844394d28d7b0f59e024d6006f47c}{sort4}},\mbox{\hyperlink{structclasse_a54e08465c8e5146e53922a66f25b9de9}{sort5}},\mbox{\hyperlink{structclasse_a4b0a286924f41f23e0a438eb2eb1e20b}{corps}};}
+\DoxyCodeLine{26     BITMAP* \mbox{\hyperlink{structclasse_ada91c70a8f9ffa2b65e8a51de3a06a5c}{profil}};}
+\DoxyCodeLine{27     BITMAP* \mbox{\hyperlink{structclasse_a5969c2ea7116ff4bab44b33368d96769}{profilvert}};}
+\DoxyCodeLine{28     BITMAP* \mbox{\hyperlink{structclasse_a95c8589458f68cad217fadfcbb222799}{profilrouge}};}
+\DoxyCodeLine{29     SAMPLE* \mbox{\hyperlink{structclasse_afdac08ccadcc7d665e496db0b54986bf}{sonClasse}};}
+\DoxyCodeLine{30 \}\mbox{\hyperlink{header_8h_a8b7c0ab3e1974f08898b7049dbdb69e5}{t\_classe}};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{//Structure joueur}}
+\DoxyCodeLine{33 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structjoueur}{joueur}}}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35     \textcolor{keywordtype}{char} \mbox{\hyperlink{structjoueur_a8f376e7000a6fb94f0639db410cb4723}{pseudo}}[15];}
+\DoxyCodeLine{36     \textcolor{keywordtype}{int} \mbox{\hyperlink{structjoueur_a66af32d3d7b5e0efd6db373c0813e7dd}{ligne}}, \mbox{\hyperlink{structjoueur_a733a251be89c7decb13f4fb7b413c82d}{colonne}}, \mbox{\hyperlink{structjoueur_a2c30f43104974e72e2809fb4569804b0}{numero}}, \mbox{\hyperlink{structjoueur_ae7ab3c1a0c3cbbe90bd4e1bcf9b6ee89}{equipe}}, \mbox{\hyperlink{structjoueur_a7f0e07936396687fd2d2742591eba490}{pa}}, \mbox{\hyperlink{structjoueur_ab51c9c4cbf7978ee4f90dbadba0cf158}{tourPoison}}, \mbox{\hyperlink{structjoueur_ab8c8e4b3ea7bd6f8fb437cc5afcdcd5b}{tourDodo}}, \mbox{\hyperlink{structjoueur_a24159ce47fce9118c851327ce7eae1c7}{tourParalysie}}, \mbox{\hyperlink{structjoueur_aa2da087e3f21582a5ba7c171dee09303}{tourPeur}}, \mbox{\hyperlink{structjoueur_ac5bdf11cd63d58a98937864985de097e}{tourBouclier}}, \mbox{\hyperlink{structjoueur_a1d94b604184009b86fcd90b89f3b32c6}{tourHate}}, \mbox{\hyperlink{structjoueur_aef160b7437d94056f1dc59646cd5b87d}{score}}, \mbox{\hyperlink{structjoueur_af1b58e608320ff939118a2a719ba3e6b}{pv}}, \mbox{\hyperlink{structjoueur_a56512c1978f0506986901ec9dd30867b}{pm}}, \mbox{\hyperlink{structjoueur_aa19060479f9c84dd1414a543a88fc43a}{numeroClasse}},\mbox{\hyperlink{structjoueur_a80e06e27760b1b0623a2aac7dc1bc191}{mort}},\mbox{\hyperlink{structjoueur_ac34233d4c2d57f00a52de3158d469988}{kills}},\mbox{\hyperlink{structjoueur_a13264c61ae5300877b12059d228834d5}{degats}};}
+\DoxyCodeLine{37     \mbox{\hyperlink{structclasse}{t\_classe}} \mbox{\hyperlink{structjoueur_a6d86411cdb6af508aed7d5904887ac6e}{classe}};}
+\DoxyCodeLine{38 \}\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\_joueur}};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{//structure case}}
+\DoxyCodeLine{43 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structcases}{cases}}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} \mbox{\hyperlink{structcases_a093b0bbfc4eaad0d53d80717f6f36e09}{disponibleOuNon}};}
+\DoxyCodeLine{46 \}\mbox{\hyperlink{header_8h_a4c5d991f24fcc9f661278996bee425cf}{t\_cases}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51 \textcolor{comment}{//Init\_allegro}}
+\DoxyCodeLine{52 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_abea32f881116ef84f63fcddc375312ea}{initialisationAllegro}}();}
+\DoxyCodeLine{53 \textcolor{comment}{//boutons\_menu}}
+\DoxyCodeLine{54 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a6c074c85d88f526c0876ef831110fd51}{AffichageBouton}}(BITMAP* bouton,BITMAP* boutonInv, BITMAP* page,\textcolor{keywordtype}{int} sourcex,\textcolor{keywordtype}{int} sourcey,\textcolor{keywordtype}{int} destx,\textcolor{keywordtype}{int} desty,\textcolor{keywordtype}{int} longueur, \textcolor{keywordtype}{int} hauteur);}
+\DoxyCodeLine{55 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ae479b4b6bb4a2ac35544035a04d9e977}{AffichageSorts}}(BITMAP* bouton,BITMAP* boutonInv,BITMAP* infos, BITMAP* page,\textcolor{keywordtype}{int} sourcex,\textcolor{keywordtype}{int} sourcey,\textcolor{keywordtype}{int} destx,\textcolor{keywordtype}{int} desty,\textcolor{keywordtype}{int} longueur, \textcolor{keywordtype}{int} hauteur, \textcolor{keywordtype}{int} hauteurinfos, \textcolor{keywordtype}{int} longueurinfos);}
+\DoxyCodeLine{56 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a84ad03893ba4eb2edeb2842cd7591299}{AffichageSorts2}}(BITMAP* bouton,BITMAP* boutonInv,BITMAP* infos, BITMAP* page,\textcolor{keywordtype}{int} sourcex,\textcolor{keywordtype}{int} sourcey,\textcolor{keywordtype}{int} destx,\textcolor{keywordtype}{int} desty,\textcolor{keywordtype}{int} longueur,\textcolor{keywordtype}{int} hauteur,\textcolor{keywordtype}{int} longueurinfos,\textcolor{keywordtype}{int} hauteurinfos);}
+\DoxyCodeLine{57 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a45805ddb3ce1a68e5071cff3463f428d}{phrases}}(BITMAP* page,\textcolor{keywordtype}{int} p);}
+\DoxyCodeLine{58 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a9ab11a1ad716b7abc08e9358a6b4bf03}{afficher\_attaque\_ronflex}}(BITMAP* buffer);}
+\DoxyCodeLine{59 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_afa4f9523e8083318467dd5e607396970}{afficher\_attaque\_rondoudou}}(BITMAP* buffer);}
+\DoxyCodeLine{60 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a01984adf09bfcdbf1d1dcc10471d8fb8}{afficher\_attaque\_alakazam}}(BITMAP* buffer);}
+\DoxyCodeLine{61 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_abc764c4e6af6f606f1da3b18512ae5fe}{afficher\_attaque\_lucario}}(BITMAP* buffer);}
+\DoxyCodeLine{62 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a082b8685174f689d5002889041513895}{afficher\_attaque\_pikachu}}(BITMAP* buffer);}
+\DoxyCodeLine{63 \textcolor{comment}{//choix\_classes}}
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a9f09b95b3f2d1cf78fb6ef0634ec4277}{menu\_classes}} (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, \mbox{\hyperlink{structjoueur}{t\_joueur}} \mbox{\hyperlink{structjoueur}{joueur}}[], \textcolor{keywordtype}{int}* violetCity, SAMPLE* musiqueFond, \textcolor{keywordtype}{int} nbJoueur, \textcolor{keywordtype}{int} tabCases[18][36], \textcolor{keywordtype}{int} t);}
+\DoxyCodeLine{65 \textcolor{comment}{//informations\_classe}}
+\DoxyCodeLine{66 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a6df547fff87c5f3280f9e67de56d3928}{information\_Pikachu}}(BITMAP* page, BITMAP* fond);}
+\DoxyCodeLine{67 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a0080df4e61564bda894844ff467e6014}{information\_Lucario}}(BITMAP* page, BITMAP* fond);}
+\DoxyCodeLine{68 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ae5d218bb0b78ec8cb412b0f28c96a09e}{information\_Ronflex}}(BITMAP* page, BITMAP* fond);}
+\DoxyCodeLine{69 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ad3cf45f452e9b57ed1532052c1d3ab86}{information\_Alakazam}}(BITMAP* page, BITMAP* fond);}
+\DoxyCodeLine{70 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ac3affb88bc661ff840f77f883b8979cc}{information\_Rondoudou}}(BITMAP* page, BITMAP* fond);}
+\DoxyCodeLine{71 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_aa6112d3e462c592863ea736a3824775e}{attaque\_Pikachu}}(BITMAP* page);}
+\DoxyCodeLine{72 \textcolor{comment}{//carte}}
+\DoxyCodeLine{73 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a6810b15bfad1f5d0007080bb1a5b10c5}{afficher\_map}}(BITMAP* buffer);}
+\DoxyCodeLine{74 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ab0712e522820c13f68267a13f57aabbb}{afficher\_arbre}}(BITMAP* buffer, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{75 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a1e1048cffbe1bd6b8c2f5119b7bfd449}{afficher\_tout\_arbre}}(BITMAP* buffer, \textcolor{keywordtype}{int} matrice\_arbre[18][36]);}
+\DoxyCodeLine{76 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ab41fe4f65333c5f7fe7f630f133ac284}{afficher\_coordonnees}}(BITMAP* buffer);}
+\DoxyCodeLine{77 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a5326787611be11aeaffb1d87498cd976}{casebleu}}(BITMAP* buffer, \textcolor{keywordtype}{int} posy, \textcolor{keywordtype}{int} posx);}
+\DoxyCodeLine{78 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a288aa4b6d1f7ca9d289c668642c461ce}{afficher\_cases\_non\_obstacles}}(\textcolor{keywordtype}{int} tab\_cases[18][36],BITMAP* buffer);}
+\DoxyCodeLine{79 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_aa2f8fe16757ba2992a7a0c6c9d62f0d8}{afficher\_cases\_dispo\_joueur}}(BITMAP* buffer,\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} pm,\textcolor{keywordtype}{int} tableau\_cases[18][36], \textcolor{keywordtype}{int} tableau\_a\_rendre[18][36],\mbox{\hyperlink{structjoueur}{t\_joueur}} tabJoueur[],\textcolor{keywordtype}{int} nbJoueur,\textcolor{keywordtype}{int} indice);}
+\DoxyCodeLine{80 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ae7cbc0c1beee6306de9ca8e025e1d96d}{casebleu\_foncee}}(BITMAP* buffer, \textcolor{keywordtype}{int} posy, \textcolor{keywordtype}{int} posx);}
+\DoxyCodeLine{81 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a4dcf40adb64ba1106af935980c551fb7}{copier\_tableau\_case}}(\textcolor{keywordtype}{int} tableau\_source[18][36], \textcolor{keywordtype}{int} tableau\_destination[18][36]);}
+\DoxyCodeLine{82 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a823a89cbb39c49684c89addb86b002b6}{remettre\_case\_obstacle}}(\textcolor{keywordtype}{int} matrice\_A\_Modifier[18][36]);}
+\DoxyCodeLine{83 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a2cdf33c73b720ed1c35435269192e195}{afficher\_lac}}(BITMAP* buffer);}
+\DoxyCodeLine{84 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a4f43be17644b1544a80bd4f2188c410c}{caserouge}}(BITMAP* buffer, \textcolor{keywordtype}{int} posx, \textcolor{keywordtype}{int} posy);}
+\DoxyCodeLine{85 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a6686f0c8e8186d8d22b5a707b157279a}{demande\_placement}} (BITMAP* buffer, \mbox{\hyperlink{structjoueur}{t\_joueur}}* \mbox{\hyperlink{structjoueur}{joueur}},\textcolor{keywordtype}{int} tableau[18][36], \textcolor{keywordtype}{int} tab\_arbres[18][36], \mbox{\hyperlink{structjoueur}{t\_joueur}} tabJoueur[], \textcolor{keywordtype}{int} indice);}
+\DoxyCodeLine{86 \textcolor{comment}{//affichage\_Personnages}}
+\DoxyCodeLine{87 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a55c88a6e009dabf10b987961f2e7417e}{afficher\_personnage\_pikachu}}(BITMAP* buffer,\textcolor{keywordtype}{int} compteur,\textcolor{keywordtype}{int} cote,\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y,\mbox{\hyperlink{structjoueur}{t\_joueur}} \mbox{\hyperlink{structjoueur}{joueur}});}
+\DoxyCodeLine{88 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a9a63e1d6ec1082952b475bfaa9a2f734}{afficher\_personnage\_lucario}}(BITMAP* buffer,\textcolor{keywordtype}{int} compteur,\textcolor{keywordtype}{int} cote,\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y,\mbox{\hyperlink{structjoueur}{t\_joueur}} \mbox{\hyperlink{structjoueur}{joueur}});}
+\DoxyCodeLine{89 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_adac894545577a61e9a2ea826c2bf9225}{afficher\_personnage\_ronflex}}(BITMAP* buffer,\textcolor{keywordtype}{int} compteur,\textcolor{keywordtype}{int} cote,\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y,\mbox{\hyperlink{structjoueur}{t\_joueur}} \mbox{\hyperlink{structjoueur}{joueur}});}
+\DoxyCodeLine{90 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a74d837556e58eeba98c540ecae102fde}{afficher\_personnage\_rondoudou}}(BITMAP* buffer,\textcolor{keywordtype}{int} compteur,\textcolor{keywordtype}{int} cote,\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y,\mbox{\hyperlink{structjoueur}{t\_joueur}} \mbox{\hyperlink{structjoueur}{joueur}});}
+\DoxyCodeLine{91 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a3c8b560c902a5f37d1fcc7a92f35e3a5}{afficher\_personnage\_alakazam}}(BITMAP* buffer,\textcolor{keywordtype}{int} compteur,\textcolor{keywordtype}{int} cote,\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y,\mbox{\hyperlink{structjoueur}{t\_joueur}} \mbox{\hyperlink{structjoueur}{joueur}});}
+\DoxyCodeLine{92 \textcolor{comment}{//menuNbJoueur}}
+\DoxyCodeLine{93 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a3535848b79eba86b4fbe6c5ca9b0044d}{menuNbJoueur}}(BITMAP* page, BITMAP* fond,BITMAP* logo,\textcolor{keywordtype}{int}* violetCity);}
+\DoxyCodeLine{94 \textcolor{comment}{//menuJeu}}
+\DoxyCodeLine{95 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ab6adbce81780ca6469b952558a5f8e77}{menuJeu}}(BITMAP* page, BITMAP* fond,BITMAP* logo);}
+\DoxyCodeLine{96 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ac7dfe0178da1524d969eaa71d24c3ca5}{Saisir\_nom}}(\textcolor{keywordtype}{char} nom\_joueur[15], BITMAP* page);}
+\DoxyCodeLine{97 \textcolor{comment}{//barre\_commande}}
+\DoxyCodeLine{98 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a1c1c57591427d50d39116db9cb6f53f8}{afficher\_commande}}(BITMAP* buffer,\mbox{\hyperlink{structjoueur}{t\_joueur}} tab[],\textcolor{keywordtype}{int} nbJ, \textcolor{keywordtype}{int} j);}
+\DoxyCodeLine{99 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a952b06ff7a85255c698c0cf16a13cc52}{affichage\_profil}}(BITMAP* buffer,\mbox{\hyperlink{structjoueur}{t\_joueur}} tab[],\textcolor{keywordtype}{int} nbJ, \textcolor{keywordtype}{int} j);}
+\DoxyCodeLine{100 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ab37b6e34230aa3e1039a7629081fedc0}{commande\_pokemon}} (BITMAP* buffer,\mbox{\hyperlink{structjoueur}{t\_joueur}} \mbox{\hyperlink{structjoueur}{joueur}}[],\textcolor{keywordtype}{int} j);}
+\DoxyCodeLine{101 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a734c0863e3646e03819095278e02918d}{menu\_pause}}(BITMAP* buffer);}
+\DoxyCodeLine{102 \textcolor{comment}{//deplacement\_joueur}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ae6e2d42f66ef1867da14fb0cd952a96e}{deplacement\_joueur}}(BITMAP* buffer, \textcolor{keywordtype}{int} indice\_ligne\_ini, \textcolor{keywordtype}{int} indice\_colonne\_ini, \textcolor{keywordtype}{int} personnage,\textcolor{keywordtype}{int} tableau\_chemin\_court[18][36],\textcolor{keywordtype}{int} tableau\_affichage\_arbre[18][32],\mbox{\hyperlink{structjoueur}{t\_joueur}} tableau\_joueur[],\textcolor{keywordtype}{int} nombre\_joueur, \textcolor{keywordtype}{int} indice\_joueur);}
+\DoxyCodeLine{105 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ac133d7f50b2c99d6eff2c4f3a8359664}{afficher\_deplacement\_plus\_court}}(\textcolor{keywordtype}{int} tableau\_case\_dispo[18][36],\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} x\_souris, \textcolor{keywordtype}{int} y\_souris, \textcolor{keywordtype}{int} tableau\_a\_rendre[18][36]);}
+\DoxyCodeLine{106 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a5ab1e014765882dd89cebab874f7694b}{changement\_case\_souris}}(BITMAP* buffer,\textcolor{keywordtype}{int} x\_souris,\textcolor{keywordtype}{int} y\_souris, \textcolor{keywordtype}{int}* case\_x, \textcolor{keywordtype}{int}* case\_y,\textcolor{keywordtype}{int} tableau\_case\_dispo[18][36],\textcolor{keywordtype}{int} tableau\_chemin\_court[18][36],\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{107 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a439c3fbd0381223cae750552d0ea8d08}{afficher\_chemin}}(BITMAP* buffer, \textcolor{keywordtype}{int} tableau\_a\_afficher[18][36],\mbox{\hyperlink{structjoueur}{t\_joueur}} tableau\_joueur[],\textcolor{keywordtype}{int} nombre\_joueur, \textcolor{keywordtype}{int} indice\_joueur);}
+\DoxyCodeLine{108 \textcolor{comment}{//gestionSorts}}
+\DoxyCodeLine{109 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a78442cd1056159c1f7211e232af284d9}{lancerSort}}(\mbox{\hyperlink{structsorts}{t\_sorts}} sort1, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurA, \mbox{\hyperlink{structjoueur}{t\_joueur}} tabJoueurs[], \textcolor{keywordtype}{int} nombreJoueur, \textcolor{keywordtype}{int} tourJoueur, BITMAP* page, \textcolor{keywordtype}{int} tab[18][36]);}
+\DoxyCodeLine{110 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a0ce02801e0ebb20c6d87064a70115ad2}{sortAttaque2J}}(\mbox{\hyperlink{structsorts}{t\_sorts}} sort1, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurA, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurB, BITMAP* page);}
+\DoxyCodeLine{111 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a8cadcf720fc99b309d2a47ce1d3dad61}{sortAttaque3J}}(\mbox{\hyperlink{structsorts}{t\_sorts}} sort1, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurA, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurB, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurC, BITMAP* page);}
+\DoxyCodeLine{112 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a5e06244e31f20a4a26e4fd99e97b8fae}{sortAttaque4J}}(\mbox{\hyperlink{structsorts}{t\_sorts}} sort1, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurA, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurB, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurC, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurD, BITMAP* page);}
+\DoxyCodeLine{113 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a19c71b1ec2c163de14147a68ecd94ae2}{sortMouvement}}(\mbox{\hyperlink{structsorts}{t\_sorts}} sort1, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurA, BITMAP* page, \textcolor{keywordtype}{int} tab[18][36], \textcolor{keywordtype}{int} nbJoueurs,\mbox{\hyperlink{structjoueur}{t\_joueur}}* tabJoueur[]);}
+\DoxyCodeLine{114 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a91a3b8bd39f5b4e4d1ee00d331f2a92d}{sortStatut2J}}(\mbox{\hyperlink{structsorts}{t\_sorts}} sort1, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurA, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurB, BITMAP* page);}
+\DoxyCodeLine{115 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a1faf448257f964ee6f74a41d6f8dc99a}{sortStatut3J}}(\mbox{\hyperlink{structsorts}{t\_sorts}} sort1, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurA, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurB, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurC, BITMAP* page);}
+\DoxyCodeLine{116 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a5c4b4ff92fa943af851756598de55f1a}{sortStatut4J}}(\mbox{\hyperlink{structsorts}{t\_sorts}} sort1, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurA, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurB, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurC, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurD, BITMAP* page);}
+\DoxyCodeLine{117 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a9d60aa2c1e1f66bf87139408b746d946}{sortVie}}(\mbox{\hyperlink{structsorts}{t\_sorts}} sort1, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurA,BITMAP* page);}
+\DoxyCodeLine{118 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a4b2a23ed704814cbb431ed5986f795be}{sortSoin2J}}(\mbox{\hyperlink{structsorts}{t\_sorts}} sort1, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurA, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurB, BITMAP* page);}
+\DoxyCodeLine{119 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a7f205c49612277da36dd239532161b97}{sortSoin3J}}(\mbox{\hyperlink{structsorts}{t\_sorts}} sort1, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurA, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurB, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurC, BITMAP* page);}
+\DoxyCodeLine{120 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a378d7d9c6a515a23a4fd2cec4358076b}{sortSoin4J}}(\mbox{\hyperlink{structsorts}{t\_sorts}} sort1, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurA, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurB, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurC, \mbox{\hyperlink{structjoueur}{t\_joueur}}* joueurD, BITMAP* page);}
+\DoxyCodeLine{121 \textcolor{keywordtype}{int} \mbox{\hyperlink{header_8h_a53ae418fcb4a387ae6237971f8e3036a}{test\_clique\_Suppr}}(\textcolor{keywordtype}{int} destx, \textcolor{keywordtype}{int} desty, \textcolor{keywordtype}{int} longueur, \textcolor{keywordtype}{int} hauteur,\textcolor{keywordtype}{int} compteur,\textcolor{keywordtype}{char} pseudo[15]);}
+\DoxyCodeLine{122 \textcolor{keywordtype}{int} \mbox{\hyperlink{header_8h_a7a424d5372c1fa56f672fab7a8ce0531}{test\_clique\_Entree}}(\textcolor{keywordtype}{int} destx, \textcolor{keywordtype}{int} desty, \textcolor{keywordtype}{int} longueur, \textcolor{keywordtype}{int} hauteur,\textcolor{keywordtype}{int} boule,\textcolor{keywordtype}{char} pseudo[15]);}
+\DoxyCodeLine{123 \textcolor{keywordtype}{int} \mbox{\hyperlink{header_8h_a132ef4c0ca9e66c3e4bee1451c1d463f}{test\_clique}}(\textcolor{keywordtype}{int} destx, \textcolor{keywordtype}{int} desty, \textcolor{keywordtype}{int} longueur, \textcolor{keywordtype}{int} hauteur,\textcolor{keywordtype}{char} lettre,\textcolor{keywordtype}{int} compteur,\textcolor{keywordtype}{char} pseudo[15]);}
+\DoxyCodeLine{124 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_abfba72c80d3cc019576e9631d9eae63e}{ordreJoueurs}}(\mbox{\hyperlink{structjoueur}{t\_joueur}} ordreJoueur[],\mbox{\hyperlink{structjoueur}{t\_joueur}} tabJoueur[], \textcolor{keywordtype}{int} nbrJoueur);}
+\DoxyCodeLine{125 \textcolor{comment}{//Classement}}
+\DoxyCodeLine{126 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ab3bb8554c74f95f95f566417c8769ecd}{classement2J}}(BITMAP* buffer,\mbox{\hyperlink{structjoueur}{t\_joueur}} joueurG, \mbox{\hyperlink{structjoueur}{t\_joueur}} joueurP1);}
+\DoxyCodeLine{127 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a58e8538d70a1a103ce630254713ccff9}{classement3J}}(BITMAP* buffer,\mbox{\hyperlink{structjoueur}{t\_joueur}} joueurG, \mbox{\hyperlink{structjoueur}{t\_joueur}} joueurP1, \mbox{\hyperlink{structjoueur}{t\_joueur}} joueurP2);}
+\DoxyCodeLine{128 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a54672d1ff6fdd918bd9c11fd392f0164}{classement4J}}(BITMAP* buffer,\mbox{\hyperlink{structjoueur}{t\_joueur}} joueurG, \mbox{\hyperlink{structjoueur}{t\_joueur}} joueurP1, \mbox{\hyperlink{structjoueur}{t\_joueur}} joueurP2, \mbox{\hyperlink{structjoueur}{t\_joueur}} joueurP3);}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// HEADER\_H\_INCLUDED}}
+
+\end{DoxyCode}

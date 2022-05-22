@@ -1,0 +1,124 @@
+\hypertarget{carte_8c}{}\doxysection{carte.\+c File Reference}
+\label{carte_8c}\index{carte.c@{carte.c}}
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\newline
+Include dependency graph for carte.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{carte_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{carte_8c_a6810b15bfad1f5d0007080bb1a5b10c5}{afficher\+\_\+map}} (BITMAP $\ast$buffer)
+\item 
+void \mbox{\hyperlink{carte_8c_a288aa4b6d1f7ca9d289c668642c461ce}{afficher\+\_\+cases\+\_\+non\+\_\+obstacles}} (int tab\+\_\+cases\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, BITMAP $\ast$buffer)
+\item 
+void \mbox{\hyperlink{carte_8c_a4dcf40adb64ba1106af935980c551fb7}{copier\+\_\+tableau\+\_\+case}} (int tableau\+\_\+source\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, int tableau\+\_\+destination\mbox{[}18\mbox{]}\mbox{[}36\mbox{]})
+\item 
+void \mbox{\hyperlink{carte_8c_aa2f8fe16757ba2992a7a0c6c9d62f0d8}{afficher\+\_\+cases\+\_\+dispo\+\_\+joueur}} (BITMAP $\ast$buffer, int x, int y, int pm, int tableau\+\_\+cases\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, int tableau\+\_\+a\+\_\+rendre\mbox{[}18\mbox{]}\mbox{[}36\mbox{]}, \mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}} tab\+Joueur\mbox{[}$\,$\mbox{]}, int nb\+Joueur, int indice)
+\item 
+void \mbox{\hyperlink{carte_8c_ab0712e522820c13f68267a13f57aabbb}{afficher\+\_\+arbre}} (BITMAP $\ast$buffer, int x, int y)
+\item 
+void \mbox{\hyperlink{carte_8c_a1e1048cffbe1bd6b8c2f5119b7bfd449}{afficher\+\_\+tout\+\_\+arbre}} (BITMAP $\ast$buffer, int matrice\+\_\+arbre\mbox{[}18\mbox{]}\mbox{[}36\mbox{]})
+\item 
+void \mbox{\hyperlink{carte_8c_a74685804bf809b3511100a3805ec9294}{casebleu}} (BITMAP $\ast$buffer, int posx, int posy)
+\item 
+void \mbox{\hyperlink{carte_8c_ad44b584c890a186481b4cfb2195cfa2f}{casebleu\+\_\+foncee}} (BITMAP $\ast$buffer, int posx, int posy)
+\item 
+void \mbox{\hyperlink{carte_8c_a2cdf33c73b720ed1c35435269192e195}{afficher\+\_\+lac}} (BITMAP $\ast$buffer)
+\item 
+void \mbox{\hyperlink{carte_8c_a4f43be17644b1544a80bd4f2188c410c}{caserouge}} (BITMAP $\ast$buffer, int posx, int posy)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{carte_8c_ab0712e522820c13f68267a13f57aabbb}\label{carte_8c_ab0712e522820c13f68267a13f57aabbb}} 
+\index{carte.c@{carte.c}!afficher\_arbre@{afficher\_arbre}}
+\index{afficher\_arbre@{afficher\_arbre}!carte.c@{carte.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_arbre()}{afficher\_arbre()}}
+{\footnotesize\ttfamily void afficher\+\_\+arbre (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{carte_8c_aa2f8fe16757ba2992a7a0c6c9d62f0d8}\label{carte_8c_aa2f8fe16757ba2992a7a0c6c9d62f0d8}} 
+\index{carte.c@{carte.c}!afficher\_cases\_dispo\_joueur@{afficher\_cases\_dispo\_joueur}}
+\index{afficher\_cases\_dispo\_joueur@{afficher\_cases\_dispo\_joueur}!carte.c@{carte.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_cases\_dispo\_joueur()}{afficher\_cases\_dispo\_joueur()}}
+{\footnotesize\ttfamily void afficher\+\_\+cases\+\_\+dispo\+\_\+joueur (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{pm,  }\item[{int}]{tableau\+\_\+cases\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{tableau\+\_\+a\+\_\+rendre\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{\mbox{\hyperlink{header_8h_a3e417dda93856044faf7542bf6c70682}{t\+\_\+joueur}}}]{tab\+Joueur\mbox{[}$\,$\mbox{]},  }\item[{int}]{nb\+Joueur,  }\item[{int}]{indice }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{carte_8c_aa2f8fe16757ba2992a7a0c6c9d62f0d8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{carte_8c_a288aa4b6d1f7ca9d289c668642c461ce}\label{carte_8c_a288aa4b6d1f7ca9d289c668642c461ce}} 
+\index{carte.c@{carte.c}!afficher\_cases\_non\_obstacles@{afficher\_cases\_non\_obstacles}}
+\index{afficher\_cases\_non\_obstacles@{afficher\_cases\_non\_obstacles}!carte.c@{carte.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_cases\_non\_obstacles()}{afficher\_cases\_non\_obstacles()}}
+{\footnotesize\ttfamily void afficher\+\_\+cases\+\_\+non\+\_\+obstacles (\begin{DoxyParamCaption}\item[{int}]{tab\+\_\+cases\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{carte_8c_a288aa4b6d1f7ca9d289c668642c461ce_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{carte_8c_a2cdf33c73b720ed1c35435269192e195}\label{carte_8c_a2cdf33c73b720ed1c35435269192e195}} 
+\index{carte.c@{carte.c}!afficher\_lac@{afficher\_lac}}
+\index{afficher\_lac@{afficher\_lac}!carte.c@{carte.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_lac()}{afficher\_lac()}}
+{\footnotesize\ttfamily void afficher\+\_\+lac (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{carte_8c_a6810b15bfad1f5d0007080bb1a5b10c5}\label{carte_8c_a6810b15bfad1f5d0007080bb1a5b10c5}} 
+\index{carte.c@{carte.c}!afficher\_map@{afficher\_map}}
+\index{afficher\_map@{afficher\_map}!carte.c@{carte.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_map()}{afficher\_map()}}
+{\footnotesize\ttfamily void afficher\+\_\+map (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{carte_8c_a1e1048cffbe1bd6b8c2f5119b7bfd449}\label{carte_8c_a1e1048cffbe1bd6b8c2f5119b7bfd449}} 
+\index{carte.c@{carte.c}!afficher\_tout\_arbre@{afficher\_tout\_arbre}}
+\index{afficher\_tout\_arbre@{afficher\_tout\_arbre}!carte.c@{carte.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_tout\_arbre()}{afficher\_tout\_arbre()}}
+{\footnotesize\ttfamily void afficher\+\_\+tout\+\_\+arbre (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{matrice\+\_\+arbre\mbox{[}18\mbox{]}\mbox{[}36\mbox{]} }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{carte_8c_a1e1048cffbe1bd6b8c2f5119b7bfd449_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{carte_8c_a74685804bf809b3511100a3805ec9294}\label{carte_8c_a74685804bf809b3511100a3805ec9294}} 
+\index{carte.c@{carte.c}!casebleu@{casebleu}}
+\index{casebleu@{casebleu}!carte.c@{carte.c}}
+\doxysubsubsection{\texorpdfstring{casebleu()}{casebleu()}}
+{\footnotesize\ttfamily void casebleu (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{posx,  }\item[{int}]{posy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{carte_8c_ad44b584c890a186481b4cfb2195cfa2f}\label{carte_8c_ad44b584c890a186481b4cfb2195cfa2f}} 
+\index{carte.c@{carte.c}!casebleu\_foncee@{casebleu\_foncee}}
+\index{casebleu\_foncee@{casebleu\_foncee}!carte.c@{carte.c}}
+\doxysubsubsection{\texorpdfstring{casebleu\_foncee()}{casebleu\_foncee()}}
+{\footnotesize\ttfamily void casebleu\+\_\+foncee (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{posx,  }\item[{int}]{posy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{carte_8c_a4f43be17644b1544a80bd4f2188c410c}\label{carte_8c_a4f43be17644b1544a80bd4f2188c410c}} 
+\index{carte.c@{carte.c}!caserouge@{caserouge}}
+\index{caserouge@{caserouge}!carte.c@{carte.c}}
+\doxysubsubsection{\texorpdfstring{caserouge()}{caserouge()}}
+{\footnotesize\ttfamily void caserouge (\begin{DoxyParamCaption}\item[{BITMAP $\ast$}]{buffer,  }\item[{int}]{posx,  }\item[{int}]{posy }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{carte_8c_a4f43be17644b1544a80bd4f2188c410c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{carte_8c_a4dcf40adb64ba1106af935980c551fb7}\label{carte_8c_a4dcf40adb64ba1106af935980c551fb7}} 
+\index{carte.c@{carte.c}!copier\_tableau\_case@{copier\_tableau\_case}}
+\index{copier\_tableau\_case@{copier\_tableau\_case}!carte.c@{carte.c}}
+\doxysubsubsection{\texorpdfstring{copier\_tableau\_case()}{copier\_tableau\_case()}}
+{\footnotesize\ttfamily void copier\+\_\+tableau\+\_\+case (\begin{DoxyParamCaption}\item[{int}]{tableau\+\_\+source\mbox{[}18\mbox{]}\mbox{[}36\mbox{]},  }\item[{int}]{tableau\+\_\+destination\mbox{[}18\mbox{]}\mbox{[}36\mbox{]} }\end{DoxyParamCaption})}
+

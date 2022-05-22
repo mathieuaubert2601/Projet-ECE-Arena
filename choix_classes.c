@@ -143,7 +143,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     pikachu.classe = 1;
     strcpy(pikachu.nom,"Pikachu");
     pikachu.pm = 6;
-    pikachu.pv = 2;
+    pikachu.pv = 75;
     pikachu.sonClasse = pikachuSon;
     pikachu.sort1=vitesseExtreme;
     pikachu.sort2=fatalFoudre;
@@ -335,6 +335,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             {
                 joueur[t].classe=pikachu;
                 joueur[t].mort=0;
+                joueur[t].equipe=t+1;
                 joueur[t].kills=0;
                 joueur[t].pv = pikachu.pv;
                 joueur[t].numero=nbJoueur;
@@ -353,6 +354,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             {
                 joueur[t].classe=ronflex;
                 joueur[t].mort=0;
+                joueur[t].equipe=t+1;
                 joueur[t].kills=0;
                 joueur[t].pv = ronflex.pv;
                 joueur[t].numero=nbJoueur;
@@ -372,6 +374,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].classe=lucario;
                 joueur[t].mort=0;
                 joueur[t].kills=0;
+                joueur[t].equipe=t+1;
                 joueur[t].pv = lucario.pv;
                 joueur[t].numero=nbJoueur;
                 joueur[t].numeroClasse=3;
@@ -389,6 +392,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
             {
                 joueur[t].classe=alakazam;
                 joueur[t].mort=0;
+                joueur[t].equipe=t+1;
                 joueur[t].kills=0;
                 joueur[t].pv = alakazam.pv;
                 joueur[t].numero=nbJoueur;
@@ -408,6 +412,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].classe=rondoudou;
                 joueur[t].mort=0;
                 joueur[t].kills=0;
+                joueur[t].equipe=t+1;
                 joueur[t].pv = rondoudou.pv;
                 joueur[t].numero=nbJoueur;
                 joueur[t].numeroClasse=5;

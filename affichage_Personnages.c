@@ -1,6 +1,6 @@
 #include "header.h"
 
-void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int y)
+void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int y, t_joueur joueur)
 {
     //déclaratation de la taille des cases
 
@@ -31,6 +31,29 @@ void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int 
     BITMAP* pikaDroite3 = load_bitmap("pikachu/pikaDroite3.bmp",NULL);
     BITMAP* pikaDroite4 = load_bitmap("pikachu/pikaDroite4.bmp",NULL);
     BITMAP* tab_pikaDroite[4] = {pikaDroite1,pikaDroite2,pikaDroite3,pikaDroite4};
+
+    BITMAP* rouge = load_bitmap("Statut/equipeRouge.bmp",NULL);
+    BITMAP* bleu = load_bitmap("Statut/equipeBleue.bmp",NULL);
+    BITMAP* vert = load_bitmap("Statut/equipeVerte.bmp",NULL);
+    BITMAP* jaune = load_bitmap("Statut/equipeJaune.bmp",NULL);
+
+    if(joueur.equipe == 1)
+    {
+        stretch_blit(rouge,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 2)
+    {
+        stretch_blit(bleu,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 3)
+    {
+        stretch_blit(vert,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 4)
+    {
+        stretch_blit(jaune,buffer,0,0,90,5,x,y+35,30,5);
+    }
+
 
     if(cote == 0)
     {
@@ -84,7 +107,7 @@ void attaque_Pikachu(BITMAP* page)
 
 }
 
-void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int y)
+void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int y, t_joueur joueur)
 {
     //Déclaration des variables pour lucario de face
     BITMAP* lucarioFace1 = load_bitmap("lucario/lucarioFace1.bmp",NULL);
@@ -114,6 +137,28 @@ void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int 
     BITMAP* lucarioDroite4 = load_bitmap("lucario/lucarioDroite4.bmp",NULL);
     BITMAP* tab_lucarioDroite[4] = {lucarioDroite1,lucarioDroite2,lucarioDroite3,lucarioDroite4};
 
+    BITMAP* rouge = load_bitmap("Statut/equipeRouge.bmp",NULL);
+    BITMAP* bleu = load_bitmap("Statut/equipeBleue.bmp",NULL);
+    BITMAP* vert = load_bitmap("Statut/equipeVerte.bmp",NULL);
+    BITMAP* jaune = load_bitmap("Statut/equipeJaune.bmp",NULL);
+
+
+    if(joueur.equipe == 1)
+    {
+        stretch_blit(rouge,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 2)
+    {
+        stretch_blit(bleu,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 3)
+    {
+        stretch_blit(vert,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 4)
+    {
+        stretch_blit(jaune,buffer,0,0,90,5,x,y+35,30,5);
+    }
     if(cote == 0)
     {
         masked_stretch_blit(tab_lucarioFace[compteur],buffer,0,0,tab_lucarioFace[compteur]->w,tab_lucarioFace[compteur]->h,x-10,y-10,(tab_lucarioFace[compteur]->w)*1.5,(tab_lucarioFace[compteur]->h)*1.5);
@@ -309,7 +354,7 @@ void afficher_attaque_pikachu(BITMAP* buffer)
     }
 
 }
-void afficher_personnage_ronflex(BITMAP* buffer,int compteur,int cote,int x,int y)
+void afficher_personnage_ronflex(BITMAP* buffer,int compteur,int cote,int x,int y,t_joueur joueur)
 {
     //Déclaration des variables pour ronflex de face
     BITMAP* ronflexFace1 = load_bitmap("ronflex/ronflexFace1.bmp",NULL);
@@ -339,6 +384,29 @@ void afficher_personnage_ronflex(BITMAP* buffer,int compteur,int cote,int x,int 
     BITMAP* ronflexDroite4 = load_bitmap("ronflex/ronflexDroite4.bmp",NULL);
     BITMAP* tab_ronflexDroite[4] = {ronflexDroite1,ronflexDroite2,ronflexDroite3,ronflexDroite4};
 
+
+    BITMAP* rouge = load_bitmap("Statut/equipeRouge.bmp",NULL);
+    BITMAP* bleu = load_bitmap("Statut/equipeBleue.bmp",NULL);
+    BITMAP* vert = load_bitmap("Statut/equipeVerte.bmp",NULL);
+    BITMAP* jaune = load_bitmap("Statut/equipeJaune.bmp",NULL);
+
+
+    if(joueur.equipe == 1)
+    {
+        stretch_blit(rouge,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 2)
+    {
+        stretch_blit(bleu,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 3)
+    {
+        stretch_blit(vert,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 4)
+    {
+        stretch_blit(jaune,buffer,0,0,90,5,x,y+35,30,5);
+    }
     if(cote == 0)
     {
         masked_stretch_blit(tab_ronflexFace[compteur],buffer,0,0,tab_ronflexFace[compteur]->w,tab_ronflexFace[compteur]->h,x-10,y-10,(tab_ronflexFace[compteur]->w)*1.5,(tab_ronflexFace[compteur]->h)*1.5);
@@ -358,7 +426,7 @@ void afficher_personnage_ronflex(BITMAP* buffer,int compteur,int cote,int x,int 
 
 }
 
-void afficher_personnage_rondoudou(BITMAP* buffer,int compteur,int cote,int x,int y)
+void afficher_personnage_rondoudou(BITMAP* buffer,int compteur,int cote,int x,int y,t_joueur joueur)
 {
     //Déclaration des variables pour rondoudou de face
     BITMAP* rondoudouFace1 = load_bitmap("rondoudou/rondoudouFace1.bmp",NULL);
@@ -388,6 +456,29 @@ void afficher_personnage_rondoudou(BITMAP* buffer,int compteur,int cote,int x,in
     BITMAP* rondoudouDroite4 = load_bitmap("rondoudou/rondoudouDroite4.bmp",NULL);
     BITMAP* tab_rondoudouDroite[4] = {rondoudouDroite1,rondoudouDroite2,rondoudouDroite3,rondoudouDroite4};
 
+
+    BITMAP* rouge = load_bitmap("Statut/equipeRouge.bmp",NULL);
+    BITMAP* bleu = load_bitmap("Statut/equipeBleue.bmp",NULL);
+    BITMAP* vert = load_bitmap("Statut/equipeVerte.bmp",NULL);
+    BITMAP* jaune = load_bitmap("Statut/equipeJaune.bmp",NULL);
+
+
+    if(joueur.equipe == 1)
+    {
+        stretch_blit(rouge,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 2)
+    {
+        stretch_blit(bleu,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 3)
+    {
+        stretch_blit(vert,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 4)
+    {
+        stretch_blit(jaune,buffer,0,0,90,5,x,y+35,30,5);
+    }
     if(cote == 0)
     {
         masked_stretch_blit(tab_rondoudouFace[compteur],buffer,0,0,tab_rondoudouFace[compteur]->w,tab_rondoudouFace[compteur]->h,x-10,y-10,(tab_rondoudouFace[compteur]->w)*1.5,(tab_rondoudouFace[compteur]->h)*1.5);
@@ -408,7 +499,7 @@ void afficher_personnage_rondoudou(BITMAP* buffer,int compteur,int cote,int x,in
 
 }
 
-void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int y)
+void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int y,t_joueur joueur)
 {
     //Déclaration des variables pour alakazam de face
     BITMAP* alakazamFace1 = load_bitmap("alakazam/alakazamFace1.bmp",NULL);
@@ -438,6 +529,29 @@ void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int
     BITMAP* alakazamDroite4 = load_bitmap("alakazam/alakazamDroite4.bmp",NULL);
     BITMAP* tab_alakazamDroite[4] = {alakazamDroite1,alakazamDroite2,alakazamDroite3,alakazamDroite4};
 
+
+    BITMAP* rouge = load_bitmap("Statut/equipeRouge.bmp",NULL);
+    BITMAP* bleu = load_bitmap("Statut/equipeBleue.bmp",NULL);
+    BITMAP* vert = load_bitmap("Statut/equipeVerte.bmp",NULL);
+    BITMAP* jaune = load_bitmap("Statut/equipeJaune.bmp",NULL);
+
+
+    if(joueur.equipe == 1)
+    {
+        stretch_blit(rouge,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 2)
+    {
+        stretch_blit(bleu,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 3)
+    {
+        stretch_blit(vert,buffer,0,0,90,5,x,y+35,30,5);
+    }
+    if(joueur.equipe == 4)
+    {
+        stretch_blit(jaune,buffer,0,0,90,5,x,y+35,30,5);
+    }
     if(cote == 0)
     {
         masked_stretch_blit(tab_alakazamFace[compteur],buffer,0,0,tab_alakazamFace[compteur]->w,tab_alakazamFace[compteur]->h,x-10,y-10,(tab_alakazamFace[compteur]->w)*1.5,(tab_alakazamFace[compteur]->h)*1.5);
@@ -457,33 +571,3 @@ void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int
 
 }
 
-/*void choix_placement (BITMAP* buffer,t_joueur joueur,int nbJoueurs)
-{
-    FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
-    for (int z=0; z<nbJoueurs; z++)
-    {
-        if (tabJoueur[z].numeroClasse==1)///Pikachu
-        {
-            //Demande le placement
-            textprintf_centre(buffer,maPolice,700,500,makecol(255,255,0),"%s choisit ton placement", joueur.pseudo);
-
-            afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-        }
-        if (tabJoueur[z].numeroClasse==2)///Ronflex
-        {
-            afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-        }
-        if (tabJoueur[z].numeroClasse==3)///Lucario
-        {
-            afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-        }
-        if (tabJoueur[z].numeroClasse==4)///Alakazam
-        {
-            afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-        }
-        if (tabJoueur[z].numeroClasse==5)///Rondoudou
-        {
-            afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-        }
-    }
-}*/
