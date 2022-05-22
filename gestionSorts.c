@@ -1376,6 +1376,12 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
             }
         }
     }
+    else
+    {
+        phrases(page,2);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
+    }
 }
 
 

@@ -119,7 +119,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     t_sorts autoSoinS={5,17,10,95,4,0,0,0,2,0,0,2,autoSoin,autoSoinInv,infosautoSoin};
     t_sorts vaguePsyS={7,18,5,80,1,2,8,0,5,1,0,0,vaguePsy,vaguePsyInv,infosvaguePsy};
     t_sorts torgnolesS={8,19,2,80,1,0,2,0,5,3,0,0,torgnoles,torgnolesInv,infostorgnoles};
-    t_sorts soinS={50,20,10,75,2,0,2,0,10,3,0,3,soin,soinInv,infossoin};
+    t_sorts soinS={50,20,10,75,4,0,2,0,10,3,0,3,soin,soinInv,infossoin};
     t_sorts berceuseS={0,21,0,50,2,0,3,0,6,3,2,0,berceuse,berceuseInv,infosberceuse};
     t_sorts corps={2,22,2,100,1,0,1,0,1,3,0,0,cac,cacInv,infoscorps};
 
