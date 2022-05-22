@@ -76,23 +76,23 @@ void afficher_chemin(BITMAP* buffer, int tableau_a_afficher[18][36],t_joueur tab
 
             if(tableau_joueur[k].numeroClasse == 1)
             {
-                afficher_personnage_pikachu(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne);
+                afficher_personnage_pikachu(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne,tableau_joueur[k]);
             }
             if(tableau_joueur[k].numeroClasse == 2)
             {
-                afficher_personnage_ronflex(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne);
+                afficher_personnage_ronflex(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne,tableau_joueur[k]);
             }
             if(tableau_joueur[k].numeroClasse == 3)
             {
-                afficher_personnage_lucario(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne);
+                afficher_personnage_lucario(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne,tableau_joueur[k]);
             }
             if(tableau_joueur[k].numeroClasse == 4)
             {
-                afficher_personnage_alakazam(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne);
+                afficher_personnage_alakazam(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne,tableau_joueur[k]);
             }
             if(tableau_joueur[k].numeroClasse == 5)
             {
-                afficher_personnage_rondoudou(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne);
+                afficher_personnage_rondoudou(buffer,0,0,tableau_joueur[k].colonne,tableau_joueur[k].ligne,tableau_joueur[k]);
             }
 
     }

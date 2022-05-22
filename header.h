@@ -84,11 +84,11 @@ void afficher_lac(BITMAP* buffer);
 void caserouge(BITMAP* buffer, int posx, int posy);
 void demande_placement (BITMAP* buffer, t_joueur* joueur,int tableau[18][36], int tab_arbres[18][36], t_joueur tabJoueur[], int indice);
 //affichage_Personnages
-void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int y);
-void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int y);
-void afficher_personnage_ronflex(BITMAP* buffer,int compteur,int cote,int x,int y);
-void afficher_personnage_rondoudou(BITMAP* buffer,int compteur,int cote,int x,int y);
-void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int y);
+void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int y,t_joueur joueur);
+void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int y,t_joueur joueur);
+void afficher_personnage_ronflex(BITMAP* buffer,int compteur,int cote,int x,int y,t_joueur joueur);
+void afficher_personnage_rondoudou(BITMAP* buffer,int compteur,int cote,int x,int y,t_joueur joueur);
+void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int y,t_joueur joueur);
 //menuNbJoueur
 void menuNbJoueur(BITMAP* page, BITMAP* fond,BITMAP* logo,int* violetCity);
 //menuJeu

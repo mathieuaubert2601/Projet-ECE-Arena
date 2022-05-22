@@ -27,19 +27,19 @@ int menuFin (BITMAP* page)
     {
         blit(fond,page,0,0,0,0,1200,711);
 
-        AffichageBouton(rejouer,rejouerInv,page,0,0,400,150,350,125);
-        AffichageBouton(nvl,nvlInv,page,0,0,400,350,350,125);
-        AffichageBouton(quitter,quitterInv,page,0,0,400,550,350,125);
+        AffichageBouton(rejouer,rejouerInv,page,0,0,400,100,350,125);
+        AffichageBouton(nvl,nvlInv,page,0,0,400,300,350,125);
+        AffichageBouton(quitter,quitterInv,page,0,0,400,500,350,125);
 
-        if(((mouse_x>=(400)&& mouse_x<=(400+350))&& (mouse_y)>=(150)&& mouse_y<=(150+125))&&(mouse_b & 1))
+        if(((mouse_x>=(400)&& mouse_x<=(400+350))&& (mouse_y)>=(100)&& mouse_y<=(100+125))&&(mouse_b & 1))
         {
             return 1;
         }
-        if(((mouse_x>=(400)&& mouse_x<=(400+350))&& (mouse_y)>=(350)&& mouse_y<=(350+125))&&(mouse_b & 1))
+        if(((mouse_x>=(400)&& mouse_x<=(400+350))&& (mouse_y)>=(300)&& mouse_y<=(300+125))&&(mouse_b & 1))
         {
             return 2;
         }
-        if(((mouse_x>=(400)&& mouse_x<=(400+350))&& (mouse_y)>=(550)&& mouse_y<=(550+125))&&(mouse_b & 1))
+        if(((mouse_x>=(400)&& mouse_x<=(400+350))&& (mouse_y)>=(500)&& mouse_y<=(500+125))&&(mouse_b & 1))
         {
             return 3;
         }

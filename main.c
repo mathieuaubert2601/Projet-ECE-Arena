@@ -193,27 +193,27 @@ int main()
                         if (tabJoueur[z].numeroClasse==1)///Pikachu
                         {
                             demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                            afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                         }
                         if (tabJoueur[z].numeroClasse==2)///Ronflex
                         {
                             demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                            afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                         }
                         if (tabJoueur[z].numeroClasse==3)///Lucario
                         {
                             demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                            afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                         }
                         if (tabJoueur[z].numeroClasse==4)///Alakazam
                         {
                             demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                            afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                         }
                         if (tabJoueur[z].numeroClasse==5)///Rondoudou
                         {
                             demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                            afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                            afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                         }
 
                         rest(200);
@@ -373,7 +373,7 @@ int main()
                         }
                         if(((mouse_x>=(casex*10)&& mouse_x<=(casex*10+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
-                            if (tabJoueur[j].classe.sort1.type == 2 || tabJoueur[j].classe.sort1.numero == 6 || tabJoueur[j].classe.sort1.numero == 17)
+                            if (tabJoueur[j].classe.sort1.type == 2 || tabJoueur[j].classe.sort1.numero == 6 || tabJoueur[j].classe.sort1.numero == 17 || tabJoueur[j].classe.sort1.numero == 5)
                             {
                                 lancerSort(tabJoueur[j].classe.sort1,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
@@ -537,7 +537,7 @@ int main()
                         }
                         if(((mouse_x>=(casex*14)&& mouse_x<=(casex*14+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
-                            if (tabJoueur[j].classe.sort2.type == 2 || tabJoueur[j].classe.sort2.numero == 6 || tabJoueur[j].classe.sort2.numero == 17)
+                            if (tabJoueur[j].classe.sort2.type == 2 || tabJoueur[j].classe.sort2.numero == 6 || tabJoueur[j].classe.sort2.numero == 17 || tabJoueur[j].classe.sort2.numero == 5)
                             {
                                 lancerSort(tabJoueur[j].classe.sort2,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
@@ -701,7 +701,7 @@ int main()
                         }
                         if(((mouse_x>=(casex*18)&& mouse_x<=(casex*18+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
-                            if (tabJoueur[j].classe.sort3.type == 2 || tabJoueur[j].classe.sort3.numero == 6 || tabJoueur[j].classe.sort3.numero == 17)
+                            if (tabJoueur[j].classe.sort3.type == 2 || tabJoueur[j].classe.sort3.numero == 6 || tabJoueur[j].classe.sort3.numero == 17 || tabJoueur[j].classe.sort3.numero == 5)
                             {
                                 lancerSort(tabJoueur[j].classe.sort3,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
@@ -865,7 +865,7 @@ int main()
                         }
                         if(((mouse_x>=(casex*22)&& mouse_x<=(casex*22+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
-                            if (tabJoueur[j].classe.sort4.type == 2 || tabJoueur[j].classe.sort4.numero == 6 || tabJoueur[j].classe.sort4.numero == 17)
+                            if (tabJoueur[j].classe.sort4.type == 2 || tabJoueur[j].classe.sort4.numero == 6 || tabJoueur[j].classe.sort4.numero == 17||tabJoueur[j].classe.sort4.numero == 5)
                             {
                                 lancerSort(tabJoueur[j].classe.sort4,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
@@ -1029,7 +1029,7 @@ int main()
                         }
                         if(((mouse_x>=(casex*26)&& mouse_x<=(casex*26+75))&& (mouse_y)>=(casey*19)&& mouse_y<=(casey*19+54))&&(mouse_b & 1))
                         {
-                            if (tabJoueur[j].classe.sort5.type == 2 || tabJoueur[j].classe.sort5.numero == 6 || tabJoueur[j].classe.sort5.numero == 17)
+                            if (tabJoueur[j].classe.sort5.type == 2 || tabJoueur[j].classe.sort5.numero == 6 || tabJoueur[j].classe.sort5.numero == 17 || tabJoueur[j].classe.sort5.numero == 5 )
                             {
                                 lancerSort(tabJoueur[j].classe.sort5,&tabJoueur[j],tabJoueur,nbJoueurs,j,page,tableau_Cases);
                                 rest(200);
@@ -1183,23 +1183,23 @@ int main()
                         {
                             if (tabJoueur[z].numeroClasse==1)///Pikachu
                             {
-                                afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                             }
                             if (tabJoueur[z].numeroClasse==2)///Ronflex
                             {
-                                afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                             }
                             if (tabJoueur[z].numeroClasse==3)///Lucario
                             {
-                                afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                             }
                             if (tabJoueur[z].numeroClasse==4)///Alakazam
                             {
-                                afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                             }
                             if (tabJoueur[z].numeroClasse==5)///Rondoudou
                             {
-                                afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                                afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne,tabJoueur[z]);
                             }
                         }
                         time_t temps3=time(NULL);
