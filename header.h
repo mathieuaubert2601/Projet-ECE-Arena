@@ -61,7 +61,7 @@ void afficher_attaque_alakazam(BITMAP* buffer);
 void afficher_attaque_lucario(BITMAP* buffer);
 void afficher_attaque_pikachu(BITMAP* buffer);
 //choix_classes
-void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur joueur[], int* violetCity, SAMPLE* musiqueFond, int nbJoueur, int tabCases[18][36], int t);
+void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur joueur[], int* violetCity, SAMPLE* musiqueFond, int nbJoueur, int tabCases[18][36], int t, int equipe);
 //informations_classe
 void information_Pikachu(BITMAP* page, BITMAP* fond);
 void information_Lucario(BITMAP* page, BITMAP* fond);

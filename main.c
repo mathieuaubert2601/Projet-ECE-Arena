@@ -26,6 +26,7 @@ int main()
     int test4=1;
     int resFin;
     int casex, casey;
+    int modeEquipe=0;
     casex = 30;
     casey = 32;
 
@@ -98,8 +99,6 @@ int main()
             violetCity++;
         }*/
 
-        //attaque_Pikachu(page);
-
         menuJeu(page,fondMenu,logo);
         if(((mouse_x>=(375)&& mouse_x<=(375+444))&& (mouse_y)>=(500)&& mouse_y<=(156+500))&&(mouse_b & 1))
         {
@@ -107,6 +106,7 @@ int main()
             sortieMenu=0;
             while(sortieMenu!=1)
             {
+                modeEquipe=0;
                 menuNbJoueur(page,fondMenu,logo,&violetCity);
                 if(((mouse_x>=(1000)&& mouse_x<=(1000+181))&& (mouse_y)>=(50)&& mouse_y<=(59+50))&&(mouse_b & 1))
                 {
@@ -121,7 +121,7 @@ int main()
 
                     for(i=0; i<nbJoueurs; i++)
                     {
-                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,tabJoueurInit,violetCity,musiqueFond,i, tableau_Cases,i);
+                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,tabJoueurInit,violetCity,musiqueFond,i, tableau_Cases,i,modeEquipe);
                         rest(300);
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
@@ -135,7 +135,7 @@ int main()
                     //ordreJoueurs3(tabJoueur,nbJoueurs,joueur1,joueur2,joueur3);
                     for(i=0; i<nbJoueurs; i++)
                     {
-                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,tabJoueurInit,violetCity,musiqueFond,i, tableau_Cases,i);
+                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,tabJoueurInit,violetCity,musiqueFond,i, tableau_Cases,i,modeEquipe);
                         rest(300);
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
@@ -149,7 +149,22 @@ int main()
                     Saisir_nom(tabJoueurInit[3].pseudo,page);
                     for(i=0; i<nbJoueurs; i++)
                     {
-                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,tabJoueurInit,violetCity,musiqueFond,i, tableau_Cases,i);
+                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,tabJoueurInit,violetCity,musiqueFond,i, tableau_Cases,i,modeEquipe);
+                        rest(300);
+                    }
+                    ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);
+                }
+                    if(((mouse_x>=(920)&& mouse_x<=(920+171))&& (mouse_y)>=(540)&& mouse_y<=(165+540))&&(mouse_b & 1))///Choix 4 joueurs
+                {
+                    nbJoueurs = 4;
+                    modeEquipe=1;
+                    Saisir_nom(tabJoueurInit[0].pseudo,page);
+                    Saisir_nom(tabJoueurInit[1].pseudo,page);
+                    Saisir_nom(tabJoueurInit[2].pseudo,page);
+                    Saisir_nom(tabJoueurInit[3].pseudo,page);
+                    for(i=0; i<nbJoueurs; i++)
+                    {
+                        menu_classes(pikachu,ronflex,lucario,alakazam,rondoudou,page,tabJoueurInit,violetCity,musiqueFond,i, tableau_Cases,i,modeEquipe);
                         rest(300);
                     }
                     ordreJoueurs(tabJoueur,tabJoueurInit,nbJoueurs);

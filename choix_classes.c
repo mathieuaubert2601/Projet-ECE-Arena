@@ -1,5 +1,5 @@
 #include "header.h"
-void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur joueur[], int* violetCity, SAMPLE* musiqueFond, int nbJoueur, int tabCases[18][36], int t)
+void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* classe4, BITMAP* classe5, BITMAP* page, t_joueur joueur[], int* violetCity, SAMPLE* musiqueFond, int nbJoueur, int tabCases[18][36], int t, int equipe)
 {
     int xRand ;
     int yRand ;
@@ -101,7 +101,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
     t_sorts vitesseExtreme={0,0,0,80,2,0,3,0,7,3,0,0,vitEx,vitExInv,infosvitEx};
     t_sorts vitesseExtremeL={0,23,0,80,2,0,3,0,7,3,0,0,vitExL,vitExLInv,infosvitExL};
     t_sorts fatalFoudre={15,1,8,50,1,4,7,0,10,1,0,0,fatF,fatFInv,infosfatF};
-    t_sorts bouleElek={10,2,5,75,1,3,5,2,6,2,0,0,boulE,boulEInv,infosboulE};
+    t_sorts bouleElek={10,2,5,75,1,3,5,2,6,3,0,0,boulE,boulEInv,infosboulE};
     t_sorts couDjus={6,3,4,90,1,2,5,0,3,3,0,0,coupJ,coupJInv,infoscoupJ};
     t_sorts cageEclair={0,4,0,25,3,2,4,0,7,3,3,0,cageE,cageEInv,infoscageE};
     t_sorts boulArmure={0,5,0,50,4,0,0,0,7,0,0,1,boulA,boulAInv,infosboulA};
@@ -288,23 +288,6 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
         masked_stretch_blit(logo,page,0,0,755,374,300,5,600,300);
 
         textprintf_ex(page,maPolice,10,180,makecol(255,255,0),-1,"%s",joueur[t].pseudo);
-        /*if(nbJoueur==0)
-        {
-            masked_stretch_blit(phrase1,page,0,0,phrase1->w,phrase1->h,5,50,300,38);
-        }
-        if(nbJoueur==1)
-        {
-            masked_stretch_blit(phrase2,page,0,0,phrase2->w,phrase2->h,5,50,300,38);
-        }
-        if(nbJoueur==2)
-        {
-            masked_stretch_blit(phrase3,page,0,0,phrase3->w,phrase3->h,5,50,300,38);
-        }
-        if(nbJoueur==3)
-        {
-            masked_stretch_blit(phrase4,page,0,0,phrase4->w,phrase4->h,5,50,300,38);
-        }*/
-
 
         if(((mouse_x>=(68)&& mouse_x<=(68+100))&& (mouse_y)>=(625)&& mouse_y<=(625+50))&& (mouse_b && 1))
         {
@@ -336,6 +319,17 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].classe=pikachu;
                 joueur[t].mort=0;
                 joueur[t].equipe=t+1;
+                if (equipe==1)
+                {
+                    if (t<=1)
+                    {
+                        joueur[t].equipe=1;
+                    }
+                    else
+                    {
+                        joueur[t].equipe=0;
+                    }
+                }
                 joueur[t].kills=0;
                 joueur[t].pv = pikachu.pv;
                 joueur[t].numero=nbJoueur;
@@ -355,6 +349,17 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].classe=ronflex;
                 joueur[t].mort=0;
                 joueur[t].equipe=t+1;
+                if (equipe==1)
+                {
+                    if (t<=1)
+                    {
+                        joueur[t].equipe=1;
+                    }
+                    else
+                    {
+                        joueur[t].equipe=0;
+                    }
+                }
                 joueur[t].kills=0;
                 joueur[t].pv = ronflex.pv;
                 joueur[t].numero=nbJoueur;
@@ -375,6 +380,17 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].mort=0;
                 joueur[t].kills=0;
                 joueur[t].equipe=t+1;
+                if (equipe==1)
+                {
+                    if (t<=1)
+                    {
+                        joueur[t].equipe=1;
+                    }
+                    else
+                    {
+                        joueur[t].equipe=0;
+                    }
+                }
                 joueur[t].pv = lucario.pv;
                 joueur[t].numero=nbJoueur;
                 joueur[t].numeroClasse=3;
@@ -393,6 +409,17 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].classe=alakazam;
                 joueur[t].mort=0;
                 joueur[t].equipe=t+1;
+                if (equipe==1)
+                {
+                    if (t<=1)
+                    {
+                        joueur[t].equipe=1;
+                    }
+                    else
+                    {
+                        joueur[t].equipe=0;
+                    }
+                }
                 joueur[t].kills=0;
                 joueur[t].pv = alakazam.pv;
                 joueur[t].numero=nbJoueur;
@@ -413,6 +440,17 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].mort=0;
                 joueur[t].kills=0;
                 joueur[t].equipe=t+1;
+                if (equipe==1)
+                {
+                    if (t<=1)
+                    {
+                        joueur[t].equipe=1;
+                    }
+                    else
+                    {
+                        joueur[t].equipe=0;
+                    }
+                }
                 joueur[t].pv = rondoudou.pv;
                 joueur[t].numero=nbJoueur;
                 joueur[t].numeroClasse=5;
