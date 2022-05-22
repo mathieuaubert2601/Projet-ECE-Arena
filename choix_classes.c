@@ -350,6 +350,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                 joueur[t].classe=ronflex;
                 joueur[t].mort=0;
                 joueur[t].equipe=t+1;
+                joueur[t].degats = 0;
                 if (equipe==1)
                 {
                     if (t<=1)

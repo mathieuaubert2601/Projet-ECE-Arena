@@ -171,7 +171,7 @@ void demande_placement (BITMAP* buffer, t_joueur* joueur,int tableau[18][36], in
         afficher_tout_arbre(buffer,tab_arbres);
         affichage_barres(buffer);
         textprintf_ex(buffer,maPolice,casex*7,casey*18,makecol(0,0,0),-1,"%s", joueur->pseudo);
-        textprintf_ex(buffer,maPolice,casex*4,casey*19,makecol(0,0,0),-1,"Choisit ton placement !");
+        textprintf_ex(buffer,maPolice,casex*4,casey*19,makecol(0,0,0),-1,"Choisis ton placement !");
         AffichageBouton(confirmer,confirmerInv,buffer,0,0,casex*21,casey*19,200,70);
         clic=0;
         while(clic!=1)
