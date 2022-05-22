@@ -325,9 +325,9 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                     {
                         joueur[t].equipe=1;
                     }
-                    else
+                    if(t>1)
                     {
-                        joueur[t].equipe=0;
+                        joueur[t].equipe=2;
                     }
                 }
                 joueur[t].kills=0;
@@ -357,7 +357,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                     }
                     else
                     {
-                        joueur[t].equipe=0;
+                        joueur[t].equipe=2;
                     }
                 }
                 joueur[t].kills=0;
@@ -388,7 +388,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                     }
                     else
                     {
-                        joueur[t].equipe=0;
+                        joueur[t].equipe=2;
                     }
                 }
                 joueur[t].pv = lucario.pv;
@@ -417,7 +417,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                     }
                     else
                     {
-                        joueur[t].equipe=0;
+                        joueur[t].equipe=2;
                     }
                 }
                 joueur[t].kills=0;
@@ -448,7 +448,7 @@ void menu_classes (BITMAP* classe1, BITMAP* classe2, BITMAP* classe3, BITMAP* cl
                     }
                     else
                     {
-                        joueur[t].equipe=0;
+                        joueur[t].equipe=2;
                     }
                 }
                 joueur[t].pv = rondoudou.pv;
