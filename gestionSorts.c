@@ -733,7 +733,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
 {
     int caseChoisieLigne, caseChoisieColonne, sortie_mouv = 0,probabilite, testTouche=0, joueurBTouche=0, joueurCTouche=0, joueurDTouche=0;
     int nombrePv;
-    FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
+    FONT* maPolice = load_font("police_ecriture/calibri.pcx",NULL,NULL);
 
     if (joueurA->pa>=sort1.nbrPa)
     {
@@ -915,6 +915,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 blit(page,screen,0,0,0,0,1200,711);
                                 rest(1000);
                             }
+                            joueurA->pa-=sort1.nbrPa;
                         }
                         else
                         {
@@ -978,6 +979,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 rest(1000);
                             }
                         }
+                        joueurA->pa-=sort1.nbrPa;
                     }
                     else
                     {
@@ -989,6 +991,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                     if (joueurD->tourBouclier>0)
                     {
                         phrases(page,9);
+                        joueurA->pa-=sort1.nbrPa;
                     }
                     else
                     {
@@ -1040,12 +1043,13 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                             }
                             joueurA->pa-=sort1.nbrPa;
                         }
+
                         else
                         {
                             phrases(page,11);
                         }
                     }
-                    joueurA->pa-=sort1.nbrPa;
+
                 }
             }
         }
@@ -1185,6 +1189,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                     if (joueurB->tourBouclier>0)
                     {
                         phrases(page,9);
+                        joueurA->pa-=sort1.nbrPa;
                     }
                     else
                     {
@@ -1234,6 +1239,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 blit(page,screen,0,0,0,0,1200,711);
                                 rest(1000);
                             }
+                            joueurA->pa-=sort1.nbrPa;
                         }
                         else
                         {
@@ -1297,6 +1303,7 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                                 rest(1000);
                             }
                         }
+                        joueurA->pa-=sort1.nbrPa;
                     }
                     else
                     {
@@ -1363,9 +1370,9 @@ void sortAttaque4J(t_sorts sort1, t_joueur* joueurA, t_joueur* joueurB, t_joueur
                             phrases(page,11);
                         }
                     }
-
+                    joueurA->pa-=sort1.nbrPa;
                 }
-                joueurA->pa-=sort1.nbrPa;
+
             }
         }
     }
