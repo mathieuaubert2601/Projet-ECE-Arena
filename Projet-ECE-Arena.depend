@@ -4,7 +4,7 @@
 
 1651337454 ated upstream
 
-1653166577 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
+1653214268 c:\users\thiba\onedrive\documents\github\projet-ece-arena\header.h
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
@@ -17,13 +17,13 @@
 	"header.h"
 	"header.h"
 
-1653210713 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
+1653216014 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\main.c
 	"header.h"
 
 1653210741 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\choix_classes.c
 	"header.h"
 
-1653146545 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
+1653212746 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\boutons_menu.c
 	"header.h"
 
 1653163334 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\main.c
@@ -80,7 +80,7 @@
 1653135580 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\menunbjoueur.c
 	"header.h"
 
-1651496491 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\menujeu.c
+1653214268 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\menujeu.c
 	"header.h"
 
 1651507984 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\menujeu.c
@@ -89,7 +89,7 @@
 1653134235 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\menunbjoueur.c
 	"header.h"
 
-1653166456 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\affichage_personnages.c
+1653210925 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\affichage_personnages.c
 	"header.h"
 
 1653135580 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\carte.c
@@ -140,7 +140,7 @@
 1653134235 source:c:\lea\ece\projet d'informatique\projet d'informatique\projet-ece-arena\deplacement_joueur.c
 	"header.h"
 
-1653209978 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\gestionsorts.c
+1653215971 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\gestionsorts.c
 	"header.h"
 
 1653135222 source:c:\users\aubert mathieu\documents\github\projet-ece-arena\barre_commande.c
@@ -236,6 +236,6 @@
 1652716208 source:c:\users\augus\onedrive\documents\github\projet-ece-arena\deplacement_plus_court.c
 	"header.h"
 
-1653210570 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\classement.c
+1653210800 source:c:\users\thiba\onedrive\documents\github\projet-ece-arena\classement.c
 	"header.h"
 
