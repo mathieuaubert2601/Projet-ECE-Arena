@@ -47,6 +47,7 @@ void phrases(BITMAP* page,int p)
     BITMAP* nom = load_bitmap("phrases/phraseNom.bmp",NULL);
     BITMAP* allieSoin = load_bitmap("phrases/phraseAllieSoin.bmp",NULL);
     BITMAP* memeEquipe = load_bitmap("phrases/phraseMemeEquipe.bmp",NULL);
+    BITMAP* pasMemeEquipe = load_bitmap("phrases/phrasePasMemeEquipe.bmp",NULL);
 
     BITMAP* endormi = load_bitmap("phrases/phraseEndormi.bmp",NULL);
     BITMAP* paralyse = load_bitmap("phrases/phraseParalyse.bmp",NULL);
@@ -116,6 +117,12 @@ void phrases(BITMAP* page,int p)
     if(p==11)
     {
         masked_blit(memeEquipe,page,0,0,150,300,memeEquipe->w,memeEquipe->h);
+        blit(page,screen,0,0,0,0,1200,711);
+        rest(1000);
+    }
+    if(p==12)
+    {
+        masked_blit(pasMemeEquipe,page,0,0,150,300,pasMemeEquipe->w,pasMemeEquipe->h);
         blit(page,screen,0,0,0,0,1200,711);
         rest(1000);
     }
