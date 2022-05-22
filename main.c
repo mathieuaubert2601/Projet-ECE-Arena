@@ -31,19 +31,19 @@ int main()
     FONT* maPolice  = load_font("police_ecriture/calibri.pcx",NULL,NULL);
 
     t_joueur joueur1,joueur2,joueur3,joueur4;
-    for (int c=0;i<15;i++)
+    for (int c=0; i<15; i++)
     {
         tabJoueurInit[0].pseudo[c]=' ';
     }
-    for (int c=0;i<15;i++)
+    for (int c=0; i<15; i++)
     {
         tabJoueurInit[1].pseudo[c]=' ';
     }
-    for (int c=0;i<15;i++)
+    for (int c=0; i<15; i++)
     {
         tabJoueurInit[2].pseudo[c]=' ';
     }
-    for (int c=0;i<15;i++)
+    for (int c=0; i<15; i++)
     {
         tabJoueurInit[3].pseudo[c]=' ';
     }
@@ -157,77 +157,105 @@ int main()
                 {
                     test3=0;
                     for (int z=0; z<nbJoueurs; z++)
+                    {
+                        tabJoueur[z].tourHate=0;
+                        tabJoueur[z].tourDodo=0;
+                        tabJoueur[z].tourParalysie=0;
+                        tabJoueur[z].tourPeur=0;
+                        tabJoueur[z].tourPoison=0;
+                        if (tabJoueur[z].numeroClasse==1)///Pikachu
                         {
-                            tabJoueur[z].tourHate=0;
-                            tabJoueur[z].tourDodo=0;
-                            tabJoueur[z].tourParalysie=0;
-                            tabJoueur[z].tourPeur=0;
-                            tabJoueur[z].tourPoison=0;
-                            if (tabJoueur[z].numeroClasse==1)///Pikachu
-                            {
-                                tabJoueur[z].pm=pikachuPm;
-                            }
-                            if (tabJoueur[z].numeroClasse==2)///Ronflex
-                            {
-                                tabJoueur[z].pm=ronflexPm;
-                            }
-                            if (tabJoueur[z].numeroClasse==3)///Lucario
-                            {
-                                tabJoueur[z].pm=lucarioPm;
-                            }
-                            if (tabJoueur[z].numeroClasse==4)///Alakazam
-                            {
-                                tabJoueur[z].pm=alakazamPm;
-                            }
-                            if (tabJoueur[z].numeroClasse==5)///Rondoudou
-                            {
-                                tabJoueur[z].pm=rondoudouPm;
-                            }
-                            tabJoueur[z].pa=10;
+                            tabJoueur[z].pm=pikachuPm;
                         }
+                        if (tabJoueur[z].numeroClasse==2)///Ronflex
+                        {
+                            tabJoueur[z].pm=ronflexPm;
+                        }
+                        if (tabJoueur[z].numeroClasse==3)///Lucario
+                        {
+                            tabJoueur[z].pm=lucarioPm;
+                        }
+                        if (tabJoueur[z].numeroClasse==4)///Alakazam
+                        {
+                            tabJoueur[z].pm=alakazamPm;
+                        }
+                        if (tabJoueur[z].numeroClasse==5)///Rondoudou
+                        {
+                            tabJoueur[z].pm=rondoudouPm;
+                        }
+                        tabJoueur[z].pa=10;
+                    }
 
                     sortieJeu=0;
                     for (int z=0; z<nbJoueurs; z++)
+                    {
+                        if (tabJoueur[z].numeroClasse==1)///Pikachu
                         {
-                            if (tabJoueur[z].numeroClasse==1)///Pikachu
-                            {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                                afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-                            }
-                            if (tabJoueur[z].numeroClasse==2)///Ronflex
-                            {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                                afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-                            }
-                            if (tabJoueur[z].numeroClasse==3)///Lucario
-                            {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                                afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-                            }
-                            if (tabJoueur[z].numeroClasse==4)///Alakazam
-                            {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                                afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-                            }
-                            if (tabJoueur[z].numeroClasse==5)///Rondoudou
-                            {
-                                demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
-                                afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-                            }
-
-                            rest(200);
+                            demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
+                            afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                         }
-                        time_t temps1 = time(NULL);
+                        if (tabJoueur[z].numeroClasse==2)///Ronflex
+                        {
+                            demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
+                            afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                        }
+                        if (tabJoueur[z].numeroClasse==3)///Lucario
+                        {
+                            demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
+                            afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                        }
+                        if (tabJoueur[z].numeroClasse==4)///Alakazam
+                        {
+                            demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
+                            afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                        }
+                        if (tabJoueur[z].numeroClasse==5)///Rondoudou
+                        {
+                            demande_placement(page,&tabJoueur[z],tableau_Cases,tableau_affichage_arbre,tabJoueur,z);
+                            afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
+                        }
+
+                        rest(200);
+                    }
+                    time_t temps1 = time(NULL);
                     while(sortieJeu!=1)
                     {
-                        if (tabJoueur[j].mort==1 || tabJoueur[j].tourDodo>=1 || tabJoueur[j].tourParalysie>=1 || tabJoueur[j].tourPeur>=1)
-                        {
-                            j++;
-                        }
-
                         if (j==nbJoueurs)
                         {
                             j=0;
+                        }
+                        if (tabJoueur[j].mort==1 || tabJoueur[j].tourDodo>=1 || tabJoueur[j].tourParalysie>=1 || tabJoueur[j].tourPeur>=1)
+                        {
+                            if(tabJoueur[j].tourDodo>0)
+                            {
+                                tabJoueur[j].tourDodo--;
+                                phrases(page,6);
+                                blit(page,screen,0,0,0,0,1200,711);
+                                rest(1000);
+                            }
+                            if(tabJoueur[j].tourParalysie>0)
+                            {
+                                tabJoueur[j].tourParalysie--;
+                                phrases(page,7);
+                                blit(page,screen,0,0,0,0,1200,711);
+                                rest(1000);
+                            }
+                            if(tabJoueur[j].tourPeur>0)
+                            {
+                                tabJoueur[j].tourPeur--;
+                                phrases(page,8);
+                                blit(page,screen,0,0,0,0,1200,711);
+                                rest(1000);
+                            }
+                            if(tabJoueur[j].tourPoison>0)
+                            {
+                                tabJoueur[j].tourPoison--;
+                                tabJoueur[j].pv-=5;
+                                phrases(page,10);
+                                blit(page,screen,0,0,0,0,1200,711);
+                                rest(1000);
+                            }
+                            j++;
                         }
 
                         if (tabJoueur[j].tourHate >0 && tempohate==0 )
@@ -261,7 +289,7 @@ int main()
                                 show_mouse(page);
                                 blit(page,screen,0,0,0,0,1200,711);
                             }
-                        temps1=time(NULL);
+                            temps1=time(NULL);
                         }
                         deplacement = 0;
 
@@ -1150,182 +1178,227 @@ int main()
                                 }
                             }
                         }
-                            for (int z=0; z<nbJoueurs; z++)
+                        for (int z=0; z<nbJoueurs; z++)
+                        {
+                            if (tabJoueur[z].numeroClasse==1)///Pikachu
                             {
-                                if (tabJoueur[z].numeroClasse==1)///Pikachu
-                                {
-                                    afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-                                }
-                                if (tabJoueur[z].numeroClasse==2)///Ronflex
-                                {
-                                    afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-                                }
-                                if (tabJoueur[z].numeroClasse==3)///Lucario
-                                {
-                                    afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-                                }
-                                if (tabJoueur[z].numeroClasse==4)///Alakazam
-                                {
-                                    afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-                                }
-                                if (tabJoueur[z].numeroClasse==5)///Rondoudou
-                                {
-                                    afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
-                                }
+                                afficher_personnage_pikachu(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
-                            time_t temps3=time(NULL);
-                            unsigned long diff=difftime(temps3,temps1);
-                            textprintf_ex(page,maPolice,1150,550,makecol(0,0,0),-1,"%d",diff);
-                            compteurMort=0;
-                            for (int d=0;d<nbJoueurs;d++)
+                            if (tabJoueur[z].numeroClasse==2)///Ronflex
                             {
-                                if (tabJoueur[d].mort==0)
-                                {
-                                    compteurMort++;
-                                }
+                                afficher_personnage_ronflex(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
-                            if (compteurMort == 1)
+                            if (tabJoueur[z].numeroClasse==3)///Lucario
                             {
-                                //Afficher classement
-                                sortieJeu=1;
-                                sortieMenu=1;
+                                afficher_personnage_lucario(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
-                            if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b & 1))
+                            if (tabJoueur[z].numeroClasse==4)///Alakazam
                             {
-                                while(test==1)
-                                {
-                                    clear_bitmap(page);;
-                                    blit(fond,page,0,0,0,0,1200,711);
-                                    AffichageBouton(quitter,quitterInv,fond,0,0,400,100,350,125);
-                                    AffichageBouton(reprendre,reprendreInv,fond,0,0,400,250,350,125);
-                                    if (((mouse_x>=(400)&& mouse_x<=(750))&& (mouse_y)>=(250)&& mouse_y<=(375))&&(mouse_b & 1))
-                                    {
-                                        test=0;
-                                    }
-                                    if (((mouse_x>=(200)&& mouse_x<=(750))&& (mouse_y)>=(100)&& mouse_y<=(225))&&(mouse_b & 1))
-                                    {
-                                        sortieMenu=1;
-                                        sortieJeu=1;
-                                        test3=1;
-                                        test=0;
-                                    }
-                                    show_mouse(page);;
-                                    blit(page,screen,0,0,0,0,1200,711);
-                                }
-                                test=1;
+                                afficher_personnage_alakazam(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
-                            show_mouse(page);
-                            blit(page,screen,0,0,0,0,1200,711);
-                            time_t temps2=time(NULL);
-                            unsigned long tempo = difftime(temps2,temps1);
-                            if (tempo>=15)
+                            if (tabJoueur[z].numeroClasse==5)///Rondoudou
                             {
-                                temps1=time(NULL);
-                                tabJoueur[j].pa=10;
-                                if (tabJoueur[j].numeroClasse==1)///Pikachu
-                                {
-                                    tabJoueur[j].pm=pikachuPm;
-                                }
-                                if (tabJoueur[j].numeroClasse==2)///Ronflex
-                                {
-                                    tabJoueur[j].pm=ronflexPm;
-                                }
-                                if (tabJoueur[j].numeroClasse==3)///Lucario
-                                {
-                                    tabJoueur[j].pm=lucarioPm;
-                                }
-                                if (tabJoueur[j].numeroClasse==4)///Alakazam
-                                {
-                                    tabJoueur[j].pm=alakazamPm;
-                                }
-                                if (tabJoueur[j].numeroClasse==5)///Rondoudou
-                                {
-                                    tabJoueur[j].pm=rondoudouPm;
-                                }
-                                if(tabJoueur[j].tourBouclier>0)
-                                {
-                                   tabJoueur[j].tourBouclier--;
-                                }
-                                if(tabJoueur[j].tourDodo>0)
-                                {
-                                   tabJoueur[j].tourDodo--;
-                                }
-                                if(tabJoueur[j].tourParalysie>0)
-                                {
-                                   tabJoueur[j].tourParalysie--;
-                                }
-                                if(tabJoueur[j].tourPeur>0)
-                                {
-                                   tabJoueur[j].tourPeur--;
-                                }
-                                if(tabJoueur[j].tourPoison>0)
-                                {
-                                   tabJoueur[j].tourPoison--;
-                                   tabJoueur[j].pv-=5;
-                                }
-                                if(tabJoueur[j].tourHate>0)
-                                {
-                                    tabJoueur[j].tourHate--;
-                                    tempohate--;
-                                }
-                                j++;
-                                rest(200);
-                            }
-                            if(((mouse_x>=(30*37)&& mouse_x<=((30*37)+130))&& (mouse_y)>=(620)&& mouse_y<=(620+115))&&(mouse_b & 1))
-                            {
-                                temps1=time(NULL);
-                                tabJoueur[j].pa=10;
-                                 if (tabJoueur[j].numeroClasse==1)///Pikachu
-                                {
-                                    tabJoueur[j].pm=pikachuPm;
-                                }
-                                if (tabJoueur[j].numeroClasse==2)///Ronflex
-                                {
-                                    tabJoueur[j].pm=ronflexPm;
-                                }
-                                if (tabJoueur[j].numeroClasse==3)///Lucario
-                                {
-                                    tabJoueur[j].pm=lucarioPm;
-                                }
-                                if (tabJoueur[j].numeroClasse==4)///Alakazam
-                                {
-                                    tabJoueur[j].pm=alakazamPm;
-                                }
-                                if (tabJoueur[j].numeroClasse==5)///Rondoudou
-                                {
-                                    tabJoueur[j].pm=rondoudouPm;
-                                }
-                                if(tabJoueur[j].tourBouclier>0)
-                                {
-                                   tabJoueur[j].tourBouclier--;
-                                }
-                                if(tabJoueur[j].tourDodo>0)
-                                {
-                                   tabJoueur[j].tourDodo--;
-                                }
-                                if(tabJoueur[j].tourParalysie>0)
-                                {
-                                   tabJoueur[j].tourParalysie--;
-                                }
-                                if(tabJoueur[j].tourPeur>0)
-                                {
-                                   tabJoueur[j].tourPeur--;
-                                }
-                                if(tabJoueur[j].tourPoison>0)
-                                {
-                                   tabJoueur[j].tourPoison--;
-                                   tabJoueur[j].pv-=5;
-                                }
-                                if(tabJoueur[j].tourHate>0)
-                                {
-                                    tabJoueur[j].tourHate--;
-                                    tempohate--;
-                                }
-                                j++;
-                                rest(200);
+                                afficher_personnage_rondoudou(page,0,0,tabJoueur[z].colonne,tabJoueur[z].ligne);
                             }
                         }
-                        i=0;
+                        time_t temps3=time(NULL);
+                        unsigned long diff=difftime(temps3,temps1);
+                        textprintf_ex(page,maPolice,1150,550,makecol(0,0,0),-1,"%d",diff);
+                        compteurMort=0;
+                        for (int d=0; d<nbJoueurs; d++)
+                        {
+                            if (tabJoueur[d].mort==0)
+                            {
+                                compteurMort++;
+                            }
+                        }
+                        if (compteurMort == 1)
+                        {
+                            if (nbJoueurs==2)
+                            {
+                                if (tabJoueur[0].mort==0)
+                                {
+                                    classement2J(page,tabJoueur[0],tabJoueur[1]);
+                                }
+                                else
+                                {
+                                    classement2J(page,tabJoueur[1],tabJoueur[0]);
+                                }
+                            }
+                            if (nbJoueurs==3)
+                            {
+                                if (tabJoueur[0].mort==0)
+                                {
+                                    classement3J(page,tabJoueur[0],tabJoueur[1],tabJoueur[2]);
+                                }
+                                if (tabJoueur[1].mort==0)
+                                {
+                                    classement3J(page,tabJoueur[1],tabJoueur[0],tabJoueur[2]);
+                                }
+                                else
+                                {
+                                    classement3J(page,tabJoueur[2],tabJoueur[1],tabJoueur[0]);
+                                }
+                            }
+                            if (nbJoueurs==4)
+                            {
+                                if (tabJoueur[0].mort==0)
+                                {
+                                    classement4J(page,tabJoueur[0],tabJoueur[1],tabJoueur[2],tabJoueur[3]);
+                                }
+                                if (tabJoueur[1].mort==0)
+                                {
+                                    classement4J(page,tabJoueur[1],tabJoueur[0],tabJoueur[2],tabJoueur[3]);
+                                }
+                                if (tabJoueur[2].mort==0)
+                                {
+                                    classement4J(page,tabJoueur[2],tabJoueur[0],tabJoueur[1],tabJoueur[3]);
+                                }
+                                else
+                                {
+                                    classement4J(page,tabJoueur[3],tabJoueur[0],tabJoueur[1],tabJoueur[2]);
+                                }
+                            }
+                            rest(5000);
+                            sortieJeu=1;
+                            sortieMenu=1;
+                        }
+                        if(((mouse_x>=(1100)&& mouse_x<=(1190))&& (mouse_y)>=(0)&& mouse_y<=(70))&&(mouse_b & 1))
+                        {
+                            while(test==1)
+                            {
+                                clear_bitmap(page);;
+                                blit(fond,page,0,0,0,0,1200,711);
+                                AffichageBouton(quitter,quitterInv,fond,0,0,400,100,350,125);
+                                AffichageBouton(reprendre,reprendreInv,fond,0,0,400,250,350,125);
+                                if (((mouse_x>=(400)&& mouse_x<=(750))&& (mouse_y)>=(250)&& mouse_y<=(375))&&(mouse_b & 1))
+                                {
+                                    test=0;
+                                }
+                                if (((mouse_x>=(200)&& mouse_x<=(750))&& (mouse_y)>=(100)&& mouse_y<=(225))&&(mouse_b & 1))
+                                {
+                                    sortieMenu=1;
+                                    sortieJeu=1;
+                                    test3=1;
+                                    test=0;
+                                }
+                                show_mouse(page);;
+                                blit(page,screen,0,0,0,0,1200,711);
+                            }
+                            test=1;
+                        }
+                        show_mouse(page);
+                        blit(page,screen,0,0,0,0,1200,711);
+                        time_t temps2=time(NULL);
+                        unsigned long tempo = difftime(temps2,temps1);
+                        if (tempo>=15)
+                        {
+                            temps1=time(NULL);
+                            tabJoueur[j].pa=10;
+                            if (tabJoueur[j].numeroClasse==1)///Pikachu
+                            {
+                                tabJoueur[j].pm=pikachuPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==2)///Ronflex
+                            {
+                                tabJoueur[j].pm=ronflexPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==3)///Lucario
+                            {
+                                tabJoueur[j].pm=lucarioPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==4)///Alakazam
+                            {
+                                tabJoueur[j].pm=alakazamPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==5)///Rondoudou
+                            {
+                                tabJoueur[j].pm=rondoudouPm;
+                            }
+                            if(tabJoueur[j].tourBouclier>0)
+                            {
+                                tabJoueur[j].tourBouclier--;
+                            }
+                            if(tabJoueur[j].tourDodo>0)
+                            {
+                                tabJoueur[j].tourDodo--;
+                            }
+                            if(tabJoueur[j].tourParalysie>0)
+                            {
+                                tabJoueur[j].tourParalysie--;
+                            }
+                            if(tabJoueur[j].tourPeur>0)
+                            {
+                                tabJoueur[j].tourPeur--;
+                            }
+                            if(tabJoueur[j].tourPoison>0)
+                            {
+                                tabJoueur[j].tourPoison--;
+                                tabJoueur[j].pv-=5;
+                            }
+                            if(tabJoueur[j].tourHate>0)
+                            {
+                                tabJoueur[j].tourHate--;
+                                tempohate--;
+                            }
+                            j++;
+                            rest(200);
+                        }
+                        if(((mouse_x>=(30*37)&& mouse_x<=((30*37)+130))&& (mouse_y)>=(620)&& mouse_y<=(620+115))&&(mouse_b & 1))
+                        {
+                            temps1=time(NULL);
+                            tabJoueur[j].pa=10;
+                            if (tabJoueur[j].numeroClasse==1)///Pikachu
+                            {
+                                tabJoueur[j].pm=pikachuPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==2)///Ronflex
+                            {
+                                tabJoueur[j].pm=ronflexPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==3)///Lucario
+                            {
+                                tabJoueur[j].pm=lucarioPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==4)///Alakazam
+                            {
+                                tabJoueur[j].pm=alakazamPm;
+                            }
+                            if (tabJoueur[j].numeroClasse==5)///Rondoudou
+                            {
+                                tabJoueur[j].pm=rondoudouPm;
+                            }
+                            if(tabJoueur[j].tourBouclier>0)
+                            {
+                                tabJoueur[j].tourBouclier--;
+                            }
+                            if(tabJoueur[j].tourDodo>0)
+                            {
+                                tabJoueur[j].tourDodo--;
+                            }
+                            if(tabJoueur[j].tourParalysie>0)
+                            {
+                                tabJoueur[j].tourParalysie--;
+                            }
+                            if(tabJoueur[j].tourPeur>0)
+                            {
+                                tabJoueur[j].tourPeur--;
+                            }
+                            if(tabJoueur[j].tourPoison>0)
+                            {
+                                tabJoueur[j].tourPoison--;
+                                tabJoueur[j].pv-=5;
+                            }
+                            if(tabJoueur[j].tourHate>0)
+                            {
+                                tabJoueur[j].tourHate--;
+                                tempohate--;
+                            }
+                            j++;
+                            rest(200);
+                        }
+                    }
+                    i=0;
                 }
             }
         }
@@ -1357,4 +1430,5 @@ int main()
     destroy_bitmap(page);
 
     return 0;
-}END_OF_MAIN();
+}
+END_OF_MAIN();

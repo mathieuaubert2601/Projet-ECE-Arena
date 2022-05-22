@@ -33,7 +33,7 @@ typedef struct classe
 typedef struct joueur
 {
     char pseudo[15];
-    int ligne, colonne, numero, equipe, pa, tourPoison, tourDodo, tourParalysie, tourPeur, tourBouclier, tourHate, score, pv, pm, numeroClasse,mort;
+    int ligne, colonne, numero, equipe, pa, tourPoison, tourDodo, tourParalysie, tourPeur, tourBouclier, tourHate, score, pv, pm, numeroClasse,mort,kills;
     t_classe classe;
 }t_joueur;
 
@@ -117,4 +117,8 @@ int test_clique_Suppr(int destx, int desty, int longueur, int hauteur,int compte
 int test_clique_Entree(int destx, int desty, int longueur, int hauteur,int boule,char pseudo[15]);
 int test_clique(int destx, int desty, int longueur, int hauteur,char lettre,int compteur,char pseudo[15]);
 void ordreJoueurs(t_joueur ordreJoueur[],t_joueur tabJoueur[], int nbrJoueur);
+//Classement
+void classement2J(BITMAP* buffer,t_joueur joueurG, t_joueur joueurP1);
+void classement3J(BITMAP* buffer,t_joueur joueurG, t_joueur joueurP1, t_joueur joueurP2);
+void classement4J(BITMAP* buffer,t_joueur joueurG, t_joueur joueurP1, t_joueur joueurP2, t_joueur joueurP3);
 #endif // HEADER_H_INCLUDED
