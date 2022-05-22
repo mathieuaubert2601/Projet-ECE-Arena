@@ -39,19 +39,19 @@ void afficher_personnage_pikachu(BITMAP* buffer,int compteur,int cote,int x,int 
 
     if(joueur.equipe == 1)
     {
-        blit(rouge,buffer,0,0,x,y+40,90,5);
+        stretch_blit(rouge,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 2)
     {
-        blit(bleu,buffer,0,0,x,y+40,90,5);
+        stretch_blit(bleu,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 3)
     {
-        blit(vert,buffer,0,0,x,y+40,90,5);
+        stretch_blit(vert,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 4)
     {
-        blit(jaune,buffer,0,0,x,y+40,90,5);
+        stretch_blit(jaune,buffer,0,0,90,5,x,y+35,30,5);
     }
 
 
@@ -142,23 +142,23 @@ void afficher_personnage_lucario(BITMAP* buffer,int compteur,int cote,int x,int 
     BITMAP* vert = load_bitmap("Statut/equipeVerte.bmp",NULL);
     BITMAP* jaune = load_bitmap("Statut/equipeJaune.bmp",NULL);
 
+
     if(joueur.equipe == 1)
     {
-        blit(rouge,buffer,0,0,x,y+40,90,5);
+        stretch_blit(rouge,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 2)
     {
-        blit(bleu,buffer,0,0,x,y+40,90,5);
+        stretch_blit(bleu,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 3)
     {
-        blit(vert,buffer,0,0,x,y+40,90,5);
+        stretch_blit(vert,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 4)
     {
-        blit(jaune,buffer,0,0,x,y+40,90,5);
+        stretch_blit(jaune,buffer,0,0,90,5,x,y+35,30,5);
     }
-
     if(cote == 0)
     {
         masked_stretch_blit(tab_lucarioFace[compteur],buffer,0,0,tab_lucarioFace[compteur]->w,tab_lucarioFace[compteur]->h,x-10,y-10,(tab_lucarioFace[compteur]->w)*1.5,(tab_lucarioFace[compteur]->h)*1.5);
@@ -390,21 +390,22 @@ void afficher_personnage_ronflex(BITMAP* buffer,int compteur,int cote,int x,int 
     BITMAP* vert = load_bitmap("Statut/equipeVerte.bmp",NULL);
     BITMAP* jaune = load_bitmap("Statut/equipeJaune.bmp",NULL);
 
+
     if(joueur.equipe == 1)
     {
-        blit(rouge,buffer,0,0,x,y+40,90,5);
+        stretch_blit(rouge,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 2)
     {
-        blit(bleu,buffer,0,0,x,y+40,90,5);
+        stretch_blit(bleu,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 3)
     {
-        blit(vert,buffer,0,0,x,y+40,90,5);
+        stretch_blit(vert,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 4)
     {
-        blit(jaune,buffer,0,0,x,y+40,90,5);
+        stretch_blit(jaune,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(cote == 0)
     {
@@ -461,21 +462,22 @@ void afficher_personnage_rondoudou(BITMAP* buffer,int compteur,int cote,int x,in
     BITMAP* vert = load_bitmap("Statut/equipeVerte.bmp",NULL);
     BITMAP* jaune = load_bitmap("Statut/equipeJaune.bmp",NULL);
 
+
     if(joueur.equipe == 1)
     {
-        blit(rouge,buffer,0,0,x,y+40,90,5);
+        stretch_blit(rouge,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 2)
     {
-        blit(bleu,buffer,0,0,x,y+40,90,5);
+        stretch_blit(bleu,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 3)
     {
-        blit(vert,buffer,0,0,x,y+40,90,5);
+        stretch_blit(vert,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 4)
     {
-        blit(jaune,buffer,0,0,x,y+40,90,5);
+        stretch_blit(jaune,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(cote == 0)
     {
@@ -533,21 +535,22 @@ void afficher_personnage_alakazam(BITMAP* buffer,int compteur,int cote,int x,int
     BITMAP* vert = load_bitmap("Statut/equipeVerte.bmp",NULL);
     BITMAP* jaune = load_bitmap("Statut/equipeJaune.bmp",NULL);
 
+
     if(joueur.equipe == 1)
     {
-        blit(rouge,buffer,0,0,x,y+40,90,5);
+        stretch_blit(rouge,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 2)
     {
-        blit(bleu,buffer,0,0,x,y+40,90,5);
+        stretch_blit(bleu,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 3)
     {
-        blit(vert,buffer,0,0,x,y+40,90,5);
+        stretch_blit(vert,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(joueur.equipe == 4)
     {
-        blit(jaune,buffer,0,0,x,y+40,90,5);
+        stretch_blit(jaune,buffer,0,0,90,5,x,y+35,30,5);
     }
     if(cote == 0)
     {
